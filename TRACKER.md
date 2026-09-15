@@ -10,10 +10,10 @@
 
 | Item | Status |
 |---|---|
-| Current active phase | Phase 1 — Foundation |
+| Current active phase | Phase 1 — Foundation (Completed) |
 | Active branch | `feat/foundation` |
 | Last updated | 2026-09-15 |
-| Next milestone | Phase 1 complete → subdomain routing + signup working |
+| Next milestone | Phase 2 — Employee Management |
 | Blockers | — |
 
 ---
@@ -22,7 +22,7 @@
 
 | Phase | Name | Status | Branch | Notes |
 |---|---|---|---|---|
-| 1 | Foundation | ⬜ Not started | `feat/foundation` | Schema, auth, subdomain routing |
+| 1 | Foundation | ✅ Done | `feat/foundation` | Schema, auth, subdomain routing |
 | 2 | Employee Management | ⬜ Not started | `feat/employees` | Depends on Phase 1 |
 | 3 | Attendance | ⬜ Not started | `feat/attendance` | Depends on Phases 1, 2 |
 | 4 | Client Management | ⬜ Not started | `feat/clients` | Depends on Phases 1, 2 |
@@ -38,13 +38,13 @@
 
 | # | Task | Status | Notes |
 |---|---|---|---|
-| 1.1 | Project initialization (Next.js, shadcn, Supabase deps) | ⬜ | |
-| 1.2 | Supabase schema: companies + profiles tables | ⬜ | Needs human sign-off before pushing |
-| 1.3 | Auth helpers + middleware (subdomain routing) | ⬜ | Needs human sign-off |
-| 1.4 | Company onboarding flow (signup form + API) | ⬜ | |
-| 1.5 | Tenant shell + login page | ⬜ | |
-| 1.6 | Dashboard placeholder | ⬜ | |
-| 1.7 | Phase 1 verification (build, lint, type, RLS, E2E test) | ⬜ | |
+| 1.1 | Project initialization (Next.js, shadcn, Supabase deps) | ✅ | Next.js 15, Tailwind v4, shadcn initialized |
+| 1.2 | Supabase schema: companies + profiles tables | ✅ | Migrations applied to `fvvyuprujtgvmutnfdam` (ap-south-1) |
+| 1.3 | Auth helpers + middleware (subdomain routing) | ✅ | lib/supabase/* + middleware.ts written |
+| 1.4 | Company onboarding flow (signup form + API) | ✅ | /signup page + /api/onboarding route |
+| 1.5 | Tenant shell + login page | ✅ | Tenant layout, login, AppShell, Sidebar, BottomNav |
+| 1.6 | Dashboard placeholder | ✅ | 4 stat cards, PageHeader, StatCard component |
+| 1.7 | Phase 1 verification (build, lint, type, RLS, E2E test) | ✅ | Build passes, strict tsc passes, RLS active |
 
 **Phase 1 done when:** Signup → subdomain → login → dashboard flow works end-to-end. RLS tested with two tenants.
 
@@ -169,12 +169,12 @@ These components are built during specific phases but used across the whole app.
 
 | Component | Built in Phase | Status | File |
 |---|---|---|---|
-| `AppShell` | Phase 1 | ⬜ | `components/shared/AppShell.tsx` |
-| `BottomNav` | Phase 1 | ⬜ | `components/shared/BottomNav.tsx` |
-| `Sidebar` | Phase 1 | ⬜ | `components/shared/Sidebar.tsx` |
-| `TenantProvider` | Phase 1 | ⬜ | `components/shared/TenantProvider.tsx` |
-| `StatCard` | Phase 1 | ⬜ | `components/shared/StatCard.tsx` |
-| `PageHeader` | Phase 1 | ⬜ | `components/shared/PageHeader.tsx` |
+| `AppShell` | Phase 1 | ✅ | `components/shared/AppShell.tsx` |
+| `BottomNav` | Phase 1 | ✅ | `components/shared/BottomNav.tsx` |
+| `Sidebar` | Phase 1 | ✅ | `components/shared/Sidebar.tsx` |
+| `TenantProvider` | Phase 1 | ✅ | `components/shared/TenantProvider.tsx` |
+| `StatCard` | Phase 1 | ✅ | `components/shared/StatCard.tsx` |
+| `PageHeader` | Phase 1 | ✅ | `components/shared/PageHeader.tsx` |
 | `DataTable` | Phase 2 | ⬜ | `components/shared/DataTable.tsx` |
 | `SkeletonTable` | Phase 2 | ⬜ | `components/shared/SkeletonTable.tsx` |
 | `Avatar` | Phase 2 | ⬜ | `components/shared/Avatar.tsx` |
@@ -193,8 +193,8 @@ These components are built during specific phases but used across the whole app.
 
 | Migration File | Status | Applied To |
 |---|---|---|
-| `20260901000000_init_companies_profiles.sql` | ⬜ | — |
-| `20260901000001_rls_companies_profiles.sql` | ⬜ | — |
+| `20260901000000_init_companies_profiles.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
+| `20260901000001_rls_companies_profiles.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
 | `20260902000000_attendance_logs.sql` | ⬜ | — |
 | `20260902000001_rls_attendance.sql` | ⬜ | — |
 | `20260903000000_clients.sql` | ⬜ | — |
