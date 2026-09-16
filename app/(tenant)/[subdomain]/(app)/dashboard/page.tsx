@@ -72,13 +72,13 @@ export default async function DashboardPage(): Promise<React.JSX.Element> {
   ] as const;
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col min-h-full">
       <PageHeader
         title="Dashboard"
         description="Welcome back. Here's what's happening today."
       />
 
-      <div className="px-4 md:px-6">
+      <div className="flex-1 max-w-7xl w-full mx-auto px-4 py-6 md:px-8 space-y-6">
         {/* Stat cards — 2 col on mobile, 4 col on desktop */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {stats.map((stat) => (
@@ -92,12 +92,12 @@ export default async function DashboardPage(): Promise<React.JSX.Element> {
         </div>
 
         {/* Placeholder activity area */}
-        <div className="mt-8 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-6">
+        <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-6 shadow-xs">
           <h2 className="text-sm font-semibold text-[var(--color-text-primary)] mb-1">
             Recent activity
           </h2>
-          <p className="text-sm text-[var(--color-text-muted)]">
-            Activity feed will appear here once modules are set up.
+          <p className="text-xs text-[var(--color-text-secondary)]">
+            Activity feed will appear here as team members complete tasks and log updates.
           </p>
         </div>
       </div>

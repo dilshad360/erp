@@ -61,26 +61,28 @@ export function DataTable<TData, TValue>({
     <div className="w-full space-y-4">
       {/* Controls: Search & Custom Filter */}
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-        <div className="relative flex-1 max-w-md">
+        <div className="relative flex-1 max-w-sm">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[var(--color-text-muted)]" />
           <input
             type="text"
             value={globalFilter ?? ""}
             onChange={(e) => setGlobalFilter(e.target.value)}
             placeholder={searchPlaceholder}
-            className="w-full pl-9 pr-4 py-2 text-sm rounded-md bg-[var(--color-surface)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)] focus:outline-none focus:border-[var(--color-brand)] transition-colors"
+            className="w-full pl-9 pr-4 py-2 text-sm rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand)] focus:border-transparent transition-all"
           />
         </div>
 
         {filterComponent && (
-          <div className="flex items-center gap-2 shrink-0">{filterComponent}</div>
+          <div className="flex items-center gap-2 shrink-0 self-start sm:self-auto">
+            {filterComponent}
+          </div>
         )}
       </div>
 
       {/* Desktop Table View */}
-      <div className="hidden md:block overflow-x-auto rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]">
-        <table className="w-full text-left text-sm text-[var(--color-text-primary)]">
-          <thead className="bg-[var(--color-surface-raised)] border-b border-[var(--color-border)] text-xs font-semibold text-[var(--color-text-secondary)] uppercase">
+      <div className="hidden md:block overflow-x-auto rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-xs">
+        <table className="w-full text-left text-sm text-[var(--color-text-primary)] border-collapse">
+          <thead className="bg-[var(--color-surface-raised)] border-b border-[var(--color-border)] text-xs font-semibold text-[var(--color-text-secondary)] uppercase tracking-wider">
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -90,7 +92,7 @@ export function DataTable<TData, TValue>({
                   return (
                     <th
                       key={header.id}
-                      className="px-4 py-3 select-none"
+                      className="px-5 py-3.5 select-none"
                       onClick={header.column.getToggleSortingHandler()}
                     >
                       <div
@@ -125,10 +127,10 @@ export function DataTable<TData, TValue>({
               rows.map((row) => (
                 <tr
                   key={row.id}
-                  className="hover:bg-[var(--color-surface-raised)] transition-colors duration-150"
+                  className="hover:bg-[var(--color-surface-raised)]/60 transition-colors duration-150"
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <td key={cell.id} className="px-4 py-3">
+                    <td key={cell.id} className="px-5 py-3.5 align-middle">
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </td>
                   ))}
@@ -161,7 +163,7 @@ export function DataTable<TData, TValue>({
           rows.map((row) => (
             <div
               key={row.id}
-              className="p-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] space-y-3"
+              className="p-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] space-y-3 shadow-xs"
             >
               {mobileCardRender ? (
                 mobileCardRender(row.original)
@@ -190,7 +192,7 @@ export function DataTable<TData, TValue>({
             </div>
           ))
         ) : (
-          <div className="p-8 text-center rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]">
+          <div className="p-8 text-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]">
             {emptyState ?? (
               <div className="space-y-1">
                 <p className="text-sm font-medium text-[var(--color-text-secondary)]">
@@ -206,13 +208,13 @@ export function DataTable<TData, TValue>({
       </div>
 
       {/* Pagination Footer */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--color-text-secondary)] pt-2">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--color-text-secondary)] pt-2 px-1">
         <div className="flex items-center gap-2">
           <span>Rows per page</span>
           <select
             value={table.getState().pagination.pageSize}
             onChange={(e) => table.setPageSize(Number(e.target.value))}
-            className="px-2 py-1 rounded bg-[var(--color-surface)] border border-[var(--color-border)] text-[var(--color-text-primary)] focus:outline-none"
+            className="px-2.5 py-1 rounded-md bg-[var(--color-surface)] border border-[var(--color-border)] text-[var(--color-text-primary)] focus:outline-none focus:ring-1 focus:ring-[var(--color-brand)] text-xs"
           >
             {[10, 25, 50].map((pageSize) => (
               <option key={pageSize} value={pageSize}>

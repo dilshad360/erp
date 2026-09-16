@@ -1,13 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import PageHeader from "@/components/shared/PageHeader";
 import Avatar from "@/components/shared/Avatar";
 import { type EmployeeProfile } from "../EmployeeListClient";
 import {
-  ArrowLeft,
   Camera,
   Edit2,
   Shield,
@@ -289,25 +287,19 @@ export default function ProfileDetailClient({
   };
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col min-h-full">
       <PageHeader
         title={employee.full_name || "Employee Profile"}
         description="View and update employee details, invite status, and roles."
+        backHref="/employees"
+        backLabel="Back to employees"
         actions={
           <div className="flex items-center gap-2">
-            <Link
-              href="/employees"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium text-[var(--color-text-secondary)] border border-[var(--color-border)] hover:bg-[var(--color-surface-raised)] transition-colors"
-            >
-              <ArrowLeft size={14} />
-              <span>Back to list</span>
-            </Link>
-
             {isAdmin && !isSelf && employee.is_active && !isConfirmed && (
               <button
                 onClick={handleResendInvite}
                 disabled={isResendingInvite}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium text-[var(--color-text-primary)] border border-[var(--color-border)] hover:bg-[var(--color-surface-raised)] transition-colors disabled:opacity-50 cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-[var(--color-text-primary)] border border-[var(--color-border)] hover:bg-[var(--color-surface-raised)] transition-colors disabled:opacity-50 cursor-pointer"
                 title="Resend invitation email"
               >
                 {isResendingInvite ? (
@@ -322,7 +314,7 @@ export default function ProfileDetailClient({
             {(isAdmin || isSelf) && !isEditing && (
               <button
                 onClick={() => setIsEditing(true)}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold text-white bg-[var(--color-brand)] hover:bg-[var(--color-brand-hover)] transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-white bg-[var(--color-brand)] hover:bg-[var(--color-brand-hover)] transition-all shadow-xs active:scale-[0.98] cursor-pointer"
               >
                 <Edit2 size={14} />
                 <span>Edit Profile</span>
@@ -332,7 +324,7 @@ export default function ProfileDetailClient({
         }
       />
 
-      <div className="px-4 md:px-6 max-w-4xl space-y-6">
+      <div className="flex-1 max-w-4xl w-full mx-auto px-4 py-6 md:px-8 space-y-6">
         {errorMsg && (
           <div className="flex items-center gap-2.5 p-3.5 rounded-md bg-[var(--color-danger-subtle)] border border-[var(--color-danger)]/30 text-[var(--color-danger)] text-xs font-medium">
             <AlertCircle size={16} className="shrink-0" />

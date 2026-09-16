@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import PageHeader from "@/components/shared/PageHeader";
 import Link from "next/link";
-import { ArrowLeft, Loader2, UserPlus, AlertCircle } from "lucide-react";
+import { Loader2, UserPlus, AlertCircle } from "lucide-react";
 
 const inviteSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
@@ -88,25 +88,18 @@ export default function InviteFormClient({
   };
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col min-h-full">
       <PageHeader
         title="Invite Employee"
         description="Send an email invitation to a new team member."
-        actions={
-          <Link
-            href="/employees"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium text-[var(--color-text-secondary)] border border-[var(--color-border)] hover:bg-[var(--color-surface-raised)] transition-colors"
-          >
-            <ArrowLeft size={14} />
-            <span>Back to list</span>
-          </Link>
-        }
+        backHref="/employees"
+        backLabel="Back to employees"
       />
 
-      <div className="px-4 md:px-6 max-w-2xl">
+      <div className="flex-1 max-w-3xl w-full mx-auto px-4 py-6 md:px-8 space-y-6">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="p-6 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] space-y-6"
+          className="p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] space-y-6 shadow-xs"
         >
           {errorMsg && (
             <div className="flex items-center gap-2.5 p-3.5 rounded-md bg-[var(--color-danger-subtle)] border border-[var(--color-danger)]/30 text-[var(--color-danger)] text-xs font-medium">

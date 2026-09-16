@@ -159,7 +159,7 @@ export default function EmployeeListClient({
   ];
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col min-h-full">
       <PageHeader
         title="Employees"
         description="Manage your team members, departments, and roles."
@@ -167,7 +167,7 @@ export default function EmployeeListClient({
           currentUserRole === "admin" ? (
             <Link
               href="/employees/new"
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-semibold text-white bg-[var(--color-brand)] hover:bg-[var(--color-brand-hover)] transition-colors"
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold text-white bg-[var(--color-brand)] hover:bg-[var(--color-brand-hover)] transition-all shadow-xs active:scale-[0.98]"
             >
               <UserPlus size={16} />
               <span>Invite Employee</span>
@@ -176,7 +176,7 @@ export default function EmployeeListClient({
         }
       />
 
-      <div className="px-4 md:px-6">
+      <div className="flex-1 max-w-7xl w-full mx-auto px-4 py-6 md:px-8 space-y-6">
         <DataTable
           columns={columns}
           data={filteredEmployees}

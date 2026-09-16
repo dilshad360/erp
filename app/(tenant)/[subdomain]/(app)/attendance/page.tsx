@@ -82,7 +82,7 @@ export default async function AttendancePage({
   const isAdminOrManager = profile.role === "admin" || profile.role === "manager";
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col min-h-full">
       <PageHeader
         title="Attendance"
         description="Track your daily attendance and view history."
@@ -90,7 +90,7 @@ export default async function AttendancePage({
           isAdminOrManager ? (
             <a
               href={`/attendance/admin`}
-              className="text-xs font-medium text-[var(--color-brand)] hover:underline"
+              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-brand)] hover:border-[var(--color-brand)]/40 transition-colors"
             >
               Admin view →
             </a>
@@ -98,7 +98,7 @@ export default async function AttendancePage({
         }
       />
 
-      <div className="px-4 md:px-6 space-y-6 max-w-lg mx-auto w-full">
+      <div className="flex-1 px-4 py-6 md:px-8 space-y-6 max-w-lg mx-auto w-full">
         {/* Tab toggle */}
         <div
           className="grid grid-cols-2 gap-1 p-1 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)]"

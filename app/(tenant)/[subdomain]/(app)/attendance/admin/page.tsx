@@ -91,21 +91,15 @@ export default async function AdminAttendancePage({
   }
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col min-h-full">
       <PageHeader
         title="Attendance — Admin View"
         description="View and export daily attendance for all employees."
-        actions={
-          <a
-            href={`/attendance`}
-            className="text-xs font-medium text-[var(--color-brand)] hover:underline"
-          >
-            ← My attendance
-          </a>
-        }
+        backHref="/attendance"
+        backLabel="My attendance"
       />
 
-      <div className="px-4 md:px-6">
+      <div className="flex-1 max-w-7xl w-full mx-auto px-4 py-6 md:px-8 space-y-6">
         <AdminAttendanceTable
           employees={employees ?? []}
           logsByUserId={logsByUserId}

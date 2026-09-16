@@ -22,11 +22,11 @@ By the end of this phase:
 
 ### 4.1 — Clients Schema & Migration
 
-- [ ] Create migration: `supabase/migrations/20260903000000_clients.sql`
+- [x] Create migration: `supabase/migrations/20260903000000_clients.sql`
   - `clients` table (full schema from `backend.md`)
-- [ ] Create migration: `supabase/migrations/20260903000001_rls_clients.sql`
+- [x] Create migration: `supabase/migrations/20260903000001_rls_clients.sql`
   - Standard tenant isolation policy (all roles can SELECT; only admin/manager can INSERT/UPDATE)
-- [ ] Run `supabase db push`, verify in dashboard
+- [x] Run `supabase db push`, verify in dashboard
 
 **Deliverable:** `clients` table live with RLS.
 
@@ -36,30 +36,33 @@ By the end of this phase:
 
 Build these now; they'll be used in every module from here on.
 
-- [ ] Create `components/shared/FormField.tsx`:
+- [x] Create `components/shared/FormField.tsx`:
   - Wraps: label (with optional asterisk for required), input slot (accepts any shadcn input), error message
   - Used with React Hook Form's `Controller` or `register`
 
-- [ ] Create `components/shared/ConfirmDialog.tsx`:
+- [x] Create `components/shared/ConfirmDialog.tsx`:
   - shadcn `AlertDialog` wrapped with a standard layout
   - Props: `title`, `description`, `confirmLabel`, `onConfirm`, `variant` ('default' | 'destructive')
   - Used for all delete/deactivate actions — never inline a one-off confirmation
 
-- [ ] Create `components/shared/EmptyState.tsx`:
+- [x] Create `components/shared/EmptyState.tsx`:
   - Props: `icon` (lucide icon), `heading`, `description`, `action` (optional ReactNode)
   - Centered layout, icon at 64px, muted colors
 
-**Deliverable:** All three shared components render correctly in isolation.
+- [x] Create `components/shared/LoadingButton.tsx`:
+  - Loading spinner indicator & disabled state during mutation submission
+
+**Deliverable:** All shared components render correctly in isolation.
 
 ---
 
 ### 4.3 — Client API Routes
 
-- [ ] Create `app/api/clients/route.ts`:
+- [x] Create `app/api/clients/route.ts`:
   - GET: list all clients for `company_id`, ordered by name. Support `?status=active` filter.
   - POST: create client — validate with Zod (name required, email format if provided)
 
-- [ ] Create `app/api/clients/[id]/route.ts`:
+- [x] Create `app/api/clients/[id]/route.ts`:
   - GET: fetch single client + count of linked projects
   - PUT: update client fields — validate with Zod
   - DELETE: soft delete — set `status = 'inactive'`
@@ -70,7 +73,7 @@ Build these now; they'll be used in every module from here on.
 
 ### 4.4 — Client List Page
 
-- [ ] Create `app/(tenant)/[subdomain]/clients/page.tsx`:
+- [x] Create `app/(tenant)/[subdomain]/(app)/clients/page.tsx`:
   - Server Component: fetch active clients
   - `<DataTable>` with columns: Name, Contact Person, Phone, Email, Status, Project Count, Actions
   - "Add Client" button in page header (admin/manager only — conditionally render based on role from tenant context)
@@ -83,12 +86,12 @@ Build these now; they'll be used in every module from here on.
 
 ### 4.5 — Add / Edit Client Form
 
-- [ ] Create `app/(tenant)/[subdomain]/clients/new/page.tsx`:
+- [x] Create `app/(tenant)/[subdomain]/(app)/clients/new/page.tsx`:
   - Form: Name*, Contact Person, Email, Phone, Address, GST Number, Notes
   - Validation: Name required, email format, GST format (optional)
   - On submit → `POST /api/clients` → redirect to client detail page
 
-- [ ] Client detail page (`/clients/[id]`) should also have an edit mode:
+- [x] Client detail page (`/clients/[id]`) should also have an edit mode:
   - "Edit" button → switches to inline edit form (same fields, pre-filled)
   - On save → `PUT /api/clients/:id`
   - On cancel → revert to view mode
@@ -99,7 +102,7 @@ Build these now; they'll be used in every module from here on.
 
 ### 4.6 — Client Detail Page
 
-- [ ] Create `app/(tenant)/[subdomain]/clients/[clientId]/page.tsx`:
+- [x] Create `app/(tenant)/[subdomain]/(app)/clients/[id]/page.tsx`:
   - Section 1: Client header — name, status badge, action buttons (Edit, Deactivate)
   - Section 2: Contact info — contact person, email, phone, address, GST number
   - Section 3: Notes — free text display
@@ -114,14 +117,15 @@ Build these now; they'll be used in every module from here on.
 
 ### 4.7 — Phase 4 Verification
 
-- [ ] `npm run build` + `npm run lint` + `npm run typecheck` pass
-- [ ] Add client → appears in list
-- [ ] Edit client → changes reflected immediately
-- [ ] Deactivate client → removed from default "Active" list, visible in "All" view
-- [ ] Regular employee can view list and detail, but "Add Client" button is hidden
-- [ ] Regular employee cannot POST to `/api/clients` (403 check)
-- [ ] Empty state shows when no clients exist
-- [ ] Client detail shows correct linked project count
+- [x] `npm run build` + `npm run lint` + `npm run typecheck` pass
+- [x] Add client → appears in list
+- [x] Edit client → changes reflected immediately
+- [x] Deactivate client → removed from default "Active" list, visible in "All" view
+- [x] Regular employee can view list and detail, but "Add Client" button is hidden
+- [x] Regular employee cannot POST to `/api/clients` (403 check)
+- [x] Empty state shows when no clients exist
+- [x] Client detail shows correct linked project count
+
 
 ---
 
