@@ -1,7 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import PageHeader from "@/components/shared/PageHeader";
-import KanbanColumnManager from "@/components/tasks/KanbanColumnManager";
+import CompanySettingsClient, { type CompanyData } from "@/components/settings/CompanySettingsClient";
 import type { Metadata } from "next";
 import type { TaskStatusRow } from "@/components/tasks/KanbanColumnManager";
 
@@ -35,6 +35,17 @@ export default async function SettingsPage({
     redirect(`/${subdomain}/login`);
   }
 
+  // Fetch company details
+  const { data: companyData } = await supabase
+    .from("companies")
+    .select("id, name, slug, gst_number, office_lat, office_lng, geofence_radius_m, brand_color, logo_url")
+    .eq("id", profile.company_id)
+    .single();
+
+  if (!companyData) {
+    redirect(`/${subdomain}/login`);
+  }
+
   // Fetch task statuses
   const { data: statusesData } = await supabase
     .from("task_statuses")
@@ -49,44 +60,33 @@ export default async function SettingsPage({
     sort_order: s.sort_order,
   }));
 
-  const isAdmin = profile.role === "admin" || profile.role === "manager";
+  const company: CompanyData = {
+    id: companyData.id,
+    name: companyData.name,
+    slug: companyData.slug,
+    gst_number: companyData.gst_number,
+    office_lat: companyData.office_lat,
+    office_lng: companyData.office_lng,
+    geofence_radius_m: companyData.geofence_radius_m ?? 200,
+    brand_color: companyData.brand_color ?? "#6366f1",
+    logo_url: companyData.logo_url,
+  };
+
+  const isAdmin = profile.role === "admin";
 
   return (
     <div className="flex flex-col min-h-full">
       <PageHeader
         title="Settings"
-        description="Manage your workspace configuration."
+        description="Manage your workspace details, branding, geofence, and Kanban configuration."
       />
 
-      <div className="flex-1 max-w-2xl w-full mx-auto px-4 py-6 md:px-8 space-y-8">
-
-        {/* Kanban Columns */}
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 sm:p-6 space-y-4 shadow-xs">
-          <div className="pb-2 border-b border-[var(--color-border-subtle)]">
-            <h2 className="text-sm font-semibold text-[var(--color-text-primary)]">
-              Kanban Columns
-            </h2>
-            <p className="text-xs text-[var(--color-text-muted)] mt-0.5">
-              Customise the task status columns shown on the Kanban board.
-              Drag to reorder. Changes apply immediately.
-            </p>
-          </div>
-
-          {isAdmin ? (
-            <KanbanColumnManager initialStatuses={statuses} />
-          ) : (
-            <p className="text-sm text-[var(--color-text-muted)]">
-              Only admins and managers can manage Kanban columns.
-            </p>
-          )}
-        </section>
-
-        {/* Placeholder sections for Phase 7 */}
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 sm:p-6 space-y-2 shadow-xs opacity-50">
-          <h2 className="text-sm font-semibold text-[var(--color-text-primary)]">Company Branding</h2>
-          <p className="text-xs text-[var(--color-text-muted)]">Logo, brand colour, and geofence settings — coming in Phase 7.</p>
-        </section>
-
+      <div className="flex-1 max-w-3xl w-full mx-auto px-4 py-6 md:px-8">
+        <CompanySettingsClient
+          company={company}
+          statuses={statuses}
+          isAdmin={isAdmin}
+        />
       </div>
     </div>
   );

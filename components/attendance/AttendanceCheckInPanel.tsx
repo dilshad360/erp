@@ -9,8 +9,15 @@ import {
   LogIn,
   LogOut,
   Timer,
+  WifiOff,
+  CloudUpload,
 } from "lucide-react";
 import LocationStatus, { type LocationState } from "./LocationStatus";
+import {
+  enqueueOfflineAttendance,
+  syncOfflineAttendance,
+  getOfflineAttendanceQueue,
+} from "@/lib/offline-queue";
 
 export type AttendanceLog = {
   id: string;
@@ -61,6 +68,8 @@ export default function AttendanceCheckInPanel({
   const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [offlineNotice, setOfflineNotice] = useState<string | null>(null);
+  const [isOnline, setIsOnline] = useState<boolean>(true);
   const [now, setNow] = useState<number>(Date.now());
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -68,6 +77,40 @@ export default function AttendanceCheckInPanel({
   useEffect(() => {
     setLogs(initialLogs);
   }, [initialLogs]);
+
+  // Online / Offline listener
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    setIsOnline(navigator.onLine);
+
+    const handleOnline = async () => {
+      setIsOnline(true);
+      const queue = await getOfflineAttendanceQueue();
+      if (queue.length > 0) {
+        setOfflineNotice("Back online. Syncing your offline check-in logs...");
+        const result = await syncOfflineAttendance();
+        if (result.syncedCount > 0) {
+          setOfflineNotice(`Synced ${result.syncedCount} offline record(s) with the server.`);
+          router.refresh();
+          setTimeout(() => setOfflineNotice(null), 4000);
+        }
+      }
+    };
+
+    const handleOffline = () => {
+      setIsOnline(false);
+      setOfflineNotice("You are offline. Any check-ins will be safely stored locally.");
+    };
+
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
+
+    return () => {
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
+  }, [router]);
 
   // Find active (un-checked-out) session
   const activeLog = useMemo(() => {
@@ -135,26 +178,74 @@ export default function AttendanceCheckInPanel({
     setLoading(true);
     setError(null);
 
-    const body = coords
-      ? { lat: coords.lat, lng: coords.lng }
-      : { lat: null, lng: null };
+    const nowIso = new Date().toISOString();
+    const lat = coords?.lat ?? 0;
+    const lng = coords?.lng ?? 0;
 
-    const res = await fetch("/api/attendance/checkin", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    });
+    // Check if offline
+    if (!navigator.onLine) {
+      await enqueueOfflineAttendance({
+        type: "checkin",
+        lat,
+        lng,
+        timestamp: nowIso,
+      });
 
-    const json = (await res.json()) as { data: AttendanceLog | null; error: string | null };
+      const optimisticLog: AttendanceLog = {
+        id: `offline-${Date.now()}`,
+        check_in_at: nowIso,
+        check_out_at: null,
+        check_in_range: true,
+        status: "present",
+      };
 
-    if (!res.ok || json.error) {
-      setError(json.error ?? "Failed to check in. Please try again.");
-    } else if (json.data) {
-      setLogs((prev) => [...prev, json.data!]);
-      router.refresh();
+      setLogs((prev) => [...prev, optimisticLog]);
+      setOfflineNotice("Offline check-in saved locally. Will sync automatically when connected.");
+      setLoading(false);
+      return;
     }
 
-    setLoading(false);
+    try {
+      const body = coords
+        ? { lat: coords.lat, lng: coords.lng }
+        : { lat: null, lng: null };
+
+      const res = await fetch("/api/attendance/checkin", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      const json = (await res.json()) as { data: AttendanceLog | null; error: string | null };
+
+      if (!res.ok || json.error) {
+        setError(json.error ?? "Failed to check in. Please try again.");
+      } else if (json.data) {
+        setLogs((prev) => [...prev, json.data!]);
+        router.refresh();
+      }
+    } catch {
+      // Network drop during fetch -> save to offline queue
+      await enqueueOfflineAttendance({
+        type: "checkin",
+        lat,
+        lng,
+        timestamp: nowIso,
+      });
+
+      const optimisticLog: AttendanceLog = {
+        id: `offline-${Date.now()}`,
+        check_in_at: nowIso,
+        check_out_at: null,
+        check_in_range: true,
+        status: "present",
+      };
+
+      setLogs((prev) => [...prev, optimisticLog]);
+      setOfflineNotice("Network lost. Check-in saved offline and queued for sync.");
+    } finally {
+      setLoading(false);
+    }
   }, [coords, router]);
 
   const handleCheckOut = useCallback(async () => {
@@ -162,28 +253,67 @@ export default function AttendanceCheckInPanel({
     setLoading(true);
     setError(null);
 
-    const body = coords
-      ? { logId: activeLog.id, lat: coords.lat, lng: coords.lng }
-      : { logId: activeLog.id, lat: null, lng: null };
+    const nowIso = new Date().toISOString();
+    const lat = coords?.lat ?? 0;
+    const lng = coords?.lng ?? 0;
 
-    const res = await fetch("/api/attendance/checkout", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    });
+    // Check if offline
+    if (!navigator.onLine) {
+      await enqueueOfflineAttendance({
+        type: "checkout",
+        lat,
+        lng,
+        timestamp: nowIso,
+      });
 
-    const json = (await res.json()) as { data: AttendanceLog | null; error: string | null };
-
-    if (!res.ok || json.error) {
-      setError(json.error ?? "Failed to check out. Please try again.");
-    } else if (json.data) {
       setLogs((prev) =>
-        prev.map((l) => (l.id === json.data!.id ? json.data! : l))
+        prev.map((l) =>
+          l.id === activeLog.id ? { ...l, check_out_at: nowIso } : l
+        )
       );
-      router.refresh();
+      setOfflineNotice("Offline check-out saved locally. Will sync automatically when connected.");
+      setLoading(false);
+      return;
     }
 
-    setLoading(false);
+    try {
+      const body = coords
+        ? { logId: activeLog.id, lat: coords.lat, lng: coords.lng }
+        : { logId: activeLog.id, lat: null, lng: null };
+
+      const res = await fetch("/api/attendance/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      const json = (await res.json()) as { data: AttendanceLog | null; error: string | null };
+
+      if (!res.ok || json.error) {
+        setError(json.error ?? "Failed to check out. Please try again.");
+      } else if (json.data) {
+        setLogs((prev) =>
+          prev.map((l) => (l.id === json.data!.id ? json.data! : l))
+        );
+        router.refresh();
+      }
+    } catch {
+      await enqueueOfflineAttendance({
+        type: "checkout",
+        lat,
+        lng,
+        timestamp: nowIso,
+      });
+
+      setLogs((prev) =>
+        prev.map((l) =>
+          l.id === activeLog.id ? { ...l, check_out_at: nowIso } : l
+        )
+      );
+      setOfflineNotice("Network lost. Check-out saved offline and queued for sync.");
+    } finally {
+      setLoading(false);
+    }
   }, [coords, activeLog, router]);
 
   const isOutOfRange = activeLog?.check_in_range === false;
@@ -194,13 +324,29 @@ export default function AttendanceCheckInPanel({
       {/* Location status & quick meta */}
       <div className="flex items-center justify-between px-1">
         <LocationStatus state={locationState} />
-        {sessionCount > 0 && (
-          <span className="text-xs text-[var(--color-text-muted)] flex items-center gap-1.5">
-            <Timer className="w-3.5 h-3.5 text-[var(--color-brand)]" />
-            Total: <strong className="text-[var(--color-text-primary)] font-mono">{formatDuration(totalWorkedMs)}</strong>
-          </span>
-        )}
+        <div className="flex items-center gap-3">
+          {!isOnline && (
+            <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full border border-amber-400/20">
+              <WifiOff size={12} />
+              Offline Mode
+            </span>
+          )}
+          {sessionCount > 0 && (
+            <span className="text-xs text-[var(--color-text-muted)] flex items-center gap-1.5">
+              <Timer className="w-3.5 h-3.5 text-[var(--color-brand)]" />
+              Total: <strong className="text-[var(--color-text-primary)] font-mono">{formatDuration(totalWorkedMs)}</strong>
+            </span>
+          )}
+        </div>
       </div>
+
+      {/* Offline sync banner */}
+      {offlineNotice && (
+        <div className="flex items-start gap-3 p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs">
+          <CloudUpload className="w-4 h-4 mt-0.5 flex-shrink-0" />
+          <span>{offlineNotice}</span>
+        </div>
+      )}
 
       {/* Out-of-range warning banner */}
       {isOutOfRange && (
@@ -253,7 +399,7 @@ export default function AttendanceCheckInPanel({
           onClick={handleCheckOut}
           disabled={loading}
           className={[
-            "w-full h-16 rounded-xl font-semibold text-base flex items-center justify-center gap-3 transition-all duration-200",
+            "w-full h-16 rounded-xl font-semibold text-base flex items-center justify-center gap-3 transition-all duration-200 cursor-pointer",
             "bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-600 hover:to-rose-700 active:scale-[0.98] text-white shadow-lg shadow-red-500/20",
             "disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100",
           ].join(" ")}
@@ -273,7 +419,7 @@ export default function AttendanceCheckInPanel({
           onClick={handleCheckIn}
           disabled={loading || locationState === "requesting"}
           className={[
-            "w-full h-16 rounded-xl font-semibold text-base flex items-center justify-center gap-3 transition-all duration-200",
+            "w-full h-16 rounded-xl font-semibold text-base flex items-center justify-center gap-3 transition-all duration-200 cursor-pointer",
             "bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 active:scale-[0.98] text-white shadow-lg shadow-emerald-500/20",
             "disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100",
           ].join(" ")}

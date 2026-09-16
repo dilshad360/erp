@@ -2,6 +2,7 @@
 
 import Sidebar from "./Sidebar";
 import BottomNav from "./BottomNav";
+import InstallPrompt from "@/components/pwa/InstallPrompt";
 
 type AppShellProps = {
   children: React.ReactNode;
@@ -35,6 +36,9 @@ export default function AppShell({ children }: AppShellProps): React.JSX.Element
       >
         <BottomNav />
       </nav>
+
+      {/* PWA Install Banner */}
+      <InstallPrompt />
     </div>
   );
 }

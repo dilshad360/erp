@@ -16,15 +16,22 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     return NextResponse.json({ data: null, error: "Unauthorized" }, { status: 401 });
   }
 
-  // Fetch current user profile
-  const { data: currentProfile, error: currentProfileError } = await supabase
+  // Fetch user profile and verify admin role
+  const { data: profile, error: profileError } = await supabase
     .from("profiles")
     .select("company_id, role")
     .eq("id", user.id)
     .single();
 
-  if (currentProfileError || !currentProfile) {
+  if (profileError || !profile) {
     return NextResponse.json({ data: null, error: "Profile not found" }, { status: 404 });
+  }
+
+  if (profile.role !== "admin") {
+    return NextResponse.json(
+      { data: null, error: "Forbidden: Only admins can upload company logos" },
+      { status: 403 }
+    );
   }
 
   let formData: FormData;
@@ -35,28 +42,15 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   }
 
   const file = formData.get("file") as File | null;
-  const targetEmployeeId = (formData.get("employeeId") as string | null) || user.id;
-
   if (!file) {
-    return NextResponse.json({ data: null, error: "No image file provided" }, { status: 400 });
+    return NextResponse.json({ data: null, error: "No logo file provided" }, { status: 400 });
   }
 
-  // Authorization check
-  const isAdmin = currentProfile.role === "admin";
-  const isSelf = user.id === targetEmployeeId;
-
-  if (!isAdmin && !isSelf) {
-    return NextResponse.json(
-      { data: null, error: "Forbidden: You cannot upload an avatar for another user" },
-      { status: 403 }
-    );
-  }
-
-  // Validate file size and type
-  const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
+  // Validate file type
+  const allowedTypes = ["image/jpeg", "image/png", "image/webp", "image/svg+xml"];
   if (!allowedTypes.includes(file.type)) {
     return NextResponse.json(
-      { data: null, error: "Invalid file type. Only JPG, PNG, and WebP images are allowed." },
+      { data: null, error: "Invalid file type. Only JPG, PNG, WebP, and SVG images are allowed." },
       { status: 400 }
     );
   }
@@ -69,8 +63,8 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     );
   }
 
-  const ext = file.name.split(".").pop() || "jpg";
-  const filePath = `${currentProfile.company_id}/${targetEmployeeId}.${ext}`;
+  const ext = file.name.split(".").pop() || "png";
+  const filePath = `${profile.company_id}/logo-${Date.now()}.${ext}`;
 
   const adminClient = createAdminSupabase(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -78,11 +72,10 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     { auth: { autoRefreshToken: false, persistSession: false } }
   );
 
-  // Convert File to ArrayBuffer for upload
   const fileBuffer = await file.arrayBuffer();
 
   const { error: uploadError } = await adminClient.storage
-    .from("avatars")
+    .from("logos")
     .upload(filePath, fileBuffer, {
       contentType: file.type,
       upsert: true,
@@ -90,34 +83,33 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
   if (uploadError) {
     return NextResponse.json(
-      { data: null, error: uploadError.message || "Failed to upload image" },
+      { data: null, error: uploadError.message || "Failed to upload logo" },
       { status: 500 }
     );
   }
 
   // Get public URL
   const { data: publicUrlData } = adminClient.storage
-    .from("avatars")
+    .from("logos")
     .getPublicUrl(filePath);
 
-  const avatarUrl = publicUrlData.publicUrl;
+  const logoUrl = publicUrlData.publicUrl;
 
-  // Update profile avatar_url
+  // Update company record
   const { error: updateError } = await adminClient
-    .from("profiles")
-    .update({ avatar_url: avatarUrl })
-    .eq("id", targetEmployeeId)
-    .eq("company_id", currentProfile.company_id);
+    .from("companies")
+    .update({ logo_url: logoUrl })
+    .eq("id", profile.company_id);
 
   if (updateError) {
     return NextResponse.json(
-      { data: null, error: updateError.message || "Failed to update profile avatar" },
+      { data: null, error: updateError.message || "Failed to save company logo URL" },
       { status: 500 }
     );
   }
 
   return NextResponse.json({
-    data: { avatarUrl },
+    data: { logoUrl },
     error: null,
   });
 }
