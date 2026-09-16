@@ -299,6 +299,15 @@ export default function ProjectDetailClient({
               )}
             </div>
           </div>
+
+          {/* Tasks button */}
+          <Link
+            href={`/projects/${project.id}/tasks`}
+            className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg border border-[var(--color-brand)]/40 text-[var(--color-brand)] hover:bg-[var(--color-brand-subtle)] transition-colors shrink-0"
+          >
+            <CheckCircle2 size={14} />
+            Tasks
+          </Link>
         </div>
 
       {/* Main View OR Edit Form */}

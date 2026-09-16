@@ -31,6 +31,15 @@ interface RecentProject {
   } | null;
 }
 
+interface MyTask {
+  id: string;
+  title: string;
+  priority: string;
+  due_date: string | null;
+  status: { id: string; name: string; color: string | null } | null;
+  project: { id: string; name: string } | null;
+}
+
 export default async function DashboardPage(): Promise<React.JSX.Element> {
   const supabase = await createClient();
 
@@ -43,6 +52,8 @@ export default async function DashboardPage(): Promise<React.JSX.Element> {
   let activeProjectsCount = 0;
   let activeClientsCount = 0;
   let recentProjects: RecentProject[] = [];
+  let openTasksForUser = 0;
+  let myTasksList: MyTask[] = [];
 
   if (user) {
     const { data: profile } = await supabase
@@ -105,6 +116,42 @@ export default async function DashboardPage(): Promise<React.JSX.Element> {
         .limit(3);
 
       recentProjects = (projectsData as unknown as RecentProject[]) || [];
+
+      // 5. Open tasks for current user (not in the last status = Done)
+      const { data: lastStatusData } = await supabase
+        .from("task_statuses")
+        .select("id")
+        .eq("company_id", profile.company_id)
+        .order("sort_order", { ascending: false })
+        .limit(1)
+        .single();
+
+      const { count: openTasksCount } = await supabase
+        .from("tasks")
+        .select("id", { count: "exact", head: true })
+        .eq("assignee_id", user.id)
+        .eq("company_id", profile.company_id)
+        .neq("status_id", lastStatusData?.id ?? "00000000-0000-0000-0000-000000000000");
+
+      openTasksForUser = openTasksCount ?? 0;
+
+      // 6. My tasks quick list (5 most urgent / soonest due)
+      const { data: myTasksData } = await supabase
+        .from("tasks")
+        .select(`
+          id,
+          title,
+          priority,
+          due_date,
+          status:status_id (id, name, color),
+          project:project_id (id, name)
+        `)
+        .eq("assignee_id", user.id)
+        .eq("company_id", profile.company_id)
+        .order("due_date", { ascending: true, nullsFirst: false })
+        .limit(5);
+
+      myTasksList = (myTasksData as unknown as MyTask[]) || [];
     }
   }
 
@@ -116,7 +163,7 @@ export default async function DashboardPage(): Promise<React.JSX.Element> {
     },
     {
       label: "Open tasks",
-      value: 0, // Phase 6
+      value: openTasksForUser,
       icon: CheckSquare,
     },
     {
@@ -236,14 +283,75 @@ export default async function DashboardPage(): Promise<React.JSX.Element> {
           )}
         </div>
 
-        {/* Activity feed placeholder */}
-        <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-6 shadow-xs">
-          <h2 className="text-sm font-semibold text-[var(--color-text-primary)] mb-1">
-            Recent activity
-          </h2>
-          <p className="text-xs text-[var(--color-text-secondary)]">
-            Activity feed will appear here as team members complete tasks and log updates.
-          </p>
+        {/* My Tasks Quick List */}
+        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 sm:p-6 space-y-4 shadow-xs">
+          <div className="flex items-center justify-between pb-2 border-b border-[var(--color-border-subtle)]">
+            <div className="flex items-center gap-2">
+              <CheckSquare size={18} className="text-[var(--color-brand)]" />
+              <h2 className="text-sm font-semibold text-[var(--color-text-primary)]">
+                My Tasks
+              </h2>
+            </div>
+            <Link
+              href="/tasks"
+              className="text-xs text-[var(--color-brand)] hover:underline flex items-center gap-1 font-medium"
+            >
+              <span>View all</span>
+              <ArrowRight size={13} />
+            </Link>
+          </div>
+
+          {myTasksList.length === 0 ? (
+            <p className="text-xs text-[var(--color-text-muted)] py-4 text-center">
+              No open tasks assigned to you.
+            </p>
+          ) : (
+            <div className="space-y-1">
+              {myTasksList.map((task) => {
+                const isOverdue =
+                  task.due_date && new Date(task.due_date) < new Date(new Date().toDateString());
+                return (
+                  <Link
+                    key={task.id}
+                    href={task.project ? `/projects/${task.project.id}/tasks` : "/tasks"}
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[var(--color-surface-raised)] transition-colors group"
+                  >
+                    <span
+                      className={`w-2 h-2 rounded-full shrink-0 ${
+                        task.priority === "urgent"
+                          ? "bg-red-400"
+                          : task.priority === "high"
+                          ? "bg-amber-400"
+                          : task.priority === "medium"
+                          ? "bg-sky-400"
+                          : "bg-[var(--color-text-muted)]"
+                      }`}
+                    />
+                    <span className="flex-1 text-xs text-[var(--color-text-primary)] truncate group-hover:text-[var(--color-brand)] transition-colors">
+                      {task.title}
+                    </span>
+                    {task.project && (
+                      <span className="hidden sm:block text-[11px] text-[var(--color-text-muted)] truncate max-w-[120px]">
+                        {task.project.name}
+                      </span>
+                    )}
+                    {task.due_date && (
+                      <span
+                        className={`text-[11px] shrink-0 ${
+                          isOverdue ? "text-red-400 font-medium" : "text-[var(--color-text-muted)]"
+                        }`}
+                      >
+                        {new Date(task.due_date).toLocaleDateString("en-IN", {
+                          day: "numeric",
+                          month: "short",
+                        })}
+                      </span>
+                    )}
+                  </Link>
+                );
+              })}
+            </div>
+          )}
         </div>
       </div>
     </div>
