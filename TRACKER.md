@@ -10,10 +10,10 @@
 
 | Item | Status |
 |---|---|
-| Current active phase | Phase 4 — Client Management (Completed) |
-| Active branch | `feat/clients` |
+| Current active phase | Phase 5 — Project Management (Completed) |
+| Active branch | `feat/projects` |
 | Last updated | 2026-09-16 |
-| Next milestone | Phase 5 — Project Management |
+| Next milestone | Phase 6 — Task Management |
 | Blockers | — |
 
 ---
@@ -26,7 +26,7 @@
 | 2 | Employee Management | ✅ Done | `feat/employees` | Depends on Phase 1 |
 | 3 | Attendance | ✅ Done | `feat/attendance` | Depends on Phases 1, 2 |
 | 4 | Client Management | ✅ Done | `feat/clients` | Depends on Phases 1, 2 |
-| 5 | Project Management | ⬜ Not started | `feat/projects` | Depends on Phases 1, 2, 4 |
+| 5 | Project Management | ✅ Done | `feat/projects` | Depends on Phases 1, 2, 4 |
 | 6 | Task Management | ⬜ Not started | `feat/tasks` | Depends on Phases 1, 2, 5 |
 | 7 | Polish & PWA | ⬜ Not started | `feat/pwa` | Depends on Phases 1–6 |
 
@@ -110,14 +110,14 @@
 
 | # | Task | Status | Notes |
 |---|---|---|---|
-| 5.1 | Projects schema + RLS | ⬜ | |
-| 5.2 | Project API routes (CRUD) | ⬜ | |
-| 5.3 | Project list page (card + table view) | ⬜ | |
-| 5.4 | New project form (with ClientSelect) | ⬜ | |
-| 5.5 | Project detail page (timeline, budget, tasks summary) | ⬜ | |
-| 5.6 | ClientSelect shared component | ⬜ | |
-| 5.7 | Dashboard: live project stats | ⬜ | |
-| 5.8 | Phase 5 verification | ⬜ | |
+| 5.1 | Projects schema + RLS | ✅ | `20260903000002_projects.sql` + `20260903000003_rls_projects.sql` applied |
+| 5.2 | Project API routes (CRUD) | ✅ | `/api/projects` + `/api/projects/[id]` (soft delete via status = 'cancelled') |
+| 5.3 | Project list page (card + table view) | ✅ | Card/table toggle persisted in localStorage, status & client filters |
+| 5.4 | New project form (with ClientSelect) | ✅ | React Hook Form + Zod, date validation, INR budget input |
+| 5.5 | Project detail page (timeline, budget, tasks summary) | ✅ | Timeline progress bar, formatINR, tasks overview, inline edit, archive dialog |
+| 5.6 | ClientSelect shared component | ✅ | Searchable combobox fetching active clients with add new link |
+| 5.7 | Dashboard: live project stats | ✅ | Live active projects count + recent projects cards from DB |
+| 5.8 | Phase 5 verification | ✅ | build + lint + typecheck all pass |
 
 **Phase 5 done when:** Projects can be created and linked to clients. Detail page shows all data. Budget formatted as INR.
 
@@ -182,7 +182,7 @@ These components are built during specific phases but used across the whole app.
 | `ConfirmDialog` | Phase 4 | ✅ | `components/shared/ConfirmDialog.tsx` |
 | `EmptyState` | Phase 4 | ✅ | `components/shared/EmptyState.tsx` |
 | `LoadingButton` | Phase 4 | ✅ | `components/shared/LoadingButton.tsx` |
-| `ClientSelect` | Phase 5 | ⬜ | `components/shared/ClientSelect.tsx` |
+| `ClientSelect` | Phase 5 | ✅ | `components/shared/ClientSelect.tsx` |
 | `UserSelect` | Phase 6 | ⬜ | `components/shared/UserSelect.tsx` |
 | `DatePicker` | Phase 6 | ⬜ | `components/shared/DatePicker.tsx` |
 | `ColorPicker` | Phase 7 | ⬜ | `components/shared/ColorPicker.tsx` |
@@ -203,13 +203,8 @@ These components are built during specific phases but used across the whole app.
 | `20260902000002_functions_haversine_checkin.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
 | `20260903000000_clients.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
 | `20260903000001_rls_clients.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
-| `20260903000002_projects.sql` | ⬜ | — |
-| `20260903000003_rls_projects.sql` | ⬜ | — |
-| `20260904000000_tasks_statuses.sql` | ⬜ | — |
-| `20260904000001_rls_tasks.sql` | ⬜ | — |
-
-| `20260903000002_projects.sql` | ⬜ | — |
-| `20260903000003_rls_projects.sql` | ⬜ | — |
+| `20260903000002_projects.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
+| `20260903000003_rls_projects.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
 | `20260904000000_tasks_statuses.sql` | ⬜ | — |
 | `20260904000001_rls_tasks.sql` | ⬜ | — |
 
@@ -250,3 +245,7 @@ Use this section to track important decisions made during development so future 
 | 2026-09-15 | Project team is derived from task assignees | No `project_members` table — avoid extra complexity |
 | 2026-09-15 | Budget always INR | Currency column deferred — only one market for now |
 | 2026-09-16 | Multi-session punches supported | Allows employees to check out for lunch/breaks and check in again; total hours aggregated across sessions |
+| 2026-09-16 | Client soft deletion & GSTIN format validation | Deactivating sets `status = 'inactive'` preserving audit trail; Indian 15-character GSTIN regex validated optionally |
+| 2026-09-16 | Project soft delete sets status = 'cancelled' | Retains historical project data and references from tasks; prevents orphan tasks |
+| 2026-09-16 | Indian Numbering System formatting (formatINR) | Explicit currency formatting with lakhs and crores (`₹15,00,000`) per Indian business standards |
+

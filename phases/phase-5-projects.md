@@ -23,13 +23,13 @@ By the end of this phase:
 
 ### 5.1 — Projects Schema & Migration
 
-- [ ] Create migration: `supabase/migrations/20260903000002_projects.sql`
+- [x] Create migration: `supabase/migrations/20260903000002_projects.sql`
   - `projects` table (full schema from `backend.md`)
-- [ ] Create migration: `supabase/migrations/20260903000003_rls_projects.sql`
+- [x] Create migration: `supabase/migrations/20260903000003_rls_projects.sql`
   - All employees can SELECT (they need to see projects to assign tasks)
   - Only admin/manager can INSERT, UPDATE, DELETE
-- [ ] Run `supabase db push`, verify in dashboard
-- [ ] Test RLS: employee cannot insert a project
+- [x] Run `supabase db push`, verify in dashboard
+- [x] Test RLS: employee cannot insert a project
 
 **Deliverable:** `projects` table live with RLS.
 
@@ -37,11 +37,11 @@ By the end of this phase:
 
 ### 5.2 — Project API Routes
 
-- [ ] Create `app/api/projects/route.ts`:
+- [x] Create `app/api/projects/route.ts`:
   - GET: list projects for `company_id`. Support filters: `?client_id=`, `?status=`, `?search=`
   - POST: create project — validate with Zod (name, client_id required; client must belong to same company)
 
-- [ ] Create `app/api/projects/[id]/route.ts`:
+- [x] Create `app/api/projects/[id]/route.ts`:
   - GET: project detail — join with `clients` (client name), join with `profiles` (created_by name)
   - PUT: update project
   - DELETE: soft delete — set `status = 'cancelled'` (don't hard delete, tasks reference this)
@@ -52,7 +52,7 @@ By the end of this phase:
 
 ### 5.3 — Project List Page
 
-- [ ] Create `app/(tenant)/[subdomain]/projects/page.tsx`:
+- [x] Create `app/(tenant)/[subdomain]/projects/page.tsx`:
   - Server Component: fetch projects
   - Toggle between card view and table view (user preference stored in `localStorage`)
   - **Card view**: project name, client name, status badge, start/end date, task count
@@ -67,7 +67,7 @@ By the end of this phase:
 
 ### 5.4 — New Project Form
 
-- [ ] Create `app/(tenant)/[subdomain]/projects/new/page.tsx`:
+- [x] Create `app/(tenant)/[subdomain]/projects/new/page.tsx`:
   - Form fields:
     - Client* (required) — `<ClientSelect>` component (searchable dropdown from `/api/clients`)
     - Project Name*
@@ -84,7 +84,7 @@ By the end of this phase:
 
 ### 5.5 — Project Detail Page
 
-- [ ] Create `app/(tenant)/[subdomain]/projects/[projectId]/page.tsx`:
+- [x] Create `app/(tenant)/[subdomain]/projects/[projectId]/page.tsx`:
   - **Header**: Project name, status badge, client link, action buttons (Edit, Archive)
   - **Overview section**:
     - Description
@@ -95,7 +95,7 @@ By the end of this phase:
   - Edit button → inline edit mode (same as client detail)
   - Archive → `<ConfirmDialog>` → sets `status = 'cancelled'`
 
-- [ ] Indian number formatting utility (`lib/format.ts`):
+- [x] Indian number formatting utility (`lib/format.ts`):
   ```ts
   // 1500000 → "₹15,00,000"
   export function formatINR(amount: number): string
@@ -107,7 +107,7 @@ By the end of this phase:
 
 ### 5.6 — ClientSelect Shared Component
 
-- [ ] Create `components/shared/ClientSelect.tsx`:
+- [x] Create `components/shared/ClientSelect.tsx`:
   - Fetches clients from `/api/clients?status=active` on mount (client component)
   - Searchable combobox using shadcn `Combobox`
   - Shows client name in option + "Add new client" link at bottom
@@ -119,7 +119,7 @@ By the end of this phase:
 
 ### 5.7 — Dashboard Integration
 
-- [ ] Update `app/(tenant)/[subdomain]/dashboard/page.tsx`:
+- [x] Update `app/(tenant)/[subdomain]/dashboard/page.tsx`:
   - Replace hardcoded "Active Projects" stat with real count from `projects` table where `status = 'active'`
   - Add "Recent Projects" section: last 3 modified projects as cards
 
@@ -129,15 +129,15 @@ By the end of this phase:
 
 ### 5.8 — Phase 5 Verification
 
-- [ ] `npm run build` + `npm run lint` + `npm run typecheck` pass
-- [ ] Create project with valid client → appears in list
-- [ ] Try to create project without client → validation error
-- [ ] Try to set end_date before start_date → validation error
-- [ ] Edit project → changes persist
-- [ ] Archive project → status changes, project disappears from "active" filter
-- [ ] Employee (non-admin) can view project list and detail but cannot create/edit (button hidden, API returns 403)
-- [ ] Budget formatted correctly in Indian number system (test: 1500000 → "₹15,00,000")
-- [ ] Timeline bar renders at correct percentage based on today's date
+- [x] `npm run build` + `npm run lint` + `npm run typecheck` pass
+- [x] Create project with valid client → appears in list
+- [x] Try to create project without client → validation error
+- [x] Try to set end_date before start_date → validation error
+- [x] Edit project → changes persist
+- [x] Archive project → status changes, project disappears from "active" filter
+- [x] Employee (non-admin) can view project list and detail but cannot create/edit (button hidden, API returns 403)
+- [x] Budget formatted correctly in Indian number system (test: 1500000 → "₹15,00,000")
+- [x] Timeline bar renders at correct percentage based on today's date
 
 ---
 
