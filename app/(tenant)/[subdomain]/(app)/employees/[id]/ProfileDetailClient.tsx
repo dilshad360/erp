@@ -350,23 +350,41 @@ export default function ProfileDetailClient({
         {/* Profile Card Header */}
         <div className="p-6 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] flex flex-col md:flex-row items-center md:items-start gap-6 relative">
           {/* Avatar Upload Container */}
-          <div className="relative group">
-            <Avatar
-              src={avatarUrl}
-              name={fullName || employee.full_name}
-              size="xl"
-            />
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <div className="relative group shrink-0">
+              <Avatar
+                src={avatarUrl}
+                name={fullName || employee.full_name}
+                size="xl"
+                className="w-20 h-20 text-xl ring-2 ring-[var(--color-border)]"
+              />
+              {(isAdmin || isSelf) && (
+                <label
+                  htmlFor="avatar-upload"
+                  className="absolute inset-0 rounded-full bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white cursor-pointer transition-opacity duration-200"
+                  title="Upload / Change Photo"
+                >
+                  {isUploadingAvatar ? (
+                    <Loader2 size={18} className="animate-spin" />
+                  ) : (
+                    <>
+                      <Camera size={18} />
+                      <span className="text-[10px] font-medium mt-0.5">Change</span>
+                    </>
+                  )}
+                </label>
+              )}
+            </div>
+
             {(isAdmin || isSelf) && (
-              <label
-                htmlFor="avatar-upload"
-                className="absolute bottom-0 right-0 p-1.5 rounded-full bg-[var(--color-brand)] text-white hover:bg-[var(--color-brand-hover)] cursor-pointer shadow-md transition-transform group-hover:scale-105"
-                title="Change Avatar"
-              >
-                {isUploadingAvatar ? (
-                  <Loader2 size={14} className="animate-spin" />
-                ) : (
-                  <Camera size={14} />
-                )}
+              <div className="space-y-1 text-center sm:text-left">
+                <label
+                  htmlFor="avatar-upload"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold text-[var(--color-text-primary)] bg-[var(--color-surface-raised)] border border-[var(--color-border)] hover:bg-[var(--color-border)] transition-colors cursor-pointer"
+                >
+                  <Camera size={14} className="text-[var(--color-brand)]" />
+                  <span>{isUploadingAvatar ? "Uploading photo..." : "Upload Photo"}</span>
+                </label>
                 <input
                   id="avatar-upload"
                   type="file"
@@ -375,7 +393,10 @@ export default function ProfileDetailClient({
                   onChange={handleAvatarChange}
                   disabled={isUploadingAvatar}
                 />
-              </label>
+                <p className="text-[11px] text-[var(--color-text-muted)]">
+                  JPG, PNG or WebP (max. 2MB)
+                </p>
+              </div>
             )}
           </div>
 
