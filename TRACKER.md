@@ -10,10 +10,10 @@
 
 | Item | Status |
 |---|---|
-| Current active phase | Phase 2 — Employee Management (Completed) |
-| Active branch | `feat/employees` |
-| Last updated | 2026-09-15 |
-| Next milestone | Phase 3 — Attendance |
+| Current active phase | Phase 3 — Attendance (Completed) |
+| Active branch | `feat/attendance` |
+| Last updated | 2026-09-16 |
+| Next milestone | Phase 4 — Client Management |
 | Blockers | — |
 
 ---
@@ -24,7 +24,7 @@
 |---|---|---|---|---|
 | 1 | Foundation | ✅ Done | `feat/foundation` | Schema, auth, subdomain routing |
 | 2 | Employee Management | ✅ Done | `feat/employees` | Depends on Phase 1 |
-| 3 | Attendance | ⬜ Not started | `feat/attendance` | Depends on Phases 1, 2 |
+| 3 | Attendance | ✅ Done | `feat/attendance` | Depends on Phases 1, 2 |
 | 4 | Client Management | ⬜ Not started | `feat/clients` | Depends on Phases 1, 2 |
 | 5 | Project Management | ⬜ Not started | `feat/projects` | Depends on Phases 1, 2, 4 |
 | 6 | Task Management | ⬜ Not started | `feat/tasks` | Depends on Phases 1, 2, 5 |
@@ -74,13 +74,13 @@
 
 | # | Task | Status | Notes |
 |---|---|---|---|
-| 3.1 | Attendance schema + RLS + haversine function | ⬜ | |
-| 3.2 | Check-in / check-out API routes | ⬜ | |
-| 3.3 | Check-in page (employee, mobile-first) | ⬜ | Priority screen — polish this |
-| 3.4 | Employee monthly calendar view | ⬜ | |
-| 3.5 | Admin attendance table + CSV export | ⬜ | |
-| 3.6 | Dashboard: live attendance stat | ⬜ | |
-| 3.7 | Phase 3 verification | ⬜ | |
+| 3.1 | Attendance schema + RLS + haversine function | ✅ | 3 migrations applied to `fvvyuprujtgvmutnfdam` |
+| 3.2 | Check-in / check-out API routes | ✅ | `/api/attendance/checkin` + `/api/attendance/checkout` |
+| 3.3 | Check-in page (employee, mobile-first) | ✅ | `AttendanceCheckInPanel` + `LocationStatus` |
+| 3.4 | Employee monthly calendar view | ✅ | `AttendanceMonthCalendar` with click popover |
+| 3.5 | Admin attendance table + CSV export | ✅ | Role-gated `/attendance/admin` + `AdminAttendanceTable` |
+| 3.6 | Dashboard: live attendance stat | ✅ | Real DB count replacing hardcoded 0 |
+| 3.7 | Phase 3 verification | ✅ | build + lint + typecheck all pass |
 
 **Phase 3 done when:** Employee checks in on phone, geolocation captured, admin sees it, CSV exports correctly.
 
@@ -195,16 +195,18 @@ These components are built during specific phases but used across the whole app.
 |---|---|---|
 | `20260901000000_init_companies_profiles.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
 | `20260901000001_rls_companies_profiles.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
-| `20260902000000_storage_avatars.sql` | ✅ | Storage bucket & RLS policies |
-| `20260902000000_attendance_logs.sql` | ⬜ | — |
-| `20260902000001_rls_attendance.sql` | ⬜ | — |
+| `20260901000003_companies_public_select.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
+| `20260901000004_fix_rls_recursion.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
+| `20260901000005_storage_avatars.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` (renamed from 20260902000000) |
+| `20260902000000_attendance_logs.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
+| `20260902000001_rls_attendance.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
+| `20260902000002_functions_haversine_checkin.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
 | `20260903000000_clients.sql` | ⬜ | — |
 | `20260903000001_rls_clients.sql` | ⬜ | — |
 | `20260903000002_projects.sql` | ⬜ | — |
 | `20260903000003_rls_projects.sql` | ⬜ | — |
 | `20260904000000_tasks_statuses.sql` | ⬜ | — |
 | `20260904000001_rls_tasks.sql` | ⬜ | — |
-| `20260904000002_functions_haversine_checkin.sql` | ⬜ | — |
 
 ---
 

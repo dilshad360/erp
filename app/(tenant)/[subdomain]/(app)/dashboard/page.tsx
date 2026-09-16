@@ -6,34 +6,67 @@ import {
 } from "lucide-react";
 import StatCard from "@/components/shared/StatCard";
 import PageHeader from "@/components/shared/PageHeader";
+import { createClient } from "@/lib/supabase/server";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Dashboard",
 };
 
-export default function DashboardPage(): React.JSX.Element {
-  // These will be replaced with live DB queries in later phases.
-  // For now they're placeholders to verify the layout renders.
+export default async function DashboardPage(): Promise<React.JSX.Element> {
+  const supabase = await createClient();
+
+  // ── Get authenticated user + profile ─────────────────────────────────────
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  let checkedInCount = 0;
+
+  if (user) {
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("company_id")
+      .eq("id", user.id)
+      .single();
+
+    if (profile) {
+      // Count distinct users who have checked in today (no check_out required)
+      const todayStart = new Date();
+      todayStart.setHours(0, 0, 0, 0);
+      const todayEnd = new Date();
+      todayEnd.setHours(23, 59, 59, 999);
+
+      const { count } = await supabase
+        .from("attendance_logs")
+        .select("user_id", { count: "exact", head: true })
+        .eq("company_id", profile.company_id)
+        .gte("check_in_at", todayStart.toISOString())
+        .lte("check_in_at", todayEnd.toISOString());
+
+      checkedInCount = count ?? 0;
+    }
+  }
+
   const stats = [
     {
       label: "Checked in today",
-      value: 0,
+      value: checkedInCount,
       icon: Users,
     },
     {
       label: "Open tasks",
-      value: 0,
+      value: 0, // Phase 6
       icon: CheckSquare,
     },
     {
       label: "Active projects",
-      value: 0,
+      value: 0, // Phase 5
       icon: FolderKanban,
     },
     {
       label: "Clients",
-      value: 0,
+      value: 0, // Phase 4
       icon: Briefcase,
     },
   ] as const;
