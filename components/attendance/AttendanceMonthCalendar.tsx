@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Clock } from "lucide-react";
+import { Timer } from "lucide-react";
 
 type AttendanceLog = {
   id: string;
@@ -22,7 +22,7 @@ type DayStatus = "present" | "absent" | "out_of_range" | "half_day" | "future" |
 function getDayStatus(
   date: Date,
   today: Date,
-  log: AttendanceLog | undefined
+  dayLogs: AttendanceLog[] | undefined
 ): DayStatus {
   const day = date.getDay(); // 0 = Sun, 6 = Sat
   if (day === 0 || day === 6) return "weekend";
@@ -31,14 +31,16 @@ function getDayStatus(
   const isFuture = date > today;
   const isToday = date.toDateString() === today.toDateString();
 
-  if (!log) {
+  if (!dayLogs || dayLogs.length === 0) {
     if (isFuture) return "future";
     if (isToday) return "today_no_log";
     return "absent"; // past weekday with no log
   }
 
-  if (log.status === "half_day") return "half_day";
-  if (log.check_in_range === false) return "out_of_range";
+  // Check if any log is half_day
+  if (dayLogs.some((l) => l.status === "half_day")) return "half_day";
+  // If any log has out of range
+  if (dayLogs.every((l) => l.check_in_range === false)) return "out_of_range";
   if (isPast || isToday) return "present";
   return "future";
 }
@@ -62,6 +64,15 @@ function formatTime(iso: string | null): string {
   });
 }
 
+function formatDuration(ms: number): string {
+  if (ms < 0) return "0m";
+  const totalMinutes = Math.floor(ms / (1000 * 60));
+  const hours = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
+  if (hours === 0) return `${minutes}m`;
+  return `${hours}h ${minutes}m`;
+}
+
 export default function AttendanceMonthCalendar({
   logs,
   month,
@@ -74,13 +85,15 @@ export default function AttendanceMonthCalendar({
     return d;
   }, []);
 
-  // Build a map of date string → log for quick lookups
+  // Build a map of date string → array of logs for quick lookups
   const logsByDate = useMemo(() => {
-    const map = new Map<string, AttendanceLog>();
+    const map = new Map<string, AttendanceLog[]>();
     for (const log of logs) {
       if (log.check_in_at) {
         const dateStr = new Date(log.check_in_at).toISOString().split("T")[0];
-        map.set(dateStr, log);
+        const existing = map.get(dateStr) ?? [];
+        existing.push(log);
+        map.set(dateStr, existing);
       }
     }
     return map;
@@ -102,13 +115,20 @@ export default function AttendanceMonthCalendar({
   // Blank cells to align with Mon as first column
   const startPadding = useMemo(() => {
     const firstDow = new Date(year, monthNum - 1, 1).getDay(); // 0=Sun
-    // Convert to Mon-first: Sun → 6, Mon → 0, Tue → 1, ...
     return firstDow === 0 ? 6 : firstDow - 1;
   }, [year, monthNum]);
 
-  const selectedLog = selectedDay
-    ? logsByDate.get(selectedDay.toISOString().split("T")[0])
-    : undefined;
+  const selectedDateStr = selectedDay ? selectedDay.toISOString().split("T")[0] : null;
+  const selectedDayLogs = selectedDateStr ? logsByDate.get(selectedDateStr) ?? [] : [];
+
+  const totalWorkedMsForSelectedDay = useMemo(() => {
+    return selectedDayLogs.reduce((acc, log) => {
+      if (!log.check_in_at) return acc;
+      const start = new Date(log.check_in_at).getTime();
+      const end = log.check_out_at ? new Date(log.check_out_at).getTime() : start;
+      return acc + Math.max(0, end - start);
+    }, 0);
+  }, [selectedDayLogs]);
 
   const monthLabel = new Date(year, monthNum - 1, 1).toLocaleString("en-IN", {
     month: "long",
@@ -148,8 +168,8 @@ export default function AttendanceMonthCalendar({
 
         {days.map((day) => {
           const dateStr = day.toISOString().split("T")[0];
-          const log = logsByDate.get(dateStr);
-          const status = getDayStatus(day, today, log);
+          const dayLogs = logsByDate.get(dateStr);
+          const status = getDayStatus(day, today, dayLogs);
           const isSelected = selectedDay?.toDateString() === day.toDateString();
           const isWeekday = day.getDay() !== 0 && day.getDay() !== 6;
           const isClickable = isWeekday && status !== "future";
@@ -178,35 +198,54 @@ export default function AttendanceMonthCalendar({
 
       {/* Day detail popover */}
       {selectedDay && (
-        <div className="mt-4 p-4 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] text-sm">
-          <p className="font-semibold text-[var(--color-text-primary)] mb-3">
-            {selectedDay.toLocaleDateString("en-IN", {
-              weekday: "long",
-              day: "numeric",
-              month: "long",
-            })}
-          </p>
-          {selectedLog ? (
-            <div className="grid grid-cols-2 gap-3 text-xs">
-              <div>
-                <p className="text-[var(--color-text-muted)]">Check-in</p>
-                <p className="text-[var(--color-text-primary)] font-medium flex items-center gap-1 mt-0.5">
-                  <Clock className="w-3 h-3" />
-                  {formatTime(selectedLog.check_in_at)}
-                </p>
-              </div>
-              <div>
-                <p className="text-[var(--color-text-muted)]">Check-out</p>
-                <p className="text-[var(--color-text-primary)] font-medium flex items-center gap-1 mt-0.5">
-                  <Clock className="w-3 h-3" />
-                  {formatTime(selectedLog.check_out_at)}
-                </p>
-              </div>
-              {selectedLog.check_in_range === false && (
-                <div className="col-span-2">
-                  <span className="text-yellow-400 text-xs">⚠ Checked in outside office area</span>
-                </div>
-              )}
+        <div className="mt-4 p-4 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] text-sm space-y-3">
+          <div className="flex items-center justify-between border-b border-[var(--color-border)] pb-2.5">
+            <p className="font-semibold text-[var(--color-text-primary)]">
+              {selectedDay.toLocaleDateString("en-IN", {
+                weekday: "long",
+                day: "numeric",
+                month: "long",
+              })}
+            </p>
+            {selectedDayLogs.length > 0 && (
+              <span className="text-xs text-[var(--color-brand)] font-medium flex items-center gap-1 font-mono">
+                <Timer className="w-3.5 h-3.5" />
+                {formatDuration(totalWorkedMsForSelectedDay)}
+              </span>
+            )}
+          </div>
+
+          {selectedDayLogs.length > 0 ? (
+            <div className="space-y-2">
+              {selectedDayLogs.map((log, idx) => {
+                const startMs = log.check_in_at ? new Date(log.check_in_at).getTime() : 0;
+                const endMs = log.check_out_at ? new Date(log.check_out_at).getTime() : startMs;
+                const durationMs = Math.max(0, endMs - startMs);
+
+                return (
+                  <div
+                    key={log.id}
+                    className="p-2.5 rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] flex items-center justify-between text-xs"
+                  >
+                    <div>
+                      <span className="font-semibold text-[var(--color-text-primary)] mr-2">
+                        Session {idx + 1}:
+                      </span>
+                      <span className="text-[var(--color-text-muted)]">
+                        {formatTime(log.check_in_at)} → {formatTime(log.check_out_at)}
+                      </span>
+                      {log.check_in_range === false && (
+                        <p className="text-[10px] text-yellow-400 mt-0.5">
+                          ⚠ Out of range
+                        </p>
+                      )}
+                    </div>
+                    <span className="font-mono text-[var(--color-text-primary)] font-medium">
+                      {formatDuration(durationMs)}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           ) : (
             <p className="text-[var(--color-text-muted)] text-xs">No attendance record for this day.</p>

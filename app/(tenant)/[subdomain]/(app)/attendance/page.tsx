@@ -46,21 +46,19 @@ export default async function AttendancePage({
 
   if (!profile) redirect(`/login`);
 
-  // ── Fetch today's log ─────────────────────────────────────────────────────
+  // ── Fetch today's logs ───────────────────────────────────────────────────
   const todayStart = new Date();
   todayStart.setHours(0, 0, 0, 0);
   const todayEnd = new Date();
   todayEnd.setHours(23, 59, 59, 999);
 
-  const { data: todayLog } = await supabase
+  const { data: todayLogs } = await supabase
     .from("attendance_logs")
     .select("id, check_in_at, check_out_at, check_in_range, status")
     .eq("user_id", user.id)
     .gte("check_in_at", todayStart.toISOString())
     .lte("check_in_at", todayEnd.toISOString())
-    .maybeSingle();
-
-  const checkedIn = !!todayLog && !todayLog.check_out_at;
+    .order("check_in_at", { ascending: true });
 
   // ── Fetch monthly logs if "month" view is active ──────────────────────────
   const now = new Date();
@@ -148,8 +146,7 @@ export default async function AttendancePage({
                 })}
               </h2>
               <AttendanceCheckInPanel
-                checkedIn={checkedIn}
-                todayLog={todayLog ?? null}
+                todayLogs={todayLogs ?? []}
               />
             </div>
           ) : (

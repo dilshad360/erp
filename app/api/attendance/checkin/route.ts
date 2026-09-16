@@ -38,20 +38,19 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
   const { lat, lng } = parseResult.data;
 
-  // ── Check for existing open log today ────────────────────────────────────
-  const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
-
-  const { data: existingLog } = await supabase
+  // ── Check for existing active open session ─────────────────────────────────
+  const { data: openLog } = await supabase
     .from("attendance_logs")
-    .select("id, check_out_at")
+    .select("id, check_in_at")
     .eq("user_id", user.id)
-    .gte("check_in_at", `${today}T00:00:00.000Z`)
-    .lte("check_in_at", `${today}T23:59:59.999Z`)
+    .is("check_out_at", null)
+    .order("check_in_at", { ascending: false })
+    .limit(1)
     .maybeSingle();
 
-  if (existingLog) {
+  if (openLog) {
     return NextResponse.json(
-      { data: null, error: "Already checked in today. Please check out first." },
+      { data: null, error: "You currently have an active check-in session. Please check out first before checking in again." },
       { status: 409 }
     );
   }

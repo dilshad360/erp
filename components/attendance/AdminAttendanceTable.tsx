@@ -23,7 +23,7 @@ type AttendanceLog = {
 
 interface AdminAttendanceTableProps {
   employees: Employee[];
-  logsByUserId: Map<string, AttendanceLog>;
+  logsByUserId: Map<string, AttendanceLog[]>;
   departments: string[];
   selectedDate: string;
   selectedDepartment: string;
@@ -31,11 +31,11 @@ interface AdminAttendanceTableProps {
 
 type RowStatus = "present" | "absent" | "out_of_range" | "half_day" | "no_location";
 
-function getRowStatus(log: AttendanceLog | undefined): RowStatus {
-  if (!log) return "absent";
-  if (log.status === "half_day") return "half_day";
-  if (log.check_in_range === null) return "no_location";
-  if (log.check_in_range === false) return "out_of_range";
+function getRowStatus(logs: AttendanceLog[] | undefined): RowStatus {
+  if (!logs || logs.length === 0) return "absent";
+  if (logs.some((l) => l.status === "half_day")) return "half_day";
+  if (logs.every((l) => l.check_in_range === null)) return "no_location";
+  if (logs.every((l) => l.check_in_range === false)) return "out_of_range";
   return "present";
 }
 
@@ -56,9 +56,26 @@ function formatTime(iso: string | null): string {
   });
 }
 
+function calculateTotalDuration(logs: AttendanceLog[] | undefined): string {
+  if (!logs || logs.length === 0) return "—";
+  let totalMs = 0;
+  for (const log of logs) {
+    if (log.check_in_at) {
+      const start = new Date(log.check_in_at).getTime();
+      const end = log.check_out_at ? new Date(log.check_out_at).getTime() : Date.now();
+      totalMs += Math.max(0, end - start);
+    }
+  }
+  const totalMinutes = Math.floor(totalMs / (1000 * 60));
+  const hours = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
+  if (hours === 0) return `${minutes}m`;
+  return `${hours}h ${minutes}m`;
+}
+
 function downloadCSV(
   employees: Employee[],
-  logsByUserId: Map<string, AttendanceLog>,
+  logsByUserId: Map<string, AttendanceLog[]>,
   date: string
 ): void {
   const headers = [
@@ -67,23 +84,40 @@ function downloadCSV(
     "Employee ID",
     "Department",
     "Status",
-    "Check-in",
-    "Check-out",
+    "Sessions",
+    "First Check-in",
+    "Last Check-out",
+    "Total Worked",
     "In Range",
   ];
 
   const rows = employees.map((emp) => {
-    const log = logsByUserId.get(emp.id);
-    const status = getRowStatus(log);
+    const userLogs = logsByUserId.get(emp.id) ?? [];
+    const status = getRowStatus(userLogs);
+    const firstCheckIn = userLogs[0]?.check_in_at ? formatTime(userLogs[0].check_in_at) : "";
+    const lastLog = userLogs[userLogs.length - 1];
+    const lastCheckOut = lastLog
+      ? lastLog.check_out_at
+        ? formatTime(lastLog.check_out_at)
+        : "In Progress"
+      : "";
+    const inRange = userLogs.length === 0
+      ? "N/A"
+      : userLogs.some((l) => l.check_in_range === true)
+      ? "Yes"
+      : "No";
+
     return [
       date,
       emp.full_name ?? "",
       emp.employee_id ?? "",
       emp.department ?? "",
       STATUS_BADGE[status].label,
-      log?.check_in_at ? formatTime(log.check_in_at) : "",
-      log?.check_out_at ? formatTime(log.check_out_at) : "",
-      log?.check_in_range === null ? "N/A" : log?.check_in_range ? "Yes" : "No",
+      userLogs.length,
+      firstCheckIn,
+      lastCheckOut,
+      calculateTotalDuration(userLogs),
+      inRange,
     ]
       .map((v) => `"${String(v).replace(/"/g, '""')}"`)
       .join(",");
@@ -124,8 +158,8 @@ export default function AdminAttendanceTable({
   }
 
   const presentCount = employees.filter((e) => {
-    const log = logsByUserId.get(e.id);
-    return log && getRowStatus(log) !== "absent";
+    const userLogs = logsByUserId.get(e.id);
+    return userLogs && getRowStatus(userLogs) !== "absent";
   }).length;
 
   return (
@@ -205,11 +239,11 @@ export default function AdminAttendanceTable({
               <th className="text-left px-4 py-3 text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wide">
                 Status
               </th>
-              <th className="text-left px-4 py-3 text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wide hidden md:table-cell">
-                Check-in
+              <th className="text-left px-4 py-3 text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wide">
+                First In / Last Out
               </th>
               <th className="text-left px-4 py-3 text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wide hidden md:table-cell">
-                Check-out
+                Total Worked
               </th>
               <th className="text-left px-4 py-3 text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wide hidden lg:table-cell">
                 In Range
@@ -225,9 +259,12 @@ export default function AdminAttendanceTable({
               </tr>
             )}
             {employees.map((emp, idx) => {
-              const log = logsByUserId.get(emp.id);
-              const status = getRowStatus(log);
+              const userLogs = logsByUserId.get(emp.id) ?? [];
+              const status = getRowStatus(userLogs);
               const badge = STATUS_BADGE[status];
+              const firstLog = userLogs[0];
+              const lastLog = userLogs[userLogs.length - 1];
+              const isOngoing = lastLog && !lastLog.check_out_at;
 
               return (
                 <tr
@@ -255,22 +292,41 @@ export default function AdminAttendanceTable({
                     {emp.department ?? "—"}
                   </td>
                   <td className="px-4 py-3">
-                    <span
-                      className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border ${badge.className}`}
-                    >
-                      {badge.label}
-                    </span>
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      <span
+                        className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border ${badge.className}`}
+                      >
+                        {badge.label}
+                      </span>
+                      {userLogs.length > 1 && (
+                        <span className="text-[10px] text-[var(--color-text-muted)] bg-[var(--color-surface-raised)] border border-[var(--color-border)] px-1.5 py-0.5 rounded">
+                          {userLogs.length} sessions
+                        </span>
+                      )}
+                    </div>
                   </td>
-                  <td className="px-4 py-3 text-[var(--color-text-muted)] hidden md:table-cell">
-                    {formatTime(log?.check_in_at ?? null)}
+                  <td className="px-4 py-3 text-[var(--color-text-muted)]">
+                    {firstLog ? (
+                      <div className="flex items-center gap-1.5 text-xs">
+                        <span className="text-[var(--color-text-primary)] font-medium">
+                          {formatTime(firstLog.check_in_at)}
+                        </span>
+                        <span>→</span>
+                        <span className={isOngoing ? "text-emerald-400 font-medium" : "text-[var(--color-text-primary)] font-medium"}>
+                          {isOngoing ? "Working…" : formatTime(lastLog.check_out_at)}
+                        </span>
+                      </div>
+                    ) : (
+                      "—"
+                    )}
                   </td>
-                  <td className="px-4 py-3 text-[var(--color-text-muted)] hidden md:table-cell">
-                    {formatTime(log?.check_out_at ?? null)}
+                  <td className="px-4 py-3 text-[var(--color-text-muted)] hidden md:table-cell font-mono text-xs">
+                    {calculateTotalDuration(userLogs)}
                   </td>
                   <td className="px-4 py-3 text-[var(--color-text-muted)] hidden lg:table-cell">
-                    {log?.check_in_range === null
+                    {userLogs.length === 0
                       ? "N/A"
-                      : log?.check_in_range
+                      : userLogs.some((l) => l.check_in_range === true)
                       ? "✓"
                       : "✗"}
                   </td>

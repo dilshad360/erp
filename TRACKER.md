@@ -244,3 +244,4 @@ Use this section to track important decisions made during development so future 
 | 2026-09-15 | App is dark mode only | Simplicity for MVP — light mode can be added later |
 | 2026-09-15 | Project team is derived from task assignees | No `project_members` table — avoid extra complexity |
 | 2026-09-15 | Budget always INR | Currency column deferred — only one market for now |
+| 2026-09-16 | Multi-session punches supported | Allows employees to check out for lunch/breaks and check in again; total hours aggregated across sessions |

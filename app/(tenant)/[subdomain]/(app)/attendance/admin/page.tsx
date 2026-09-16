@@ -67,7 +67,8 @@ export default async function AdminAttendancePage({
     .select("id, user_id, check_in_at, check_out_at, check_in_range, check_out_range, status")
     .eq("company_id", profile.company_id)
     .gte("check_in_at", dayStart)
-    .lte("check_in_at", dayEnd);
+    .lte("check_in_at", dayEnd)
+    .order("check_in_at", { ascending: true });
 
   // ── Fetch distinct departments for filter ────────────────────────────────
   const { data: deptRows } = await supabase
@@ -81,7 +82,13 @@ export default async function AdminAttendancePage({
     ...new Set((deptRows ?? []).map((r) => r.department).filter(Boolean)),
   ] as string[];
 
-  const logsByUserId = new Map((logs ?? []).map((l) => [l.user_id, l]));
+  type LogRow = NonNullable<typeof logs>[number];
+  const logsByUserId = new Map<string, LogRow[]>();
+  for (const log of logs ?? []) {
+    const existing = logsByUserId.get(log.user_id) ?? [];
+    existing.push(log);
+    logsByUserId.set(log.user_id, existing);
+  }
 
   return (
     <div className="flex flex-col gap-6">
