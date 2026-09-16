@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { AlertTriangle, Clock, LogIn, LogOut } from "lucide-react";
+import { AlertTriangle, CheckCircle2, Clock, LogIn, LogOut } from "lucide-react";
 import LocationStatus, { type LocationState } from "./LocationStatus";
 
 type AttendanceLog = {
@@ -134,6 +134,8 @@ export default function AttendanceCheckInPanel({
   }, [coords, todayLog, router]);
 
   const isOutOfRange = todayLog?.check_in_range === false;
+  // Session is done for the day: log exists + checked out
+  const sessionComplete = !!todayLog?.check_out_at && !checkedIn;
 
   return (
     <div className="flex flex-col gap-5">
@@ -183,6 +185,17 @@ export default function AttendanceCheckInPanel({
         >
           <LogOut className="w-5 h-5" />
           {loading ? "Checking out…" : "Check Out"}
+        </button>
+      ) : sessionComplete ? (
+        /* Session done for today — disable button and show completion state */
+        <button
+          id="session-complete-btn"
+          disabled
+          className="w-full h-16 rounded-xl font-semibold text-base flex items-center justify-center gap-3 bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-muted)] cursor-not-allowed"
+          aria-label="Session complete for today"
+        >
+          <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+          Session Complete
         </button>
       ) : (
         <button
