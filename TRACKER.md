@@ -10,10 +10,10 @@
 
 | Item | Status |
 |---|---|
-| Current active phase | Phase 5 — Project Management (Completed) |
-| Active branch | `feat/projects` |
+| Current active phase | Phase 6 — Task Management (Completed) |
+| Active branch | `feat/tasks` |
 | Last updated | 2026-09-16 |
-| Next milestone | Phase 6 — Task Management |
+| Next milestone | Phase 7 — Polish & PWA |
 | Blockers | — |
 
 ---
@@ -27,7 +27,7 @@
 | 3 | Attendance | ✅ Done | `feat/attendance` | Depends on Phases 1, 2 |
 | 4 | Client Management | ✅ Done | `feat/clients` | Depends on Phases 1, 2 |
 | 5 | Project Management | ✅ Done | `feat/projects` | Depends on Phases 1, 2, 4 |
-| 6 | Task Management | ⬜ Not started | `feat/tasks` | Depends on Phases 1, 2, 5 |
+| 6 | Task Management | ✅ Done | `feat/tasks` | Depends on Phases 1, 2, 5 |
 | 7 | Polish & PWA | ⬜ Not started | `feat/pwa` | Depends on Phases 1–6 |
 
 ---
@@ -129,15 +129,15 @@
 
 | # | Task | Status | Notes |
 |---|---|---|---|
-| 6.1 | Tasks schema + RLS + updated_at trigger | ⬜ | |
-| 6.2 | Task + task-status API routes | ⬜ | |
-| 6.3 | Task list view (within project) | ⬜ | |
-| 6.4 | Task creation / edit form (sheet) | ⬜ | |
-| 6.5 | Kanban board (@dnd-kit) | ⬜ | Most complex component |
-| 6.6 | My Tasks page (cross-project) | ⬜ | |
-| 6.7 | Kanban column management (settings) | ⬜ | |
-| 6.8 | Dashboard: task stats + my tasks quick list | ⬜ | |
-| 6.9 | Phase 6 verification | ⬜ | |
+| 6.1 | Tasks schema + RLS + updated_at trigger | ✅ | `20260904000000_tasks_statuses.sql` + `20260904000001_rls_tasks.sql` applied |
+| 6.2 | Task + task-status API routes | ✅ | `/api/tasks`, `/api/tasks/[id]`, `/api/task-statuses`, `/api/task-statuses/[id]`, `/api/task-statuses/reorder` |
+| 6.3 | Task list view (within project) | ✅ | `/projects/[projectId]/tasks?view=list` with filters |
+| 6.4 | Task creation / edit form (sheet) | ✅ | `TaskForm.tsx` + `TaskSheet.tsx` + `UserSelect.tsx` + `DatePicker.tsx` |
+| 6.5 | Kanban board (@dnd-kit) | ✅ | `KanbanBoard`, `KanbanColumn`, `KanbanCard`, `KanbanCardOverlay` — optimistic DnD |
+| 6.6 | My Tasks page (cross-project) | ✅ | `/tasks` — grouped by project, filter tabs |
+| 6.7 | Kanban column management (settings) | ✅ | `/settings` — `KanbanColumnManager` with drag-to-reorder, inline edit, color picker |
+| 6.8 | Dashboard: task stats + my tasks quick list | ✅ | Live open tasks count + 5-task quick list |
+| 6.9 | Phase 6 verification | ✅ | `npm run build` exits 0 — 0 type errors, 0 lint errors |
 
 **Phase 6 done when:** Tasks created in list view appear in Kanban. Drag-and-drop persists to DB. My Tasks works.
 
@@ -183,8 +183,8 @@ These components are built during specific phases but used across the whole app.
 | `EmptyState` | Phase 4 | ✅ | `components/shared/EmptyState.tsx` |
 | `LoadingButton` | Phase 4 | ✅ | `components/shared/LoadingButton.tsx` |
 | `ClientSelect` | Phase 5 | ✅ | `components/shared/ClientSelect.tsx` |
-| `UserSelect` | Phase 6 | ⬜ | `components/shared/UserSelect.tsx` |
-| `DatePicker` | Phase 6 | ⬜ | `components/shared/DatePicker.tsx` |
+| `UserSelect` | Phase 6 | ✅ | `components/shared/UserSelect.tsx` |
+| `DatePicker` | Phase 6 | ✅ | `components/shared/DatePicker.tsx` |
 | `ColorPicker` | Phase 7 | ⬜ | `components/shared/ColorPicker.tsx` |
 
 ---
@@ -205,8 +205,8 @@ These components are built during specific phases but used across the whole app.
 | `20260903000001_rls_clients.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
 | `20260903000002_projects.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
 | `20260903000003_rls_projects.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
-| `20260904000000_tasks_statuses.sql` | ⬜ | — |
-| `20260904000001_rls_tasks.sql` | ⬜ | — |
+| `20260904000000_tasks_statuses.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
+| `20260904000001_rls_tasks.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
 
 ---
 
