@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { z } from "zod";
 
 // ── Validation schemas ─────────────────────────────────────────────────────
@@ -29,7 +28,6 @@ type FieldError = Partial<Record<string, string>>;
 // ── Component ─────────────────────────────────────────────────────────────
 
 export default function SignupPage(): React.JSX.Element {
-  const router = useRouter();
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [step1Data, setStep1Data] = useState<Step1Data>({
     companyName: "",

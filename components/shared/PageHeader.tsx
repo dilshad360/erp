@@ -3,7 +3,7 @@
 import { useTenant } from "./TenantProvider";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
-import { LogOut, User } from "lucide-react";
+import { LogOut } from "lucide-react";
 
 type PageHeaderProps = {
   title: string;

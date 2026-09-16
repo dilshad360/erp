@@ -10,10 +10,10 @@
 
 | Item | Status |
 |---|---|
-| Current active phase | Phase 1 — Foundation (Completed) |
-| Active branch | `feat/foundation` |
+| Current active phase | Phase 2 — Employee Management (Completed) |
+| Active branch | `feat/employees` |
 | Last updated | 2026-09-15 |
-| Next milestone | Phase 2 — Employee Management |
+| Next milestone | Phase 3 — Attendance |
 | Blockers | — |
 
 ---
@@ -23,7 +23,7 @@
 | Phase | Name | Status | Branch | Notes |
 |---|---|---|---|---|
 | 1 | Foundation | ✅ Done | `feat/foundation` | Schema, auth, subdomain routing |
-| 2 | Employee Management | ⬜ Not started | `feat/employees` | Depends on Phase 1 |
+| 2 | Employee Management | ✅ Done | `feat/employees` | Depends on Phase 1 |
 | 3 | Attendance | ⬜ Not started | `feat/attendance` | Depends on Phases 1, 2 |
 | 4 | Client Management | ⬜ Not started | `feat/clients` | Depends on Phases 1, 2 |
 | 5 | Project Management | ⬜ Not started | `feat/projects` | Depends on Phases 1, 2, 4 |
@@ -56,13 +56,13 @@
 
 | # | Task | Status | Notes |
 |---|---|---|---|
-| 2.1 | DataTable shared component (TanStack Table) | ⬜ | Reused by all list pages |
-| 2.2 | Employee list page | ⬜ | |
-| 2.3 | Invite employee flow (auth invite + profile insert) | ⬜ | |
-| 2.4 | Employee profile page | ⬜ | |
-| 2.5 | Avatar upload (Supabase Storage) | ⬜ | |
-| 2.6 | Role management (admin/manager/employee) | ⬜ | |
-| 2.7 | Phase 2 verification | ⬜ | |
+| 2.1 | DataTable shared component (TanStack Table) | ✅ | Reused by all list pages (`components/shared/DataTable.tsx`) |
+| 2.2 | Employee list page | ✅ | `app/(tenant)/[subdomain]/(app)/employees/page.tsx` |
+| 2.3 | Invite employee flow (auth invite + profile insert) | ✅ | `app/api/employees/route.ts` & `/employees/new` & `/set-password` |
+| 2.4 | Employee profile page | ✅ | `app/(tenant)/[subdomain]/(app)/employees/[id]/page.tsx` |
+| 2.5 | Avatar upload (Supabase Storage) | ✅ | `app/api/employees/upload-avatar/route.ts` & Storage policy |
+| 2.6 | Role management (admin/manager/employee) | ✅ | Simple string role gating (`admin`/`manager`/`employee`) |
+| 2.7 | Phase 2 verification | ✅ | Build passes, strict tsc passes, components verified |
 
 **Phase 2 done when:** Admin can invite an employee who can log in and see their profile. DataTable works with real data.
 
@@ -175,9 +175,9 @@ These components are built during specific phases but used across the whole app.
 | `TenantProvider` | Phase 1 | ✅ | `components/shared/TenantProvider.tsx` |
 | `StatCard` | Phase 1 | ✅ | `components/shared/StatCard.tsx` |
 | `PageHeader` | Phase 1 | ✅ | `components/shared/PageHeader.tsx` |
-| `DataTable` | Phase 2 | ⬜ | `components/shared/DataTable.tsx` |
-| `SkeletonTable` | Phase 2 | ⬜ | `components/shared/SkeletonTable.tsx` |
-| `Avatar` | Phase 2 | ⬜ | `components/shared/Avatar.tsx` |
+| `DataTable` | Phase 2 | ✅ | `components/shared/DataTable.tsx` |
+| `SkeletonTable` | Phase 2 | ✅ | `components/shared/SkeletonTable.tsx` |
+| `Avatar` | Phase 2 | ✅ | `components/shared/Avatar.tsx` |
 | `FormField` | Phase 4 | ⬜ | `components/shared/FormField.tsx` |
 | `ConfirmDialog` | Phase 4 | ⬜ | `components/shared/ConfirmDialog.tsx` |
 | `EmptyState` | Phase 4 | ⬜ | `components/shared/EmptyState.tsx` |
@@ -195,6 +195,7 @@ These components are built during specific phases but used across the whole app.
 |---|---|---|
 | `20260901000000_init_companies_profiles.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
 | `20260901000001_rls_companies_profiles.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
+| `20260902000000_storage_avatars.sql` | ✅ | Storage bucket & RLS policies |
 | `20260902000000_attendance_logs.sql` | ⬜ | — |
 | `20260902000001_rls_attendance.sql` | ⬜ | — |
 | `20260903000000_clients.sql` | ⬜ | — |

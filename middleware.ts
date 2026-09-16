@@ -66,7 +66,7 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
 
   if (companyError || !company) {
     console.error("[middleware] Subdomain lookup failed:", { subdomain, companyError, company });
-    return NextResponse.rewrite(new URL("/not-found", request.url));
+    return NextResponse.rewrite(new URL("/workspace-not-found", request.url));
   }
 
   // ── Step 5: Check auth for tenant routes ──────────────────────────────────
@@ -75,8 +75,10 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
   } = await supabase.auth.getUser();
 
   const isLoginPage = url.pathname === "/login";
+  const isSetPasswordPage = url.pathname === "/set-password";
+  const isApiRoute = url.pathname.startsWith("/api");
 
-  if (!user && !isLoginPage) {
+  if (!user && !isLoginPage && !isSetPasswordPage && !isApiRoute) {
     // Not logged in — redirect to this tenant's login page
     const loginUrl = new URL(request.url);
     loginUrl.pathname = "/login";
@@ -96,6 +98,10 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
   // ── Step 6: Rewrite to tenant route tree ─────────────────────────────────
   // The browser URL stays as acme.dilshadcodes.com/dashboard
   // but Next.js internally serves (tenant)/[subdomain]/dashboard
+  if (isApiRoute) {
+    return sessionResponse;
+  }
+
   if (!url.pathname.startsWith(`/${subdomain}`)) {
     url.pathname = `/${subdomain}${url.pathname}`;
     const rewriteResponse = NextResponse.rewrite(url);

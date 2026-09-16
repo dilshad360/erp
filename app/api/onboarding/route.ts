@@ -17,8 +17,6 @@ const onboardingSchema = z.object({
   password: z.string().min(8),
 });
 
-type OnboardingBody = z.infer<typeof onboardingSchema>;
-
 // ── Default task statuses seeded for every new company ───────────────────
 
 const DEFAULT_TASK_STATUSES = [
