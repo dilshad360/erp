@@ -57,7 +57,6 @@
       "C:\\Users\\dilsh\\OneDrive\\Desktop\\ERP\\app\\layout.tsx",
       "C:\\Users\\dilsh\\OneDrive\\Desktop\\ERP\\app\\manifest.ts",
       "C:\\Users\\dilsh\\OneDrive\\Desktop\\ERP\\app\\not-found.tsx",
-      "C:\\Users\\dilsh\\OneDrive\\Desktop\\ERP\\app\\page.tsx",
       "C:\\Users\\dilsh\\OneDrive\\Desktop\\ERP\\app\\workspace-not-found\\page.tsx",
       "C:\\Users\\dilsh\\OneDrive\\Desktop\\ERP\\components.json",
       "C:\\Users\\dilsh\\OneDrive\\Desktop\\ERP\\components\\attendance\\AdminAttendanceTable.tsx",
@@ -109,7 +108,6 @@
       "C:\\Users\\dilsh\\OneDrive\\Desktop\\ERP\\package.json",
       "C:\\Users\\dilsh\\OneDrive\\Desktop\\ERP\\postcss.config.mjs",
       "C:\\Users\\dilsh\\OneDrive\\Desktop\\ERP\\public\\sw.js",
-      "C:\\Users\\dilsh\\OneDrive\\Desktop\\ERP\\scratch\\build_graph.py",
       "C:\\Users\\dilsh\\OneDrive\\Desktop\\ERP\\supabase\\migrations\\20260901000000_init_companies_profiles.sql",
       "C:\\Users\\dilsh\\OneDrive\\Desktop\\ERP\\supabase\\migrations\\20260901000001_rls_companies_profiles.sql",
       "C:\\Users\\dilsh\\OneDrive\\Desktop\\ERP\\supabase\\migrations\\20260901000003_companies_public_select.sql",
@@ -163,8 +161,8 @@
     ],
     "video": []
   },
-  "total_files": 154,
-  "total_words": 78378,
+  "total_files": 152,
+  "total_words": 78035,
   "needs_graph": true,
   "warning": null,
   "skipped_sensitive": [
