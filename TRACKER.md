@@ -43,7 +43,7 @@
 |---|---|---|---|---|---|---|
 | `STORY-001` | Offline Check-In & Sync Queue | Attendance / PWA | P1 | ⬜ Backlog | `feat/attendance-story-001` | [`phases/stories/STORY-001.md`](phases/stories/) |
 | `STORY-002` | Project Member Allocation & Capacity | Projects | P2 | ⬜ Backlog | `feat/projects-story-002` | [`phases/stories/STORY-002.md`](phases/stories/) |
-| `STORY-003` | Dark Mode & Company Logo on Login Screen | Foundation / Auth | P2 | ⬜ Backlog | `feat/foundation-story-003` | [`phases/stories/STORY-003-login-dark-mode-company-branding.md`](phases/stories/STORY-003-login-dark-mode-company-branding.md) |
+| `STORY-003` | Dark Mode & Company Logo on Login Screen | Foundation / Auth | P2 | ✅ Done | `feat/foundation-story-003` | [`phases/stories/STORY-003-login-dark-mode-company-branding.md`](phases/stories/STORY-003-login-dark-mode-company-branding.md) |
 
 ### Bug & Defect Registry (`BUG-xxx`)
 
@@ -271,4 +271,5 @@ Use this section to track important decisions made during development so future 
 | 2026-09-16 | Project soft delete sets status = 'cancelled' | Retains historical project data and references from tasks; prevents orphan tasks |
 | 2026-09-16 | Indian Numbering System formatting (formatINR) | Explicit currency formatting with lakhs and crores (`₹15,00,000`) per Indian business standards |
 | 2026-09-18 | Settings Role Isolation (`BUG-001`) | Bifurcated `/settings`: Employees get personal profile, avatar, security, preferences & read-only workplace info; Admins manage workspace details, branding, Kanban statuses & danger zone. |
+| 2026-09-18 | Login Branding & Dark Mode (`STORY-003`) | Server-rendered login screen queries tenant branding by slug; displays uploaded company logo (or brand initial fallback), dynamic brand color accents, and full dark-mode surface polish. |
 

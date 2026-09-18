@@ -1,121 +1,49 @@
-"use client";
+import { createClient } from "@/lib/supabase/server";
+import LoginClient, { type TenantLoginBranding } from "@/components/auth/LoginClient";
+import type { Metadata } from "next";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
+type LoginPageProps = {
+  params: Promise<{ subdomain: string }>;
+};
 
-export default function LoginPage(): React.JSX.Element {
-  const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
+export async function generateMetadata({
+  params,
+}: LoginPageProps): Promise<Metadata> {
+  const { subdomain } = await params;
+  const supabase = await createClient();
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>): Promise<void> {
-    e.preventDefault();
-    setError(null);
-    setLoading(true);
+  const { data: company } = await supabase
+    .from("companies")
+    .select("name")
+    .eq("slug", subdomain)
+    .single();
 
-    const supabase = createClient();
-    const { error: authError } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+  const companyName = company?.name || subdomain;
 
-    if (authError) {
-      setError(
-        authError.message === "Invalid login credentials"
-          ? "Incorrect email or password."
-          : authError.message
-      );
-      setLoading(false);
-      return;
-    }
+  return {
+    title: `Sign In — ${companyName}`,
+    description: `Sign in to your ${companyName} multi-tenant ERP workspace.`,
+  };
+}
 
-    // Redirect to dashboard — let middleware handle the subdomain context
-    router.push("/dashboard");
-    router.refresh();
-  }
+export default async function LoginPage({
+  params,
+}: LoginPageProps): Promise<React.JSX.Element> {
+  const { subdomain } = await params;
+  const supabase = await createClient();
 
-  return (
-    <div className="min-h-screen flex items-center justify-center px-4 bg-[var(--color-bg)]">
-      <div className="w-full max-w-sm space-y-6">
-        {/* Header */}
-        <div className="text-center space-y-1">
-          <h1 className="text-2xl font-bold text-[var(--color-text-primary)]">
-            Welcome back
-          </h1>
-          <p className="text-sm text-[var(--color-text-secondary)]">
-            Sign in to your workspace
-          </p>
-        </div>
+  const { data: companyData } = await supabase
+    .from("companies")
+    .select("name, slug, brand_color, logo_url")
+    .eq("slug", subdomain)
+    .single();
 
-        {/* Form */}
-        <form
-          onSubmit={handleSubmit}
-          className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-6 space-y-4 shadow-[var(--shadow-level-1)]"
-          noValidate
-        >
-          {/* Email */}
-          <div className="space-y-1.5">
-            <label
-              htmlFor="email"
-              className="text-sm font-medium text-[var(--color-text-primary)]"
-            >
-              Email
-            </label>
-            <input
-              id="email"
-              type="email"
-              autoComplete="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full h-10 px-3 rounded-md bg-[var(--color-bg)] border border-[var(--color-border)] text-sm text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand)] focus:border-transparent transition-shadow"
-              placeholder="you@company.com"
-            />
-          </div>
+  const company: TenantLoginBranding = {
+    name: companyData?.name || subdomain,
+    slug: companyData?.slug || subdomain,
+    brandColor: companyData?.brand_color ?? "#6366f1",
+    logoUrl: companyData?.logo_url ?? null,
+  };
 
-          {/* Password */}
-          <div className="space-y-1.5">
-            <label
-              htmlFor="password"
-              className="text-sm font-medium text-[var(--color-text-primary)]"
-            >
-              Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              autoComplete="current-password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full h-10 px-3 rounded-md bg-[var(--color-bg)] border border-[var(--color-border)] text-sm text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand)] focus:border-transparent transition-shadow"
-              placeholder="••••••••"
-            />
-          </div>
-
-          {/* Error */}
-          {error && (
-            <p
-              role="alert"
-              className="text-xs text-[var(--color-danger)] bg-[var(--color-danger-subtle)] px-3 py-2 rounded-md"
-            >
-              {error}
-            </p>
-          )}
-
-          {/* Submit */}
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full h-10 rounded-md bg-[var(--color-brand)] text-white text-sm font-medium hover:bg-[var(--color-brand-hover)] disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-150"
-          >
-            {loading ? "Signing in…" : "Sign in"}
-          </button>
-        </form>
-      </div>
-    </div>
-  );
+  return <LoginClient company={company} />;
 }

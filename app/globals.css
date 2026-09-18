@@ -52,10 +52,27 @@
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   Shadcn/ui Variables — wired to our dark design tokens
+   Shadcn/ui & Theme Variables
    ───────────────────────────────────────────────────────────────────────────── */
 
-:root {
+:root,
+html.dark {
+  color-scheme: dark;
+  --color-bg:             #0f1117;
+  --color-surface:        #1a1d27;
+  --color-surface-hover:  #222535;
+  --color-surface-raised: #222535;
+  --color-border:         #2e3147;
+  --color-border-subtle:  #1e2136;
+
+  --color-text-primary:   #e8eaf6;
+  --color-text-secondary: #9095b0;
+  --color-text-muted:     #5a5f78;
+
+  --color-brand:          #6366f1;
+  --color-brand-hover:    #4f52d9;
+  --color-brand-subtle:   #1e1f4a;
+
   --background:         var(--color-bg);
   --foreground:         var(--color-text-primary);
   --card:               var(--color-surface);
@@ -85,6 +102,44 @@
   --sidebar-accent-foreground:  var(--color-brand);
   --sidebar-border:             var(--color-border);
   --sidebar-ring:               var(--color-brand);
+}
+
+html.light {
+  color-scheme: light;
+  --color-bg:             #f8fafc;
+  --color-surface:        #ffffff;
+  --color-surface-hover:  #f1f5f9;
+  --color-surface-raised: #f8fafc;
+  --color-border:         #e2e8f0;
+  --color-border-subtle:  #edf2f7;
+
+  --color-text-primary:   #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted:     #94a3b8;
+
+  --color-brand-subtle:   #e0e7ff;
+
+  --background:         var(--color-bg);
+  --foreground:         var(--color-text-primary);
+  --card:               var(--color-surface);
+  --card-foreground:    var(--color-text-primary);
+  --popover:            var(--color-surface);
+  --popover-foreground: var(--color-text-primary);
+  --secondary:          var(--color-surface-hover);
+  --secondary-foreground: var(--color-text-secondary);
+  --muted:              var(--color-surface-hover);
+  --muted-foreground:   var(--color-text-muted);
+  --accent:             var(--color-brand-subtle);
+  --accent-foreground:  var(--color-brand);
+  --border:             var(--color-border);
+  --input:              var(--color-border);
+  --ring:               var(--color-brand);
+
+  /* sidebar */
+  --sidebar:                    var(--color-surface);
+  --sidebar-foreground:         var(--color-text-primary);
+  --sidebar-accent:             var(--color-brand-subtle);
+  --sidebar-border:             var(--color-border);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────

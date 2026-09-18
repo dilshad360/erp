@@ -15,6 +15,7 @@ import {
 import { useTenant } from "./TenantProvider";
 import { createClient } from "@/lib/supabase/client";
 import Image from "next/image";
+import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
   { href: "/dashboard",  label: "Dashboard",  icon: LayoutDashboard },
@@ -127,14 +128,17 @@ export default function Sidebar(): React.JSX.Element {
             </div>
           </div>
 
-          <button
-            onClick={handleSignOut}
-            className="p-1.5 rounded-md text-[var(--color-text-muted)] hover:text-red-400 hover:bg-red-500/10 transition-colors shrink-0 cursor-pointer"
-            title="Sign out"
-            aria-label="Sign out"
-          >
-            <LogOut size={16} />
-          </button>
+          <div className="flex items-center gap-1 shrink-0">
+            <ThemeToggle />
+            <button
+              onClick={handleSignOut}
+              className="p-1.5 rounded-md text-[var(--color-text-muted)] hover:text-red-400 hover:bg-red-500/10 transition-colors shrink-0 cursor-pointer"
+              title="Sign out"
+              aria-label="Sign out"
+            >
+              <LogOut size={16} />
+            </button>
+          </div>
         </div>
       </div>
     </div>

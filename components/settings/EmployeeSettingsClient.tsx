@@ -4,6 +4,7 @@ import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { createClient } from "@/lib/supabase/client";
 import LoadingButton from "@/components/shared/LoadingButton";
+import ThemeToggle from "@/components/shared/ThemeToggle";
 import {
   User,
   ShieldCheck,
@@ -23,6 +24,7 @@ import {
   Bell,
   Sparkles,
   Info,
+  SunMoon,
 } from "lucide-react";
 
 export type EmployeeProfileData = {
@@ -583,6 +585,20 @@ export default function EmployeeSettingsClient({
             )}
 
             <div className="divide-y divide-[var(--color-border)]">
+              {/* Theme Mode toggle */}
+              <div className="py-3.5 flex items-center justify-between">
+                <div>
+                  <div className="text-xs font-semibold text-[var(--color-text-primary)] flex items-center gap-1.5">
+                    <SunMoon size={14} className="text-[var(--color-brand)]" />
+                    <span>Interface Theme</span>
+                  </div>
+                  <p className="text-[11px] text-[var(--color-text-muted)] mt-0.5">
+                    Toggle between Dark and Light mode themes.
+                  </p>
+                </div>
+                <ThemeToggle showLabel />
+              </div>
+
               {/* Motion toggle */}
               <div className="py-3.5 flex items-center justify-between">
                 <div>
