@@ -125,13 +125,27 @@ Do not touch files that belong to another agent's module. If you need something 
 
 ---
 
+---
+
+## AI-Assisted Development Workflow
+
+When implementing new features or resolving bugs, all agents must adhere to the **Story-Driven & Tracking-First** protocol documented in [`AI_WORKFLOW.md`](file:///c:/Users/dilsh/OneDrive/Desktop/ERP/AI_WORKFLOW.md):
+
+1. **New Features**: Create a formal User Story (`STORY-xxx`) using [`templates/story-template.md`](file:///c:/Users/dilsh/OneDrive/Desktop/ERP/templates/story-template.md), log it in [`TRACKER.md`](file:///c:/Users/dilsh/OneDrive/Desktop/ERP/TRACKER.md), verify multi-tenancy & RLS, implement subtasks, run quality gates, and sync tracker.
+2. **Bug Fixes**: Create a Bug Ticket (`BUG-xxx`) using [`templates/bug-template.md`](file:///c:/Users/dilsh/OneDrive/Desktop/ERP/templates/bug-template.md), perform Root Cause Analysis (RCA), audit tenant isolation risk, patch cleanly, verify against regression, and sync tracker.
+
+---
+
 ## Project Reference Files
 
 | File | Purpose |
 |---|---|
+| `AI_WORKFLOW.md` | Story-driven & tracking-first AI development workflow guide |
+| `templates/story-template.md` | Standard User Story template for new features |
+| `templates/bug-template.md` | Standard Bug Report & RCA template for defects |
+| `TRACKER.md` | Master task, story, and bug tracker — update as work progresses |
 | `erp-saas-development-plan.md` | Full project spec and architecture overview |
 | `design.md` | Design system, color tokens, component patterns |
 | `frontend.md` | Frontend architecture, page map, component inventory |
 | `backend.md` | Database schema, RLS policies, API routes, Supabase config |
-| `TRACKER.md` | Master task tracker — update this as tasks complete |
 | `phases/phase-*.md` | Per-phase detailed task breakdowns |

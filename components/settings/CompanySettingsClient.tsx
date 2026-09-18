@@ -208,6 +208,20 @@ export default function CompanySettingsClient({
     }
   }
 
+  if (!isAdmin) {
+    return (
+      <div className="p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] text-center space-y-3">
+        <AlertCircle size={32} className="mx-auto text-amber-400" />
+        <h2 className="text-sm font-semibold text-[var(--color-text-primary)]">
+          Administrator Access Required
+        </h2>
+        <p className="text-xs text-[var(--color-text-muted)] max-w-md mx-auto">
+          Company workspace settings, branding, geofence, and Kanban configuration can only be managed by workspace administrators.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
       {/* Tabs Navigation */}

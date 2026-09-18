@@ -32,6 +32,27 @@
 
 ---
 
+## AI-Assisted Story & Bug Tracking
+
+> Refer to [`AI_WORKFLOW.md`](file:///c:/Users/dilsh/OneDrive/Desktop/ERP/AI_WORKFLOW.md) for full execution protocol.  
+> Story Template: [`templates/story-template.md`](file:///c:/Users/dilsh/OneDrive/Desktop/ERP/templates/story-template.md) · Bug Template: [`templates/bug-template.md`](file:///c:/Users/dilsh/OneDrive/Desktop/ERP/templates/bug-template.md)
+
+### Active Stories & Features (`STORY-xxx` / `FEAT-xxx`)
+
+| Story ID | Title | Module | Priority | Status | Branch | Story File |
+|---|---|---|---|---|---|---|
+| `STORY-001` | Offline Check-In & Sync Queue | Attendance / PWA | P1 | ⬜ Backlog | `feat/attendance-story-001` | [`phases/stories/STORY-001.md`](phases/stories/) |
+| `STORY-002` | Project Member Allocation & Capacity | Projects | P2 | ⬜ Backlog | `feat/projects-story-002` | [`phases/stories/STORY-002.md`](phases/stories/) |
+| `STORY-003` | Dark Mode & Company Logo on Login Screen | Foundation / Auth | P2 | ⬜ Backlog | `feat/foundation-story-003` | [`phases/stories/STORY-003-login-dark-mode-company-branding.md`](phases/stories/STORY-003-login-dark-mode-company-branding.md) |
+
+### Bug & Defect Registry (`BUG-xxx`)
+
+| Bug ID | Title | Module | Severity | Status | Branch | Bug File |
+|---|---|---|---|---|---|---|
+| `BUG-001` | Employee settings role isolation & dedicated employee view | Settings / Role Access | P2 | ✅ Resolved | `fix/settings-bug-001` | [`phases/bugs/BUG-001-employee-settings-role-isolation.md`](phases/bugs/BUG-001-employee-settings-role-isolation.md) |
+
+---
+
 ## Phase 1 — Foundation
 
 > Detailed tasks: [`phases/phase-1-foundation.md`](phases/phase-1-foundation.md)
@@ -249,4 +270,5 @@ Use this section to track important decisions made during development so future 
 | 2026-09-16 | Client soft deletion & GSTIN format validation | Deactivating sets `status = 'inactive'` preserving audit trail; Indian 15-character GSTIN regex validated optionally |
 | 2026-09-16 | Project soft delete sets status = 'cancelled' | Retains historical project data and references from tasks; prevents orphan tasks |
 | 2026-09-16 | Indian Numbering System formatting (formatINR) | Explicit currency formatting with lakhs and crores (`₹15,00,000`) per Indian business standards |
+| 2026-09-18 | Settings Role Isolation (`BUG-001`) | Bifurcated `/settings`: Employees get personal profile, avatar, security, preferences & read-only workplace info; Admins manage workspace details, branding, Kanban statuses & danger zone. |
 
