@@ -32,7 +32,6 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
   const [preloaderMessage, setPreloaderMessage] = useState("Verifying session…");
 
   const brandColor = company.brandColor || "#6366f1";
-  const initial = company.name ? company.name.charAt(0).toUpperCase() : "W";
 
   // Check for existing active session on mount
   useEffect(() => {
@@ -135,15 +134,14 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
               />
             </div>
           ) : (
-            <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg border border-[var(--color-border)] transition-transform duration-200"
-              style={{
-                backgroundColor: `${brandColor}18`,
-                color: brandColor,
-                borderColor: `${brandColor}40`,
-              }}
-            >
-              {initial}
+            <div className="relative w-16 h-16 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)] p-2 shadow-lg flex items-center justify-center overflow-hidden">
+              <Image
+                src="/logo.png"
+                alt="ERP Logo"
+                fill
+                className="object-contain p-2"
+                priority
+              />
             </div>
           )}
 

@@ -54,9 +54,13 @@ export default function Sidebar(): React.JSX.Element {
             className="rounded-lg object-contain"
           />
         ) : (
-          <div className="w-8 h-8 rounded-lg bg-[var(--color-brand-subtle)] border border-[var(--color-brand)]/20 flex items-center justify-center text-[var(--color-brand)] font-bold text-sm shrink-0">
-            {companyName.charAt(0).toUpperCase()}
-          </div>
+          <Image
+            src="/logo.png"
+            alt="ERP Logo"
+            width={32}
+            height={32}
+            className="rounded-lg object-contain p-0.5 bg-[var(--color-surface-raised)] border border-[var(--color-border)]"
+          />
         )}
         <div className="min-w-0 flex-1">
           <span className="font-semibold text-sm text-[var(--color-text-primary)] block truncate">

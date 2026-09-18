@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Download, Share, X, Smartphone } from "lucide-react";
+import Image from "next/image";
+import { Download, X } from "lucide-react";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -84,8 +85,13 @@ export default function InstallPrompt(): React.JSX.Element | null {
       <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/95 backdrop-blur-md p-4 shadow-xl shadow-black/20 flex flex-col gap-3">
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-[var(--color-brand)]/10 border border-[var(--color-brand)]/20 flex items-center justify-center shrink-0 text-[var(--color-brand)]">
-              {isIOS ? <Share size={20} /> : <Smartphone size={20} />}
+            <div className="relative h-11 w-11 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] p-1 flex items-center justify-center shrink-0 overflow-hidden shadow-sm">
+              <Image
+                src="/logo.png"
+                alt="ERP Logo"
+                fill
+                className="object-contain p-1"
+              />
             </div>
             <div>
               <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">

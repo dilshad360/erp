@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { z } from "zod";
 
 // ── Validation schemas ─────────────────────────────────────────────────────
@@ -150,17 +151,29 @@ export default function SignupPage(): React.JSX.Element {
   return (
     <div className="min-h-screen flex items-center justify-center px-4 bg-[var(--color-bg)]">
       <div className="w-full max-w-sm space-y-6">
-        {/* Progress */}
-        <div className="text-center space-y-1">
-          <p className="text-xs text-[var(--color-text-muted)]">Step {step} of 2</p>
-          <h1 className="text-2xl font-bold text-[var(--color-text-primary)]">
-            {step === 1 ? "Create your workspace" : "Your admin account"}
-          </h1>
-          <p className="text-sm text-[var(--color-text-secondary)]">
-            {step === 1
-              ? "Your company gets its own subdomain"
-              : "You'll use this to sign in"}
-          </p>
+        {/* App Logo & Header */}
+        <div className="text-center space-y-3 flex flex-col items-center">
+          <div className="relative w-14 h-14 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)] p-2 shadow-lg flex items-center justify-center overflow-hidden">
+            <Image
+              src="/logo.png"
+              alt="ERP Logo"
+              fill
+              className="object-contain p-2"
+              priority
+            />
+          </div>
+
+          <div className="space-y-1">
+            <p className="text-xs text-[var(--color-text-muted)] font-mono">Step {step} of 2</p>
+            <h1 className="text-2xl font-bold text-[var(--color-text-primary)]">
+              {step === 1 ? "Create your workspace" : "Your admin account"}
+            </h1>
+            <p className="text-sm text-[var(--color-text-secondary)]">
+              {step === 1
+                ? "Your company gets its own dedicated subdomain"
+                : "You'll use this to sign in to your workspace"}
+            </p>
+          </div>
         </div>
 
         <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-6 shadow-[var(--shadow-level-1)]">

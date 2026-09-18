@@ -8,6 +8,7 @@ export type TenantPreloaderProps = {
   companyName?: string | null;
   brandColor?: string | null;
   logoUrl?: string | null;
+  showAppLogoFallback?: boolean;
   message?: string;
   fullScreen?: boolean;
   className?: string;
@@ -17,13 +18,16 @@ export default function TenantPreloader({
   companyName = null,
   brandColor = "#6366f1",
   logoUrl = null,
+  showAppLogoFallback = true,
   message = "Loading…",
   fullScreen = true,
   className = "",
 }: TenantPreloaderProps): React.JSX.Element {
   const [logoError, setLogoError] = useState(false);
   const activeBrandColor = brandColor || "#6366f1";
-  const hasCompanyLogo = Boolean(logoUrl && !logoError);
+
+  // Determine logo source: custom tenant logo if available, or app logo fallback
+  const resolvedLogoUrl = logoUrl && !logoError ? logoUrl : (showAppLogoFallback ? "/logo.png" : null);
 
   const content = (
     <div className="relative flex flex-col items-center justify-center p-6 text-center select-none animate-in fade-in duration-300">
@@ -33,8 +37,8 @@ export default function TenantPreloader({
         style={{ backgroundColor: activeBrandColor }}
       />
 
-      {/* If Company Logo is available, display it with brand aura */}
-      {hasCompanyLogo ? (
+      {/* If Logo is available, display it with brand halo */}
+      {resolvedLogoUrl ? (
         <div className="relative mb-5">
           {/* Soft pulsing halo */}
           <div
@@ -43,18 +47,17 @@ export default function TenantPreloader({
           />
           <div className="relative w-16 h-16 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)] p-2.5 shadow-2xl flex items-center justify-center overflow-hidden">
             <Image
-              src={logoUrl!}
-              alt={companyName || "Company Logo"}
+              src={resolvedLogoUrl}
+              alt={companyName || "ERP Logo"}
               fill
               className="object-contain p-2"
               onError={() => setLogoError(true)}
-              unoptimized
               priority
             />
           </div>
         </div>
       ) : (
-        /* Common Preloader (no logo): Sleek minimalist spinner ring */
+        /* Sleek minimalist spinner ring for compact embed */
         <div className="relative mb-5 flex items-center justify-center">
           <div
             className="w-12 h-12 rounded-full flex items-center justify-center relative"
@@ -71,7 +74,7 @@ export default function TenantPreloader({
         </div>
       )}
 
-      {/* Title (if companyName provided) & Status Message */}
+      {/* Title & Status Message */}
       <div className="space-y-1.5 mb-5 max-w-xs">
         {companyName && (
           <h2 className="text-sm sm:text-base font-semibold text-[var(--color-text-primary)] tracking-tight">

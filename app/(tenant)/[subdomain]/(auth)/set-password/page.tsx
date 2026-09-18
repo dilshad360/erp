@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
-import { KeyRound, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 
 export default function SetPasswordPage(): React.JSX.Element {
   const router = useRouter();
@@ -189,16 +190,24 @@ export default function SetPasswordPage(): React.JSX.Element {
     <div className="min-h-screen flex items-center justify-center px-4 bg-[var(--color-bg)]">
       <div className="w-full max-w-sm space-y-6">
         {/* Header */}
-        <div className="text-center space-y-1">
-          <div className="mx-auto w-12 h-12 rounded-full bg-[var(--color-brand-subtle)] text-[var(--color-brand)] flex items-center justify-center mb-2">
-            <KeyRound size={24} />
+        <div className="text-center space-y-3 flex flex-col items-center">
+          <div className="relative w-14 h-14 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)] p-2 shadow-lg flex items-center justify-center overflow-hidden">
+            <Image
+              src="/logo.png"
+              alt="ERP Logo"
+              fill
+              className="object-contain p-2"
+              priority
+            />
           </div>
-          <h1 className="text-2xl font-bold text-[var(--color-text-primary)]">
-            Set your password
-          </h1>
-          <p className="text-sm text-[var(--color-text-secondary)]">
-            Create a secure password to activate your account
-          </p>
+          <div className="space-y-1">
+            <h1 className="text-2xl font-bold text-[var(--color-text-primary)]">
+              Set your password
+            </h1>
+            <p className="text-sm text-[var(--color-text-secondary)]">
+              Create a secure password to activate your account
+            </p>
+          </div>
         </div>
 
         {/* Missing Session Banner */}

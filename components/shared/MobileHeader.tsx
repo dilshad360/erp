@@ -7,10 +7,9 @@ import { useTenant } from "./TenantProvider";
 import ThemeToggle from "./ThemeToggle";
 
 export default function MobileHeader(): React.JSX.Element {
-  const { companyName, logoUrl, brandColor, userName, userAvatarUrl } = useTenant();
+  const { companyName, logoUrl, userName, userAvatarUrl } = useTenant();
   const [logoError, setLogoError] = useState(false);
 
-  const initial = companyName ? companyName.charAt(0).toUpperCase() : "C";
   const userInitial = userName ? userName.charAt(0).toUpperCase() : "U";
 
   return (
@@ -29,15 +28,13 @@ export default function MobileHeader(): React.JSX.Element {
             />
           </div>
         ) : (
-          <div
-            className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-xs shrink-0 border border-[var(--color-border)]"
-            style={{
-              backgroundColor: `${brandColor || "#6366f1"}18`,
-              color: brandColor || "#6366f1",
-              borderColor: `${brandColor || "#6366f1"}40`,
-            }}
-          >
-            {initial}
+          <div className="relative w-8 h-8 rounded-lg overflow-hidden shrink-0 border border-[var(--color-border)] bg-[var(--color-surface-hover)]">
+            <Image
+              src="/logo.png"
+              alt="ERP Logo"
+              fill
+              className="object-contain p-0.5"
+            />
           </div>
         )}
         <span className="text-sm font-bold text-[var(--color-text-primary)] truncate">
