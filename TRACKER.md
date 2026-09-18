@@ -44,6 +44,7 @@
 | `STORY-001` | Offline Check-In & Sync Queue | Attendance / PWA | P1 | ⬜ Backlog | `feat/attendance-story-001` | [`phases/stories/STORY-001.md`](phases/stories/) |
 | `STORY-002` | Project Member Allocation & Capacity | Projects | P2 | ⬜ Backlog | `feat/projects-story-002` | [`phases/stories/STORY-002.md`](phases/stories/) |
 | `STORY-003` | Dark Mode & Company Logo on Login Screen | Foundation / Auth | P2 | ✅ Done | `feat/foundation-story-003` | [`phases/stories/STORY-003-login-dark-mode-company-branding.md`](phases/stories/STORY-003-login-dark-mode-company-branding.md) |
+| `STORY-004` | Session Auto-Login & Tenant Branded Preloader | Foundation / Auth & UX | P1 | ✅ Done | `feat/foundation-story-004` | [`phases/stories/STORY-004-autologin-preloader.md`](phases/stories/STORY-004-autologin-preloader.md) |
 
 ### Bug & Defect Registry (`BUG-xxx`)
 
@@ -51,6 +52,7 @@
 |---|---|---|---|---|---|---|
 | `BUG-001` | Employee settings role isolation & dedicated employee view | Settings / Role Access | P2 | ✅ Resolved | `fix/settings-bug-001` | [`phases/bugs/BUG-001-employee-settings-role-isolation.md`](phases/bugs/BUG-001-employee-settings-role-isolation.md) |
 | `BUG-002` | Mobile company logo header & BottomNav More drawer | Mobile AppShell / Navigation | P2 | ✅ Resolved | `fix/mobile-nav-bug-002` | [`phases/bugs/BUG-002-mobile-bottomnav-more-and-logo-missing.md`](phases/bugs/BUG-002-mobile-bottomnav-more-and-logo-missing.md) |
+| `BUG-003` | Mobile BottomNav tactile press feedback & transition indicator | Mobile AppShell / Navigation | P2 | ✅ Resolved | `fix/mobile-nav-bug-003` | [`phases/bugs/BUG-003-mobile-bottom-nav-press-feedback.md`](phases/bugs/BUG-003-mobile-bottom-nav-press-feedback.md) |
 
 ---
 
@@ -274,4 +276,6 @@ Use this section to track important decisions made during development so future 
 | 2026-09-18 | Settings Role Isolation (`BUG-001`) | Bifurcated `/settings`: Employees get personal profile, avatar, security, preferences & read-only workplace info; Admins manage workspace details, branding, Kanban statuses & danger zone. |
 | 2026-09-18 | Login Branding & Dark Mode (`STORY-003`) | Server-rendered login screen queries tenant branding by slug; displays uploaded company logo (or brand initial fallback), dynamic brand color accents, and full dark-mode surface polish. |
 | 2026-09-18 | Mobile Header & BottomNav Sheet (`BUG-002`) | Added sticky `MobileHeader` with company logo, name, avatar, and theme toggle; enhanced `BottomNav` More tab to open a slide-up drawer for accessing Employees, Clients, Settings, Theme Switcher, and Sign Out. |
+| 2026-09-18 | Session Auto-Login & Preloader (`STORY-004`) | Implemented instant server-side middleware auto-redirect to `/dashboard` for active sessions, client-side session verification in `LoginClient`, reusable `TenantPreloader` with animated glowing brand accent, and Next.js streaming `loading.tsx` boundaries. |
+| 2026-09-18 | Mobile BottomNav Active Press & Transition Bar (`BUG-003`) | Added tactile active scale-down press states, immediate optimistic pending tab highlight with pulsing dot, and global top-screen `RouteProgressBar` for instant visual page loading feedback on mobile. |
 

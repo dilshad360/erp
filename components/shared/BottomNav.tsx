@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
@@ -32,10 +32,17 @@ const primaryTabs = [
 export default function BottomNav(): React.JSX.Element {
   const pathname = usePathname();
   const router = useRouter();
-  const { userName, userRole, userAvatarUrl } = useTenant();
+  const { userName, userRole, userAvatarUrl, brandColor } = useTenant();
   const [moreOpen, setMoreOpen] = useState(false);
+  const [pendingHref, setPendingHref] = useState<string | null>(null);
 
   const userInitial = userName ? userName.charAt(0).toUpperCase() : "U";
+  const activeBrandColor = brandColor || "#6366f1";
+
+  // Reset pending loading state when pathname changes
+  useEffect(() => {
+    setPendingHref(null);
+  }, [pathname]);
 
   // Check if current route belongs to "More" categories
   const isMoreActive =
@@ -76,29 +83,72 @@ export default function BottomNav(): React.JSX.Element {
     <>
       {/* Bottom Navigation Bar */}
       <div className="bg-[var(--color-surface)] border-t border-[var(--color-border)] safe-area-pb select-none transition-colors duration-200">
-        <div className="flex items-center justify-around">
+        <div className="grid grid-cols-5 items-center w-full">
           {/* Primary Tabs */}
           {primaryTabs.map(({ href, label, icon: Icon }) => {
             const isActive = pathname === href || pathname.startsWith(`${href}/`);
+            const isPending = pendingHref === href;
+            const isHighlighted = isActive || isPending;
+
             return (
               <Link
                 key={href}
                 href={href}
-                onClick={() => setMoreOpen(false)}
+                onClick={() => {
+                  setMoreOpen(false);
+                  if (pathname !== href) {
+                    setPendingHref(href);
+                  }
+                }}
                 className={`
-                  flex flex-col items-center justify-center gap-1 py-2.5 px-3
-                  min-w-[48px] min-h-[56px] transition-colors duration-150
+                  relative flex flex-col items-center justify-center gap-1 py-2 px-1 my-0.5
+                  w-full min-h-[52px] rounded-xl text-center
+                  touch-manipulation cursor-pointer
+                  transform transition-all duration-100 ease-out
+                  active:scale-85 active:bg-[var(--color-surface-hover)] active:opacity-80
                   ${
-                    isActive
-                      ? "text-[var(--color-brand)]"
+                    isHighlighted
+                      ? "text-[var(--color-brand)] font-semibold"
                       : "text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)]"
                   }
                 `}
                 aria-current={isActive ? "page" : undefined}
                 aria-label={label}
               >
-                <Icon size={20} strokeWidth={isActive ? 2.5 : 2} />
-                <span className="text-[10px] font-medium leading-none">{label}</span>
+                {/* Active/Pending background highlight bubble */}
+                {isHighlighted && (
+                  <div
+                    className="absolute inset-1 rounded-xl opacity-15 pointer-events-none transition-all duration-200"
+                    style={{ backgroundColor: activeBrandColor }}
+                  />
+                )}
+
+                <div className="relative flex items-center justify-center">
+                  <Icon
+                    size={20}
+                    strokeWidth={isHighlighted ? 2.5 : 2}
+                    className={`transition-transform duration-150 ${isPending ? "animate-pulse scale-110" : ""}`}
+                  />
+                  {/* Micro pending dot */}
+                  {isPending && (
+                    <span
+                      className="absolute -top-0.5 -right-1 w-2 h-2 rounded-full animate-ping"
+                      style={{ backgroundColor: activeBrandColor }}
+                    />
+                  )}
+                </div>
+
+                <span className="text-[10px] tracking-tight leading-none truncate max-w-full px-0.5">
+                  {label}
+                </span>
+
+                {/* Subtle active indicator underline pill */}
+                {isActive && !isPending && (
+                  <div
+                    className="w-4 h-0.5 rounded-full mt-0.5 transition-all duration-200"
+                    style={{ backgroundColor: activeBrandColor }}
+                  />
+                )}
               </Link>
             );
           })}
@@ -108,8 +158,11 @@ export default function BottomNav(): React.JSX.Element {
             type="button"
             onClick={() => setMoreOpen(!moreOpen)}
             className={`
-              flex flex-col items-center justify-center gap-1 py-2.5 px-3
-              min-w-[48px] min-h-[56px] transition-colors duration-150 cursor-pointer
+              relative flex flex-col items-center justify-center gap-1 py-2 px-1 my-0.5
+              w-full min-h-[52px] rounded-xl text-center
+              touch-manipulation cursor-pointer
+              transform transition-all duration-100 ease-out
+              active:scale-85 active:bg-[var(--color-surface-hover)] active:opacity-80
               ${
                 moreOpen || isMoreActive
                   ? "text-[var(--color-brand)] font-semibold"
@@ -119,8 +172,22 @@ export default function BottomNav(): React.JSX.Element {
             aria-label="More navigation options"
             aria-expanded={moreOpen}
           >
-            <MoreHorizontal size={20} strokeWidth={moreOpen || isMoreActive ? 2.5 : 2} />
-            <span className="text-[10px] font-medium leading-none">More</span>
+            {(moreOpen || isMoreActive) && (
+              <div
+                className="absolute inset-1 rounded-xl opacity-15 pointer-events-none transition-all duration-200"
+                style={{ backgroundColor: activeBrandColor }}
+              />
+            )}
+            <div className="relative flex items-center justify-center">
+              <MoreHorizontal size={20} strokeWidth={moreOpen || isMoreActive ? 2.5 : 2} />
+            </div>
+            <span className="text-[10px] tracking-tight leading-none">More</span>
+            {isMoreActive && !moreOpen && (
+              <div
+                className="w-4 h-0.5 rounded-full mt-0.5 transition-all duration-200"
+                style={{ backgroundColor: activeBrandColor }}
+              />
+            )}
           </button>
         </div>
       </div>
@@ -154,7 +221,14 @@ export default function BottomNav(): React.JSX.Element {
                     />
                   </div>
                 ) : (
-                  <div className="w-10 h-10 rounded-full bg-[var(--color-brand-subtle)] border border-[var(--color-brand)]/30 text-[var(--color-brand)] flex items-center justify-center font-bold text-sm shrink-0">
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shrink-0 border"
+                    style={{
+                      backgroundColor: `${activeBrandColor}18`,
+                      color: activeBrandColor,
+                      borderColor: `${activeBrandColor}40`,
+                    }}
+                  >
                     {userInitial}
                   </div>
                 )}
@@ -162,7 +236,10 @@ export default function BottomNav(): React.JSX.Element {
                   <p className="text-sm font-semibold text-[var(--color-text-primary)] truncate">
                     {userName}
                   </p>
-                  <span className="inline-block text-[10px] uppercase font-mono tracking-wider font-semibold text-[var(--color-brand)]">
+                  <span
+                    className="inline-block text-[10px] uppercase font-mono tracking-wider font-semibold"
+                    style={{ color: activeBrandColor }}
+                  >
                     {userRole}
                   </span>
                 </div>
@@ -171,7 +248,7 @@ export default function BottomNav(): React.JSX.Element {
               <button
                 type="button"
                 onClick={() => setMoreOpen(false)}
-                className="p-1.5 rounded-lg text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface-hover)] transition-colors cursor-pointer"
+                className="p-1.5 rounded-xl text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface-hover)] active:scale-90 transition-all cursor-pointer"
                 aria-label="Close menu"
               >
                 <X size={20} />
@@ -182,32 +259,58 @@ export default function BottomNav(): React.JSX.Element {
             <div className="space-y-1.5">
               {moreLinks.map(({ href, label, description, icon: Icon }) => {
                 const isActive = pathname === href || pathname.startsWith(`${href}/`);
+                const isPending = pendingHref === href;
+                const isHighlighted = isActive || isPending;
+
                 return (
                   <Link
                     key={href}
                     href={href}
-                    onClick={() => setMoreOpen(false)}
+                    onClick={() => {
+                      setMoreOpen(false);
+                      if (pathname !== href) {
+                        setPendingHref(href);
+                      }
+                    }}
                     className={`
-                      flex items-center justify-between p-3 rounded-xl border transition-all duration-150
+                      flex items-center justify-between p-3 rounded-xl border
+                      touch-manipulation transform transition-all duration-100 ease-out
+                      active:scale-[0.97] active:opacity-85
                       ${
-                        isActive
-                          ? "bg-[var(--color-brand-subtle)] border-[var(--color-brand)]/30 text-[var(--color-brand)]"
+                        isHighlighted
+                          ? "border-[var(--color-brand)]/40 text-[var(--color-brand)]"
                           : "bg-[var(--color-bg)] border-[var(--color-border)] text-[var(--color-text-primary)] hover:border-[var(--color-brand)]/40 hover:bg-[var(--color-surface-hover)]"
                       }
                     `}
+                    style={
+                      isHighlighted
+                        ? {
+                            backgroundColor: `${activeBrandColor}12`,
+                            borderColor: `${activeBrandColor}40`,
+                            color: activeBrandColor,
+                          }
+                        : {}
+                    }
                   >
                     <div className="flex items-center gap-3">
                       <div
-                        className={`p-2 rounded-lg ${
-                          isActive
-                            ? "bg-[var(--color-brand)] text-white"
-                            : "bg-[var(--color-surface)] text-[var(--color-text-secondary)]"
-                        }`}
+                        className="p-2 rounded-lg text-white transition-transform duration-150"
+                        style={{
+                          backgroundColor: isHighlighted ? activeBrandColor : "var(--color-surface-raised)",
+                          color: isHighlighted ? "#ffffff" : "var(--color-text-secondary)",
+                        }}
                       >
-                        <Icon size={18} />
+                        <Icon size={18} className={isPending ? "animate-pulse" : ""} />
                       </div>
                       <div>
-                        <div className="text-xs font-semibold">{label}</div>
+                        <div className="text-xs font-semibold flex items-center gap-1.5">
+                          <span>{label}</span>
+                          {isPending && (
+                            <span className="text-[10px] font-normal opacity-75 animate-pulse">
+                              (loading…)
+                            </span>
+                          )}
+                        </div>
                         <div className="text-[11px] text-[var(--color-text-muted)]">
                           {description}
                         </div>
@@ -215,7 +318,7 @@ export default function BottomNav(): React.JSX.Element {
                     </div>
                     <ChevronRight
                       size={16}
-                      className={isActive ? "text-[var(--color-brand)]" : "text-[var(--color-text-muted)]"}
+                      className={isHighlighted ? "text-[var(--color-brand)]" : "text-[var(--color-text-muted)]"}
                     />
                   </Link>
                 );
@@ -232,7 +335,7 @@ export default function BottomNav(): React.JSX.Element {
               <button
                 type="button"
                 onClick={handleSignOut}
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-red-400 hover:text-red-300 bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-red-400 hover:text-red-300 bg-red-500/10 hover:bg-red-500/20 active:scale-95 border border-red-500/20 transition-all cursor-pointer"
               >
                 <LogOut size={14} />
                 <span>Sign Out</span>

@@ -218,3 +218,22 @@ body {
 .safe-area-pt {
   padding-top: max(0.5rem, env(safe-area-inset-top));
 }
+
+/* ── Indeterminate Loading Bar ── */
+@keyframes indeterminate {
+  0% {
+    left: -40%;
+    width: 40%;
+  }
+  50% {
+    left: 20%;
+    width: 60%;
+  }
+  100% {
+    left: 100%;
+    width: 40%;
+  }
+}
+.animate-indeterminate {
+  animation: indeterminate 1.4s ease-in-out infinite;
+}

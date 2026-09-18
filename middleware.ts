@@ -78,6 +78,22 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
   const isSetPasswordPage = url.pathname === "/set-password";
   const isApiRoute = url.pathname.startsWith("/api");
 
+  // If user is already authenticated and visits /login or root /, auto-redirect to dashboard
+  if (user && (isLoginPage || url.pathname === "/")) {
+    const dashboardUrl = new URL(request.url);
+    dashboardUrl.pathname = "/dashboard";
+    const response = NextResponse.redirect(dashboardUrl);
+    sessionResponse.cookies.getAll().forEach((cookie) => {
+      const isProdDomain = hostWithoutPort.endsWith(appDomain);
+      response.cookies.set(cookie.name, cookie.value, {
+        ...(isProdDomain ? { domain: `.${appDomain}` } : {}),
+        sameSite: "lax",
+        secure: process.env.NODE_ENV === "production",
+      });
+    });
+    return response;
+  }
+
   if (!user && !isLoginPage && !isSetPasswordPage && !isApiRoute) {
     // Not logged in — redirect to this tenant's login page
     const loginUrl = new URL(request.url);

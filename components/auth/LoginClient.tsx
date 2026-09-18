@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import LoadingButton from "@/components/shared/LoadingButton";
 import ThemeToggle from "@/components/shared/ThemeToggle";
+import TenantPreloader from "@/components/shared/TenantPreloader";
 import { Mail, Lock, Eye, EyeOff, AlertCircle, ShieldCheck } from "lucide-react";
 
 export type TenantLoginBranding = {
@@ -27,6 +28,43 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [logoError, setLogoError] = useState(false);
+  const [isCheckingSession, setIsCheckingSession] = useState(true);
+  const [preloaderMessage, setPreloaderMessage] = useState("Verifying session…");
+
+  const brandColor = company.brandColor || "#6366f1";
+  const initial = company.name ? company.name.charAt(0).toUpperCase() : "W";
+
+  // Check for existing active session on mount
+  useEffect(() => {
+    let isMounted = true;
+
+    async function checkExistingSession(): Promise<void> {
+      try {
+        const supabase = createClient();
+        const {
+          data: { session },
+        } = await supabase.auth.getSession();
+
+        if (session?.user && isMounted) {
+          setPreloaderMessage("Session active. Opening workspace…");
+          router.replace("/dashboard");
+          return;
+        }
+      } catch (err) {
+        console.error("Session verification error:", err);
+      }
+
+      if (isMounted) {
+        setIsCheckingSession(false);
+      }
+    }
+
+    checkExistingSession();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [router]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>): Promise<void> {
     e.preventDefault();
@@ -49,13 +87,25 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
       return;
     }
 
-    // Redirect to dashboard — let middleware handle subdomain routing context
+    // Seamless branded transition to dashboard
+    setIsCheckingSession(true);
+    setPreloaderMessage("Authenticated. Entering workspace…");
     router.push("/dashboard");
     router.refresh();
   }
 
-  const initial = company.name ? company.name.charAt(0).toUpperCase() : "W";
-  const brandColor = company.brandColor || "#6366f1";
+  // Render preloader while performing auto-login or active session validation
+  if (isCheckingSession) {
+    return (
+      <TenantPreloader
+        companyName={company.name}
+        brandColor={brandColor}
+        logoUrl={company.logoUrl}
+        message={preloaderMessage}
+        fullScreen={true}
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8 bg-[var(--color-bg)] text-[var(--color-text-primary)] relative overflow-hidden transition-colors duration-200">
@@ -70,7 +120,7 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
         style={{ backgroundColor: brandColor }}
       />
 
-      <div className="w-full max-w-sm space-y-6 relative z-10">
+      <div className="w-full max-w-sm space-y-6 relative z-10 animate-in fade-in zoom-in-95 duration-200">
         {/* Company Branding & Header */}
         <div className="text-center space-y-3 flex flex-col items-center">
           {company.logoUrl && !logoError ? (
