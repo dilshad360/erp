@@ -153,7 +153,7 @@ export default function SetPasswordPage(): React.JSX.Element {
 
             if (company?.slug) {
               const appDomain =
-                process.env.NEXT_PUBLIC_APP_DOMAIN ?? "dilshadcodes.com";
+                process.env.NEXT_PUBLIC_APP_DOMAIN ?? "erp.dilshadcodes.com";
               const isLocalhost = window.location.hostname.includes("localhost");
               const port = window.location.port ? `:${window.location.port}` : "";
               const tenantHost = isLocalhost

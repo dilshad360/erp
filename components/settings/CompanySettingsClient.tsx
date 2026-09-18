@@ -323,7 +323,9 @@ export default function CompanySettingsClient({
                 </label>
                 <div className="flex items-center px-3 py-2 text-xs rounded-lg border border-[var(--color-border)] bg-[var(--color-surface-hover)] text-[var(--color-text-muted)] cursor-not-allowed">
                   <span className="font-mono">{company.slug}</span>
-                  <span className="text-[var(--color-text-muted)]/70">.dilshadcodes.com</span>
+                  <span className="text-[var(--color-text-muted)]/70">
+                    .{process.env.NEXT_PUBLIC_APP_DOMAIN ?? "erp.dilshadcodes.com"}
+                  </span>
                 </div>
               </div>
 

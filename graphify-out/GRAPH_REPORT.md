@@ -1,7 +1,7 @@
 # Graph Report - C:\Users\dilsh\OneDrive\Desktop\ERP  (2026-09-18)
 
 ## Corpus Check
-- 152 files · ~78,035 words
+- 152 files · ~78,052 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary

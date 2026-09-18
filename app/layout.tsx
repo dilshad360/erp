@@ -19,8 +19,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "ERP — dilshadcodes.com",
-    template: "%s | dilshadcodes.com ERP",
+    default: "ERP — erp.dilshadcodes.com",
+    template: "%s | erp.dilshadcodes.com",
   },
   description:
     "Multi-tenant ERP for small Indian startups. Attendance, clients, projects, and tasks — in one place.",

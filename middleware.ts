@@ -21,13 +21,13 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
   const sessionResponse = await updateSession(request);
 
   // ── Step 2: Extract subdomain ────────────────────────────────────────────
-  const appDomain = process.env.NEXT_PUBLIC_APP_DOMAIN ?? "dilshadcodes.com";
+  const appDomain = process.env.NEXT_PUBLIC_APP_DOMAIN ?? "erp.dilshadcodes.com";
   const hostWithoutPort = hostname.split(":")[0];
 
-  // Matches: acme.dilshadcodes.com:3000 → "acme"
-  // Matches: acme.localhost:3000        → "acme" (native local browser subdomain)
-  // Matches: dilshadcodes.com          → null   (marketing)
-  // Matches: localhost                 → null   (marketing, local dev)
+  // Matches: acme.erp.dilshadcodes.com:3000 → "acme"
+  // Matches: acme.localhost:3000            → "acme" (native local browser subdomain)
+  // Matches: erp.dilshadcodes.com          → null   (marketing)
+  // Matches: localhost                     → null   (marketing, local dev)
   let subdomain: string | null = null;
 
   if (hostWithoutPort.endsWith(`.${appDomain}`)) {

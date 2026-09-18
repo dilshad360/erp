@@ -51,8 +51,9 @@ export default async function AppLayout({
       .single();
 
     if (correctCompany) {
-      const appDomain = process.env.NEXT_PUBLIC_APP_DOMAIN ?? "dilshadcodes.com";
-      redirect(`http://${correctCompany.slug}.${appDomain}/dashboard`);
+      const appDomain = process.env.NEXT_PUBLIC_APP_DOMAIN ?? "erp.dilshadcodes.com";
+      const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
+      redirect(`${protocol}://${correctCompany.slug}.${appDomain}/dashboard`);
     }
 
     redirect(`/login`);

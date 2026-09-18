@@ -114,7 +114,7 @@ export default function SignupPage(): React.JSX.Element {
 
     // Success → show step 3 then redirect
     setStep(3);
-    const appDomain = process.env.NEXT_PUBLIC_APP_DOMAIN ?? "dilshadcodes.com";
+    const appDomain = process.env.NEXT_PUBLIC_APP_DOMAIN ?? "erp.dilshadcodes.com";
     const slug = json.data?.companySlug ?? step1Data.slug;
     setTimeout(() => {
       if (typeof window !== "undefined") {
@@ -207,7 +207,9 @@ export default function SignupPage(): React.JSX.Element {
                     className="flex-1 min-w-0 h-10 px-3 rounded-md bg-[var(--color-bg)] border border-[var(--color-border)] text-sm text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand)] focus:border-transparent font-mono block"
                     placeholder="acme"
                   />
-                  <span className="text-xs text-[var(--color-text-muted)] whitespace-nowrap shrink-0">.dilshadcodes.com</span>
+                    <span className="text-xs text-[var(--color-text-muted)] whitespace-nowrap shrink-0">
+                      .{process.env.NEXT_PUBLIC_APP_DOMAIN ?? "erp.dilshadcodes.com"}
+                    </span>
                 </div>
                 {slugAvailable === true && (
                   <p className="text-xs text-[var(--color-success)]">✓ Available</p>

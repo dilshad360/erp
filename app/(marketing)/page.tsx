@@ -5,7 +5,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ERP SaaS — dilshadcodes.com",
+  title: "ERP SaaS — erp.dilshadcodes.com",
   description:
     "Attendance, clients, projects, and tasks — all in one place for small Indian startups.",
   robots: { index: true, follow: true },
