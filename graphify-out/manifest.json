@@ -320,8 +320,8 @@
     "semantic_hash": ""
   },
   "components/auth/LoginClient.tsx": {
-    "mtime": 1789728162.9889014,
-    "ast_hash": "368ad565029be18ee743ccada1685483",
+    "mtime": 1789728447.1666164,
+    "ast_hash": "7fb00d49048f44e76bf754e26f42f27a",
     "semantic_hash": ""
   },
   "components/pwa/InstallPrompt.tsx": {

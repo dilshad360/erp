@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
@@ -29,61 +29,8 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
   const [loading, setLoading] = useState(false);
   const [logoError, setLogoError] = useState(false);
   const [isRedirecting, setIsRedirecting] = useState(false);
-  const [redirectMessage, setRedirectMessage] = useState("Opening workspace…");
 
   const brandColor = company.brandColor || "#6366f1";
-
-  // Silent background check for existing active session on mount
-  useEffect(() => {
-    let isMounted = true;
-
-    async function checkExistingSession(): Promise<void> {
-      try {
-        const supabase = createClient();
-        const {
-          data: { session },
-          error: sessionError,
-        } = await supabase.auth.getSession();
-
-        // If refresh token is expired / invalid, clear it
-        if (sessionError) {
-          console.warn("[LoginClient] Session check error, clearing stale auth:", sessionError.message);
-          return;
-        }
-
-        if (session?.user && isMounted) {
-          // Check if the authenticated user belongs to THIS company slug
-          const { data: profile } = await supabase
-            .from("profiles")
-            .select("company_id")
-            .eq("id", session.user.id)
-            .single();
-
-          if (profile?.company_id) {
-            const { data: userCompany } = await supabase
-              .from("companies")
-              .select("slug")
-              .eq("id", profile.company_id)
-              .single();
-
-            if (userCompany?.slug === company.slug && isMounted) {
-              setRedirectMessage("Session active. Opening workspace…");
-              setIsRedirecting(true);
-              window.location.href = "/dashboard";
-            }
-          }
-        }
-      } catch (err) {
-        console.warn("[LoginClient] Silent session verification error:", err);
-      }
-    }
-
-    checkExistingSession();
-
-    return () => {
-      isMounted = false;
-    };
-  }, [company.slug]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>): Promise<void> {
     e.preventDefault();
@@ -108,19 +55,18 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
 
     // Seamless transition to dashboard upon successful authentication
     setIsRedirecting(true);
-    setRedirectMessage("Authenticated. Entering workspace…");
     router.push("/dashboard");
     router.refresh();
   }
 
-  // Render preloader only when actively transitioning to dashboard
+  // Render preloader only when actively transitioning to dashboard after submitting
   if (isRedirecting) {
     return (
       <TenantPreloader
         companyName={company.name}
         brandColor={brandColor}
         logoUrl={company.logoUrl}
-        message={redirectMessage}
+        message="Authenticated. Entering workspace…"
         fullScreen={true}
       />
     );
