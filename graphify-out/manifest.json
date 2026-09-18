@@ -75,8 +75,8 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/employees/EmployeeListClient.tsx": {
-    "mtime": 1789554522.6034024,
-    "ast_hash": "c06fdb49388021d401302e324c51ba15",
+    "mtime": 1789730076.4144323,
+    "ast_hash": "34dbcc703cbd4ce834949b100c6719b4",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/employees/[id]/ProfileDetailClient.tsx": {
@@ -100,8 +100,8 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/employees/page.tsx": {
-    "mtime": 1789532821.196036,
-    "ast_hash": "8dce18bc0a6816cf7626efbde9065e2a",
+    "mtime": 1789730047.8445394,
+    "ast_hash": "c9e7373d19d67a8c960c7f3b38ec67d2",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/layout.tsx": {
@@ -320,8 +320,8 @@
     "semantic_hash": ""
   },
   "components/auth/LoginClient.tsx": {
-    "mtime": 1789728447.1666164,
-    "ast_hash": "7fb00d49048f44e76bf754e26f42f27a",
+    "mtime": 1789730029.5868466,
+    "ast_hash": "81b79e12cf1dafb3beb54876edfef95c",
     "semantic_hash": ""
   },
   "components/pwa/InstallPrompt.tsx": {
@@ -660,8 +660,8 @@
     "semantic_hash": ""
   },
   "TRACKER.md": {
-    "mtime": 1789726792.254805,
-    "ast_hash": "d71429e4acdca745c9c8e0184b331007",
+    "mtime": 1789730187.709849,
+    "ast_hash": "d41d38d31582e6e276942c299db295ba",
     "semantic_hash": ""
   },
   "backend.md": {
@@ -807,6 +807,41 @@
   "app/icon.png": {
     "mtime": 1789727967.7622447,
     "ast_hash": "24ae3a4232af435ac3f50fd5bc9128ca",
+    "semantic_hash": ""
+  },
+  "app/(tenant)/[subdomain]/(auth)/signup/page.tsx": {
+    "mtime": 1789730036.286477,
+    "ast_hash": "5beab8d65cc8c8d7ca6900a421887323",
+    "semantic_hash": ""
+  },
+  "app/api/auth/signup/route.ts": {
+    "mtime": 1789729994.2332838,
+    "ast_hash": "f9f625dab71845965aa4892e65461945",
+    "semantic_hash": ""
+  },
+  "app/api/employees/[id]/activate/route.ts": {
+    "mtime": 1789730002.677534,
+    "ast_hash": "a66b396f3e3a2de5005ec72f56ad32c7",
+    "semantic_hash": ""
+  },
+  "app/api/employees/[id]/reject/route.ts": {
+    "mtime": 1789730009.5104933,
+    "ast_hash": "5ce3a040d267caa3c3089a3b6357c28f",
+    "semantic_hash": ""
+  },
+  "lib/validations/auth.ts": {
+    "mtime": 1789729985.3150403,
+    "ast_hash": "51b71b67cf0d36b762fb5212ddd9e31a",
+    "semantic_hash": ""
+  },
+  "phases/bugs/BUG-004-mobile-viewport-scroll-clearance.md": {
+    "mtime": 1789728965.459356,
+    "ast_hash": "83f2a320e78906a333f8e36219e88b36",
+    "semantic_hash": ""
+  },
+  "phases/stories/STORY-005-tenant-employee-self-signup-and-admin-activation.md": {
+    "mtime": 1789730177.8826246,
+    "ast_hash": "b852449113130589379efb35d7e8f5f3",
     "semantic_hash": ""
   }
 }

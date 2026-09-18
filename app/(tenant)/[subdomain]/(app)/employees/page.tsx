@@ -34,8 +34,8 @@ export default async function EmployeesPage({
     redirect(`/${subdomain}/login`);
   }
 
-  // Fetch employees for the current tenant company
-  const { data: employees } = await supabase
+  // Fetch all profiles for the current tenant company (both active & pending)
+  const { data: allProfiles } = await supabase
     .from("profiles")
     .select(`
       id,
@@ -57,14 +57,25 @@ export default async function EmployeesPage({
       )
     `)
     .eq("company_id", userProfile.company_id)
-    .eq("is_active", true)
     .order("created_at", { ascending: false });
 
-  const employeeList = (employees as unknown as EmployeeProfile[]) || [];
+  const rawList = (allProfiles as unknown as EmployeeProfile[]) || [];
+  const activeEmployees = rawList.filter((e) => e.is_active);
+  const pendingEmployees = rawList.filter((e) => !e.is_active);
+
+  const managerOptions = activeEmployees
+    .filter((e) => e.role === "admin" || e.role === "manager")
+    .map((e) => ({
+      id: e.id,
+      full_name: e.full_name,
+      designation: e.designation,
+    }));
 
   return (
     <EmployeeListClient
-      initialEmployees={employeeList}
+      initialEmployees={activeEmployees}
+      initialPendingEmployees={pendingEmployees}
+      managerOptions={managerOptions}
       subdomain={subdomain}
       currentUserRole={userProfile.role}
     />

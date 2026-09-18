@@ -4764,6 +4764,26 @@
       "norm_label": "static_assets"
     },
     {
+      "label": "generate_icons.py",
+      "file_type": "code",
+      "source_file": "scratch/generate_icons.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "scratch_generate_icons",
+      "community": 78,
+      "norm_label": "generate_icons.py"
+    },
+    {
+      "label": "generate_icons()",
+      "file_type": "code",
+      "source_file": "scratch/generate_icons.py",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "scratch_generate_icons_generate_icons",
+      "community": 78,
+      "norm_label": "generate_icons()"
+    },
+    {
       "label": "tailwind.config.ts",
       "file_type": "code",
       "source_file": "tailwind.config.ts",
@@ -7170,7 +7190,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_phase_2_employees",
-      "community": 57,
+      "community": 64,
       "norm_label": "phase-2-employees.md"
     },
     {
@@ -7180,7 +7200,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_phase_2_employees_phase_2_employee_management",
-      "community": 57,
+      "community": 64,
       "norm_label": "phase 2 \u2014 employee management"
     },
     {
@@ -7190,7 +7210,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "phases_phase_2_employees_what_you_re_building",
-      "community": 57,
+      "community": 64,
       "norm_label": "what you're building"
     },
     {
@@ -7280,7 +7300,7 @@
       "source_location": "L141",
       "_origin": "ast",
       "id": "phases_phase_2_employees_notes",
-      "community": 57,
+      "community": 64,
       "norm_label": "notes"
     },
     {
@@ -7290,7 +7310,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_phase_3_attendance",
-      "community": 72,
+      "community": 66,
       "norm_label": "phase-3-attendance.md"
     },
     {
@@ -7300,7 +7320,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_phase_3_attendance_phase_3_attendance",
-      "community": 72,
+      "community": 66,
       "norm_label": "phase 3 \u2014 attendance"
     },
     {
@@ -7310,7 +7330,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "phases_phase_3_attendance_what_you_re_building",
-      "community": 72,
+      "community": 66,
       "norm_label": "what you're building"
     },
     {
@@ -7400,7 +7420,7 @@
       "source_location": "L152",
       "_origin": "ast",
       "id": "phases_phase_3_attendance_notes",
-      "community": 72,
+      "community": 66,
       "norm_label": "notes"
     },
     {
@@ -7530,7 +7550,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_phase_5_projects",
-      "community": 64,
+      "community": 63,
       "norm_label": "phase-5-projects.md"
     },
     {
@@ -7540,7 +7560,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_phase_5_projects_phase_5_project_management",
-      "community": 64,
+      "community": 63,
       "norm_label": "phase 5 \u2014 project management"
     },
     {
@@ -7550,7 +7570,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "phases_phase_5_projects_what_you_re_building",
-      "community": 64,
+      "community": 63,
       "norm_label": "what you're building"
     },
     {
@@ -7650,7 +7670,7 @@
       "source_location": "L144",
       "_origin": "ast",
       "id": "phases_phase_5_projects_notes",
-      "community": 64,
+      "community": 63,
       "norm_label": "notes"
     },
     {
@@ -7660,7 +7680,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_phase_6_tasks",
-      "community": 54,
+      "community": 72,
       "norm_label": "phase-6-tasks.md"
     },
     {
@@ -7670,7 +7690,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_phase_6_tasks_phase_6_task_management",
-      "community": 54,
+      "community": 72,
       "norm_label": "phase 6 \u2014 task management"
     },
     {
@@ -7680,7 +7700,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "phases_phase_6_tasks_what_you_re_building",
-      "community": 54,
+      "community": 72,
       "norm_label": "what you're building"
     },
     {
@@ -7790,7 +7810,7 @@
       "source_location": "L191",
       "_origin": "ast",
       "id": "phases_phase_6_tasks_notes",
-      "community": 54,
+      "community": 72,
       "norm_label": "notes"
     },
     {
@@ -16631,6 +16651,16 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "scratch/generate_icons.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "scratch_generate_icons",
+      "target": "scratch_generate_icons_generate_icons",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "tailwind.config.ts",
       "source_location": "L3",
       "weight": 1.0,
@@ -20370,5 +20400,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "692c4d2027f06ff6fb960dbbbfc190dfeb8ab4d6"
+  "built_at_commit": "94c2dfcc79c8fd8ec9df3cff1818d5cefe0bd487"
 }

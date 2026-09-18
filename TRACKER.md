@@ -45,7 +45,7 @@
 | `STORY-002` | Project Member Allocation & Capacity | Projects | P2 | ⬜ Backlog | `feat/projects-story-002` | [`phases/stories/STORY-002.md`](phases/stories/) |
 | `STORY-003` | Dark Mode & Company Logo on Login Screen | Foundation / Auth | P2 | ✅ Done | `feat/foundation-story-003` | [`phases/stories/STORY-003-login-dark-mode-company-branding.md`](phases/stories/STORY-003-login-dark-mode-company-branding.md) |
 | `STORY-004` | Session Auto-Login & Tenant Branded Preloader | Foundation / Auth & UX | P1 | ✅ Done | `feat/foundation-story-004` | [`phases/stories/STORY-004-autologin-preloader.md`](phases/stories/STORY-004-autologin-preloader.md) |
-| `STORY-005` | Tenant Employee Self-Signup & Admin Activation Workflow | Foundation / Auth & Employees | P1 | ⬜ Backlog | `feat/auth-story-005` | [`phases/stories/STORY-005-tenant-employee-self-signup-and-admin-activation.md`](phases/stories/STORY-005-tenant-employee-self-signup-and-admin-activation.md) |
+| `STORY-005` | Tenant Employee Self-Signup & Admin Activation Workflow | Foundation / Auth & Employees | P1 | ✅ Done | `feat/auth-story-005` | [`phases/stories/STORY-005-tenant-employee-self-signup-and-admin-activation.md`](phases/stories/STORY-005-tenant-employee-self-signup-and-admin-activation.md) |
 
 ### Bug & Defect Registry (`BUG-xxx`)
 

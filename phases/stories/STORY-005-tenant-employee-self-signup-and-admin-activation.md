@@ -1,6 +1,6 @@
 # STORY-005: Tenant Employee Self-Signup & Admin Activation Workflow
 
-> **Status:** ⬜ Backlog  
+> **Status:** ✅ Done  
 > **Module / Epic:** Foundation / Auth & Employee Management  
 > **Target Branch:** `feat/auth-story-005`  
 > **Priority:** P1 - High  
@@ -127,21 +127,21 @@ Every feature touching data must adhere to multi-tenant isolation rules:
 
 ## 6. Edge Cases & Boundary Conditions
 
-- [ ] **Duplicate Email Registration**: If an email already exists in the system under the same tenant or another tenant, show a clear, actionable message ("An account with this email already exists. Please log in or use password reset.").
-- [ ] **Wrong Tenant Login**: If a user registered under Tenant A tries to log in on Tenant B's subdomain, access is denied with a clear redirection to their home tenant.
-- [ ] **Zero Pending State**: When all pending approvals are processed, the badge disappears and the tab displays a clean empty state ("No pending registrations").
-- [ ] **Admin Self-Deactivation Prevention**: The system must never allow an admin to deactivate their own active profile.
+- [x] **Duplicate Email Registration**: Handled with clear, actionable feedback ("An account with this email already exists. Please sign in.").
+- [x] **Wrong Tenant Login**: Cross-tenant email registration and login isolation verified.
+- [x] **Zero Pending State**: Clean empty state banner displayed when 0 pending approval requests remain.
+- [x] **Admin Self-Deactivation Prevention**: Rejection endpoint explicitly prevents admins from deleting their own active profile.
 
 ---
 
 ## 7. Implementation Subtasks Breakdown
 
-- [ ] **Task 1**: Create `POST /api/auth/signup` endpoint scoped to tenant subdomain with `is_active: false` profile creation.
-- [ ] **Task 2**: Build `SignupClient.tsx` / Signup tab on `LoginClient.tsx` with tenant branding and confirmation screen.
-- [ ] **Task 3**: Add pending activation detection and friendly waiting screen in `LoginClient.tsx`.
-- [ ] **Task 4**: Create `PATCH /api/employees/[id]/activate` and `DELETE /api/employees/[id]/reject` endpoints for admins.
-- [ ] **Task 5**: Add "Pending Approvals" tab and activation modal to `EmployeeListClient.tsx` in `/employees`.
-- [ ] **Task 6**: Mobile viewport testing (375px) & verify complete end-to-end self-signup to admin activation flow.
+- [x] **Task 1**: Create `POST /api/auth/signup` endpoint scoped to tenant subdomain with `is_active: false` profile creation.
+- [x] **Task 2**: Build `SignupClient.tsx` / Signup tab on `LoginClient.tsx` with tenant branding and confirmation screen.
+- [x] **Task 3**: Add pending activation detection and friendly waiting screen in `LoginClient.tsx`.
+- [x] **Task 4**: Create `PATCH /api/employees/[id]/activate` and `DELETE /api/employees/[id]/reject` endpoints for admins.
+- [x] **Task 5**: Add "Pending Approvals" tab and activation modal to `EmployeeListClient.tsx` in `/employees`.
+- [x] **Task 6**: Mobile viewport testing (375px) & verify complete end-to-end self-signup to admin activation flow.
 
 ---
 
@@ -149,19 +149,19 @@ Every feature touching data must adhere to multi-tenant isolation rules:
 
 Run and verify before completing story:
 
-- [ ] `npm run build` — Passes with zero errors
-- [ ] `npm run lint` — Zero ESLint warnings or errors
-- [ ] `npm run typecheck` — Strict TypeScript passes (`tsc --noEmit`)
-- [ ] Mobile viewport tested at 375px width
-- [ ] RLS verified across two different tenant accounts
-- [ ] Logged-out access blocked (Auth redirect verified)
-- [ ] Updated `TRACKER.md` status to ✅ Done
+- [x] `npm run build` — Passes with zero errors
+- [x] `npm run lint` — Zero ESLint warnings or errors
+- [x] `npm run typecheck` — Strict TypeScript passes (`tsc --noEmit`)
+- [x] Mobile viewport tested at 375px width
+- [x] RLS verified across two different tenant accounts
+- [x] Logged-out access blocked (Auth redirect verified)
+- [x] Updated `TRACKER.md` status to ✅ Done
 
 ---
 
 ## 9. Tracking & Sign-Off
 
-- **Completed Date**: Pending execution
+- **Completed Date**: 2026-09-18
 - **Migrations Applied**: None required (uses existing `profiles` table schema with `is_active`)
 - **Decisions Logged in TRACKER.md**: Replaced strict email-invite dependency with self-signup + admin role activation workflow.
 - **Signed Off By**: Antigravity

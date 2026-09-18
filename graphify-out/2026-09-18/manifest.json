@@ -320,8 +320,8 @@
     "semantic_hash": ""
   },
   "components/auth/LoginClient.tsx": {
-    "mtime": 1789727843.060177,
-    "ast_hash": "03e50744a7e52dd5ff8f1782ad24749d",
+    "mtime": 1789728447.1666164,
+    "ast_hash": "7fb00d49048f44e76bf754e26f42f27a",
     "semantic_hash": ""
   },
   "components/pwa/InstallPrompt.tsx": {
@@ -345,8 +345,8 @@
     "semantic_hash": ""
   },
   "components/shared/AppShell.tsx": {
-    "mtime": 1789726818.564514,
-    "ast_hash": "6003d3e0f8f0c4b0196e2dcc36f9c974",
+    "mtime": 1789728917.8093083,
+    "ast_hash": "8f99f7f0c4556932aa8319e8efb4511e",
     "semantic_hash": ""
   },
   "components/shared/Avatar.tsx": {
@@ -770,28 +770,43 @@
     "semantic_hash": ""
   },
   "public/icons/apple-touch-icon.png": {
-    "mtime": 1789577455.7297988,
-    "ast_hash": "39a0eaccc1bdc9fe9130f2d8d3b5a8c0",
+    "mtime": 1789727967.315868,
+    "ast_hash": "dbf7c58a767f4fc4bd5d0b6584d1ce0a",
     "semantic_hash": ""
   },
   "public/icons/icon-192.png": {
-    "mtime": 1789577455.7122328,
-    "ast_hash": "fcfdb53f01e54da25bb9646710cd8d84",
+    "mtime": 1789727967.3151655,
+    "ast_hash": "24ae3a4232af435ac3f50fd5bc9128ca",
     "semantic_hash": ""
   },
   "public/icons/icon-512.png": {
-    "mtime": 1789577455.7212286,
-    "ast_hash": "b88d354147dce32919a634272d5e5c25",
+    "mtime": 1789727967.299325,
+    "ast_hash": "04181175350f719a177601e824e28201",
     "semantic_hash": ""
   },
   "public/icons/icon-maskable-512.png": {
-    "mtime": 1789577455.728235,
-    "ast_hash": "b88d354147dce32919a634272d5e5c25",
+    "mtime": 1789727967.3325157,
+    "ast_hash": "c620a45cfb6f18fa1d2fe1938d1ba3fd",
     "semantic_hash": ""
   },
   "public/logo.png": {
     "mtime": 1789727449.9755485,
     "ast_hash": "197493718184390dec4818bfbacf6c2c",
+    "semantic_hash": ""
+  },
+  "scratch/generate_icons.py": {
+    "mtime": 1789727960.0372741,
+    "ast_hash": "43c33f86053e4bfa4797eb3626163883",
+    "semantic_hash": ""
+  },
+  "app/apple-icon.png": {
+    "mtime": 1789727967.771247,
+    "ast_hash": "dbf7c58a767f4fc4bd5d0b6584d1ce0a",
+    "semantic_hash": ""
+  },
+  "app/icon.png": {
+    "mtime": 1789727967.7622447,
+    "ast_hash": "24ae3a4232af435ac3f50fd5bc9128ca",
     "semantic_hash": ""
   }
 }

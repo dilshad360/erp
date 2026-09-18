@@ -1,16 +1,16 @@
 # Graph Report - ERP  (2026-09-18)
 
 ## Corpus Check
-- 153 files · ~85,708 words
+- 154 files · ~96,169 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 865 nodes · 1132 edges · 78 communities (59 shown, 19 thin omitted)
+- 867 nodes · 1133 edges · 79 communities (60 shown, 19 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `692c4d20`
+- Built from commit: `94c2dfcc`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -119,7 +119,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (78 total, 19 thin omitted)
+## Communities (79 total, 19 thin omitted)
 
 ### Community 0 - "ClientDetailClient.tsx"
 Cohesion: 0.18
@@ -270,8 +270,8 @@ Cohesion: 0.21
 Nodes (10): DatePicker(), DatePickerProps, EmptyState(), EmptyStateProps, FormField(), FormFieldProps, UserOption, UserSelect() (+2 more)
 
 ### Community 54 - "Tasks"
-Cohesion: 0.14
-Nodes (13): 6.1 — Task Schema & Migration, 6.2 — Task API Routes, 6.3 — Task List View, 6.4 — Task Creation & Edit Form, 6.5 — Kanban Board, 6.6 — My Tasks Page, 6.7 — Kanban Column Management (Settings), 6.8 — Dashboard Integration (+5 more)
+Cohesion: 0.20
+Nodes (10): 6.1 — Task Schema & Migration, 6.2 — Task API Routes, 6.3 — Task List View, 6.4 — Task Creation & Edit Form, 6.5 — Kanban Board, 6.6 — My Tasks Page, 6.7 — Kanban Column Management (Settings), 6.8 — Dashboard Integration (+2 more)
 
 ### Community 55 - "Tasks"
 Cohesion: 0.14
@@ -282,8 +282,8 @@ Cohesion: 0.17
 Nodes (11): 1.1 — Project Initialization, 1.2 — Supabase Schema: Companies & Profiles, 1.3 — Auth Helpers & Supabase SSR Setup, 1.4 — Company Onboarding Flow, 1.5 — Tenant Shell & Login, 1.6 — Dashboard Placeholder, 1.7 — Phase 1 Verification, Notes (+3 more)
 
 ### Community 57 - "Tasks"
-Cohesion: 0.17
-Nodes (11): 2.1 — DataTable Shared Component, 2.2 — Employee List Page, 2.3 — Invite Employee Flow, 2.4 — Employee Profile Page, 2.5 — Avatar Upload, 2.6 — Role Management (Basic), 2.7 — Phase 2 Verification, Notes (+3 more)
+Cohesion: 0.25
+Nodes (8): 2.1 — DataTable Shared Component, 2.2 — Employee List Page, 2.3 — Invite Employee Flow, 2.4 — Employee Profile Page, 2.5 — Avatar Upload, 2.6 — Role Management (Basic), 2.7 — Phase 2 Verification, Tasks
 
 ### Community 58 - "Tasks"
 Cohesion: 0.17
@@ -306,20 +306,20 @@ Cohesion: 0.22
 Nodes (9): 1. Defect Description & Symptoms, 2. Environment & Context, 3. Steps to Reproduce, 4. Multi-Tenancy & Security Impact Assessment, 5. Root Cause Analysis (RCA), 6. Fix Implementation Plan, 7. Verification & Regression Checklist, 8. Post-Mortem & Preventative Action (+1 more)
 
 ### Community 63 - "Tasks"
-Cohesion: 0.22
-Nodes (9): 5.1 — Projects Schema & Migration, 5.2 — Project API Routes, 5.3 — Project List Page, 5.4 — New Project Form, 5.5 — Project Detail Page, 5.6 — ClientSelect Shared Component, 5.7 — Dashboard Integration, 5.8 — Phase 5 Verification (+1 more)
+Cohesion: 0.15
+Nodes (12): 5.1 — Projects Schema & Migration, 5.2 — Project API Routes, 5.3 — Project List Page, 5.4 — New Project Form, 5.5 — Project Detail Page, 5.6 — ClientSelect Shared Component, 5.7 — Dashboard Integration, 5.8 — Phase 5 Verification (+4 more)
 
 ### Community 64 - "TRACKER.md"
 Cohesion: 0.25
-Nodes (3): Notes, Phase 5 — Project Management, What You're Building
+Nodes (3): Notes, Phase 2 — Employee Management, What You're Building
 
 ### Community 65 - "[BUG-002]: Mobile View Missing Company Logo Top Header and BottomNav "More" Button Non-Functional"
 Cohesion: 0.25
 Nodes (8): 1. Defect Description & Symptoms, 2. Environment & Context, 3. Steps to Reproduce, 4. Multi-Tenancy & Security Impact Assessment, 5. Root Cause Analysis (RCA), 6. Fix Implementation Plan, 7. Verification & Regression Checklist, [BUG-002]: Mobile View Missing Company Logo Top Header and BottomNav "More" Button Non-Functional
 
 ### Community 66 - "Tasks"
-Cohesion: 0.25
-Nodes (8): 3.1 — Attendance Schema & Migration, 3.2 — Check-In / Check-Out API, 3.3 — Check-In Page (Employee View), 3.4 — Employee Monthly View, 3.5 — Admin Attendance View, 3.6 — Dashboard Integration, 3.7 — Phase 3 Verification, Tasks
+Cohesion: 0.17
+Nodes (11): 3.1 — Attendance Schema & Migration, 3.2 — Check-In / Check-Out API, 3.3 — Check-In Page (Employee View), 3.4 — Employee Monthly View, 3.5 — Admin Attendance View, 3.6 — Dashboard Integration, 3.7 — Phase 3 Verification, Notes (+3 more)
 
 ### Community 67 - "ProjectListClient.tsx"
 Cohesion: 0.38
@@ -343,7 +343,7 @@ Nodes (3): Bug Reports & Fixes Directory (`phases/bugs/`), File Naming Conventio
 
 ### Community 72 - "Phase 3 — Attendance"
 Cohesion: 0.50
-Nodes (3): Notes, Phase 3 — Attendance, What You're Building
+Nodes (3): Notes, Phase 6 — Task Management, What You're Building
 
 ### Community 73 - "Stories Directory (`phases/stories/`)"
 Cohesion: 0.50
