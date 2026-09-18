@@ -50,6 +50,7 @@
 | Bug ID | Title | Module | Severity | Status | Branch | Bug File |
 |---|---|---|---|---|---|---|
 | `BUG-001` | Employee settings role isolation & dedicated employee view | Settings / Role Access | P2 | ✅ Resolved | `fix/settings-bug-001` | [`phases/bugs/BUG-001-employee-settings-role-isolation.md`](phases/bugs/BUG-001-employee-settings-role-isolation.md) |
+| `BUG-002` | Mobile company logo header & BottomNav More drawer | Mobile AppShell / Navigation | P2 | ✅ Resolved | `fix/mobile-nav-bug-002` | [`phases/bugs/BUG-002-mobile-bottomnav-more-and-logo-missing.md`](phases/bugs/BUG-002-mobile-bottomnav-more-and-logo-missing.md) |
 
 ---
 
@@ -272,4 +273,5 @@ Use this section to track important decisions made during development so future 
 | 2026-09-16 | Indian Numbering System formatting (formatINR) | Explicit currency formatting with lakhs and crores (`₹15,00,000`) per Indian business standards |
 | 2026-09-18 | Settings Role Isolation (`BUG-001`) | Bifurcated `/settings`: Employees get personal profile, avatar, security, preferences & read-only workplace info; Admins manage workspace details, branding, Kanban statuses & danger zone. |
 | 2026-09-18 | Login Branding & Dark Mode (`STORY-003`) | Server-rendered login screen queries tenant branding by slug; displays uploaded company logo (or brand initial fallback), dynamic brand color accents, and full dark-mode surface polish. |
+| 2026-09-18 | Mobile Header & BottomNav Sheet (`BUG-002`) | Added sticky `MobileHeader` with company logo, name, avatar, and theme toggle; enhanced `BottomNav` More tab to open a slide-up drawer for accessing Employees, Clients, Settings, Theme Switcher, and Sign Out. |
 

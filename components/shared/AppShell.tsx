@@ -2,6 +2,7 @@
 
 import Sidebar from "./Sidebar";
 import BottomNav from "./BottomNav";
+import MobileHeader from "./MobileHeader";
 import InstallPrompt from "@/components/pwa/InstallPrompt";
 
 type AppShellProps = {
@@ -16,8 +17,11 @@ export default function AppShell({ children }: AppShellProps): React.JSX.Element
         <Sidebar />
       </aside>
 
-      {/* Main content area */}
+      {/* Main content area with MobileHeader */}
       <div className="flex flex-col flex-1 overflow-hidden">
+        {/* Mobile top header with logo — hidden on desktop */}
+        <MobileHeader />
+
         <main
           className="flex-1 overflow-y-auto"
           id="main-content"
