@@ -58,7 +58,7 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
   const brandColor = company.brandColor || "#6366f1";
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8 bg-[var(--color-bg,#09090b)] relative overflow-hidden">
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8 bg-[var(--color-bg)] text-[var(--color-text-primary)] relative overflow-hidden transition-colors duration-200">
       {/* Top Right Theme Toggle */}
       <div className="absolute top-4 right-4 z-20">
         <ThemeToggle />
@@ -66,7 +66,7 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
 
       {/* Background Ambient Glow */}
       <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl opacity-15 pointer-events-none"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl opacity-10 pointer-events-none"
         style={{ backgroundColor: brandColor }}
       />
 
@@ -74,7 +74,7 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
         {/* Company Branding & Header */}
         <div className="text-center space-y-3 flex flex-col items-center">
           {company.logoUrl && !logoError ? (
-            <div className="relative w-16 h-16 rounded-2xl bg-[var(--color-surface,#18181b)] border border-[var(--color-border,#27272a)] p-2 shadow-lg flex items-center justify-center overflow-hidden">
+            <div className="relative w-16 h-16 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)] p-2 shadow-lg flex items-center justify-center overflow-hidden">
               <Image
                 src={company.logoUrl}
                 alt={company.name}
@@ -86,7 +86,7 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
             </div>
           ) : (
             <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg border border-[var(--color-border,#27272a)] transition-transform duration-200"
+              className="w-14 h-14 rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg border border-[var(--color-border)] transition-transform duration-200"
               style={{
                 backgroundColor: `${brandColor}18`,
                 color: brandColor,
@@ -98,10 +98,10 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
           )}
 
           <div className="space-y-1">
-            <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-[var(--color-text-primary,#f4f4f5)]">
+            <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-[var(--color-text-primary)]">
               {company.name}
             </h1>
-            <p className="text-xs sm:text-sm text-[var(--color-text-muted,#a1a1aa)]">
+            <p className="text-xs sm:text-sm text-[var(--color-text-muted)]">
               Sign in to your workspace portal
             </p>
           </div>
@@ -110,14 +110,14 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
         {/* Login Form Card */}
         <form
           onSubmit={handleSubmit}
-          className="bg-[var(--color-surface,#18181b)] border border-[var(--color-border,#27272a)] rounded-2xl p-6 sm:p-7 space-y-4 shadow-xl backdrop-blur-sm"
+          className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-6 sm:p-7 space-y-4 shadow-xl backdrop-blur-sm transition-colors duration-200"
           noValidate
         >
           {/* Error Alert */}
           {error && (
             <div
               role="alert"
-              className="flex items-start gap-2.5 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-xs font-medium text-red-400 animate-in fade-in duration-200"
+              className="flex items-start gap-2.5 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-xs font-medium text-red-500 animate-in fade-in duration-200"
             >
               <AlertCircle size={16} className="shrink-0 mt-0.5" />
               <span className="leading-snug">{error}</span>
@@ -128,9 +128,9 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
           <div className="space-y-1.5">
             <label
               htmlFor="email"
-              className="text-xs font-semibold text-[var(--color-text-primary,#f4f4f5)] flex items-center gap-1.5"
+              className="text-xs font-semibold text-[var(--color-text-primary)] flex items-center gap-1.5"
             >
-              <Mail size={13} className="text-[var(--color-text-muted,#a1a1aa)]" />
+              <Mail size={13} className="text-[var(--color-text-muted)]" />
               <span>Work Email</span>
             </label>
             <input
@@ -141,7 +141,7 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@company.com"
-              className="w-full h-11 px-3.5 rounded-xl bg-[var(--color-background,#09090b)] border border-[var(--color-border,#27272a)] text-xs sm:text-sm text-[var(--color-text-primary,#f4f4f5)] placeholder:text-[var(--color-text-muted,#71717a)] focus:outline-hidden focus:border-[var(--color-brand)] focus:ring-2 focus:ring-[var(--color-brand)]/20 transition-all"
+              className="w-full h-11 px-3.5 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] text-xs sm:text-sm text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-hidden focus:border-[var(--color-brand)] focus:ring-2 focus:ring-[var(--color-brand)]/20 transition-all"
             />
           </div>
 
@@ -149,9 +149,9 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
           <div className="space-y-1.5">
             <label
               htmlFor="password"
-              className="text-xs font-semibold text-[var(--color-text-primary,#f4f4f5)] flex items-center gap-1.5"
+              className="text-xs font-semibold text-[var(--color-text-primary)] flex items-center gap-1.5"
             >
-              <Lock size={13} className="text-[var(--color-text-muted,#a1a1aa)]" />
+              <Lock size={13} className="text-[var(--color-text-muted)]" />
               <span>Password</span>
             </label>
             <div className="relative">
@@ -163,12 +163,12 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full h-11 px-3.5 pr-10 rounded-xl bg-[var(--color-background,#09090b)] border border-[var(--color-border,#27272a)] text-xs sm:text-sm text-[var(--color-text-primary,#f4f4f5)] placeholder:text-[var(--color-text-muted,#71717a)] focus:outline-hidden focus:border-[var(--color-brand)] focus:ring-2 focus:ring-[var(--color-brand)]/20 transition-all"
+                className="w-full h-11 px-3.5 pr-10 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] text-xs sm:text-sm text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-hidden focus:border-[var(--color-brand)] focus:ring-2 focus:ring-[var(--color-brand)]/20 transition-all"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-[var(--color-text-muted,#a1a1aa)] hover:text-[var(--color-text-primary,#f4f4f5)] transition-colors p-1"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors p-1 cursor-pointer"
                 aria-label={showPassword ? "Hide password" : "Show password"}
               >
                 {showPassword ? <EyeOff size={15} /> : <Eye size={15} />}
@@ -182,7 +182,7 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
               type="submit"
               isLoading={loading}
               loadingText="Signing in…"
-              className="w-full h-11 rounded-xl text-white text-xs sm:text-sm font-semibold shadow-md transition-all duration-150"
+              className="w-full h-11 rounded-xl text-white text-xs sm:text-sm font-semibold shadow-md transition-all duration-150 cursor-pointer"
               style={{ backgroundColor: brandColor }}
             >
               Sign In to Workspace
@@ -192,8 +192,8 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
 
         {/* Security / Multi-Tenancy Footer */}
         <div className="text-center space-y-2">
-          <div className="inline-flex items-center gap-1.5 text-[11px] text-[var(--color-text-muted,#71717a)]">
-            <ShieldCheck size={13} className="text-emerald-400" />
+          <div className="inline-flex items-center gap-1.5 text-[11px] text-[var(--color-text-muted)]">
+            <ShieldCheck size={13} className="text-emerald-500" />
             <span>Encrypted Multi-Tenant Workspace Session</span>
           </div>
         </div>
