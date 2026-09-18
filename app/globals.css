@@ -213,10 +213,18 @@ body {
 
 /* ── Safe Area Insets ── */
 .safe-area-pb {
-  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom, 0px));
 }
 .safe-area-pt {
-  padding-top: max(0.5rem, env(safe-area-inset-top));
+  padding-top: max(0.5rem, env(safe-area-inset-top, 0px));
+}
+.safe-bottom-clearance {
+  padding-bottom: calc(7rem + env(safe-area-inset-bottom, 0px));
+}
+@media (min-width: 768px) {
+  .safe-bottom-clearance {
+    padding-bottom: 2rem;
+  }
 }
 
 /* ── Indeterminate Loading Bar ── */

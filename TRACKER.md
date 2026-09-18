@@ -53,6 +53,7 @@
 | `BUG-001` | Employee settings role isolation & dedicated employee view | Settings / Role Access | P2 | ✅ Resolved | `fix/settings-bug-001` | [`phases/bugs/BUG-001-employee-settings-role-isolation.md`](phases/bugs/BUG-001-employee-settings-role-isolation.md) |
 | `BUG-002` | Mobile company logo header & BottomNav More drawer | Mobile AppShell / Navigation | P2 | ✅ Resolved | `fix/mobile-nav-bug-002` | [`phases/bugs/BUG-002-mobile-bottomnav-more-and-logo-missing.md`](phases/bugs/BUG-002-mobile-bottomnav-more-and-logo-missing.md) |
 | `BUG-003` | Mobile BottomNav tactile press feedback & transition indicator | Mobile AppShell / Navigation | P2 | ✅ Resolved | `fix/mobile-nav-bug-003` | [`phases/bugs/BUG-003-mobile-bottom-nav-press-feedback.md`](phases/bugs/BUG-003-mobile-bottom-nav-press-feedback.md) |
+| `BUG-004` | Mobile viewport bottom scroll clearance obscured by BottomNav | Mobile Layout / AppShell | P1 | ✅ Resolved | `fix/mobile-viewport-bug-004` | [`phases/bugs/BUG-004-mobile-viewport-scroll-clearance.md`](phases/bugs/BUG-004-mobile-viewport-scroll-clearance.md) |
 
 ---
 

@@ -12,7 +12,7 @@ type AppShellProps = {
 
 export default function AppShell({ children }: AppShellProps): React.JSX.Element {
   return (
-    <div className="flex h-screen overflow-hidden bg-[var(--color-bg)] relative">
+    <div className="flex h-screen h-[100dvh] overflow-hidden bg-[var(--color-bg)] relative">
       {/* Instant route transition progress bar */}
       <RouteProgressBar />
 
@@ -22,16 +22,18 @@ export default function AppShell({ children }: AppShellProps): React.JSX.Element
       </aside>
 
       {/* Main content area with MobileHeader */}
-      <div className="flex flex-col flex-1 overflow-hidden">
+      <div className="flex flex-col flex-1 overflow-hidden min-h-0">
         {/* Mobile top header with logo — hidden on desktop */}
         <MobileHeader />
 
         <main
-          className="flex-1 overflow-y-auto pb-28 sm:pb-32 md:pb-8 safe-area-pb"
+          className="flex-1 overflow-y-auto overscroll-y-contain"
           id="main-content"
         >
-          {/* Page content rendered here */}
-          {children}
+          {/* Inner wrapper guaranteeing full bottom nav clearance in scroll calculation */}
+          <div className="min-h-full flex flex-col safe-bottom-clearance">
+            {children}
+          </div>
         </main>
       </div>
 
