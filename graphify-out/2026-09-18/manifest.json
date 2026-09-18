@@ -105,8 +105,8 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/layout.tsx": {
-    "mtime": 1789722918.6394193,
-    "ast_hash": "f3869aec02e791e73819dcd47a957534",
+    "mtime": 1789727859.1379416,
+    "ast_hash": "6d5996acba00099ce62e3090d86d4757",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/loading.tsx": {
@@ -320,8 +320,8 @@
     "semantic_hash": ""
   },
   "components/auth/LoginClient.tsx": {
-    "mtime": 1789727722.4760036,
-    "ast_hash": "ecf1751ac3ccd3c8bb9dce70527e220f",
+    "mtime": 1789727843.060177,
+    "ast_hash": "03e50744a7e52dd5ff8f1782ad24749d",
     "semantic_hash": ""
   },
   "components/pwa/InstallPrompt.tsx": {
@@ -530,8 +530,8 @@
     "semantic_hash": ""
   },
   "middleware.ts": {
-    "mtime": 1789726295.906446,
-    "ast_hash": "3fab47560b96cf3e25b90dd91d754780",
+    "mtime": 1789727827.8980603,
+    "ast_hash": "a353f082d64fcb7ac6c02e3cd0abab2c",
     "semantic_hash": ""
   },
   "next.config.ts": {

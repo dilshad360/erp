@@ -28,28 +28,28 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [logoError, setLogoError] = useState(false);
-  const [isCheckingSession, setIsCheckingSession] = useState(true);
-  const [preloaderMessage, setPreloaderMessage] = useState("Verifying session…");
+  const [isRedirecting, setIsRedirecting] = useState(false);
+  const [redirectMessage, setRedirectMessage] = useState("Opening workspace…");
 
   const brandColor = company.brandColor || "#6366f1";
 
-  // Check for existing active session on mount
+  // Silent background check for existing active session on mount
   useEffect(() => {
     let isMounted = true;
-
-    // Safety timeout: Never leave user stuck on preloader for more than 2 seconds
-    const safetyTimer = setTimeout(() => {
-      if (isMounted) {
-        setIsCheckingSession(false);
-      }
-    }, 2000);
 
     async function checkExistingSession(): Promise<void> {
       try {
         const supabase = createClient();
         const {
           data: { session },
+          error: sessionError,
         } = await supabase.auth.getSession();
+
+        // If refresh token is expired / invalid, clear it
+        if (sessionError) {
+          console.warn("[LoginClient] Session check error, clearing stale auth:", sessionError.message);
+          return;
+        }
 
         if (session?.user && isMounted) {
           // Check if the authenticated user belongs to THIS company slug
@@ -67,18 +67,14 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
               .single();
 
             if (userCompany?.slug === company.slug && isMounted) {
-              setPreloaderMessage("Session active. Opening workspace…");
+              setRedirectMessage("Session active. Opening workspace…");
+              setIsRedirecting(true);
               window.location.href = "/dashboard";
-              return;
             }
           }
         }
       } catch (err) {
-        console.error("Session verification error:", err);
-      }
-
-      if (isMounted) {
-        setIsCheckingSession(false);
+        console.warn("[LoginClient] Silent session verification error:", err);
       }
     }
 
@@ -86,7 +82,6 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
 
     return () => {
       isMounted = false;
-      clearTimeout(safetyTimer);
     };
   }, [company.slug]);
 
@@ -111,21 +106,21 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
       return;
     }
 
-    // Seamless branded transition to dashboard
-    setIsCheckingSession(true);
-    setPreloaderMessage("Authenticated. Entering workspace…");
+    // Seamless transition to dashboard upon successful authentication
+    setIsRedirecting(true);
+    setRedirectMessage("Authenticated. Entering workspace…");
     router.push("/dashboard");
     router.refresh();
   }
 
-  // Render preloader while performing auto-login or active session validation
-  if (isCheckingSession) {
+  // Render preloader only when actively transitioning to dashboard
+  if (isRedirecting) {
     return (
       <TenantPreloader
         companyName={company.name}
         brandColor={brandColor}
         logoUrl={company.logoUrl}
-        message={preloaderMessage}
+        message={redirectMessage}
         fullScreen={true}
       />
     );

@@ -4267,7 +4267,7 @@
       "label": "config",
       "file_type": "code",
       "source_file": "middleware.ts",
-      "source_location": "L133",
+      "source_location": "L141",
       "_origin": "ast",
       "id": "middleware_config",
       "community": 22,
@@ -16162,7 +16162,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "middleware.ts",
-      "source_location": "L133",
+      "source_location": "L141",
       "weight": 1.0,
       "source": "middleware",
       "target": "middleware_config",
@@ -20370,5 +20370,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e6f63f1b8982cd9c13c2c82d54deca89ea790d50"
+  "built_at_commit": "692c4d2027f06ff6fb960dbbbfc190dfeb8ab4d6"
 }
