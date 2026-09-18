@@ -50,10 +50,14 @@ export default async function AppLayout({
       .eq("id", profile.company_id)
       .single();
 
-    if (correctCompany) {
+    if (correctCompany && correctCompany.slug !== subdomain) {
       const appDomain = process.env.NEXT_PUBLIC_APP_DOMAIN ?? "erp.dilshadcodes.com";
-      const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
-      redirect(`${protocol}://${correctCompany.slug}.${appDomain}/dashboard`);
+      const isProd = process.env.NODE_ENV === "production";
+      if (!isProd) {
+        redirect(`http://${correctCompany.slug}.localhost:3000/dashboard`);
+      } else {
+        redirect(`https://${correctCompany.slug}.${appDomain}/dashboard`);
+      }
     }
 
     redirect(`/login`);

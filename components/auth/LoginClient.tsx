@@ -37,6 +37,13 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
   useEffect(() => {
     let isMounted = true;
 
+    // Safety timeout: Never leave user stuck on preloader for more than 2 seconds
+    const safetyTimer = setTimeout(() => {
+      if (isMounted) {
+        setIsCheckingSession(false);
+      }
+    }, 2000);
+
     async function checkExistingSession(): Promise<void> {
       try {
         const supabase = createClient();
@@ -45,9 +52,26 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
         } = await supabase.auth.getSession();
 
         if (session?.user && isMounted) {
-          setPreloaderMessage("Session active. Opening workspace…");
-          router.replace("/dashboard");
-          return;
+          // Check if the authenticated user belongs to THIS company slug
+          const { data: profile } = await supabase
+            .from("profiles")
+            .select("company_id")
+            .eq("id", session.user.id)
+            .single();
+
+          if (profile?.company_id) {
+            const { data: userCompany } = await supabase
+              .from("companies")
+              .select("slug")
+              .eq("id", profile.company_id)
+              .single();
+
+            if (userCompany?.slug === company.slug && isMounted) {
+              setPreloaderMessage("Session active. Opening workspace…");
+              window.location.href = "/dashboard";
+              return;
+            }
+          }
         }
       } catch (err) {
         console.error("Session verification error:", err);
@@ -62,8 +86,9 @@ export default function LoginClient({ company }: LoginClientProps): React.JSX.El
 
     return () => {
       isMounted = false;
+      clearTimeout(safetyTimer);
     };
-  }, [router]);
+  }, [company.slug]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>): Promise<void> {
     e.preventDefault();

@@ -78,20 +78,28 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
   const isSetPasswordPage = url.pathname === "/set-password";
   const isApiRoute = url.pathname.startsWith("/api");
 
-  // If user is already authenticated and visits /login or root /, auto-redirect to dashboard
+  // If user is already authenticated and visits /login or root /, auto-redirect to dashboard ONLY if user belongs to this company
   if (user && (isLoginPage || url.pathname === "/")) {
-    const dashboardUrl = new URL(request.url);
-    dashboardUrl.pathname = "/dashboard";
-    const response = NextResponse.redirect(dashboardUrl);
-    sessionResponse.cookies.getAll().forEach((cookie) => {
-      const isProdDomain = hostWithoutPort.endsWith(appDomain);
-      response.cookies.set(cookie.name, cookie.value, {
-        ...(isProdDomain ? { domain: `.${appDomain}` } : {}),
-        sameSite: "lax",
-        secure: process.env.NODE_ENV === "production",
+    const { data: userProfile } = await supabase
+      .from("profiles")
+      .select("company_id")
+      .eq("id", user.id)
+      .single();
+
+    if (userProfile && userProfile.company_id === company.id) {
+      const dashboardUrl = new URL(request.url);
+      dashboardUrl.pathname = "/dashboard";
+      const response = NextResponse.redirect(dashboardUrl);
+      sessionResponse.cookies.getAll().forEach((cookie) => {
+        const isProdDomain = hostWithoutPort.endsWith(appDomain);
+        response.cookies.set(cookie.name, cookie.value, {
+          ...(isProdDomain ? { domain: `.${appDomain}` } : {}),
+          sameSite: "lax",
+          secure: process.env.NODE_ENV === "production",
+        });
       });
-    });
-    return response;
+      return response;
+    }
   }
 
   if (!user && !isLoginPage && !isSetPasswordPage && !isApiRoute) {
