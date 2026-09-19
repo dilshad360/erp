@@ -430,7 +430,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient",
-      "community": 31,
+      "community": 75,
       "norm_label": "newclientformclient.tsx"
     },
     {
@@ -440,7 +440,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient_clientformschema",
-      "community": 31,
+      "community": 75,
       "norm_label": "clientformschema"
     },
     {
@@ -450,7 +450,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient_clientformdata",
-      "community": 31,
+      "community": 75,
       "norm_label": "clientformdata"
     },
     {
@@ -460,7 +460,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient_newclientformclient",
-      "community": 31,
+      "community": 75,
       "norm_label": "newclientformclient()"
     },
     {
@@ -770,7 +770,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_projectlistclient",
-      "community": 7,
+      "community": 81,
       "norm_label": "projectlistclient.tsx"
     },
     {
@@ -780,7 +780,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_projectlistclient_projectrecord",
-      "community": 7,
+      "community": 81,
       "norm_label": "projectrecord"
     },
     {
@@ -790,7 +790,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_projectlistclient_clientoption",
-      "community": 7,
+      "community": 81,
       "norm_label": "clientoption"
     },
     {
@@ -800,7 +800,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_projectlistclient_projectlistclientprops",
-      "community": 7,
+      "community": 81,
       "norm_label": "projectlistclientprops"
     },
     {
@@ -820,7 +820,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient",
-      "community": 50,
+      "community": 7,
       "norm_label": "projectdetailclient.tsx"
     },
     {
@@ -830,7 +830,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_editprojectschema",
-      "community": 50,
+      "community": 7,
       "norm_label": "editprojectschema"
     },
     {
@@ -840,7 +840,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_editprojectformdata",
-      "community": 50,
+      "community": 7,
       "norm_label": "editprojectformdata"
     },
     {
@@ -860,7 +860,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_taskstatuscount",
-      "community": 50,
+      "community": 7,
       "norm_label": "taskstatuscount"
     },
     {
@@ -870,7 +870,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectteammember",
-      "community": 50,
+      "community": 7,
       "norm_label": "projectteammember"
     },
     {
@@ -1040,7 +1040,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_page",
-      "community": 7,
+      "community": 81,
       "norm_label": "page.tsx"
     },
     {
@@ -1050,7 +1050,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_page_metadata",
-      "community": 7,
+      "community": 81,
       "norm_label": "metadata"
     },
     {
@@ -1060,7 +1060,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_page_projectspage",
-      "community": 7,
+      "community": 81,
       "norm_label": "projectspage()"
     },
     {
@@ -3240,24 +3240,24 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_confirmdialog",
-      "community": 31,
+      "community": 2,
       "norm_label": "confirmdialog.tsx"
     },
     {
       "label": "ConfirmDialogProps",
       "file_type": "code",
       "source_file": "components/shared/ConfirmDialog.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "components_shared_confirmdialog_confirmdialogprops",
-      "community": 31,
+      "community": 2,
       "norm_label": "confirmdialogprops"
     },
     {
       "label": "ConfirmDialog()",
       "file_type": "code",
       "source_file": "components/shared/ConfirmDialog.tsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "components_shared_confirmdialog_confirmdialog",
       "community": 2,
@@ -7870,7 +7870,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_phase_4_clients",
-      "community": 14,
+      "community": 58,
       "norm_label": "phase-4-clients.md"
     },
     {
@@ -7880,7 +7880,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_phase_4_clients_phase_4_client_management",
-      "community": 14,
+      "community": 58,
       "norm_label": "phase 4 \u2014 client management"
     },
     {
@@ -7890,7 +7890,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "phases_phase_4_clients_what_you_re_building",
-      "community": 14,
+      "community": 58,
       "norm_label": "what you're building"
     },
     {
@@ -7980,7 +7980,7 @@
       "source_location": "L132",
       "_origin": "ast",
       "id": "phases_phase_4_clients_notes",
-      "community": 14,
+      "community": 58,
       "norm_label": "notes"
     },
     {
@@ -8120,7 +8120,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_phase_6_tasks",
-      "community": 54,
+      "community": 14,
       "norm_label": "phase-6-tasks.md"
     },
     {
@@ -8130,7 +8130,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_phase_6_tasks_phase_6_task_management",
-      "community": 54,
+      "community": 14,
       "norm_label": "phase 6 \u2014 task management"
     },
     {
@@ -8140,7 +8140,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "phases_phase_6_tasks_what_you_re_building",
-      "community": 54,
+      "community": 14,
       "norm_label": "what you're building"
     },
     {
@@ -8250,7 +8250,7 @@
       "source_location": "L191",
       "_origin": "ast",
       "id": "phases_phase_6_tasks_notes",
-      "community": 54,
+      "community": 14,
       "norm_label": "notes"
     },
     {
@@ -9951,6 +9951,17 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/clients/ClientListClient.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_clients_clientlistclient",
+      "target": "components_shared_confirmdialog_confirmdialog",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10086,6 +10097,17 @@
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "components_shared_confirmdialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
+      "target": "components_shared_confirmdialog_confirmdialog",
       "confidence_score": 1.0
     },
     {
@@ -11126,6 +11148,17 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/projects/ProjectListClient.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_projects_projectlistclient",
+      "target": "components_shared_confirmdialog_confirmdialog",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11380,6 +11413,17 @@
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "components_shared_confirmdialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
+      "target": "components_shared_confirmdialog_confirmdialog",
       "confidence_score": 1.0
     },
     {
@@ -15761,7 +15805,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/shared/ConfirmDialog.tsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "source": "components_shared_confirmdialog",
       "target": "components_shared_confirmdialog_confirmdialog",
@@ -15771,7 +15815,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/shared/ConfirmDialog.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "source": "components_shared_confirmdialog",
       "target": "components_shared_confirmdialog_confirmdialogprops",
@@ -15782,7 +15826,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/shared/ConfirmDialog.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "source": "components_shared_confirmdialog",
       "target": "components_ui_button",
@@ -15793,7 +15837,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/shared/ConfirmDialog.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "source": "components_shared_confirmdialog",
       "target": "components_ui_button_button",
@@ -15842,6 +15886,39 @@
       "weight": 1.0,
       "source": "components_shared_confirmdialog_confirmdialog",
       "target": "package_dependencies_react"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/tasks/KanbanCard.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "components_tasks_kanbancard",
+      "target": "components_shared_confirmdialog_confirmdialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/tasks/TaskForm.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "components_tasks_taskform",
+      "target": "components_shared_confirmdialog_confirmdialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/tasks/TaskListView.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "components_tasks_tasklistview",
+      "target": "components_shared_confirmdialog_confirmdialog",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",

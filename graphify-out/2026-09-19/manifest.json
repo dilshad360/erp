@@ -355,8 +355,8 @@
     "semantic_hash": ""
   },
   "components/shared/ConfirmDialog.tsx": {
-    "mtime": 1789552929.2805772,
-    "ast_hash": "fe522cd9f2d26e00e246fb4e00869e34",
+    "mtime": 1789814164.6003976,
+    "ast_hash": "85045ba3e83a1c60cb6d7e8e0c321f47",
     "semantic_hash": ""
   },
   "components/shared/DataTable.tsx": {
@@ -455,8 +455,8 @@
     "semantic_hash": ""
   },
   "components/tasks/TaskForm.tsx": {
-    "mtime": 1789811892.4339774,
-    "ast_hash": "919dc2109b1d1a5ff9919de67a42c497",
+    "mtime": 1789814147.551034,
+    "ast_hash": "54f750e6d444ced88fd985ee0119f6e2",
     "semantic_hash": ""
   },
   "components/tasks/TaskListView.tsx": {

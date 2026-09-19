@@ -1,11 +1,11 @@
 # Graph Report - ERP  (2026-09-19)
 
 ## Corpus Check
-- 166 files · ~108,513 words
+- 166 files · ~108,553 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 954 nodes · 1261 edges · 81 communities (63 shown, 18 thin omitted)
+- 954 nodes · 1268 edges · 82 communities (65 shown, 17 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
@@ -92,6 +92,7 @@
 - [[_COMMUNITY_graphify|graphify.md]]
 - [[_COMMUNITY_graphify|graphify.md]]
 - [[_COMMUNITY_page.tsx|page.tsx]]
+- [[_COMMUNITY_ProjectListClient.tsx|ProjectListClient.tsx]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `createClient()` - 87 edges
@@ -120,7 +121,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (81 total, 18 thin omitted)
+## Communities (82 total, 17 thin omitted)
 
 ### Community 0 - "ClientDetailClient.tsx"
 Cohesion: 0.31
@@ -132,7 +133,7 @@ Nodes (28): AppLayout(), AppLayoutProps, generateMetadata(), LoginPage(), LoginP
 
 ### Community 2 - "TaskForm.tsx"
 Cohesion: 0.07
-Nodes (43): ClientListClient(), DateFilterKey, GlobalTask, GlobalTasksClient(), GlobalTasksClientProps, isDueToday(), isOverdue(), PRIORITY_BADGE (+35 more)
+Nodes (44): ClientListClient(), DateFilterKey, GlobalTask, GlobalTasksClient(), GlobalTasksClientProps, isDueToday(), isOverdue(), PRIORITY_BADGE (+36 more)
 
 ### Community 3 - "EmployeeListClient.tsx"
 Cohesion: 0.09
@@ -151,8 +152,8 @@ Cohesion: 0.09
 Nodes (21): aliases, components, hooks, lib, ui, utils, iconLibrary, menuAccent (+13 more)
 
 ### Community 7 - "ProjectDetailClient.tsx"
-Cohesion: 0.18
-Nodes (14): DashboardPage(), metadata, MyTask, RecentProject, ProjectDetailClient(), metadata, ProjectsPage(), ClientOption (+6 more)
+Cohesion: 0.20
+Nodes (13): DashboardPage(), metadata, MyTask, RecentProject, EditProjectFormData, editProjectSchema, ProjectDetailClient(), ProjectTeamMember (+5 more)
 
 ### Community 8 - "Backend — Database, API & Supabase Configuration"
 Cohesion: 0.06
@@ -180,7 +181,7 @@ Nodes (4): checkOutSchema, POST(), metadata, NewClientPage()
 
 ### Community 14 - "page.tsx"
 Cohesion: 0.22
-Nodes (3): Notes, Phase 4 — Client Management, What You're Building
+Nodes (3): Notes, Phase 6 — Task Management, What You're Building
 
 ### Community 15 - "page.tsx"
 Cohesion: 0.29
@@ -239,8 +240,8 @@ Cohesion: 0.25
 Nodes (8): 1. Defect Description & Symptoms, 2. Environment & Context, 3. Steps to Reproduce, 4. Multi-Tenancy & Security Impact Assessment, 5. Root Cause Analysis (RCA), 6. Fix Implementation Plan, 7. Verification & Regression Checklist, [BUG-002]: Mobile View Missing Company Logo Top Header and BottomNav "More" Button Non-Functional
 
 ### Community 31 - "layout.tsx"
-Cohesion: 0.18
-Nodes (10): ClientDetailProps, EditClientFormData, editClientSchema, ClientFormData, clientFormSchema, ConfirmDialogProps, LoadingButton(), LoadingButtonProps (+2 more)
+Cohesion: 0.27
+Nodes (7): ClientDetailProps, EditClientFormData, editClientSchema, LoadingButton(), LoadingButtonProps, Button(), buttonVariants
 
 ### Community 37 - "page.tsx"
 Cohesion: 0.50
@@ -263,8 +264,8 @@ Cohesion: 0.11
 Nodes (18): 1. User Story Statement, 2. Business Value & Context, 3. Multi-Tenancy & Security Verification, 4. Technical Scope & Architecture, 5. Acceptance Criteria (Given-When-Then), 6. Edge Cases & Boundary Conditions, 7. Implementation Subtasks Breakdown, 8. Quality & Verification Gates (+10 more)
 
 ### Community 50 - "page.tsx"
-Cohesion: 0.17
-Nodes (11): EditProjectFormData, editProjectSchema, ProjectDetailProps, ProjectTeamMember, TaskStatusCount, NewProjectFormClientProps, ProjectFormData, projectFormSchema (+3 more)
+Cohesion: 0.24
+Nodes (7): ProjectDetailProps, NewProjectFormClientProps, ProjectFormData, projectFormSchema, ClientOption, ClientSelect(), ClientSelectProps
 
 ### Community 51 - "Multi-Tenant ERP SaaS — Development Plan"
 Cohesion: 0.12
@@ -279,8 +280,8 @@ Cohesion: 0.15
 Nodes (14): AssigneeAvatarGroup(), DatePicker(), DatePickerProps, EmptyState(), EmptyStateProps, FormField(), FormFieldProps, UserMultiSelect() (+6 more)
 
 ### Community 54 - "Tasks"
-Cohesion: 0.14
-Nodes (13): 6.1 — Task Schema & Migration, 6.2 — Task API Routes, 6.3 — Task List View, 6.4 — Task Creation & Edit Form, 6.5 — Kanban Board, 6.6 — My Tasks Page, 6.7 — Kanban Column Management (Settings), 6.8 — Dashboard Integration (+5 more)
+Cohesion: 0.20
+Nodes (10): 6.1 — Task Schema & Migration, 6.2 — Task API Routes, 6.3 — Task List View, 6.4 — Task Creation & Edit Form, 6.5 — Kanban Board, 6.6 — My Tasks Page, 6.7 — Kanban Column Management (Settings), 6.8 — Dashboard Integration (+2 more)
 
 ### Community 55 - "Tasks"
 Cohesion: 0.14
@@ -295,8 +296,8 @@ Cohesion: 0.17
 Nodes (11): 2.1 — DataTable Shared Component, 2.2 — Employee List Page, 2.3 — Invite Employee Flow, 2.4 — Employee Profile Page, 2.5 — Avatar Upload, 2.6 — Role Management (Basic), 2.7 — Phase 2 Verification, Notes (+3 more)
 
 ### Community 58 - "Tasks"
-Cohesion: 0.25
-Nodes (8): 4.1 — Clients Schema & Migration, 4.2 — Shared Components: Forms & Dialogs, 4.3 — Client API Routes, 4.4 — Client List Page, 4.5 — Add / Edit Client Form, 4.6 — Client Detail Page, 4.7 — Phase 4 Verification, Tasks
+Cohesion: 0.17
+Nodes (11): 4.1 — Clients Schema & Migration, 4.2 — Shared Components: Forms & Dialogs, 4.3 — Client API Routes, 4.4 — Client List Page, 4.5 — Add / Edit Client Form, 4.6 — Client Detail Page, 4.7 — Phase 4 Verification, Notes (+3 more)
 
 ### Community 59 - "[BUG-XXX]: [Short Descriptive Summary of the Defect]"
 Cohesion: 0.20
@@ -358,25 +359,33 @@ Nodes (5): 1. Description & Symptoms, 2. Root Cause Analysis (RCA), 3. Resolutio
 Cohesion: 0.50
 Nodes (3): File Naming Convention, Stories Directory (`phases/stories/`), Workflow
 
+### Community 75 - "PageHeader.tsx"
+Cohesion: 0.29
+Nodes (3): ClientFormData, clientFormSchema, PageHeaderProps
+
+### Community 81 - "ProjectListClient.tsx"
+Cohesion: 0.38
+Nodes (5): metadata, ProjectsPage(), ClientOption, ProjectListClientProps, ProjectRecord
+
 ## Knowledge Gaps
 - **544 isolated node(s):** `metadata`, `metadata`, `metadata`, `step1Schema`, `step2Schema` (+539 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **17 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `createClient()` connect `createClient` to `EmployeeSettingsClient.tsx`, `TaskForm.tsx`, `EmployeeListClient.tsx`, `ProjectDetailClient.tsx`, `page.tsx`, `server.ts`, `route.ts`, `PageHeader.tsx`, `route.ts`, `route.ts`, `route.ts`, `route.ts`, `page.tsx`, `[BUG-001]: Employee Users Exposed to Company-Level Workspace Settings and Missing Role-Specific Settings`, `page.tsx`, `TRACKER.md`, `page.tsx`, `route.ts`, `route.ts`, `page.tsx`, `route.ts`?**
+- **Why does `createClient()` connect `createClient` to `EmployeeSettingsClient.tsx`, `TaskForm.tsx`, `EmployeeListClient.tsx`, `ProjectDetailClient.tsx`, `page.tsx`, `server.ts`, `route.ts`, `PageHeader.tsx`, `route.ts`, `route.ts`, `route.ts`, `route.ts`, `page.tsx`, `[BUG-001]: Employee Users Exposed to Company-Level Workspace Settings and Missing Role-Specific Settings`, `page.tsx`, `TRACKER.md`, `page.tsx`, `route.ts`, `route.ts`, `page.tsx`, `route.ts`, `ProjectListClient.tsx`?**
   _High betweenness centrality (0.077) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `dependencies` to `TaskForm.tsx`?**
   _High betweenness centrality (0.037) - this node is a cross-community bridge._
 - **Why does `react` connect `TaskForm.tsx` to `dependencies`?**
-  _High betweenness centrality (0.036) - this node is a cross-community bridge._
+  _High betweenness centrality (0.037) - this node is a cross-community bridge._
 - **What connects `metadata`, `metadata`, `metadata` to the rest of the system?**
   _544 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `EmployeeSettingsClient.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.0611764705882353 - nodes in this community are weakly interconnected._
 - **Should `TaskForm.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.07205513784461152 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07188778492109878 - nodes in this community are weakly interconnected._
 - **Should `EmployeeListClient.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.0896551724137931 - nodes in this community are weakly interconnected._

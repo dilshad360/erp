@@ -60,11 +60,10 @@ const taskFormSchema = z.object({
 
 type TaskFormValues = z.infer<typeof taskFormSchema>;
 
-// ── Props ─────────────────────────────────────────────────────
-
 interface TaskFormProps {
   projectId: string;
   statuses: TaskStatus[];
+  projects?: { id: string; name: string }[];
   defaultValues?: Partial<TaskFormData>;
   onSuccess: (task: TaskFormData) => void;
   onCancel: () => void;
@@ -86,6 +85,7 @@ const PRIORITY_OPTIONS = [
 export default function TaskForm({
   projectId,
   statuses,
+  projects,
   defaultValues,
   onSuccess,
   onCancel,
@@ -220,6 +220,29 @@ export default function TaskForm({
             <AlertCircle size={15} className="shrink-0" />
             <span>{errors.root.message}</span>
           </div>
+        )}
+
+        {/* Project Selector (shown if projects list is provided) */}
+        {projects && projects.length > 0 && (
+          <FormField label="Project" required error={errors.projectId?.message}>
+            <Controller
+              control={control}
+              name="projectId"
+              render={({ field }) => (
+                <select
+                  value={field.value ?? projectId}
+                  onChange={(e) => field.onChange(e.target.value)}
+                  className="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-brand)] transition-colors cursor-pointer"
+                >
+                  {projects.map((p) => (
+                    <option key={p.id} value={p.id}>
+                      {p.name}
+                    </option>
+                  ))}
+                </select>
+              )}
+            />
+          </FormField>
         )}
 
         {/* Title */}

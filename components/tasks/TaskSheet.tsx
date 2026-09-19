@@ -10,6 +10,7 @@ interface TaskSheetProps {
   onClose: () => void;
   projectId: string;
   statuses: TaskStatus[];
+  projects?: { id: string; name: string }[];
   mode?: "create" | "edit";
   taskId?: string;
   defaultValues?: Partial<TaskFormData>;
@@ -25,6 +26,7 @@ export default function TaskSheet({
   onClose,
   projectId,
   statuses,
+  projects,
   mode = "create",
   taskId,
   defaultValues,
@@ -103,6 +105,7 @@ export default function TaskSheet({
           <TaskForm
             projectId={projectId}
             statuses={statuses}
+            projects={projects}
             mode={mode}
             taskId={taskId}
             canDelete={canDelete}

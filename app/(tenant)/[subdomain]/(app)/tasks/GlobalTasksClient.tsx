@@ -522,6 +522,7 @@ export default function GlobalTasksClient({
             }}
             projectId={editTask?.project?.id || targetProjectId}
             statuses={statuses}
+            projects={projects}
             mode={editTask ? "edit" : "create"}
             taskId={editTask?.id}
             title={editTask ? `Edit Task: ${editTask.title}` : "Create New Task"}
