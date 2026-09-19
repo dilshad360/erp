@@ -34,14 +34,25 @@ export default async function ClientsPage({
     redirect(`/${subdomain}/login`);
   }
 
-  // Fetch clients for the current tenant company
+  // Fetch clients for the current tenant company with project counts
   const { data: clients } = await supabase
     .from("clients")
-    .select("*")
+    .select(`
+      *,
+      projects (
+        id
+      )
+    `)
     .eq("company_id", userProfile.company_id)
     .order("name", { ascending: true });
 
-  const clientList = (clients as unknown as ClientRecord[]) || [];
+  const clientList = ((clients as unknown as Array<Record<string, unknown>>) || []).map((c) => {
+    const rawProjects = (c.projects as Array<{ id: string }> | null) || [];
+    return {
+      ...c,
+      project_count: rawProjects.length,
+    } as unknown as ClientRecord;
+  });
 
   return (
     <ClientListClient

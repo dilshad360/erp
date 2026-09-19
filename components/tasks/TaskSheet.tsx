@@ -14,7 +14,9 @@ interface TaskSheetProps {
   defaultValues?: Partial<TaskFormData>;
   defaultStatusId?: string | null;
   onSuccess: (task: TaskFormData) => void;
+  onDelete?: (taskId: string) => Promise<void> | void;
   title?: string;
+  canDelete?: boolean;
 }
 
 export default function TaskSheet({
@@ -27,7 +29,9 @@ export default function TaskSheet({
   defaultValues,
   defaultStatusId,
   onSuccess,
+  onDelete,
   title,
+  canDelete = true,
 }: TaskSheetProps): React.JSX.Element | null {
   if (!open) return null;
 
@@ -42,24 +46,31 @@ export default function TaskSheet({
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 z-40 bg-black/50 backdrop-blur-[2px]"
+        className="fixed inset-0 z-40 bg-black/60 backdrop-blur-xs transition-opacity"
         onClick={onClose}
         aria-hidden="true"
       />
 
-      {/* Panel */}
+      {/* Drawer Panel: Bottom sheet on mobile (max-h-[90vh]), side sheet on desktop */}
       <div
         role="dialog"
         aria-modal="true"
         aria-label={sheetTitle}
-        className="fixed inset-y-0 right-0 z-50 w-full max-w-md bg-[var(--color-surface)] border-l border-[var(--color-border)] shadow-2xl flex flex-col animate-in slide-in-from-right duration-200"
+        className="fixed z-50 bg-[var(--color-surface)] border-[var(--color-border)] shadow-2xl flex flex-col transition-transform
+          inset-x-0 bottom-0 rounded-t-2xl border-t max-h-[92vh]
+          md:inset-y-0 md:right-0 md:left-auto md:w-full md:max-w-md md:rounded-none md:border-l md:max-h-full
+          animate-in slide-in-from-bottom md:slide-in-from-right duration-200"
       >
+        {/* Mobile handle indicator */}
+        <div className="w-10 h-1 rounded-full bg-[var(--color-border)] mx-auto mt-2.5 md:hidden" />
+
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-[var(--color-border)]">
           <h2 className="text-base font-semibold text-[var(--color-text-primary)]">
             {sheetTitle}
           </h2>
           <button
+            type="button"
             onClick={onClose}
             className="p-1.5 rounded-md text-[var(--color-text-muted)] hover:bg-[var(--color-surface-raised)] hover:text-[var(--color-text-primary)] transition-colors"
             aria-label="Close"
@@ -75,9 +86,16 @@ export default function TaskSheet({
             statuses={statuses}
             mode={mode}
             taskId={taskId}
+            canDelete={canDelete}
             defaultValues={mergedDefaults}
             onSuccess={(task) => {
               onSuccess(task);
+              onClose();
+            }}
+            onDelete={async (id) => {
+              if (onDelete) {
+                await onDelete(id);
+              }
               onClose();
             }}
             onCancel={onClose}

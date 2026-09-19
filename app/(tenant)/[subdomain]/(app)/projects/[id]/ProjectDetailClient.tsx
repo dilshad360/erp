@@ -13,16 +13,18 @@ import {
   Edit2,
   Archive,
   CheckCircle2,
-  Clock,
   CheckSquare,
   Users,
   AlertCircle,
+  Plus,
+  ArrowRight,
 } from "lucide-react";
 import PageHeader from "@/components/shared/PageHeader";
 import FormField from "@/components/shared/FormField";
 import LoadingButton from "@/components/shared/LoadingButton";
 import ConfirmDialog from "@/components/shared/ConfirmDialog";
 import ClientSelect, { type ClientOption } from "@/components/shared/ClientSelect";
+import Avatar from "@/components/shared/Avatar";
 import { Button } from "@/components/ui/button";
 import { formatINR, calculateTimelineProgress } from "@/lib/format";
 
@@ -77,20 +79,49 @@ export interface ProjectDetailData {
   } | null;
 }
 
+export interface TaskStatusCount {
+  id: string;
+  name: string;
+  color: string | null;
+  count: number;
+}
+
+export interface ProjectTeamMember {
+  id: string;
+  full_name: string | null;
+  avatar_url: string | null;
+  employee_id: string | null;
+  task_count: number;
+}
+
 export interface ProjectDetailProps {
   initialProject: ProjectDetailData;
   clients: ClientOption[];
   currentUserRole: string;
+  taskCounts?: {
+    total: number;
+    statuses: TaskStatusCount[];
+    unstatused: number;
+  };
+  teamMembers?: ProjectTeamMember[];
 }
 
 export default function ProjectDetailClient({
   initialProject,
   clients,
   currentUserRole,
+  taskCounts = { total: 0, statuses: [], unstatused: 0 },
+  teamMembers = [],
 }: ProjectDetailProps): React.JSX.Element {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [project, setProject] = useState<ProjectDetailData>(initialProject);
+
+  // Sync state if initialProject prop updates
+  useEffect(() => {
+    setProject(initialProject);
+  }, [initialProject]);
+
   const [isEditing, setIsEditing] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
   const [isArchiveOpen, setIsArchiveOpen] = useState(false);
@@ -190,6 +221,32 @@ export default function ProjectDetailClient({
     }
   }
 
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+  const [isDeleteLoading, setIsDeleteLoading] = useState(false);
+
+  async function handleDelete(): Promise<void> {
+    setIsDeleteLoading(true);
+    try {
+      const res = await fetch(`/api/projects/${project.id}?hard=true`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({ error: "Failed to delete project" }));
+        alert(err.error || "Failed to delete project");
+        return;
+      }
+
+      router.push("/projects");
+      router.refresh();
+    } catch (err) {
+      console.error(err);
+      alert("An unexpected error occurred while deleting project.");
+    } finally {
+      setIsDeleteLoading(false);
+    }
+  }
+
   function handleCancelEdit(): void {
     reset({
       name: project.name,
@@ -256,15 +313,23 @@ export default function ProjectDetailClient({
               </Button>
               {project.status !== "cancelled" && (
                 <Button
-                  variant="destructive"
+                  variant="outline"
                   size="sm"
                   onClick={() => setIsArchiveOpen(true)}
-                  className="bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/20"
+                  className="border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-raised)]"
                 >
                   <Archive size={14} className="mr-1.5" />
                   Archive
                 </Button>
               )}
+              <Button
+                variant="destructive"
+                size="sm"
+                onClick={() => setIsDeleteOpen(true)}
+                className="bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/20"
+              >
+                Delete Project
+              </Button>
             </div>
           ) : undefined
         }
@@ -557,63 +622,126 @@ export default function ProjectDetailClient({
             </p>
           </div>
 
-          {/* Tasks Summary Placeholder (Wired up in Phase 6) */}
-          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 sm:p-6 space-y-4">
-            <div className="flex items-center justify-between pb-2 border-b border-[var(--color-border-subtle)]">
+          {/* Tasks Overview Section */}
+          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 sm:p-6 space-y-4 shadow-xs">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[var(--color-border-subtle)]">
               <div className="flex items-center gap-2">
                 <CheckSquare size={16} className="text-[var(--color-brand)]" />
                 <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">
                   Tasks Overview
                 </h3>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-secondary)] font-medium">
+                  {taskCounts?.total ?? 0} total
+                </span>
               </div>
-              <span className="text-xs text-[var(--color-text-muted)]">
-                Phase 6 Integration
-              </span>
-            </div>
-
-            <div className="grid grid-cols-3 gap-3 text-center">
-              <div className="p-3 rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border-subtle)]">
-                <div className="text-lg font-bold text-[var(--color-text-primary)]">0</div>
-                <div className="text-xs text-[var(--color-text-muted)] flex items-center justify-center gap-1 mt-1">
-                  <Clock size={12} />
-                  <span>To Do</span>
-                </div>
-              </div>
-              <div className="p-3 rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border-subtle)]">
-                <div className="text-lg font-bold text-[var(--color-brand)]">0</div>
-                <div className="text-xs text-[var(--color-text-muted)] flex items-center justify-center gap-1 mt-1">
-                  <Clock size={12} />
-                  <span>In Progress</span>
-                </div>
-              </div>
-              <div className="p-3 rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border-subtle)]">
-                <div className="text-lg font-bold text-[var(--color-success)]">0</div>
-                <div className="text-xs text-[var(--color-text-muted)] flex items-center justify-center gap-1 mt-1">
-                  <CheckCircle2 size={12} />
-                  <span>Completed</span>
-                </div>
+              <div className="flex items-center gap-2">
+                <Link
+                  href={`/projects/${project.id}/tasks?view=list`}
+                  className="px-2.5 py-1 text-xs font-medium rounded-md border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-raised)] hover:text-[var(--color-text-primary)] transition-colors"
+                >
+                  List View
+                </Link>
+                <Link
+                  href={`/projects/${project.id}/tasks?view=kanban`}
+                  className="px-2.5 py-1 text-xs font-medium rounded-md bg-[var(--color-brand)] text-white hover:bg-[var(--color-brand-hover)] transition-colors"
+                >
+                  Kanban Board →
+                </Link>
               </div>
             </div>
 
-            <p className="text-xs text-[var(--color-text-muted)] text-center pt-1">
-              Task assignment, Kanban boards, and status tracking will be active upon completing Phase 6.
-            </p>
+            {/* Dynamic Status Breakdown Cards */}
+            {taskCounts && taskCounts.statuses.length > 0 ? (
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {taskCounts.statuses.map((status) => (
+                  <div
+                    key={status.id}
+                    className="p-3.5 rounded-xl bg-[var(--color-surface-raised)]/60 border border-[var(--color-border-subtle)] space-y-1"
+                  >
+                    <div className="flex items-center gap-1.5 text-xs text-[var(--color-text-secondary)]">
+                      <span
+                        className="w-2 h-2 rounded-full shrink-0"
+                        style={{ backgroundColor: status.color || "var(--color-text-muted)" }}
+                      />
+                      <span className="truncate font-medium">{status.name}</span>
+                    </div>
+                    <div
+                      className="text-xl font-bold tracking-tight"
+                      style={{ color: status.color || "var(--color-text-primary)" }}
+                    >
+                      {status.count}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="p-4 text-center text-xs text-[var(--color-text-muted)] bg-[var(--color-surface-raised)]/30 rounded-lg">
+                No task statuses configured.
+              </div>
+            )}
           </div>
 
-          {/* Team Members Placeholder (Derived from Tasks in Phase 6) */}
-          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 sm:p-6 space-y-3">
-            <div className="flex items-center justify-between pb-2 border-b border-[var(--color-border-subtle)]">
+          {/* Project Team Section */}
+          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 sm:p-6 space-y-4 shadow-xs">
+            <div className="flex items-center justify-between pb-3 border-b border-[var(--color-border-subtle)]">
               <div className="flex items-center gap-2">
                 <Users size={16} className="text-[var(--color-brand)]" />
                 <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">
                   Project Team
                 </h3>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-secondary)] font-medium">
+                  {teamMembers.length} {teamMembers.length === 1 ? "member" : "members"}
+                </span>
               </div>
-              <span className="text-xs text-[var(--color-text-muted)]">Derived</span>
+              <Link
+                href={`/projects/${project.id}/tasks`}
+                className="text-xs text-[var(--color-brand)] hover:underline flex items-center gap-1 font-medium"
+              >
+                <span>Assign tasks</span>
+                <ArrowRight size={13} />
+              </Link>
             </div>
-            <p className="text-xs text-[var(--color-text-muted)]">
-              Team members are dynamically populated from team members assigned to active tasks within this project.
-            </p>
+
+            {teamMembers.length === 0 ? (
+              <div className="py-6 text-center space-y-2">
+                <p className="text-xs text-[var(--color-text-muted)]">
+                  No team members assigned to tasks in this project yet.
+                </p>
+                <Link
+                  href={`/projects/${project.id}/tasks`}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium bg-[var(--color-brand-subtle)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-white transition-colors"
+                >
+                  <Plus size={13} />
+                  <span>Create task & assign members</span>
+                </Link>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                {teamMembers.map((member) => (
+                  <div
+                    key={member.id}
+                    className="flex items-center gap-3 p-3 rounded-xl bg-[var(--color-surface-raised)]/60 border border-[var(--color-border-subtle)]"
+                  >
+                    <Avatar
+                      src={member.avatar_url}
+                      name={member.full_name}
+                      size="md"
+                    />
+                    <div className="min-w-0 flex-1">
+                      <p className="text-xs font-semibold text-[var(--color-text-primary)] truncate">
+                        {member.full_name || "Unnamed Employee"}
+                      </p>
+                      <p className="text-[11px] text-[var(--color-text-muted)] truncate">
+                        {member.employee_id ? `#${member.employee_id}` : "Team Member"}
+                      </p>
+                    </div>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-[var(--color-brand-subtle)] text-[var(--color-brand)] font-medium shrink-0">
+                      {member.task_count} {member.task_count === 1 ? "task" : "tasks"}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -627,6 +755,18 @@ export default function ProjectDetailClient({
         title={`Archive ${project.name}?`}
         description="Archiving this project will set its status to 'cancelled'. You can still view it under the 'All' projects list."
         confirmLabel="Archive Project"
+        variant="destructive"
+      />
+
+      {/* Hard Delete Confirmation Dialog */}
+      <ConfirmDialog
+        isOpen={isDeleteOpen}
+        onClose={() => setIsDeleteOpen(false)}
+        onConfirm={handleDelete}
+        isLoading={isDeleteLoading}
+        title={`Permanently Delete ${project.name}?`}
+        description={`Permanently deleting "${project.name}" will delete the project and all attached tasks and team assignments across the organization. This action cannot be undone.`}
+        confirmLabel="Permanently Delete"
         variant="destructive"
       />
       </div>

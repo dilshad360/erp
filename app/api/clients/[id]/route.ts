@@ -174,7 +174,7 @@ export async function PUT(
 }
 
 export async function DELETE(
-  _request: NextRequest,
+  request: NextRequest,
   props: RouteProps
 ): Promise<NextResponse> {
   const { id } = await props.params;
@@ -202,13 +202,31 @@ export async function DELETE(
 
   if (profile.role !== "admin" && profile.role !== "manager") {
     return NextResponse.json(
-      { data: null, error: "Forbidden: Only admins and managers can deactivate clients" },
+      { data: null, error: "Forbidden: Only admins and managers can delete or deactivate clients" },
       { status: 403 }
     );
   }
 
+  const { searchParams } = new URL(request.url);
+  const isHardDelete = searchParams.get("hard") === "true";
+
+  if (isHardDelete) {
+    // Hard delete client — DB foreign key cascades to projects, tasks, and task_assignees
+    const { error: deleteError } = await supabase
+      .from("clients")
+      .delete()
+      .eq("id", id)
+      .eq("company_id", profile.company_id);
+
+    if (deleteError) {
+      return NextResponse.json({ data: null, error: deleteError.message }, { status: 500 });
+    }
+
+    return NextResponse.json({ data: { id, deleted: true }, error: null });
+  }
+
   // Soft delete — set status to 'inactive'
-  const { data: deactivatedClient, error: deleteError } = await supabase
+  const { data: deactivatedClient, error: deactivateError } = await supabase
     .from("clients")
     .update({ status: "inactive" })
     .eq("id", id)
@@ -216,8 +234,8 @@ export async function DELETE(
     .select()
     .single();
 
-  if (deleteError) {
-    return NextResponse.json({ data: null, error: deleteError.message }, { status: 500 });
+  if (deactivateError) {
+    return NextResponse.json({ data: null, error: deactivateError.message }, { status: 500 });
   }
 
   return NextResponse.json({ data: deactivatedClient, error: null });

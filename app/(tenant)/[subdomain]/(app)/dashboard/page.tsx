@@ -126,17 +126,16 @@ export default async function DashboardPage(): Promise<React.JSX.Element> {
         .limit(1)
         .single();
 
-      const { count: openTasksCount } = await supabase
-        .from("tasks")
-        .select("id", { count: "exact", head: true })
-        .eq("assignee_id", user.id)
-        .eq("company_id", profile.company_id)
-        .neq("status_id", lastStatusData?.id ?? "00000000-0000-0000-0000-000000000000");
+      // Find all tasks assigned to user (junction + legacy)
+      const { data: userAssignments } = await supabase
+        .from("task_assignees")
+        .select("task_id")
+        .eq("profile_id", user.id)
+        .eq("company_id", profile.company_id);
 
-      openTasksForUser = openTasksCount ?? 0;
+      const userAssignedTaskIds = (userAssignments ?? []).map((a) => a.task_id);
 
-      // 6. My tasks quick list (5 most urgent / soonest due)
-      const { data: myTasksData } = await supabase
+      let myTasksQuery = supabase
         .from("tasks")
         .select(`
           id,
@@ -146,12 +145,39 @@ export default async function DashboardPage(): Promise<React.JSX.Element> {
           status:status_id (id, name, color),
           project:project_id (id, name)
         `)
-        .eq("assignee_id", user.id)
-        .eq("company_id", profile.company_id)
+        .eq("company_id", profile.company_id);
+
+      if (userAssignedTaskIds.length > 0) {
+        myTasksQuery = myTasksQuery.or(
+          `assignee_id.eq.${user.id},id.in.(${userAssignedTaskIds.join(",")})`
+        );
+      } else {
+        myTasksQuery = myTasksQuery.eq("assignee_id", user.id);
+      }
+
+      const { data: myTasksData } = await myTasksQuery
         .order("due_date", { ascending: true, nullsFirst: false })
         .limit(5);
 
       myTasksList = (myTasksData as unknown as MyTask[]) || [];
+
+      // Open tasks count (excluding last status)
+      let openTasksQuery = supabase
+        .from("tasks")
+        .select("id", { count: "exact", head: true })
+        .eq("company_id", profile.company_id)
+        .neq("status_id", lastStatusData?.id ?? "00000000-0000-0000-0000-000000000000");
+
+      if (userAssignedTaskIds.length > 0) {
+        openTasksQuery = openTasksQuery.or(
+          `assignee_id.eq.${user.id},id.in.(${userAssignedTaskIds.join(",")})`
+        );
+      } else {
+        openTasksQuery = openTasksQuery.eq("assignee_id", user.id);
+      }
+
+      const { count: openTasksCount } = await openTasksQuery;
+      openTasksForUser = openTasksCount ?? 0;
     }
   }
 

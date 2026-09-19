@@ -83,24 +83,73 @@ export default async function ProjectTasksPage({
     color: s.color ?? null,
   }));
 
-  // Fetch tasks for this project
+  // Fetch tasks for this project with multi-assignee junction
   const { data: tasksData } = await supabase
     .from("tasks")
     .select(`
       id,
       title,
+      description,
       priority,
       due_date,
+      created_by,
       created_at,
       status:status_id (id, name, color),
-      assignee:assignee_id (id, full_name, avatar_url),
+      assignee:assignee_id (id, full_name, avatar_url, employee_id),
+      task_assignees (
+        profile:profile_id (
+          id,
+          full_name,
+          avatar_url,
+          employee_id
+        )
+      ),
       project:project_id (id, name)
     `)
     .eq("project_id", projectId)
     .eq("company_id", profile.company_id)
     .order("created_at", { ascending: false });
 
-  const tasks = (tasksData ?? []) as unknown as Task[];
+  interface RawAssignee {
+    profile: {
+      id: string;
+      full_name: string | null;
+      avatar_url: string | null;
+      employee_id: string | null;
+    } | null;
+  }
+
+  const tasks: Task[] = (tasksData ?? []).map((t: Record<string, unknown>) => {
+    const rawAssignees = (t.task_assignees as RawAssignee[] | null) || [];
+    const profiles = rawAssignees
+      .map((ta) => ta.profile)
+      .filter((p): p is NonNullable<typeof p> => p !== null);
+
+    const primaryAssignee = t.assignee as {
+      id: string;
+      full_name: string | null;
+      avatar_url: string | null;
+      employee_id: string | null;
+    } | null;
+
+    if (profiles.length === 0 && primaryAssignee) {
+      profiles.push(primaryAssignee);
+    }
+
+    return {
+      id: t.id as string,
+      title: t.title as string,
+      description: (t.description as string | null) ?? null,
+      priority: (t.priority as string) ?? "medium",
+      due_date: (t.due_date as string | null) ?? null,
+      created_by: (t.created_by as string | null) ?? null,
+      created_at: t.created_at as string,
+      status: t.status as Task["status"],
+      assignee: primaryAssignee,
+      assignees: profiles,
+      project: t.project as Task["project"],
+    };
+  });
 
   const basePath = `/projects/${projectId}/tasks`;
 

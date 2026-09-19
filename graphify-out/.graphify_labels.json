@@ -64,15 +64,18 @@
   "62": "[BUG-003]: Mobile BottomNav Lack of Active Press Feedback & Loading Perception Delay",
   "63": "Tasks",
   "64": "TRACKER.md",
+  "65": "Tasks",
   "66": "Tasks",
   "68": "route.ts",
   "69": "route.ts",
   "70": "page.tsx",
   "71": "Bug Reports & Fixes Directory (`phases/bugs/`)",
+  "72": "BUG-004: Mobile Viewport Bottom Scroll Clearance Obscured by BottomNav",
   "73": "Stories Directory (`phases/stories/`)",
   "74": "route.ts",
-  "75": "StatCard.tsx",
   "76": "graphify.md",
   "77": "graphify.md",
-  "78": "generate_icons.py"
+  "78": "generate_icons.py",
+  "79": "Phase 3 — Attendance",
+  "80": "page.tsx"
 }

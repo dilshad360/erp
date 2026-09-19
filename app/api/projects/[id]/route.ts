@@ -221,7 +221,7 @@ export async function PUT(
 }
 
 export async function DELETE(
-  _request: NextRequest,
+  request: NextRequest,
   props: RouteProps
 ): Promise<NextResponse> {
   const { id } = await props.params;
@@ -249,13 +249,31 @@ export async function DELETE(
 
   if (profile.role !== "admin" && profile.role !== "manager") {
     return NextResponse.json(
-      { data: null, error: "Forbidden: Only admins and managers can archive projects" },
+      { data: null, error: "Forbidden: Only admins and managers can delete or archive projects" },
       { status: 403 }
     );
   }
 
-  // Soft delete — set status to 'cancelled'
-  const { data: cancelledProject, error: deleteError } = await supabase
+  const { searchParams } = new URL(request.url);
+  const isHardDelete = searchParams.get("hard") === "true";
+
+  if (isHardDelete) {
+    // Hard delete project — DB cascade will remove linked tasks and task assignees
+    const { error: deleteError } = await supabase
+      .from("projects")
+      .delete()
+      .eq("id", id)
+      .eq("company_id", profile.company_id);
+
+    if (deleteError) {
+      return NextResponse.json({ data: null, error: deleteError.message }, { status: 500 });
+    }
+
+    return NextResponse.json({ data: { id, deleted: true }, error: null });
+  }
+
+  // Soft delete / archive — set status to 'cancelled'
+  const { data: cancelledProject, error: archiveError } = await supabase
     .from("projects")
     .update({ status: "cancelled" })
     .eq("id", id)
@@ -263,8 +281,8 @@ export async function DELETE(
     .select()
     .single();
 
-  if (deleteError) {
-    return NextResponse.json({ data: null, error: deleteError.message }, { status: 500 });
+  if (archiveError) {
+    return NextResponse.json({ data: null, error: archiveError.message }, { status: 500 });
   }
 
   return NextResponse.json({ data: cancelledProject, error: null });

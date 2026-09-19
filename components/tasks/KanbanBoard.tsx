@@ -105,22 +105,53 @@ export default function KanbanBoard({
     setSheetOpen(true);
   }, []);
 
+  const handleDeleteTask = useCallback(async (taskId: string): Promise<void> => {
+    try {
+      const res = await fetch(`/api/tasks/${taskId}`, { method: "DELETE" });
+      if (res.ok) {
+        setTasks((prev) => prev.filter((t) => t.id !== taskId));
+      }
+    } catch (err) {
+      console.error("Failed to delete task", err);
+    }
+  }, []);
+
+  // Sync state if initialTasks prop updates
+  React.useEffect(() => {
+    setTasks(initialTasks);
+  }, [initialTasks]);
+
   const handleTaskSuccess = useCallback(
-    (task: TaskFormData): void => {
+    (taskData: TaskFormData): void => {
+      const taskStatus =
+        taskData.status ??
+        statuses.find((s) => s.id === (taskData.status_id || taskData.statusId)) ??
+        null;
+
+      const formattedTask: Task = {
+        id: taskData.id ?? String(Date.now()),
+        title: taskData.title,
+        description: taskData.description ?? null,
+        priority: taskData.priority,
+        due_date: taskData.due_date ?? taskData.dueDate ?? null,
+        created_at: taskData.created_at ?? new Date().toISOString(),
+        created_by: taskData.created_by,
+        status: taskStatus,
+        assignee: taskData.assignee ?? (taskData.assignees?.[0] ?? null),
+        assignees: taskData.assignees ?? (taskData.assignee ? [taskData.assignee] : []),
+        project: taskData.project ?? null,
+      };
+
       if (editTask) {
         // Update in-place
-        const newStatus = statuses.find((s) => s.id === task.statusId) ?? null;
         setTasks((prev) =>
-          prev.map((t) =>
-            t.id === task.id
-              ? { ...t, title: task.title, priority: task.priority, due_date: task.dueDate ?? null, status: newStatus }
-              : t
-          )
+          prev.map((t) => (t.id === formattedTask.id ? { ...t, ...formattedTask } : t))
         );
       } else {
-        // Refresh for new tasks (need full joined data)
-        router.refresh();
+        // Prepend new task immediately to board
+        setTasks((prev) => [formattedTask, ...prev.filter((t) => t.id !== formattedTask.id)]);
       }
+      router.refresh();
       setSheetOpen(false);
       setEditTask(null);
     },
@@ -145,11 +176,12 @@ export default function KanbanBoard({
               status={status}
               tasks={tasks.filter((t) => t.status?.id === status.id)}
               onEdit={handleEdit}
+              onDelete={handleDeleteTask}
               onAddTask={handleAddTask}
             />
           ))}
 
-          {/* Unstaused column for tasks with no status */}
+          {/* Unstatused column for tasks with no status */}
           {tasks.some((t) => !t.status) && (
             <div className="flex flex-col w-[270px] min-w-[270px]">
               <div className="flex items-center gap-2 mb-2 px-1">
@@ -191,16 +223,17 @@ export default function KanbanBoard({
             ? {
                 id: editTask.id,
                 title: editTask.title,
-                description: null,
+                description: editTask.description ?? null,
                 statusId: editTask.status?.id ?? null,
                 priority: editTask.priority as TaskFormData["priority"],
-                assigneeId: editTask.assignee?.id ?? null,
+                assigneeIds: editTask.assignees?.map((a) => a.id) ?? (editTask.assignee ? [editTask.assignee.id] : []),
                 dueDate: editTask.due_date,
                 projectId,
               }
             : undefined
         }
         onSuccess={handleTaskSuccess}
+        onDelete={handleDeleteTask}
       />
     </div>
   );

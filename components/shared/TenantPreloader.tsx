@@ -86,10 +86,10 @@ export default function TenantPreloader({
         </p>
       </div>
 
-      {/* Indeterminate Glowing Progress Bar */}
+      {/* Smooth Glowing Progress Bar */}
       <div className="w-44 h-1 bg-[var(--color-border)] rounded-full overflow-hidden relative shadow-inner">
         <div
-          className="absolute top-0 bottom-0 rounded-full w-1/2 animate-indeterminate"
+          className="h-full w-full rounded-full animate-pulse"
           style={{
             backgroundColor: activeBrandColor,
             boxShadow: `0 0 10px ${activeBrandColor}`,

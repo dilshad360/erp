@@ -3,7 +3,6 @@
 import Sidebar from "./Sidebar";
 import BottomNav from "./BottomNav";
 import MobileHeader from "./MobileHeader";
-import RouteProgressBar from "./RouteProgressBar";
 import InstallPrompt from "@/components/pwa/InstallPrompt";
 
 type AppShellProps = {
@@ -13,9 +12,6 @@ type AppShellProps = {
 export default function AppShell({ children }: AppShellProps): React.JSX.Element {
   return (
     <div className="flex h-screen h-[100dvh] overflow-hidden bg-[var(--color-bg)] relative">
-      {/* Instant route transition progress bar */}
-      <RouteProgressBar />
-
       {/* Desktop sidebar — hidden on mobile */}
       <aside className="hidden md:flex md:flex-col md:w-60 md:shrink-0">
         <Sidebar />

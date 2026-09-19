@@ -250,7 +250,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_attendance_page",
-      "community": 12,
+      "community": 4,
       "norm_label": "page.tsx"
     },
     {
@@ -260,7 +260,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_attendance_page_metadata",
-      "community": 12,
+      "community": 4,
       "norm_label": "metadata"
     },
     {
@@ -270,7 +270,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_attendance_page_attendancepageprops",
-      "community": 12,
+      "community": 4,
       "norm_label": "attendancepageprops"
     },
     {
@@ -280,7 +280,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_attendance_page_attendancelog",
-      "community": 12,
+      "community": 4,
       "norm_label": "attendancelog"
     },
     {
@@ -290,7 +290,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_attendance_page_attendancepage",
-      "community": 12,
+      "community": 4,
       "norm_label": "attendancepage()"
     },
     {
@@ -347,7 +347,7 @@
       "label": "editClientSchema",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L31",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_editclientschema",
       "community": 0,
@@ -357,7 +357,7 @@
       "label": "EditClientFormData",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L55",
+      "source_location": "L56",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_editclientformdata",
       "community": 0,
@@ -367,7 +367,7 @@
       "label": "LinkedProject",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L57",
+      "source_location": "L58",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_linkedproject",
       "community": 61,
@@ -377,7 +377,7 @@
       "label": "ClientDetailProps",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L66",
+      "source_location": "L67",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_clientdetailprops",
       "community": 0,
@@ -387,7 +387,7 @@
       "label": "ClientDetailClient()",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L84",
+      "source_location": "L85",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_clientdetailclient",
       "community": 0,
@@ -430,7 +430,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient",
-      "community": 60,
+      "community": 0,
       "norm_label": "newclientformclient.tsx"
     },
     {
@@ -440,7 +440,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient_clientformschema",
-      "community": 60,
+      "community": 0,
       "norm_label": "clientformschema"
     },
     {
@@ -450,7 +450,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient_clientformdata",
-      "community": 60,
+      "community": 0,
       "norm_label": "clientformdata"
     },
     {
@@ -460,7 +460,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient_newclientformclient",
-      "community": 60,
+      "community": 0,
       "norm_label": "newclientformclient()"
     },
     {
@@ -470,7 +470,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_page",
-      "community": 13,
+      "community": 80,
       "norm_label": "page.tsx"
     },
     {
@@ -480,7 +480,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_page_metadata",
-      "community": 13,
+      "community": 80,
       "norm_label": "metadata"
     },
     {
@@ -490,7 +490,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_page_newclientpage",
-      "community": 13,
+      "community": 80,
       "norm_label": "newclientpage()"
     },
     {
@@ -917,7 +917,7 @@
       "label": "editProjectSchema",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L29",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_editprojectschema",
       "community": 60,
@@ -927,7 +927,7 @@
       "label": "EditProjectFormData",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L53",
+      "source_location": "L55",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_editprojectformdata",
       "community": 60,
@@ -937,17 +937,37 @@
       "label": "ProjectDetailData",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L55",
+      "source_location": "L57",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetaildata",
-      "community": 30,
+      "community": 10,
       "norm_label": "projectdetaildata"
+    },
+    {
+      "label": "TaskStatusCount",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
+      "source_location": "L82",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_taskstatuscount",
+      "community": 60,
+      "norm_label": "taskstatuscount"
+    },
+    {
+      "label": "ProjectTeamMember",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
+      "source_location": "L89",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectteammember",
+      "community": 60,
+      "norm_label": "projectteammember"
     },
     {
       "label": "ProjectDetailProps",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L80",
+      "source_location": "L97",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetailprops",
       "community": 60,
@@ -957,7 +977,7 @@
       "label": "ProjectDetailClient()",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L86",
+      "source_location": "L109",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetailclient",
       "community": 7,
@@ -970,7 +990,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_page",
-      "community": 30,
+      "community": 10,
       "norm_label": "page.tsx"
     },
     {
@@ -980,7 +1000,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_page_generatemetadata",
-      "community": 30,
+      "community": 10,
       "norm_label": "generatemetadata()"
     },
     {
@@ -990,7 +1010,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_page_projectdetailpage",
-      "community": 30,
+      "community": 10,
       "norm_label": "projectdetailpage()"
     },
     {
@@ -1080,7 +1100,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_page",
-      "community": 10,
+      "community": 13,
       "norm_label": "page.tsx"
     },
     {
@@ -1090,7 +1110,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_page_metadata",
-      "community": 10,
+      "community": 13,
       "norm_label": "metadata"
     },
     {
@@ -1100,7 +1120,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_page_newprojectpage",
-      "community": 10,
+      "community": 13,
       "norm_label": "newprojectpage()"
     },
     {
@@ -1140,7 +1160,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_settings_page",
-      "community": 50,
+      "community": 12,
       "norm_label": "page.tsx"
     },
     {
@@ -1150,7 +1170,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_settings_page_metadata",
-      "community": 50,
+      "community": 12,
       "norm_label": "metadata"
     },
     {
@@ -1160,8 +1180,108 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_settings_page_settingspage",
-      "community": 50,
+      "community": 12,
       "norm_label": "settingspage()"
+    },
+    {
+      "label": "GlobalTasksClient.tsx",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "community": 2,
+      "norm_label": "globaltasksclient.tsx"
+    },
+    {
+      "label": "GlobalTask",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_app_tasks_globaltasksclient_globaltask",
+      "community": 2,
+      "norm_label": "globaltask"
+    },
+    {
+      "label": "ProjectOption",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_app_tasks_globaltasksclient_projectoption",
+      "community": 2,
+      "norm_label": "projectoption"
+    },
+    {
+      "label": "GlobalTasksClientProps",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_app_tasks_globaltasksclient_globaltasksclientprops",
+      "community": 2,
+      "norm_label": "globaltasksclientprops"
+    },
+    {
+      "label": "DateFilterKey",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_app_tasks_globaltasksclient_datefilterkey",
+      "community": 2,
+      "norm_label": "datefilterkey"
+    },
+    {
+      "label": "ViewModeKey",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_app_tasks_globaltasksclient_viewmodekey",
+      "community": 2,
+      "norm_label": "viewmodekey"
+    },
+    {
+      "label": "isOverdue()",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_app_tasks_globaltasksclient_isoverdue",
+      "community": 2,
+      "norm_label": "isoverdue()"
+    },
+    {
+      "label": "isDueToday()",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L58",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_app_tasks_globaltasksclient_isduetoday",
+      "community": 2,
+      "norm_label": "isduetoday()"
+    },
+    {
+      "label": "PRIORITY_BADGE",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L63",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_app_tasks_globaltasksclient_priority_badge",
+      "community": 2,
+      "norm_label": "priority_badge"
+    },
+    {
+      "label": "GlobalTasksClient()",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_app_tasks_globaltasksclient_globaltasksclient",
+      "community": 2,
+      "norm_label": "globaltasksclient()"
     },
     {
       "label": "page.tsx",
@@ -1170,78 +1290,28 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_tasks_page",
-      "community": 14,
+      "community": 2,
       "norm_label": "page.tsx"
     },
     {
       "label": "metadata",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_tasks_page_metadata",
-      "community": 14,
+      "community": 2,
       "norm_label": "metadata"
     },
     {
-      "label": "MyTask",
+      "label": "TasksPage()",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
-      "source_location": "L12",
+      "source_location": "L11",
       "_origin": "ast",
-      "id": "app_tenant_subdomain_app_tasks_page_mytask",
-      "community": 14,
-      "norm_label": "mytask"
-    },
-    {
-      "label": "FilterKey",
-      "file_type": "code",
-      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
-      "source_location": "L22",
-      "_origin": "ast",
-      "id": "app_tenant_subdomain_app_tasks_page_filterkey",
-      "community": 14,
-      "norm_label": "filterkey"
-    },
-    {
-      "label": "isOverdue()",
-      "file_type": "code",
-      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
-      "source_location": "L24",
-      "_origin": "ast",
-      "id": "app_tenant_subdomain_app_tasks_page_isoverdue",
-      "community": 14,
-      "norm_label": "isoverdue()"
-    },
-    {
-      "label": "isDueToday()",
-      "file_type": "code",
-      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
-      "source_location": "L29",
-      "_origin": "ast",
-      "id": "app_tenant_subdomain_app_tasks_page_isduetoday",
-      "community": 14,
-      "norm_label": "isduetoday()"
-    },
-    {
-      "label": "PRIORITY_BADGE",
-      "file_type": "code",
-      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
-      "source_location": "L34",
-      "_origin": "ast",
-      "id": "app_tenant_subdomain_app_tasks_page_priority_badge",
-      "community": 14,
-      "norm_label": "priority_badge"
-    },
-    {
-      "label": "MyTasksPage()",
-      "file_type": "code",
-      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
-      "source_location": "L41",
-      "_origin": "ast",
-      "id": "app_tenant_subdomain_app_tasks_page_mytaskspage",
-      "community": 14,
-      "norm_label": "mytaskspage()"
+      "id": "app_tenant_subdomain_app_tasks_page_taskspage",
+      "community": 2,
+      "norm_label": "taskspage()"
     },
     {
       "label": "loading.tsx",
@@ -1410,7 +1480,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_attendance_checkin_route",
-      "community": 13,
+      "community": 10,
       "norm_label": "route.ts"
     },
     {
@@ -1420,7 +1490,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_api_attendance_checkin_route_checkinschema",
-      "community": 13,
+      "community": 10,
       "norm_label": "checkinschema"
     },
     {
@@ -1430,7 +1500,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_api_attendance_checkin_route_post",
-      "community": 13,
+      "community": 10,
       "norm_label": "post()"
     },
     {
@@ -1490,7 +1560,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_clients_id_route",
-      "community": 10,
+      "community": 69,
       "norm_label": "route.ts"
     },
     {
@@ -1500,7 +1570,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_api_clients_id_route_updateclientschema",
-      "community": 10,
+      "community": 69,
       "norm_label": "updateclientschema"
     },
     {
@@ -1510,7 +1580,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_api_clients_id_route_routeprops",
-      "community": 10,
+      "community": 69,
       "norm_label": "routeprops"
     },
     {
@@ -1520,7 +1590,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "app_api_clients_id_route_get",
-      "community": 10,
+      "community": 69,
       "norm_label": "get()"
     },
     {
@@ -1530,7 +1600,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "app_api_clients_id_route_put",
-      "community": 10,
+      "community": 69,
       "norm_label": "put()"
     },
     {
@@ -1540,7 +1610,7 @@
       "source_location": "L176",
       "_origin": "ast",
       "id": "app_api_clients_id_route_delete",
-      "community": 10,
+      "community": 69,
       "norm_label": "delete()"
     },
     {
@@ -1577,7 +1647,7 @@
       "label": "POST()",
       "file_type": "code",
       "source_file": "app/api/clients/route.ts",
-      "source_location": "L77",
+      "source_location": "L90",
       "_origin": "ast",
       "id": "app_api_clients_route_post",
       "community": 10,
@@ -1760,7 +1830,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_employees_route",
-      "community": 25,
+      "community": 13,
       "norm_label": "route.ts"
     },
     {
@@ -1770,7 +1840,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_api_employees_route_inviteemployeeschema",
-      "community": 25,
+      "community": 13,
       "norm_label": "inviteemployeeschema"
     },
     {
@@ -1780,7 +1850,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_api_employees_route_get",
-      "community": 25,
+      "community": 13,
       "norm_label": "get()"
     },
     {
@@ -1790,7 +1860,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "app_api_employees_route_post",
-      "community": 25,
+      "community": 13,
       "norm_label": "post()"
     },
     {
@@ -2094,20 +2164,10 @@
       "norm_label": "route.ts"
     },
     {
-      "label": "updateTaskSchema",
-      "file_type": "code",
-      "source_file": "app/api/tasks/[id]/route.ts",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "app_api_tasks_id_route_updatetaskschema",
-      "community": 64,
-      "norm_label": "updatetaskschema"
-    },
-    {
       "label": "GET()",
       "file_type": "code",
       "source_file": "app/api/tasks/[id]/route.ts",
-      "source_location": "L19",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "app_api_tasks_id_route_get",
       "community": 64,
@@ -2117,7 +2177,7 @@
       "label": "PUT()",
       "file_type": "code",
       "source_file": "app/api/tasks/[id]/route.ts",
-      "source_location": "L76",
+      "source_location": "L101",
       "_origin": "ast",
       "id": "app_api_tasks_id_route_put",
       "community": 64,
@@ -2127,7 +2187,7 @@
       "label": "DELETE()",
       "file_type": "code",
       "source_file": "app/api/tasks/[id]/route.ts",
-      "source_location": "L173",
+      "source_location": "L287",
       "_origin": "ast",
       "id": "app_api_tasks_id_route_delete",
       "community": 64,
@@ -2140,37 +2200,27 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_tasks_route",
-      "community": 69,
+      "community": 64,
       "norm_label": "route.ts"
-    },
-    {
-      "label": "createTaskSchema",
-      "file_type": "code",
-      "source_file": "app/api/tasks/route.ts",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "app_api_tasks_route_createtaskschema",
-      "community": 69,
-      "norm_label": "createtaskschema"
     },
     {
       "label": "GET()",
       "file_type": "code",
       "source_file": "app/api/tasks/route.ts",
-      "source_location": "L20",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "app_api_tasks_route_get",
-      "community": 69,
+      "community": 64,
       "norm_label": "get()"
     },
     {
       "label": "POST()",
       "file_type": "code",
       "source_file": "app/api/tasks/route.ts",
-      "source_location": "L102",
+      "source_location": "L172",
       "_origin": "ast",
       "id": "app_api_tasks_route_post",
-      "community": 69,
+      "community": 64,
       "norm_label": "post()"
     },
     {
@@ -2710,7 +2760,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_attendance_attendancemonthcalendar",
-      "community": 12,
+      "community": 4,
       "norm_label": "attendancemonthcalendar.tsx"
     },
     {
@@ -2720,7 +2770,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_attendance_attendancemonthcalendar_attendancelog",
-      "community": 12,
+      "community": 4,
       "norm_label": "attendancelog"
     },
     {
@@ -2730,7 +2780,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "components_attendance_attendancemonthcalendar_attendancemonthcalendarprops",
-      "community": 12,
+      "community": 4,
       "norm_label": "attendancemonthcalendarprops"
     },
     {
@@ -2740,7 +2790,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "components_attendance_attendancemonthcalendar_daystatus",
-      "community": 12,
+      "community": 4,
       "norm_label": "daystatus"
     },
     {
@@ -2750,7 +2800,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "components_attendance_attendancemonthcalendar_getdaystatus",
-      "community": 12,
+      "community": 4,
       "norm_label": "getdaystatus()"
     },
     {
@@ -2760,7 +2810,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "components_attendance_attendancemonthcalendar_status_styles",
-      "community": 12,
+      "community": 4,
       "norm_label": "status_styles"
     },
     {
@@ -2770,7 +2820,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "components_attendance_attendancemonthcalendar_formattime",
-      "community": 12,
+      "community": 4,
       "norm_label": "formattime()"
     },
     {
@@ -2780,7 +2830,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "components_attendance_attendancemonthcalendar_formatduration",
-      "community": 12,
+      "community": 4,
       "norm_label": "formatduration()"
     },
     {
@@ -2790,7 +2840,7 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "components_attendance_attendancemonthcalendar_attendancemonthcalendar",
-      "community": 12,
+      "community": 4,
       "norm_label": "attendancemonthcalendar()"
     },
     {
@@ -2847,7 +2897,7 @@
       "label": "TenantLoginBranding",
       "file_type": "code",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L24",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "components_auth_loginclient_tenantloginbranding",
       "community": 37,
@@ -2857,7 +2907,7 @@
       "label": "LoginClientProps",
       "file_type": "code",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L31",
+      "source_location": "L30",
       "_origin": "ast",
       "id": "components_auth_loginclient_loginclientprops",
       "community": 1,
@@ -2867,7 +2917,7 @@
       "label": "LoginClient()",
       "file_type": "code",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L36",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "components_auth_loginclient_loginclient",
       "community": 1,
@@ -2930,7 +2980,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_settings_companysettingsclient",
-      "community": 50,
+      "community": 12,
       "norm_label": "companysettingsclient.tsx"
     },
     {
@@ -2940,7 +2990,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "components_settings_companysettingsclient_companydata",
-      "community": 50,
+      "community": 12,
       "norm_label": "companydata"
     },
     {
@@ -2950,7 +3000,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "components_settings_companysettingsclient_companysettingsclientprops",
-      "community": 50,
+      "community": 12,
       "norm_label": "companysettingsclientprops"
     },
     {
@@ -2960,7 +3010,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "components_settings_companysettingsclient_tabtype",
-      "community": 50,
+      "community": 12,
       "norm_label": "tabtype"
     },
     {
@@ -2970,7 +3020,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "components_settings_companysettingsclient_companysettingsclient",
-      "community": 50,
+      "community": 12,
       "norm_label": "companysettingsclient()"
     },
     {
@@ -3000,7 +3050,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "components_settings_employeesettingsclient_companysummarydata",
-      "community": 50,
+      "community": 12,
       "norm_label": "companysummarydata"
     },
     {
@@ -3047,7 +3097,7 @@
       "label": "AppShellProps",
       "file_type": "code",
       "source_file": "components/shared/AppShell.tsx",
-      "source_location": "L9",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "components_shared_appshell_appshellprops",
       "community": 1,
@@ -3057,11 +3107,61 @@
       "label": "AppShell()",
       "file_type": "code",
       "source_file": "components/shared/AppShell.tsx",
-      "source_location": "L13",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "components_shared_appshell_appshell",
       "community": 1,
       "norm_label": "appshell()"
+    },
+    {
+      "label": "AssigneeAvatarGroup.tsx",
+      "file_type": "code",
+      "source_file": "components/shared/AssigneeAvatarGroup.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_shared_assigneeavatargroup",
+      "community": 2,
+      "norm_label": "assigneeavatargroup.tsx"
+    },
+    {
+      "label": "AssigneeInfo",
+      "file_type": "code",
+      "source_file": "components/shared/AssigneeAvatarGroup.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "components_shared_assigneeavatargroup_assigneeinfo",
+      "community": 2,
+      "norm_label": "assigneeinfo"
+    },
+    {
+      "label": "AssigneeAvatarGroupProps",
+      "file_type": "code",
+      "source_file": "components/shared/AssigneeAvatarGroup.tsx",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "components_shared_assigneeavatargroup_assigneeavatargroupprops",
+      "community": 2,
+      "norm_label": "assigneeavatargroupprops"
+    },
+    {
+      "label": "SIZE_MAP",
+      "file_type": "code",
+      "source_file": "components/shared/AssigneeAvatarGroup.tsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "components_shared_assigneeavatargroup_size_map",
+      "community": 2,
+      "norm_label": "size_map"
+    },
+    {
+      "label": "AssigneeAvatarGroup()",
+      "file_type": "code",
+      "source_file": "components/shared/AssigneeAvatarGroup.tsx",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "components_shared_assigneeavatargroup_assigneeavatargroup",
+      "community": 2,
+      "norm_label": "assigneeavatargroup()"
     },
     {
       "label": "Avatar.tsx",
@@ -3140,7 +3240,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_clientselect",
-      "community": 53,
+      "community": 60,
       "norm_label": "clientselect.tsx"
     },
     {
@@ -3160,7 +3260,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "components_shared_clientselect_clientselectprops",
-      "community": 53,
+      "community": 60,
       "norm_label": "clientselectprops"
     },
     {
@@ -3170,7 +3270,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "components_shared_clientselect_clientselect",
-      "community": 53,
+      "community": 60,
       "norm_label": "clientselect()"
     },
     {
@@ -3180,7 +3280,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_colorpicker",
-      "community": 50,
+      "community": 12,
       "norm_label": "colorpicker.tsx"
     },
     {
@@ -3190,7 +3290,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_shared_colorpicker_preset_colors",
-      "community": 50,
+      "community": 12,
       "norm_label": "preset_colors"
     },
     {
@@ -3200,7 +3300,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "components_shared_colorpicker_colorpickerprops",
-      "community": 50,
+      "community": 12,
       "norm_label": "colorpickerprops"
     },
     {
@@ -3210,7 +3310,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "components_shared_colorpicker_colorpicker",
-      "community": 50,
+      "community": 12,
       "norm_label": "colorpicker()"
     },
     {
@@ -3240,7 +3340,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "components_shared_confirmdialog_confirmdialog",
-      "community": 5,
+      "community": 2,
       "norm_label": "confirmdialog()"
     },
     {
@@ -3370,7 +3470,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_loadingbutton",
-      "community": 60,
+      "community": 0,
       "norm_label": "loadingbutton.tsx"
     },
     {
@@ -3380,7 +3480,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_shared_loadingbutton_loadingbuttonprops",
-      "community": 60,
+      "community": 0,
       "norm_label": "loadingbuttonprops"
     },
     {
@@ -3390,7 +3490,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "components_shared_loadingbutton_loadingbutton",
-      "community": 60,
+      "community": 0,
       "norm_label": "loadingbutton()"
     },
     {
@@ -3450,17 +3550,17 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_routeprogressbar",
-      "community": 1,
+      "community": 79,
       "norm_label": "routeprogressbar.tsx"
     },
     {
       "label": "RouteProgressBar()",
       "file_type": "code",
       "source_file": "components/shared/RouteProgressBar.tsx",
-      "source_location": "L7",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "components_shared_routeprogressbar_routeprogressbar",
-      "community": 1,
+      "community": 79,
       "norm_label": "routeprogressbar()"
     },
     {
@@ -3530,7 +3630,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_statcard",
-      "community": 75,
+      "community": 7,
       "norm_label": "statcard.tsx"
     },
     {
@@ -3540,7 +3640,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "components_shared_statcard_statcardprops",
-      "community": 75,
+      "community": 7,
       "norm_label": "statcardprops"
     },
     {
@@ -3550,7 +3650,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "components_shared_statcard_statcard",
-      "community": 75,
+      "community": 7,
       "norm_label": "statcard()"
     },
     {
@@ -3674,6 +3774,46 @@
       "norm_label": "themetoggle()"
     },
     {
+      "label": "UserMultiSelect.tsx",
+      "file_type": "code",
+      "source_file": "components/shared/UserMultiSelect.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_shared_usermultiselect",
+      "community": 53,
+      "norm_label": "usermultiselect.tsx"
+    },
+    {
+      "label": "UserOption",
+      "file_type": "code",
+      "source_file": "components/shared/UserMultiSelect.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "components_shared_usermultiselect_useroption",
+      "community": 53,
+      "norm_label": "useroption"
+    },
+    {
+      "label": "UserMultiSelectProps",
+      "file_type": "code",
+      "source_file": "components/shared/UserMultiSelect.tsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "components_shared_usermultiselect_usermultiselectprops",
+      "community": 53,
+      "norm_label": "usermultiselectprops"
+    },
+    {
+      "label": "UserMultiSelect()",
+      "file_type": "code",
+      "source_file": "components/shared/UserMultiSelect.tsx",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "components_shared_usermultiselect_usermultiselect",
+      "community": 53,
+      "norm_label": "usermultiselect()"
+    },
+    {
       "label": "UserSelect.tsx",
       "file_type": "code",
       "source_file": "components/shared/UserSelect.tsx",
@@ -3757,7 +3897,7 @@
       "label": "PRIORITY_DOT",
       "file_type": "code",
       "source_file": "components/tasks/KanbanCard.tsx",
-      "source_location": "L10",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "components_tasks_kanbancard_priority_dot",
       "community": 2,
@@ -3767,7 +3907,7 @@
       "label": "isOverdue()",
       "file_type": "code",
       "source_file": "components/tasks/KanbanCard.tsx",
-      "source_location": "L17",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "components_tasks_kanbancard_isoverdue",
       "community": 2,
@@ -3777,7 +3917,7 @@
       "label": "KanbanCardProps",
       "file_type": "code",
       "source_file": "components/tasks/KanbanCard.tsx",
-      "source_location": "L22",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "components_tasks_kanbancard_kanbancardprops",
       "community": 2,
@@ -3787,7 +3927,7 @@
       "label": "KanbanCard()",
       "file_type": "code",
       "source_file": "components/tasks/KanbanCard.tsx",
-      "source_location": "L27",
+      "source_location": "L30",
       "_origin": "ast",
       "id": "components_tasks_kanbancard_kanbancard",
       "community": 2,
@@ -3797,7 +3937,7 @@
       "label": "KanbanCardOverlay()",
       "file_type": "code",
       "source_file": "components/tasks/KanbanCard.tsx",
-      "source_location": "L119",
+      "source_location": "L199",
       "_origin": "ast",
       "id": "components_tasks_kanbancard_kanbancardoverlay",
       "community": 2,
@@ -3827,7 +3967,7 @@
       "label": "KanbanColumn()",
       "file_type": "code",
       "source_file": "components/tasks/KanbanColumn.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "components_tasks_kanbancolumn_kanbancolumn",
       "community": 2,
@@ -3840,7 +3980,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_tasks_kanbancolumnmanager",
-      "community": 50,
+      "community": 12,
       "norm_label": "kanbancolumnmanager.tsx"
     },
     {
@@ -3850,7 +3990,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "components_tasks_kanbancolumnmanager_taskstatusrow",
-      "community": 50,
+      "community": 12,
       "norm_label": "taskstatusrow"
     },
     {
@@ -3860,7 +4000,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "components_tasks_kanbancolumnmanager_statusrow",
-      "community": 50,
+      "community": 12,
       "norm_label": "statusrow()"
     },
     {
@@ -3870,7 +4010,7 @@
       "source_location": "L172",
       "_origin": "ast",
       "id": "components_tasks_kanbancolumnmanager_kanbancolumnmanagerprops",
-      "community": 50,
+      "community": 12,
       "norm_label": "kanbancolumnmanagerprops"
     },
     {
@@ -3880,7 +4020,7 @@
       "source_location": "L176",
       "_origin": "ast",
       "id": "components_tasks_kanbancolumnmanager_kanbancolumnmanager",
-      "community": 50,
+      "community": 12,
       "norm_label": "kanbancolumnmanager()"
     },
     {
@@ -3897,7 +4037,7 @@
       "label": "TaskStatus",
       "file_type": "code",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L15",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "components_tasks_taskform_taskstatus",
       "community": 2,
@@ -3907,27 +4047,37 @@
       "label": "TaskFormData",
       "file_type": "code",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L21",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "components_tasks_taskform_taskformdata",
       "community": 2,
       "norm_label": "taskformdata"
     },
     {
-      "label": "taskSchema",
+      "label": "taskFormSchema",
       "file_type": "code",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L34",
+      "source_location": "L47",
       "_origin": "ast",
-      "id": "components_tasks_taskform_taskschema",
+      "id": "components_tasks_taskform_taskformschema",
       "community": 2,
-      "norm_label": "taskschema"
+      "norm_label": "taskformschema"
+    },
+    {
+      "label": "TaskFormValues",
+      "file_type": "code",
+      "source_file": "components/tasks/TaskForm.tsx",
+      "source_location": "L61",
+      "_origin": "ast",
+      "id": "components_tasks_taskform_taskformvalues",
+      "community": 2,
+      "norm_label": "taskformvalues"
     },
     {
       "label": "TaskFormProps",
       "file_type": "code",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L51",
+      "source_location": "L65",
       "_origin": "ast",
       "id": "components_tasks_taskform_taskformprops",
       "community": 2,
@@ -3937,7 +4087,7 @@
       "label": "PRIORITY_OPTIONS",
       "file_type": "code",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L61",
+      "source_location": "L77",
       "_origin": "ast",
       "id": "components_tasks_taskform_priority_options",
       "community": 2,
@@ -3947,7 +4097,7 @@
       "label": "TaskForm()",
       "file_type": "code",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L70",
+      "source_location": "L86",
       "_origin": "ast",
       "id": "components_tasks_taskform_taskform",
       "community": 2,
@@ -3967,7 +4117,7 @@
       "label": "Task",
       "file_type": "code",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "components_tasks_tasklistview_task",
       "community": 2,
@@ -3977,7 +4127,7 @@
       "label": "TaskListViewProps",
       "file_type": "code",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L23",
+      "source_location": "L28",
       "_origin": "ast",
       "id": "components_tasks_tasklistview_tasklistviewprops",
       "community": 2,
@@ -3987,7 +4137,7 @@
       "label": "PRIORITY_STYLES",
       "file_type": "code",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L31",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "components_tasks_tasklistview_priority_styles",
       "community": 2,
@@ -3997,7 +4147,7 @@
       "label": "PriorityBadge()",
       "file_type": "code",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L38",
+      "source_location": "L43",
       "_origin": "ast",
       "id": "components_tasks_tasklistview_prioritybadge",
       "community": 2,
@@ -4007,7 +4157,7 @@
       "label": "StatusBadge()",
       "file_type": "code",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L46",
+      "source_location": "L51",
       "_origin": "ast",
       "id": "components_tasks_tasklistview_statusbadge",
       "community": 2,
@@ -4017,7 +4167,7 @@
       "label": "isOverdue()",
       "file_type": "code",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L62",
+      "source_location": "L67",
       "_origin": "ast",
       "id": "components_tasks_tasklistview_isoverdue",
       "community": 2,
@@ -4027,7 +4177,7 @@
       "label": "TaskListView()",
       "file_type": "code",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L69",
+      "source_location": "L74",
       "_origin": "ast",
       "id": "components_tasks_tasklistview_tasklistview",
       "community": 2,
@@ -4057,7 +4207,7 @@
       "label": "TaskSheet()",
       "file_type": "code",
       "source_file": "components/tasks/TaskSheet.tsx",
-      "source_location": "L20",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "components_tasks_tasksheet_tasksheet",
       "community": 2,
@@ -4402,6 +4552,56 @@
       "id": "lib_validations_auth_activateemployeeinput",
       "community": 23,
       "norm_label": "activateemployeeinput"
+    },
+    {
+      "label": "task.ts",
+      "file_type": "code",
+      "source_file": "lib/validations/task.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "lib_validations_task",
+      "community": 64,
+      "norm_label": "task.ts"
+    },
+    {
+      "label": "createTaskSchema",
+      "file_type": "code",
+      "source_file": "lib/validations/task.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "lib_validations_task_createtaskschema",
+      "community": 64,
+      "norm_label": "createtaskschema"
+    },
+    {
+      "label": "updateTaskSchema",
+      "file_type": "code",
+      "source_file": "lib/validations/task.ts",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "lib_validations_task_updatetaskschema",
+      "community": 64,
+      "norm_label": "updatetaskschema"
+    },
+    {
+      "label": "CreateTaskInput",
+      "file_type": "code",
+      "source_file": "lib/validations/task.ts",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "lib_validations_task_createtaskinput",
+      "community": 64,
+      "norm_label": "createtaskinput"
+    },
+    {
+      "label": "UpdateTaskInput",
+      "file_type": "code",
+      "source_file": "lib/validations/task.ts",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "lib_validations_task_updatetaskinput",
+      "community": 64,
+      "norm_label": "updatetaskinput"
     },
     {
       "label": "middleware.ts",
@@ -4820,7 +5020,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "package_dependencies_react",
-      "community": 5,
+      "community": 2,
       "norm_label": "react"
     },
     {
@@ -5630,7 +5830,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tracker",
-      "community": 56,
+      "community": 14,
       "norm_label": "tracker.md"
     },
     {
@@ -5777,7 +5977,7 @@
       "label": "Database Migration Status",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L219",
+      "source_location": "L221",
       "_origin": "ast",
       "id": "tracker_database_migration_status",
       "community": 52,
@@ -5787,7 +5987,7 @@
       "label": "Pre-Launch Checklist",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L241",
+      "source_location": "L244",
       "_origin": "ast",
       "id": "tracker_pre_launch_checklist",
       "community": 52,
@@ -5797,7 +5997,7 @@
       "label": "Decisions & Notes Log",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L262",
+      "source_location": "L265",
       "_origin": "ast",
       "id": "tracker_decisions_notes_log",
       "community": 52,
@@ -6900,7 +7100,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_bugs_bug_001_employee_settings_role_isolation",
-      "community": 56,
+      "community": 14,
       "norm_label": "bug-001-employee-settings-role-isolation.md"
     },
     {
@@ -7000,7 +7200,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_bugs_bug_002_mobile_bottomnav_more_and_logo_missing",
-      "community": 56,
+      "community": 14,
       "norm_label": "bug-002-mobile-bottomnav-more-and-logo-missing.md"
     },
     {
@@ -7010,7 +7210,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_bugs_bug_002_mobile_bottomnav_more_and_logo_missing_bug_002_mobile_view_missing_company_logo_top_header_and_bottomnav_more_button_non_functional",
-      "community": 56,
+      "community": 30,
       "norm_label": "[bug-002]: mobile view missing company logo top header and bottomnav \"more\" button non-functional"
     },
     {
@@ -7020,7 +7220,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "phases_bugs_bug_002_mobile_bottomnav_more_and_logo_missing_1_defect_description_symptoms",
-      "community": 56,
+      "community": 30,
       "norm_label": "1. defect description & symptoms"
     },
     {
@@ -7030,7 +7230,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "phases_bugs_bug_002_mobile_bottomnav_more_and_logo_missing_2_environment_context",
-      "community": 56,
+      "community": 30,
       "norm_label": "2. environment & context"
     },
     {
@@ -7040,7 +7240,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "phases_bugs_bug_002_mobile_bottomnav_more_and_logo_missing_3_steps_to_reproduce",
-      "community": 56,
+      "community": 30,
       "norm_label": "3. steps to reproduce"
     },
     {
@@ -7050,7 +7250,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "phases_bugs_bug_002_mobile_bottomnav_more_and_logo_missing_4_multi_tenancy_security_impact_assessment",
-      "community": 56,
+      "community": 30,
       "norm_label": "4. multi-tenancy & security impact assessment"
     },
     {
@@ -7060,7 +7260,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "phases_bugs_bug_002_mobile_bottomnav_more_and_logo_missing_5_root_cause_analysis_rca",
-      "community": 56,
+      "community": 30,
       "norm_label": "5. root cause analysis (rca)"
     },
     {
@@ -7070,7 +7270,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "phases_bugs_bug_002_mobile_bottomnav_more_and_logo_missing_6_fix_implementation_plan",
-      "community": 56,
+      "community": 30,
       "norm_label": "6. fix implementation plan"
     },
     {
@@ -7080,7 +7280,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "phases_bugs_bug_002_mobile_bottomnav_more_and_logo_missing_7_verification_regression_checklist",
-      "community": 56,
+      "community": 30,
       "norm_label": "7. verification & regression checklist"
     },
     {
@@ -7090,7 +7290,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_bugs_bug_003_mobile_bottom_nav_press_feedback",
-      "community": 56,
+      "community": 14,
       "norm_label": "bug-003-mobile-bottom-nav-press-feedback.md"
     },
     {
@@ -7100,7 +7300,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_bugs_bug_003_mobile_bottom_nav_press_feedback_bug_003_mobile_bottomnav_lack_of_active_press_feedback_loading_perception_delay",
-      "community": 56,
+      "community": 25,
       "norm_label": "[bug-003]: mobile bottomnav lack of active press feedback & loading perception delay"
     },
     {
@@ -7110,7 +7310,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "phases_bugs_bug_003_mobile_bottom_nav_press_feedback_1_defect_description_symptoms",
-      "community": 56,
+      "community": 25,
       "norm_label": "1. defect description & symptoms"
     },
     {
@@ -7120,7 +7320,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "phases_bugs_bug_003_mobile_bottom_nav_press_feedback_2_environment_context",
-      "community": 56,
+      "community": 25,
       "norm_label": "2. environment & context"
     },
     {
@@ -7130,7 +7330,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "phases_bugs_bug_003_mobile_bottom_nav_press_feedback_3_steps_to_reproduce",
-      "community": 56,
+      "community": 25,
       "norm_label": "3. steps to reproduce"
     },
     {
@@ -7140,7 +7340,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "phases_bugs_bug_003_mobile_bottom_nav_press_feedback_4_multi_tenancy_security_impact_assessment",
-      "community": 56,
+      "community": 25,
       "norm_label": "4. multi-tenancy & security impact assessment"
     },
     {
@@ -7150,7 +7350,7 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "phases_bugs_bug_003_mobile_bottom_nav_press_feedback_5_root_cause_analysis_rca",
-      "community": 56,
+      "community": 25,
       "norm_label": "5. root cause analysis (rca)"
     },
     {
@@ -7160,7 +7360,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "phases_bugs_bug_003_mobile_bottom_nav_press_feedback_6_fix_implementation_plan",
-      "community": 56,
+      "community": 25,
       "norm_label": "6. fix implementation plan"
     },
     {
@@ -7170,7 +7370,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "phases_bugs_bug_003_mobile_bottom_nav_press_feedback_7_verification_regression_checklist",
-      "community": 56,
+      "community": 25,
       "norm_label": "7. verification & regression checklist"
     },
     {
@@ -7180,7 +7380,7 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "phases_bugs_bug_003_mobile_bottom_nav_press_feedback_8_post_mortem_preventative_action",
-      "community": 56,
+      "community": 25,
       "norm_label": "8. post-mortem & preventative action"
     },
     {
@@ -7190,7 +7390,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_bugs_bug_004_mobile_viewport_scroll_clearance",
-      "community": 56,
+      "community": 72,
       "norm_label": "bug-004-mobile-viewport-scroll-clearance.md"
     },
     {
@@ -7200,7 +7400,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_bugs_bug_004_mobile_viewport_scroll_clearance_bug_004_mobile_viewport_bottom_scroll_clearance_obscured_by_bottomnav",
-      "community": 56,
+      "community": 72,
       "norm_label": "bug-004: mobile viewport bottom scroll clearance obscured by bottomnav"
     },
     {
@@ -7210,7 +7410,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "phases_bugs_bug_004_mobile_viewport_scroll_clearance_1_description_symptoms",
-      "community": 56,
+      "community": 72,
       "norm_label": "1. description & symptoms"
     },
     {
@@ -7220,7 +7420,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "phases_bugs_bug_004_mobile_viewport_scroll_clearance_2_root_cause_analysis_rca",
-      "community": 56,
+      "community": 72,
       "norm_label": "2. root cause analysis (rca)"
     },
     {
@@ -7230,7 +7430,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "phases_bugs_bug_004_mobile_viewport_scroll_clearance_3_resolution",
-      "community": 56,
+      "community": 72,
       "norm_label": "3. resolution"
     },
     {
@@ -7240,7 +7440,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "phases_bugs_bug_004_mobile_viewport_scroll_clearance_4_verification",
-      "community": 56,
+      "community": 72,
       "norm_label": "4. verification"
     },
     {
@@ -7290,7 +7490,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_phase_1_foundation",
-      "community": 56,
+      "community": 14,
       "norm_label": "phase-1-foundation.md"
     },
     {
@@ -7300,7 +7500,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_phase_1_foundation_phase_1_foundation",
-      "community": 56,
+      "community": 14,
       "norm_label": "phase 1 \u2014 foundation"
     },
     {
@@ -7310,7 +7510,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "phases_phase_1_foundation_what_you_re_building",
-      "community": 56,
+      "community": 14,
       "norm_label": "what you're building"
     },
     {
@@ -7320,7 +7520,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "phases_phase_1_foundation_tasks",
-      "community": 56,
+      "community": 65,
       "norm_label": "tasks"
     },
     {
@@ -7330,7 +7530,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "phases_phase_1_foundation_1_1_project_initialization",
-      "community": 56,
+      "community": 65,
       "norm_label": "1.1 \u2014 project initialization"
     },
     {
@@ -7340,7 +7540,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "phases_phase_1_foundation_1_2_supabase_schema_companies_profiles",
-      "community": 56,
+      "community": 65,
       "norm_label": "1.2 \u2014 supabase schema: companies & profiles"
     },
     {
@@ -7350,7 +7550,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "phases_phase_1_foundation_1_3_auth_helpers_supabase_ssr_setup",
-      "community": 56,
+      "community": 65,
       "norm_label": "1.3 \u2014 auth helpers & supabase ssr setup"
     },
     {
@@ -7360,7 +7560,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "phases_phase_1_foundation_1_4_company_onboarding_flow",
-      "community": 56,
+      "community": 65,
       "norm_label": "1.4 \u2014 company onboarding flow"
     },
     {
@@ -7370,7 +7570,7 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "phases_phase_1_foundation_1_5_tenant_shell_login",
-      "community": 56,
+      "community": 65,
       "norm_label": "1.5 \u2014 tenant shell & login"
     },
     {
@@ -7380,7 +7580,7 @@
       "source_location": "L124",
       "_origin": "ast",
       "id": "phases_phase_1_foundation_1_6_dashboard_placeholder",
-      "community": 56,
+      "community": 65,
       "norm_label": "1.6 \u2014 dashboard placeholder"
     },
     {
@@ -7390,7 +7590,7 @@
       "source_location": "L136",
       "_origin": "ast",
       "id": "phases_phase_1_foundation_1_7_phase_1_verification",
-      "community": 56,
+      "community": 65,
       "norm_label": "1.7 \u2014 phase 1 verification"
     },
     {
@@ -7400,7 +7600,7 @@
       "source_location": "L150",
       "_origin": "ast",
       "id": "phases_phase_1_foundation_notes",
-      "community": 56,
+      "community": 14,
       "norm_label": "notes"
     },
     {
@@ -7410,7 +7610,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_phase_2_employees",
-      "community": 57,
+      "community": 50,
       "norm_label": "phase-2-employees.md"
     },
     {
@@ -7420,7 +7620,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_phase_2_employees_phase_2_employee_management",
-      "community": 57,
+      "community": 50,
       "norm_label": "phase 2 \u2014 employee management"
     },
     {
@@ -7430,7 +7630,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "phases_phase_2_employees_what_you_re_building",
-      "community": 57,
+      "community": 50,
       "norm_label": "what you're building"
     },
     {
@@ -7520,7 +7720,7 @@
       "source_location": "L141",
       "_origin": "ast",
       "id": "phases_phase_2_employees_notes",
-      "community": 57,
+      "community": 50,
       "norm_label": "notes"
     },
     {
@@ -8410,7 +8610,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_stories_story_004_autologin_preloader",
-      "community": 38,
+      "community": 14,
       "norm_label": "story-004-autologin-preloader.md"
     },
     {
@@ -8820,7 +9020,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_stories_story_006_crud_deletion_task_collaboration_multi_assignee",
-      "community": 56,
+      "community": 28,
       "norm_label": "story-006-crud-deletion-task-collaboration-multi-assignee.md"
     },
     {
@@ -9775,10 +9975,21 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(tenant)/[subdomain]/(app)/clients/ClientListClient.tsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_clients_clientlistclient_clientlistclient",
+      "target": "package_dependencies_react"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L84",
+      "source_location": "L85",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "app_tenant_subdomain_app_clients_id_clientdetailclient_clientdetailclient",
@@ -9788,7 +9999,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L66",
+      "source_location": "L67",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "app_tenant_subdomain_app_clients_id_clientdetailclient_clientdetailprops",
@@ -9798,7 +10009,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L55",
+      "source_location": "L56",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "app_tenant_subdomain_app_clients_id_clientdetailclient_editclientformdata",
@@ -9808,7 +10019,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "app_tenant_subdomain_app_clients_id_clientdetailclient_editclientschema",
@@ -9818,7 +10029,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L57",
+      "source_location": "L58",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "app_tenant_subdomain_app_clients_id_clientdetailclient_linkedproject",
@@ -9829,7 +10040,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "components_shared_confirmdialog",
@@ -9840,7 +10051,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "components_shared_emptystate",
@@ -9851,7 +10062,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "components_shared_formfield",
@@ -9862,7 +10073,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "components_shared_loadingbutton",
@@ -9873,7 +10084,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "components_shared_loadingbutton_loadingbutton",
@@ -9884,7 +10095,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "components_shared_pageheader",
@@ -9895,7 +10106,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "components_ui_button",
@@ -9906,7 +10117,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "components_ui_button_button",
@@ -10312,7 +10523,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/(tenant)/[subdomain]/(app)/dashboard/page.tsx",
-      "source_location": "L230",
+      "source_location": "L256",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_dashboard_page_dashboardpage",
       "target": "lib_format_calculatetimelineprogress"
@@ -10323,7 +10534,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/(tenant)/[subdomain]/(app)/dashboard/page.tsx",
-      "source_location": "L277",
+      "source_location": "L303",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_dashboard_page_dashboardpage",
       "target": "lib_format_formatinr"
@@ -11080,7 +11291,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/ProjectListClient.tsx",
-      "source_location": "L220",
+      "source_location": "L249",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_projectlistclient_projectlistclient",
       "target": "lib_format_calculatetimelineprogress"
@@ -11091,7 +11302,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/ProjectListClient.tsx",
-      "source_location": "L246",
+      "source_location": "L275",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_projectlistclient_projectlistclient",
       "target": "lib_format_formatinr"
@@ -11111,7 +11322,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L53",
+      "source_location": "L55",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "app_tenant_subdomain_app_projects_id_projectdetailclient_editprojectformdata",
@@ -11121,7 +11332,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "app_tenant_subdomain_app_projects_id_projectdetailclient_editprojectschema",
@@ -11131,7 +11342,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L86",
+      "source_location": "L109",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetailclient",
@@ -11141,7 +11352,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L55",
+      "source_location": "L57",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetaildata",
@@ -11151,10 +11362,30 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L80",
+      "source_location": "L97",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetailprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
+      "target": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectteammember",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
+      "target": "app_tenant_subdomain_app_projects_id_projectdetailclient_taskstatuscount",
       "confidence_score": 1.0
     },
     {
@@ -11162,7 +11393,29 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L25",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
+      "target": "components_shared_avatar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
+      "target": "components_shared_avatar_avatar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
+      "source_location": "L26",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "components_shared_clientselect",
@@ -11173,7 +11426,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "components_shared_clientselect_clientoption",
@@ -11184,7 +11437,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "components_shared_confirmdialog",
@@ -11195,7 +11448,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "components_shared_formfield",
@@ -11206,7 +11459,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "components_shared_loadingbutton",
@@ -11217,7 +11470,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "components_shared_loadingbutton_loadingbutton",
@@ -11228,7 +11481,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "components_shared_pageheader",
@@ -11239,7 +11492,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L26",
+      "source_location": "L28",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "components_ui_button",
@@ -11250,7 +11503,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L26",
+      "source_location": "L28",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "components_ui_button_button",
@@ -11261,7 +11514,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L27",
+      "source_location": "L29",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "lib_format",
@@ -11272,7 +11525,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L27",
+      "source_location": "L29",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "lib_format_calculatetimelineprogress",
@@ -11283,7 +11536,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L27",
+      "source_location": "L29",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "lib_format_formatinr",
@@ -11305,7 +11558,7 @@
       "context": "field",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L82",
+      "source_location": "L99",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetailprops",
       "target": "components_shared_clientselect_clientoption",
@@ -11317,7 +11570,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L207",
+      "source_location": "L264",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetailclient",
       "target": "lib_format_calculatetimelineprogress"
@@ -11328,7 +11581,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L529",
+      "source_location": "L594",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetailclient",
       "target": "lib_format_formatinr"
@@ -11905,71 +12158,190 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
-      "source_location": "L22",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L50",
       "weight": 1.0,
-      "source": "app_tenant_subdomain_app_tasks_page",
-      "target": "app_tenant_subdomain_app_tasks_page_filterkey",
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "app_tenant_subdomain_app_tasks_globaltasksclient_datefilterkey",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
-      "source_location": "L29",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L23",
       "weight": 1.0,
-      "source": "app_tenant_subdomain_app_tasks_page",
-      "target": "app_tenant_subdomain_app_tasks_page_isduetoday",
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "app_tenant_subdomain_app_tasks_globaltasksclient_globaltask",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
-      "source_location": "L24",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L70",
       "weight": 1.0,
-      "source": "app_tenant_subdomain_app_tasks_page",
-      "target": "app_tenant_subdomain_app_tasks_page_isoverdue",
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "app_tenant_subdomain_app_tasks_globaltasksclient_globaltasksclient",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
-      "source_location": "L8",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L42",
       "weight": 1.0,
-      "source": "app_tenant_subdomain_app_tasks_page",
-      "target": "app_tenant_subdomain_app_tasks_page_metadata",
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "app_tenant_subdomain_app_tasks_globaltasksclient_globaltasksclientprops",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
-      "source_location": "L12",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L58",
       "weight": 1.0,
-      "source": "app_tenant_subdomain_app_tasks_page",
-      "target": "app_tenant_subdomain_app_tasks_page_mytask",
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "app_tenant_subdomain_app_tasks_globaltasksclient_isduetoday",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
-      "source_location": "L41",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L53",
       "weight": 1.0,
-      "source": "app_tenant_subdomain_app_tasks_page",
-      "target": "app_tenant_subdomain_app_tasks_page_mytaskspage",
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "app_tenant_subdomain_app_tasks_globaltasksclient_isoverdue",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
-      "source_location": "L34",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L63",
       "weight": 1.0,
-      "source": "app_tenant_subdomain_app_tasks_page",
-      "target": "app_tenant_subdomain_app_tasks_page_priority_badge",
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "app_tenant_subdomain_app_tasks_globaltasksclient_priority_badge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "app_tenant_subdomain_app_tasks_globaltasksclient_projectoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "app_tenant_subdomain_app_tasks_globaltasksclient_viewmodekey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "components_shared_assigneeavatargroup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "components_shared_assigneeavatargroup_assigneeinfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "components_shared_emptystate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "components_shared_pageheader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "components_tasks_taskform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "components_tasks_taskform_taskformdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "components_tasks_taskform_taskstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "components_tasks_tasksheet",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "target": "components_tasks_tasksheet_tasksheet",
       "confidence_score": 1.0
     },
     {
@@ -11980,7 +12352,115 @@
       "source_location": "L3",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_tasks_page",
-      "target": "components_shared_pageheader",
+      "target": "app_tenant_subdomain_app_tasks_globaltasksclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_page",
+      "target": "app_tenant_subdomain_app_tasks_globaltasksclient_globaltask",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_page",
+      "target": "app_tenant_subdomain_app_tasks_globaltasksclient_projectoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient_globaltasksclientprops",
+      "target": "components_tasks_taskform_taskstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L118",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient_globaltasksclient",
+      "target": "app_tenant_subdomain_app_tasks_globaltasksclient_isoverdue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L117",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient_globaltasksclient",
+      "target": "app_tenant_subdomain_app_tasks_globaltasksclient_isduetoday",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx",
+      "source_location": "L157",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_globaltasksclient_globaltasksclient",
+      "target": "package_dependencies_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_page",
+      "target": "app_tenant_subdomain_app_tasks_page_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_page",
+      "target": "app_tenant_subdomain_app_tasks_page_taskspage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_page",
+      "target": "components_tasks_taskform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_tasks_page",
+      "target": "components_tasks_taskform_taskstatus",
       "confidence_score": 1.0
     },
     {
@@ -12009,33 +12489,11 @@
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
-      "source_location": "L95",
-      "weight": 1.0,
-      "source": "app_tenant_subdomain_app_tasks_page_mytaskspage",
-      "target": "app_tenant_subdomain_app_tasks_page_isoverdue",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
-      "source_location": "L94",
-      "weight": 1.0,
-      "source": "app_tenant_subdomain_app_tasks_page_mytaskspage",
-      "target": "app_tenant_subdomain_app_tasks_page_isduetoday",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/(tenant)/[subdomain]/(app)/tasks/page.tsx",
-      "source_location": "L55",
+      "source_location": "L17",
       "weight": 1.0,
-      "source": "app_tenant_subdomain_app_tasks_page_mytaskspage",
+      "source": "app_tenant_subdomain_app_tasks_page_taskspage",
       "target": "lib_supabase_server_createclient"
     },
     {
@@ -12635,7 +13093,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/api/clients/route.ts",
-      "source_location": "L77",
+      "source_location": "L90",
       "weight": 1.0,
       "source": "app_api_clients_route",
       "target": "app_api_clients_route_post",
@@ -12680,7 +13138,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/api/clients/route.ts",
-      "source_location": "L78",
+      "source_location": "L91",
       "weight": 1.0,
       "source": "app_api_clients_route_post",
       "target": "lib_supabase_server_createclient"
@@ -13512,7 +13970,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/api/tasks/[id]/route.ts",
-      "source_location": "L173",
+      "source_location": "L287",
       "weight": 1.0,
       "source": "app_api_tasks_id_route",
       "target": "app_api_tasks_id_route_delete",
@@ -13522,7 +13980,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/api/tasks/[id]/route.ts",
-      "source_location": "L19",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "app_api_tasks_id_route",
       "target": "app_api_tasks_id_route_get",
@@ -13532,20 +13990,10 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/api/tasks/[id]/route.ts",
-      "source_location": "L76",
+      "source_location": "L101",
       "weight": 1.0,
       "source": "app_api_tasks_id_route",
       "target": "app_api_tasks_id_route_put",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/tasks/[id]/route.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "app_api_tasks_id_route",
-      "target": "app_api_tasks_id_route_updatetaskschema",
       "confidence_score": 1.0
     },
     {
@@ -13571,12 +14019,34 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/tasks/[id]/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_api_tasks_id_route",
+      "target": "lib_validations_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/tasks/[id]/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_api_tasks_id_route",
+      "target": "lib_validations_task_updatetaskschema",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/api/tasks/[id]/route.ts",
-      "source_location": "L24",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "app_api_tasks_id_route_get",
       "target": "lib_supabase_server_createclient"
@@ -13587,7 +14057,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/api/tasks/[id]/route.ts",
-      "source_location": "L81",
+      "source_location": "L106",
       "weight": 1.0,
       "source": "app_api_tasks_id_route_put",
       "target": "lib_supabase_server_createclient"
@@ -13598,7 +14068,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/api/tasks/[id]/route.ts",
-      "source_location": "L178",
+      "source_location": "L292",
       "weight": 1.0,
       "source": "app_api_tasks_id_route_delete",
       "target": "lib_supabase_server_createclient"
@@ -13610,16 +14080,6 @@
       "source_location": "L5",
       "weight": 1.0,
       "source": "app_api_tasks_route",
-      "target": "app_api_tasks_route_createtaskschema",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/tasks/route.ts",
-      "source_location": "L20",
-      "weight": 1.0,
-      "source": "app_api_tasks_route",
       "target": "app_api_tasks_route_get",
       "confidence_score": 1.0
     },
@@ -13627,7 +14087,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/api/tasks/route.ts",
-      "source_location": "L102",
+      "source_location": "L172",
       "weight": 1.0,
       "source": "app_api_tasks_route",
       "target": "app_api_tasks_route_post",
@@ -13656,12 +14116,34 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/tasks/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_api_tasks_route",
+      "target": "lib_validations_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/tasks/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_api_tasks_route",
+      "target": "lib_validations_task_createtaskschema",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/api/tasks/route.ts",
-      "source_location": "L21",
+      "source_location": "L6",
       "weight": 1.0,
       "source": "app_api_tasks_route_get",
       "target": "lib_supabase_server_createclient"
@@ -13672,7 +14154,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/api/tasks/route.ts",
-      "source_location": "L103",
+      "source_location": "L173",
       "weight": 1.0,
       "source": "app_api_tasks_route_post",
       "target": "lib_supabase_server_createclient"
@@ -14526,7 +15008,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L36",
+      "source_location": "L35",
       "weight": 1.0,
       "source": "components_auth_loginclient",
       "target": "components_auth_loginclient_loginclient",
@@ -14536,7 +15018,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L31",
+      "source_location": "L30",
       "weight": 1.0,
       "source": "components_auth_loginclient",
       "target": "components_auth_loginclient_loginclientprops",
@@ -14546,7 +15028,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L24",
+      "source_location": "L23",
       "weight": 1.0,
       "source": "components_auth_loginclient",
       "target": "components_auth_loginclient_tenantloginbranding",
@@ -14557,7 +15039,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "source": "components_auth_loginclient",
       "target": "components_shared_loadingbutton",
@@ -14568,7 +15050,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "source": "components_auth_loginclient",
       "target": "components_shared_loadingbutton_loadingbutton",
@@ -14579,7 +15061,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0,
       "source": "components_auth_loginclient",
       "target": "components_shared_tenantpreloader",
@@ -14590,7 +15072,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0,
       "source": "components_auth_loginclient",
       "target": "components_shared_themetoggle",
@@ -14601,7 +15083,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0,
       "source": "components_auth_loginclient",
       "target": "components_shared_themetoggle_themetoggle",
@@ -14612,7 +15094,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "components_auth_loginclient",
       "target": "lib_supabase_client",
@@ -14623,7 +15105,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "components_auth_loginclient",
       "target": "lib_supabase_client_createclient",
@@ -14654,7 +15136,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/shared/AppShell.tsx",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "source": "components_shared_appshell",
       "target": "components_pwa_installprompt",
@@ -14918,7 +15400,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/shared/AppShell.tsx",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "source": "components_shared_appshell",
       "target": "components_shared_appshell_appshell",
@@ -14928,7 +15410,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/shared/AppShell.tsx",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0,
       "source": "components_shared_appshell",
       "target": "components_shared_appshell_appshellprops",
@@ -14961,33 +15443,128 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/shared/AppShell.tsx",
-      "source_location": "L6",
+      "source_location": "L3",
       "weight": 1.0,
       "source": "components_shared_appshell",
-      "target": "components_shared_routeprogressbar",
+      "target": "components_shared_sidebar",
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "components/shared/AppShell.tsx",
+      "source_file": "components/shared/AssigneeAvatarGroup.tsx",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "components_shared_assigneeavatargroup",
+      "target": "components_shared_assigneeavatargroup_assigneeavatargroup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/AssigneeAvatarGroup.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "components_shared_assigneeavatargroup",
+      "target": "components_shared_assigneeavatargroup_assigneeavatargroupprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/AssigneeAvatarGroup.tsx",
       "source_location": "L6",
       "weight": 1.0,
-      "source": "components_shared_appshell",
-      "target": "components_shared_routeprogressbar_routeprogressbar",
+      "source": "components_shared_assigneeavatargroup",
+      "target": "components_shared_assigneeavatargroup_assigneeinfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/AssigneeAvatarGroup.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "components_shared_assigneeavatargroup",
+      "target": "components_shared_assigneeavatargroup_size_map",
       "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "components/shared/AppShell.tsx",
-      "source_location": "L3",
+      "source_file": "components/shared/AssigneeAvatarGroup.tsx",
+      "source_location": "L4",
       "weight": 1.0,
-      "source": "components_shared_appshell",
-      "target": "components_shared_sidebar",
+      "source": "components_shared_assigneeavatargroup",
+      "target": "lib_utils",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/AssigneeAvatarGroup.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_shared_assigneeavatargroup",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/tasks/KanbanCard.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_tasks_kanbancard",
+      "target": "components_shared_assigneeavatargroup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/tasks/TaskListView.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_tasks_tasklistview",
+      "target": "components_shared_assigneeavatargroup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/tasks/KanbanCard.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_tasks_kanbancard",
+      "target": "components_shared_assigneeavatargroup_assigneeinfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/tasks/TaskListView.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_tasks_tasklistview",
+      "target": "components_shared_assigneeavatargroup_assigneeinfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/shared/AssigneeAvatarGroup.tsx",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "components_shared_assigneeavatargroup_assigneeavatargroup",
+      "target": "lib_utils_cn"
     },
     {
       "relation": "contains",
@@ -15249,6 +15826,39 @@
       "weight": 1.0,
       "source": "components_shared_confirmdialog",
       "target": "components_ui_button_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/tasks/KanbanCard.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "components_tasks_kanbancard",
+      "target": "components_shared_confirmdialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/tasks/TaskForm.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "components_tasks_taskform",
+      "target": "components_shared_confirmdialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/tasks/TaskListView.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "components_tasks_tasklistview",
+      "target": "components_shared_confirmdialog",
       "confidence_score": 1.0
     },
     {
@@ -15671,44 +16281,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/shared/RouteProgressBar.tsx",
-      "source_location": "L7",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "components_shared_routeprogressbar",
       "target": "components_shared_routeprogressbar_routeprogressbar",
       "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/shared/RouteProgressBar.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "components_shared_routeprogressbar",
-      "target": "components_shared_tenantprovider",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/shared/RouteProgressBar.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "components_shared_routeprogressbar",
-      "target": "components_shared_tenantprovider_usetenant",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "components/shared/RouteProgressBar.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "components_shared_routeprogressbar_routeprogressbar",
-      "target": "components_shared_tenantprovider_usetenant"
     },
     {
       "relation": "contains",
@@ -15940,6 +16517,80 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "components/shared/UserMultiSelect.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "components_shared_usermultiselect",
+      "target": "components_shared_usermultiselect_usermultiselect",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/UserMultiSelect.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "components_shared_usermultiselect",
+      "target": "components_shared_usermultiselect_usermultiselectprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/UserMultiSelect.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_shared_usermultiselect",
+      "target": "components_shared_usermultiselect_useroption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/UserMultiSelect.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_shared_usermultiselect",
+      "target": "lib_utils",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/UserMultiSelect.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_shared_usermultiselect",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/tasks/TaskForm.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "components_tasks_taskform",
+      "target": "components_shared_usermultiselect",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/shared/UserMultiSelect.tsx",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "components_shared_usermultiselect_usermultiselect",
+      "target": "lib_utils_cn"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "components/shared/UserSelect.tsx",
       "source_location": "L7",
       "weight": 1.0,
@@ -15987,17 +16638,6 @@
       "weight": 1.0,
       "source": "components_shared_userselect",
       "target": "lib_utils_cn",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "components_tasks_taskform",
-      "target": "components_shared_userselect",
       "confidence_score": 1.0
     },
     {
@@ -16175,10 +16815,21 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/tasks/KanbanBoard.tsx",
+      "source_location": "L120",
+      "weight": 1.0,
+      "source": "components_tasks_kanbanboard_kanbanboard",
+      "target": "package_dependencies_react"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/KanbanCard.tsx",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0,
       "source": "components_tasks_kanbancard",
       "target": "components_tasks_kanbancard_isoverdue",
@@ -16188,7 +16839,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/KanbanCard.tsx",
-      "source_location": "L27",
+      "source_location": "L30",
       "weight": 1.0,
       "source": "components_tasks_kanbancard",
       "target": "components_tasks_kanbancard_kanbancard",
@@ -16198,7 +16849,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/KanbanCard.tsx",
-      "source_location": "L119",
+      "source_location": "L199",
       "weight": 1.0,
       "source": "components_tasks_kanbancard",
       "target": "components_tasks_kanbancard_kanbancardoverlay",
@@ -16208,7 +16859,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/KanbanCard.tsx",
-      "source_location": "L22",
+      "source_location": "L24",
       "weight": 1.0,
       "source": "components_tasks_kanbancard",
       "target": "components_tasks_kanbancard_kanbancardprops",
@@ -16218,7 +16869,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/KanbanCard.tsx",
-      "source_location": "L10",
+      "source_location": "L12",
       "weight": 1.0,
       "source": "components_tasks_kanbancard",
       "target": "components_tasks_kanbancard_priority_dot",
@@ -16229,7 +16880,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/KanbanCard.tsx",
-      "source_location": "L8",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "components_tasks_kanbancard",
       "target": "components_tasks_taskform",
@@ -16240,7 +16891,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/KanbanCard.tsx",
-      "source_location": "L8",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "components_tasks_kanbancard",
       "target": "components_tasks_taskform_taskformdata",
@@ -16251,7 +16902,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/KanbanCard.tsx",
-      "source_location": "L7",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "components_tasks_kanbancard",
       "target": "components_tasks_tasklistview",
@@ -16262,7 +16913,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/KanbanCard.tsx",
-      "source_location": "L7",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "components_tasks_kanbancard",
       "target": "components_tasks_tasklistview_task",
@@ -16284,7 +16935,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/KanbanCard.tsx",
-      "source_location": "L39",
+      "source_location": "L46",
       "weight": 1.0,
       "source": "components_tasks_kanbancard_kanbancard",
       "target": "components_tasks_kanbancard_isoverdue",
@@ -16295,7 +16946,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/KanbanCard.tsx",
-      "source_location": "L122",
+      "source_location": "L202",
       "weight": 1.0,
       "source": "components_tasks_kanbancard_kanbancardoverlay",
       "target": "components_tasks_kanbancard_isoverdue",
@@ -16306,17 +16957,28 @@
       "context": "field",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/KanbanCard.tsx",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0,
       "source": "components_tasks_kanbancard_kanbancardprops",
       "target": "components_tasks_tasklistview_task",
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/tasks/KanbanColumn.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "components_tasks_kanbancolumn",
+      "target": "components_tasks_kanbancard_kanbancard",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/KanbanColumn.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "source": "components_tasks_kanbancolumn",
       "target": "components_tasks_kanbancolumn_kanbancolumn",
@@ -16442,7 +17104,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L61",
+      "source_location": "L77",
       "weight": 1.0,
       "source": "components_tasks_taskform",
       "target": "components_tasks_taskform_priority_options",
@@ -16452,7 +17114,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L70",
+      "source_location": "L86",
       "weight": 1.0,
       "source": "components_tasks_taskform",
       "target": "components_tasks_taskform_taskform",
@@ -16462,7 +17124,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0,
       "source": "components_tasks_taskform",
       "target": "components_tasks_taskform_taskformdata",
@@ -16472,7 +17134,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L51",
+      "source_location": "L65",
       "weight": 1.0,
       "source": "components_tasks_taskform",
       "target": "components_tasks_taskform_taskformprops",
@@ -16485,14 +17147,24 @@
       "source_location": "L47",
       "weight": 1.0,
       "source": "components_tasks_taskform",
-      "target": "components_tasks_taskform_taskschema",
+      "target": "components_tasks_taskform_taskformschema",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L15",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "components_tasks_taskform",
+      "target": "components_tasks_taskform_taskformvalues",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/tasks/TaskForm.tsx",
+      "source_location": "L17",
       "weight": 1.0,
       "source": "components_tasks_taskform",
       "target": "components_tasks_taskform_taskstatus",
@@ -16502,8 +17174,30 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "components/tasks/TaskForm.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "components_tasks_taskform",
+      "target": "components_ui_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/tasks/TaskForm.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "components_tasks_taskform",
+      "target": "components_ui_button_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L8",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "components_tasks_tasklistview",
       "target": "components_tasks_taskform",
@@ -16525,7 +17219,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L8",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "components_tasks_tasklistview",
       "target": "components_tasks_taskform_taskstatus",
@@ -16536,7 +17230,7 @@
       "context": "field",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L25",
+      "source_location": "L30",
       "weight": 1.0,
       "source": "components_tasks_tasklistview_tasklistviewprops",
       "target": "components_tasks_taskform_taskstatus",
@@ -16569,7 +17263,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L8",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "components_tasks_tasklistview",
       "target": "components_tasks_taskform_taskformdata",
@@ -16598,21 +17292,10 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "indirect_call",
-      "context": "argument",
-      "confidence": "INFERRED",
-      "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L87",
-      "weight": 1.0,
-      "source": "components_tasks_taskform_taskform",
-      "target": "components_tasks_taskform_taskschema",
-      "confidence_score": 0.5
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L62",
+      "source_location": "L67",
       "weight": 1.0,
       "source": "components_tasks_tasklistview",
       "target": "components_tasks_tasklistview_isoverdue",
@@ -16622,7 +17305,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L31",
+      "source_location": "L36",
       "weight": 1.0,
       "source": "components_tasks_tasklistview",
       "target": "components_tasks_tasklistview_priority_styles",
@@ -16632,7 +17315,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L38",
+      "source_location": "L43",
       "weight": 1.0,
       "source": "components_tasks_tasklistview",
       "target": "components_tasks_tasklistview_prioritybadge",
@@ -16642,7 +17325,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L46",
+      "source_location": "L51",
       "weight": 1.0,
       "source": "components_tasks_tasklistview",
       "target": "components_tasks_tasklistview_statusbadge",
@@ -16652,7 +17335,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "weight": 1.0,
       "source": "components_tasks_tasklistview",
       "target": "components_tasks_tasklistview_task",
@@ -16662,7 +17345,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L69",
+      "source_location": "L74",
       "weight": 1.0,
       "source": "components_tasks_tasklistview",
       "target": "components_tasks_tasklistview_tasklistview",
@@ -16672,7 +17355,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L23",
+      "source_location": "L28",
       "weight": 1.0,
       "source": "components_tasks_tasklistview",
       "target": "components_tasks_tasklistview_tasklistviewprops",
@@ -16683,7 +17366,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L7",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "components_tasks_tasklistview",
       "target": "components_tasks_tasksheet",
@@ -16694,7 +17377,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L7",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "components_tasks_tasklistview",
       "target": "components_tasks_tasksheet_tasksheet",
@@ -16705,17 +17388,28 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskListView.tsx",
-      "source_location": "L227",
+      "source_location": "L282",
       "weight": 1.0,
       "source": "components_tasks_tasklistview_tasklistview",
       "target": "components_tasks_tasklistview_isoverdue",
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/tasks/TaskListView.tsx",
+      "source_location": "L88",
+      "weight": 1.0,
+      "source": "components_tasks_tasklistview_tasklistview",
+      "target": "package_dependencies_react"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskSheet.tsx",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0,
       "source": "components_tasks_tasksheet",
       "target": "components_tasks_tasksheet_tasksheet",
@@ -17090,6 +17784,46 @@
       "weight": 1.0,
       "source": "lib_validations_auth",
       "target": "lib_validations_auth_tenantsignupschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/validations/task.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "lib_validations_task",
+      "target": "lib_validations_task_createtaskinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/validations/task.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "lib_validations_task",
+      "target": "lib_validations_task_createtaskschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/validations/task.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "lib_validations_task",
+      "target": "lib_validations_task_updatetaskinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/validations/task.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "lib_validations_task",
+      "target": "lib_validations_task_updatetaskschema",
       "confidence_score": 1.0
     },
     {
@@ -18366,7 +19100,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L219",
+      "source_location": "L221",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_database_migration_status",
@@ -18376,7 +19110,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L262",
+      "source_location": "L265",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_decisions_notes_log",
@@ -18466,7 +19200,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L241",
+      "source_location": "L244",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_pre_launch_checklist",
@@ -21804,5 +22538,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "73b4cf595a34e1accd227e903c952a9d8def48b4"
+  "built_at_commit": "bef764b8de6b419a7ec351579a2d2f3729014846"
 }

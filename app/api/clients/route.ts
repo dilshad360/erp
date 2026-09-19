@@ -57,7 +57,12 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 
   let query = supabase
     .from("clients")
-    .select("*")
+    .select(`
+      *,
+      projects (
+        id
+      )
+    `)
     .eq("company_id", profile.company_id)
     .order("name", { ascending: true });
 
@@ -71,7 +76,15 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     return NextResponse.json({ data: null, error: clientsError.message }, { status: 500 });
   }
 
-  return NextResponse.json({ data: clients, error: null });
+  const formattedClients = ((clients as unknown as Array<Record<string, unknown>>) || []).map((c) => {
+    const rawProjects = (c.projects as Array<{ id: string }> | null) || [];
+    return {
+      ...c,
+      project_count: rawProjects.length,
+    };
+  });
+
+  return NextResponse.json({ data: formattedClients, error: null });
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse> {

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -176,6 +177,32 @@ export default function ClientDetailClient({
     }
   }
 
+  const [isHardDeleteOpen, setIsHardDeleteOpen] = useState(false);
+  const [isHardDeleting, setIsHardDeleting] = useState(false);
+
+  async function handleHardDelete(): Promise<void> {
+    setIsHardDeleting(true);
+    try {
+      const res = await fetch(`/api/clients/${client.id}?hard=true`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({ error: "Failed to delete client" }));
+        alert(errorData.error || "Failed to delete client");
+        return;
+      }
+
+      router.push("/clients");
+      router.refresh();
+    } catch (err) {
+      console.error(err);
+      alert("An unexpected error occurred while deleting client.");
+    } finally {
+      setIsHardDeleting(false);
+    }
+  }
+
   function handleCancelEdit(): void {
     reset({
       name: client.name,
@@ -211,13 +238,13 @@ export default function ClientDetailClient({
               </Button>
               {client.status === "active" ? (
                 <Button
-                  variant="destructive"
+                  variant="outline"
                   size="sm"
                   onClick={() => {
                     setConfirmAction("deactivate");
                     setIsConfirmOpen(true);
                   }}
-                  className="bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/20"
+                  className="border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-raised)]"
                 >
                   <UserX size={14} className="mr-1.5" />
                   Deactivate
@@ -236,6 +263,14 @@ export default function ClientDetailClient({
                   Reactivate
                 </Button>
               )}
+              <Button
+                variant="destructive"
+                size="sm"
+                onClick={() => setIsHardDeleteOpen(true)}
+                className="bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/20"
+              >
+                Delete Client
+              </Button>
             </div>
           ) : undefined
         }
@@ -546,9 +581,12 @@ export default function ClientDetailClient({
                     className="py-3 flex items-center justify-between gap-3 first:pt-0 last:pb-0"
                   >
                     <div>
-                      <h4 className="text-sm font-medium text-[var(--color-text-primary)]">
+                      <Link
+                        href={`/projects/${proj.id}`}
+                        className="text-sm font-medium text-[var(--color-text-primary)] hover:text-[var(--color-brand)] transition-colors"
+                      >
                         {proj.name}
-                      </h4>
+                      </Link>
                       {(proj.start_date || proj.end_date) && (
                         <p className="text-xs text-[var(--color-text-muted)] flex items-center gap-1 mt-0.5">
                           <Calendar size={12} />
@@ -569,7 +607,7 @@ export default function ClientDetailClient({
         </div>
       )}
 
-      {/* Confirmation Dialog */}
+      {/* Confirmation Dialog for Deactivate / Reactivate */}
       <ConfirmDialog
         isOpen={isConfirmOpen}
         onClose={() => setIsConfirmOpen(false)}
@@ -587,6 +625,18 @@ export default function ClientDetailClient({
         }
         confirmLabel={confirmAction === "deactivate" ? "Deactivate Client" : "Reactivate Client"}
         variant={confirmAction === "deactivate" ? "destructive" : "default"}
+      />
+
+      {/* Hard Delete Confirmation Dialog */}
+      <ConfirmDialog
+        isOpen={isHardDeleteOpen}
+        onClose={() => setIsHardDeleteOpen(false)}
+        onConfirm={handleHardDelete}
+        isLoading={isHardDeleting}
+        title={`Permanently Delete ${client.name}?`}
+        description={`This action will permanently delete "${client.name}" and all ${initialProjects.length} linked project(s) and their tasks across your organization. This action cannot be undone.`}
+        confirmLabel="Permanently Delete"
+        variant="destructive"
       />
       </div>
     </div>

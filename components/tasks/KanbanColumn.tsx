@@ -11,6 +11,7 @@ interface KanbanColumnProps {
   status: TaskStatus;
   tasks: Task[];
   onEdit: (task: Task) => void;
+  onDelete?: (taskId: string) => Promise<void> | void;
   onAddTask: (statusId: string) => void;
 }
 
@@ -18,6 +19,7 @@ export default function KanbanColumn({
   status,
   tasks,
   onEdit,
+  onDelete,
   onAddTask,
 }: KanbanColumnProps): React.JSX.Element {
   const { setNodeRef, isOver } = useDroppable({ id: status.id });
@@ -55,7 +57,7 @@ export default function KanbanColumn({
           }`}
         >
           {tasks.map((task) => (
-            <KanbanCard key={task.id} task={task} onEdit={onEdit} />
+            <KanbanCard key={task.id} task={task} onEdit={onEdit} onDelete={onDelete} />
           ))}
 
           {/* Add task button */}

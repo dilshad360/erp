@@ -2,8 +2,10 @@
 
 import React, { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import { Plus, Filter, Search } from "lucide-react";
+import { Plus, Filter, Search, MoreVertical, Trash2, Edit2 } from "lucide-react";
 import EmptyState from "@/components/shared/EmptyState";
+import AssigneeAvatarGroup, { type AssigneeInfo } from "@/components/shared/AssigneeAvatarGroup";
+import ConfirmDialog from "@/components/shared/ConfirmDialog";
 import TaskSheet from "./TaskSheet";
 import type { TaskFormData, TaskStatus } from "./TaskForm";
 
@@ -12,11 +14,14 @@ import type { TaskFormData, TaskStatus } from "./TaskForm";
 export interface Task {
   id: string;
   title: string;
+  description?: string | null;
   priority: string;
   due_date: string | null;
   created_at: string;
+  created_by?: string | null;
   status: { id: string; name: string; color: string | null } | null;
-  assignee: { id: string; full_name: string | null; avatar_url: string | null } | null;
+  assignee: { id: string; full_name: string | null; avatar_url: string | null; employee_id?: string | null } | null;
+  assignees?: { id: string; full_name: string | null; avatar_url: string | null; employee_id?: string | null }[];
   project: { id: string; name: string } | null;
 }
 
@@ -75,6 +80,14 @@ export default function TaskListView({
   const [tasks, setTasks] = useState<Task[]>(initialTasks);
   const [sheetOpen, setSheetOpen] = useState(false);
   const [editTask, setEditTask] = useState<Task | null>(null);
+  const [openDropdownId, setOpenDropdownId] = useState<string | null>(null);
+  const [taskToDelete, setTaskToDelete] = useState<Task | null>(null);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  // Sync state if initialTasks prop updates
+  React.useEffect(() => {
+    setTasks(initialTasks);
+  }, [initialTasks]);
 
   // Filters
   const [filterStatus, setFilterStatus] = useState("");
@@ -83,49 +96,90 @@ export default function TaskListView({
   const [search, setSearch] = useState("");
 
   const handleTaskSuccess = useCallback(
-    (task: TaskFormData) => {
+    (taskData: TaskFormData) => {
+      const taskStatus =
+        taskData.status ??
+        statuses.find((s) => s.id === (taskData.status_id || taskData.statusId)) ??
+        null;
+
+      const formattedTask: Task = {
+        id: taskData.id ?? String(Date.now()),
+        title: taskData.title,
+        description: taskData.description ?? null,
+        priority: taskData.priority,
+        due_date: taskData.due_date ?? taskData.dueDate ?? null,
+        created_at: taskData.created_at ?? new Date().toISOString(),
+        created_by: taskData.created_by,
+        status: taskStatus,
+        assignee: taskData.assignee ?? (taskData.assignees?.[0] ?? null),
+        assignees: taskData.assignees ?? (taskData.assignee ? [taskData.assignee] : []),
+        project: taskData.project ?? null,
+      };
+
       if (editTask) {
         // Update in-place
         setTasks((prev) =>
-          prev.map((t) =>
-            t.id === task.id
-              ? {
-                  ...t,
-                  title: task.title,
-                  priority: task.priority,
-                  due_date: task.dueDate ?? null,
-                  status: statuses.find((s) => s.id === task.statusId) ?? t.status,
-                }
-              : t
-          )
+          prev.map((t) => (t.id === formattedTask.id ? { ...t, ...formattedTask } : t))
         );
       } else {
-        // Refresh from server for full joined data
-        router.refresh();
+        // Prepend new task immediately to list
+        setTasks((prev) => [formattedTask, ...prev.filter((t) => t.id !== formattedTask.id)]);
       }
+      router.refresh();
       setSheetOpen(false);
       setEditTask(null);
     },
     [editTask, statuses, router]
   );
 
-  // Unique assignees for filter
-  const assigneeOptions = Array.from(
-    new Map(
-      tasks
-        .filter((t) => t.assignee)
-        .map((t) => [t.assignee!.id, t.assignee!])
-    ).values()
-  );
+  const handleDeleteTask = useCallback(async (taskId: string): Promise<void> => {
+    try {
+      const res = await fetch(`/api/tasks/${taskId}`, { method: "DELETE" });
+      if (res.ok) {
+        setTasks((prev) => prev.filter((t) => t.id !== taskId));
+      }
+    } catch (err) {
+      console.error("Failed to delete task", err);
+    }
+  }, []);
+
+  async function handleConfirmDelete(): Promise<void> {
+    if (!taskToDelete) return;
+    setIsDeleting(true);
+    try {
+      await handleDeleteTask(taskToDelete.id);
+      setTaskToDelete(null);
+      router.refresh();
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setIsDeleting(false);
+    }
+  }
+
+  // Unique assignees for filter (considering multi-assignees)
+  const allAssigneesMap = new Map<string, AssigneeInfo>();
+  tasks.forEach((t) => {
+    if (t.assignees && t.assignees.length > 0) {
+      t.assignees.forEach((a) => allAssigneesMap.set(a.id, a));
+    } else if (t.assignee) {
+      allAssigneesMap.set(t.assignee.id, t.assignee);
+    }
+  });
+  const assigneeOptions = Array.from(allAssigneesMap.values());
 
   const filteredTasks = tasks.filter((t) => {
     if (filterStatus && t.status?.id !== filterStatus) return false;
     if (filterPriority && t.priority !== filterPriority) return false;
-    if (filterAssignee && t.assignee?.id !== filterAssignee) return false;
+    if (filterAssignee) {
+      const hasAssignee =
+        (t.assignees && t.assignees.some((a) => a.id === filterAssignee)) ||
+        t.assignee?.id === filterAssignee;
+      if (!hasAssignee) return false;
+    }
     if (search && !t.title.toLowerCase().includes(search.toLowerCase())) return false;
     return true;
   });
-
 
   return (
     <div className="space-y-4">
@@ -211,31 +265,45 @@ export default function TaskListView({
           }
         />
       ) : (
-        <div className="rounded-xl border border-[var(--color-border)] overflow-hidden bg-[var(--color-surface)]">
+        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-xs relative">
           {/* Table header */}
-          <div className="grid grid-cols-[1fr_auto_auto_auto_auto] gap-4 px-4 py-2.5 border-b border-[var(--color-border)] bg-[var(--color-surface-raised)]/60 text-[11px] font-semibold text-[var(--color-text-muted)] uppercase tracking-wide">
+          <div className="grid grid-cols-[1fr_auto_auto_auto_auto_auto] gap-4 px-4 py-2.5 border-b border-[var(--color-border)] bg-[var(--color-surface-raised)]/60 text-[11px] font-semibold text-[var(--color-text-muted)] uppercase tracking-wide items-center rounded-t-xl">
             <span>Title</span>
             <span className="hidden sm:block">Status</span>
             <span>Priority</span>
-            <span className="hidden md:block">Assignee</span>
+            <span className="hidden md:block">Assignees</span>
             <span className="hidden sm:block">Due Date</span>
+            <span className="w-6"></span>
           </div>
 
           {/* Rows */}
           <div className="divide-y divide-[var(--color-border-subtle)]">
-            {filteredTasks.map((task) => {
+            {filteredTasks.map((task, idx) => {
               const overdue = isOverdue(task.due_date);
+              const isDropdownOpen = openDropdownId === task.id;
+              const isNearBottom = idx >= Math.max(0, filteredTasks.length - 2);
+              const isLastRow = idx === filteredTasks.length - 1;
+              const assigneesList = task.assignees && task.assignees.length > 0
+                ? task.assignees
+                : task.assignee
+                ? [task.assignee]
+                : [];
+
               return (
-                <button
+                <div
                   key={task.id}
-                  type="button"
-                  onClick={() => { setEditTask(task); setSheetOpen(true); }}
-                  className="w-full grid grid-cols-[1fr_auto_auto_auto_auto] gap-4 items-center px-4 py-3 text-left hover:bg-[var(--color-surface-raised)] transition-colors"
+                  className={`grid grid-cols-[1fr_auto_auto_auto_auto_auto] gap-4 items-center px-4 py-3 text-left hover:bg-[var(--color-surface-raised)] transition-colors group ${
+                    isLastRow ? "rounded-b-xl" : ""
+                  }`}
                 >
                   {/* Title */}
-                  <span className="text-sm font-medium text-[var(--color-text-primary)] truncate">
+                  <button
+                    type="button"
+                    onClick={() => { setEditTask(task); setSheetOpen(true); }}
+                    className="text-sm font-medium text-[var(--color-text-primary)] hover:text-[var(--color-brand)] transition-colors truncate text-left"
+                  >
                     {task.title}
-                  </span>
+                  </button>
 
                   {/* Status */}
                   <span className="hidden sm:block">
@@ -245,25 +313,9 @@ export default function TaskListView({
                   {/* Priority */}
                   <PriorityBadge priority={task.priority} />
 
-                  {/* Assignee */}
-                  <span className="hidden md:flex items-center gap-2 min-w-[100px]">
-                    {task.assignee ? (
-                      <>
-                        {task.assignee.avatar_url ? (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img src={task.assignee.avatar_url} alt="" className="w-5 h-5 rounded-full object-cover" />
-                        ) : (
-                          <div className="w-5 h-5 rounded-full bg-[var(--color-brand-subtle)] text-[var(--color-brand)] flex items-center justify-center text-[9px] font-bold shrink-0">
-                            {task.assignee.full_name?.charAt(0).toUpperCase() ?? "?"}
-                          </div>
-                        )}
-                        <span className="text-xs text-[var(--color-text-secondary)] truncate max-w-[100px]">
-                          {task.assignee.full_name ?? "Unnamed"}
-                        </span>
-                      </>
-                    ) : (
-                      <span className="text-xs text-[var(--color-text-muted)]">Unassigned</span>
-                    )}
+                  {/* Assignees */}
+                  <span className="hidden md:flex items-center min-w-[120px]">
+                    <AssigneeAvatarGroup assignees={assigneesList} size="xs" max={3} showNameIfSingle={true} />
                   </span>
 
                   {/* Due date */}
@@ -276,7 +328,61 @@ export default function TaskListView({
                       <span className="text-xs text-[var(--color-text-muted)]">—</span>
                     )}
                   </span>
-                </button>
+
+                  {/* Options Menu */}
+                  <div className="relative flex justify-end">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setOpenDropdownId(isDropdownOpen ? null : task.id);
+                      }}
+                      className="p-1 rounded text-[var(--color-text-muted)] hover:bg-[var(--color-surface-raised)] hover:text-[var(--color-text-primary)] transition-colors"
+                      aria-label="Task options"
+                    >
+                      <MoreVertical size={15} />
+                    </button>
+
+                    {isDropdownOpen && (
+                      <>
+                        <div
+                          className="fixed inset-0 z-40"
+                          onClick={() => setOpenDropdownId(null)}
+                        />
+                        <div
+                          className={`absolute right-0 ${
+                            isNearBottom ? "bottom-full mb-1.5" : "top-full mt-1.5"
+                          } z-50 w-36 rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] shadow-2xl py-1 text-xs divide-y divide-[var(--color-border-subtle)] animate-in fade-in zoom-in-95 duration-150`}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setOpenDropdownId(null);
+                              setEditTask(task);
+                              setSheetOpen(true);
+                            }}
+                            className="w-full flex items-center gap-2 px-3 py-2 text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] text-left"
+                          >
+                            <Edit2 size={13} />
+                            Edit
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setOpenDropdownId(null);
+                              setTaskToDelete(task);
+                            }}
+                            className="w-full flex items-center gap-2 px-3 py-2 text-[var(--color-danger)] hover:bg-[var(--color-danger-subtle)] text-left"
+                          >
+                            <Trash2 size={13} />
+                            Delete
+                          </button>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </div>
               );
             })}
           </div>
@@ -296,16 +402,29 @@ export default function TaskListView({
             ? {
                 id: editTask.id,
                 title: editTask.title,
-                description: null,
+                description: editTask.description ?? null,
                 statusId: editTask.status?.id ?? null,
                 priority: editTask.priority as TaskFormData["priority"],
-                assigneeId: editTask.assignee?.id ?? null,
+                assigneeIds: editTask.assignees?.map((a) => a.id) ?? (editTask.assignee ? [editTask.assignee.id] : []),
                 dueDate: editTask.due_date,
                 projectId,
               }
             : undefined
         }
         onSuccess={handleTaskSuccess}
+        onDelete={handleDeleteTask}
+      />
+
+      {/* Row Delete Confirmation Dialog */}
+      <ConfirmDialog
+        isOpen={!!taskToDelete}
+        onClose={() => setTaskToDelete(null)}
+        onConfirm={handleConfirmDelete}
+        isLoading={isDeleting}
+        title="Delete Task?"
+        description={`Are you sure you want to delete "${taskToDelete?.title}"?`}
+        confirmLabel="Delete Task"
+        variant="destructive"
       />
     </div>
   );

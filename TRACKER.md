@@ -46,7 +46,7 @@
 | `STORY-003` | Dark Mode & Company Logo on Login Screen | Foundation / Auth | P2 | ✅ Done | `feat/foundation-story-003` | [`phases/stories/STORY-003-login-dark-mode-company-branding.md`](phases/stories/STORY-003-login-dark-mode-company-branding.md) |
 | `STORY-004` | Session Auto-Login & Tenant Branded Preloader | Foundation / Auth & UX | P1 | ✅ Done | `feat/foundation-story-004` | [`phases/stories/STORY-004-autologin-preloader.md`](phases/stories/STORY-004-autologin-preloader.md) |
 | `STORY-005` | Tenant Employee Self-Signup & Admin Activation Workflow | Foundation / Auth & Employees | P1 | ✅ Done | `feat/auth-story-005` | [`phases/stories/STORY-005-tenant-employee-self-signup-and-admin-activation.md`](phases/stories/STORY-005-tenant-employee-self-signup-and-admin-activation.md) |
-| `STORY-006` | Entity Deletion Lifecycle, Tenant Task Visibility & Multi-Assignee Collaboration | Clients / Projects / Tasks | P1 | ⬜ Backlog | `feat/tasks-clients-story-006` | [`phases/stories/STORY-006-crud-deletion-task-collaboration-multi-assignee.md`](phases/stories/STORY-006-crud-deletion-task-collaboration-multi-assignee.md) |
+| `STORY-006` | Entity Deletion Lifecycle, Tenant Task Visibility & Multi-Assignee Collaboration | Clients / Projects / Tasks | P1 | ✅ Done | `feat/tasks-clients-story-006` | [`phases/stories/STORY-006-crud-deletion-task-collaboration-multi-assignee.md`](phases/stories/STORY-006-crud-deletion-task-collaboration-multi-assignee.md) |
 
 ### Bug & Defect Registry (`BUG-xxx`)
 
@@ -213,6 +213,8 @@ These components are built during specific phases but used across the whole app.
 | `UserSelect` | Phase 6 | ✅ | `components/shared/UserSelect.tsx` |
 | `DatePicker` | Phase 6 | ✅ | `components/shared/DatePicker.tsx` |
 | `ColorPicker` | Phase 7 | ✅ | `components/shared/ColorPicker.tsx` |
+| `UserMultiSelect` | STORY-006 | ✅ | `components/shared/UserMultiSelect.tsx` |
+| `AssigneeAvatarGroup` | STORY-006 | ✅ | `components/shared/AssigneeAvatarGroup.tsx` |
 
 ---
 
@@ -235,6 +237,7 @@ These components are built during specific phases but used across the whole app.
 | `20260904000000_tasks_statuses.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
 | `20260904000001_rls_tasks.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
 | `20260905000000_storage_logos.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
+| `20260906000000_task_assignees_and_deletions.sql` | ✅ | Applied to `fvvyuprujtgvmutnfdam` |
 
 ---
 
@@ -281,4 +284,6 @@ Use this section to track important decisions made during development so future 
 | 2026-09-18 | Mobile Header & BottomNav Sheet (`BUG-002`) | Added sticky `MobileHeader` with company logo, name, avatar, and theme toggle; enhanced `BottomNav` More tab to open a slide-up drawer for accessing Employees, Clients, Settings, Theme Switcher, and Sign Out. |
 | 2026-09-18 | Session Auto-Login & Preloader (`STORY-004`) | Implemented instant server-side middleware auto-redirect to `/dashboard` for active sessions, client-side session verification in `LoginClient`, reusable `TenantPreloader` with animated glowing brand accent, and Next.js streaming `loading.tsx` boundaries. |
 | 2026-09-18 | Mobile BottomNav Active Press & Transition Bar (`BUG-003`) | Added tactile active scale-down press states, immediate optimistic pending tab highlight with pulsing dot, and global top-screen `RouteProgressBar` for instant visual page loading feedback on mobile. |
+| 2026-09-19 | Deletion Lifecycle, Multi-Assignees & Global Tasks (`STORY-006`) | Implemented hard deletion with cascade safeguards across Clients, Projects, and Tasks; created `task_assignees` junction table for multi-user assignment with `UserMultiSelect` and stacked `AssigneeAvatarGroup`; opened company-wide task visibility under `/tasks` with "My Tasks" vs "All Tasks" toggle and cross-project task creation. |
+
 

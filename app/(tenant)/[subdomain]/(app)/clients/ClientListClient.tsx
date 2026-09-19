@@ -49,6 +49,12 @@ export default function ClientListClient({
 
   const router = useRouter();
   const [clients, setClients] = useState<ClientRecord[]>(initialClients);
+
+  // Sync state if initialClients prop updates
+  React.useEffect(() => {
+    setClients(initialClients);
+  }, [initialClients]);
+
   const [statusTab, setStatusTab] = useState<"active" | "all">("active");
   const [selectedClientForAction, setSelectedClientForAction] = useState<{
     client: ClientRecord;
@@ -96,6 +102,34 @@ export default function ClientListClient({
       alert("An unexpected error occurred.");
     } finally {
       setIsActionLoading(false);
+    }
+  }
+
+  const [clientToDelete, setClientToDelete] = useState<ClientRecord | null>(null);
+  const [isDeleteLoading, setIsDeleteLoading] = useState(false);
+
+  async function handleDeleteClient(): Promise<void> {
+    if (!clientToDelete) return;
+    setIsDeleteLoading(true);
+    try {
+      const res = await fetch(`/api/clients/${clientToDelete.id}?hard=true`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({ error: "Failed to delete client" }));
+        alert(errorData.error || "Failed to delete client");
+        return;
+      }
+
+      setClients((prev) => prev.filter((c) => c.id !== clientToDelete.id));
+      setClientToDelete(null);
+      router.refresh();
+    } catch (err) {
+      console.error(err);
+      alert("An unexpected error occurred while deleting client.");
+    } finally {
+      setIsDeleteLoading(false);
     }
   }
 
@@ -217,9 +251,11 @@ export default function ClientListClient({
       {
         id: "actions",
         header: "",
-        cell: ({ row }) => {
+        cell: ({ row, table }) => {
           const client = row.original;
           const isDropdownOpen = openDropdownId === client.id;
+          const totalRows = table.getRowModel().rows.length;
+          const isNearBottom = row.index >= Math.max(0, totalRows - 2) && totalRows > 2;
 
           return (
             <div className="relative flex justify-end">
@@ -238,11 +274,13 @@ export default function ClientListClient({
               {isDropdownOpen && (
                 <>
                   <div
-                    className="fixed inset-0 z-20"
+                    className="fixed inset-0 z-40"
                     onClick={() => setOpenDropdownId(null)}
                   />
                   <div
-                    className="absolute right-0 top-8 z-30 w-44 rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] shadow-xl py-1 text-xs divide-y divide-[var(--color-border-subtle)]"
+                    className={`absolute right-0 ${
+                      isNearBottom ? "bottom-full mb-1.5" : "top-full mt-1.5"
+                    } z-50 w-44 rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] shadow-2xl py-1 text-xs divide-y divide-[var(--color-border-subtle)] animate-in fade-in zoom-in-95 duration-150`}
                     onClick={(e) => e.stopPropagation()}
                   >
                     <div className="py-1">
@@ -275,7 +313,7 @@ export default function ClientListClient({
                               setOpenDropdownId(null);
                               setSelectedClientForAction({ client, action: "deactivate" });
                             }}
-                            className="w-full flex items-center gap-2 px-3 py-2 text-[var(--color-danger)] hover:bg-[var(--color-danger-subtle)] transition-colors text-left"
+                            className="w-full flex items-center gap-2 px-3 py-2 text-[var(--color-text-secondary)] hover:bg-[var(--color-surface)] transition-colors text-left"
                           >
                             <UserX size={14} />
                             Deactivate client
@@ -293,6 +331,17 @@ export default function ClientListClient({
                             Reactivate client
                           </button>
                         )}
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setOpenDropdownId(null);
+                            setClientToDelete(client);
+                          }}
+                          className="w-full flex items-center gap-2 px-3 py-2 text-[var(--color-danger)] hover:bg-[var(--color-danger-subtle)] transition-colors text-left"
+                        >
+                          <UserX size={14} />
+                          Delete client
+                        </button>
                       </div>
                     )}
                   </div>
@@ -472,6 +521,18 @@ export default function ClientListClient({
             : "Reactivate Client"
         }
         variant={selectedClientForAction?.action === "deactivate" ? "destructive" : "default"}
+      />
+
+      {/* Permanently Delete Dialog */}
+      <ConfirmDialog
+        isOpen={!!clientToDelete}
+        onClose={() => setClientToDelete(null)}
+        onConfirm={handleDeleteClient}
+        isLoading={isDeleteLoading}
+        title={`Permanently Delete ${clientToDelete?.name}?`}
+        description={`Permanently deleting this client will delete all associated projects and tasks across your organization. This action cannot be undone.`}
+        confirmLabel="Permanently Delete"
+        variant="destructive"
       />
       </div>
     </div>
