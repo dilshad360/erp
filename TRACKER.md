@@ -47,6 +47,7 @@
 | `STORY-004` | Session Auto-Login & Tenant Branded Preloader | Foundation / Auth & UX | P1 | ✅ Done | `feat/foundation-story-004` | [`phases/stories/STORY-004-autologin-preloader.md`](phases/stories/STORY-004-autologin-preloader.md) |
 | `STORY-005` | Tenant Employee Self-Signup & Admin Activation Workflow | Foundation / Auth & Employees | P1 | ✅ Done | `feat/auth-story-005` | [`phases/stories/STORY-005-tenant-employee-self-signup-and-admin-activation.md`](phases/stories/STORY-005-tenant-employee-self-signup-and-admin-activation.md) |
 | `STORY-006` | Entity Deletion Lifecycle, Tenant Task Visibility & Multi-Assignee Collaboration | Clients / Projects / Tasks | P1 | ✅ Done | `feat/tasks-clients-story-006` | [`phases/stories/STORY-006-crud-deletion-task-collaboration-multi-assignee.md`](phases/stories/STORY-006-crud-deletion-task-collaboration-multi-assignee.md) |
+| `STORY-007` | Rich Text Editor Integration for Tasks, Projects & Client Notes | Shared / Tasks / Projects / Clients | P2 | ⬜ Backlog | `feat/rich-text-story-007` | [`phases/stories/STORY-007-rich-text-editor-tasks-projects-clients.md`](phases/stories/STORY-007-rich-text-editor-tasks-projects-clients.md) |
 
 ### Bug & Defect Registry (`BUG-xxx`)
 
@@ -216,6 +217,8 @@ These components are built during specific phases but used across the whole app.
 | `ColorPicker` | Phase 7 | ✅ | `components/shared/ColorPicker.tsx` |
 | `UserMultiSelect` | STORY-006 | ✅ | `components/shared/UserMultiSelect.tsx` |
 | `AssigneeAvatarGroup` | STORY-006 | ✅ | `components/shared/AssigneeAvatarGroup.tsx` |
+| `RichTextEditor` | STORY-007 | ⬜ | `components/shared/RichTextEditor.tsx` |
+| `RichTextViewer` | STORY-007 | ⬜ | `components/shared/RichTextViewer.tsx` |
 
 ---
 
