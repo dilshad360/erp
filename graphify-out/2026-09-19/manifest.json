@@ -320,8 +320,8 @@
     "semantic_hash": ""
   },
   "components/auth/LoginClient.tsx": {
-    "mtime": 1789801116.7997897,
-    "ast_hash": "b6a379043099459640225c075537aa0c",
+    "mtime": 1789730029.5868466,
+    "ast_hash": "81b79e12cf1dafb3beb54876edfef95c",
     "semantic_hash": ""
   },
   "components/pwa/InstallPrompt.tsx": {
@@ -510,8 +510,8 @@
     "semantic_hash": ""
   },
   "lib/supabase/client.ts": {
-    "mtime": 1789801101.207183,
-    "ast_hash": "38092f6c99e405ce088f8d76d371fd96",
+    "mtime": 1789458061.4970248,
+    "ast_hash": "73149fcbbd0239402f6cbc671194cef0",
     "semantic_hash": ""
   },
   "lib/supabase/middleware.ts": {
@@ -660,8 +660,8 @@
     "semantic_hash": ""
   },
   "TRACKER.md": {
-    "mtime": 1789800538.8881185,
-    "ast_hash": "2497fc50c4659f7d404b7f978996c19f",
+    "mtime": 1789730187.709849,
+    "ast_hash": "d41d38d31582e6e276942c299db295ba",
     "semantic_hash": ""
   },
   "backend.md": {
@@ -842,11 +842,6 @@
   "phases/stories/STORY-005-tenant-employee-self-signup-and-admin-activation.md": {
     "mtime": 1789730177.8826246,
     "ast_hash": "b852449113130589379efb35d7e8f5f3",
-    "semantic_hash": ""
-  },
-  "phases/stories/STORY-006-crud-deletion-task-collaboration-multi-assignee.md": {
-    "mtime": 1789800529.1486187,
-    "ast_hash": "6ff1d812d80ef88f7bd58f71bfaf7a30",
     "semantic_hash": ""
   }
 }

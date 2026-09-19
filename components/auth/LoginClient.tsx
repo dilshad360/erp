@@ -85,28 +85,21 @@ export default function LoginClient({
     }
 
     // Check if user profile is active
-    const { data: profile, error: profileError } = await supabase
+    const { data: profile } = await supabase
       .from("profiles")
       .select("is_active, company_id")
       .eq("id", authData.user.id)
-      .single();
+      .maybeSingle();
 
-    if (profileError || !profile) {
-      setError("User profile not found. Please contact administrator.");
-      setLoading(false);
-      return;
-    }
-
-    if (!profile.is_active) {
+    if (profile && profile.is_active === false) {
       setIsPendingApproval(true);
       setLoading(false);
       return;
     }
 
-    // Seamless transition to dashboard
+    // Seamless transition to dashboard — full navigation ensures fresh session cookies reach server middleware & layout
     setIsRedirecting(true);
-    router.push("/dashboard");
-    router.refresh();
+    window.location.href = "/dashboard";
   }
 
   // ── Handle Sign Up ──────────────────────────────────────────────────────────
