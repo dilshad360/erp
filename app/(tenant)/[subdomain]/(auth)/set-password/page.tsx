@@ -18,7 +18,6 @@ export default function SetPasswordPage(): React.JSX.Element {
 
   useEffect(() => {
     const supabase = createClient();
-    let subscription: { unsubscribe: () => void } | null = null;
 
     async function initSession(): Promise<void> {
       // 1. Check existing session
@@ -48,7 +47,7 @@ export default function SetPasswordPage(): React.JSX.Element {
           if (setSessionError) {
             console.error("Failed to set session from URL hash:", setSessionError);
             setError(
-              "Invitation link expired or invalid. Please ask your administrator to resend the invite."
+              "Security link expired or invalid. Please request a new password reset or login link."
             );
           } else if (data.session) {
             setHasSession(true);
@@ -58,25 +57,21 @@ export default function SetPasswordPage(): React.JSX.Element {
         }
       }
 
-      // 3. Listen for auth state change
-      const { data: subData } = supabase.auth.onAuthStateChange((_event, session) => {
-        if (session) {
-          setHasSession(true);
-        }
-        setSessionChecking(false);
-      });
-      subscription = subData.subscription;
-
-      // Fallback timeout if no token is found in URL
-      setTimeout(() => {
-        setSessionChecking(false);
-      }, 1500);
+      setSessionChecking(false);
     }
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session) {
+        setHasSession(true);
+      }
+    });
 
     initSession();
 
     return () => {
-      subscription?.unsubscribe();
+      subscription.unsubscribe();
     };
   }, []);
 
@@ -104,7 +99,7 @@ export default function SetPasswordPage(): React.JSX.Element {
 
     if (!activeSession) {
       setError(
-        "Auth session missing! Please click the invitation link in your email again."
+        "Auth session missing! Please click the link in your email again or log in."
       );
       setLoading(false);
       return;
@@ -113,7 +108,7 @@ export default function SetPasswordPage(): React.JSX.Element {
     const formatErrorMessage = (msg: string | null): string => {
       if (!msg) return "An unexpected error occurred.";
       if (msg.toLowerCase().includes("user from sub claim") || msg.toLowerCase().includes("jwt")) {
-        return "This invitation link is invalid because the account was reset or re-invited. Please use the newest invite link from your email, or ask your admin to click 'Resend Invite'.";
+        return "This link is expired or invalid. Please request a new password reset link from the login page.";
       }
       return msg;
     };

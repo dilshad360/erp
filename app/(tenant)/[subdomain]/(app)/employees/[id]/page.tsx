@@ -1,5 +1,4 @@
 import { createClient } from "@/lib/supabase/server";
-import { createClient as createAdminSupabase } from "@supabase/supabase-js";
 import { redirect, notFound } from "next/navigation";
 import ProfileDetailClient from "./ProfileDetailClient";
 import type { EmployeeProfile } from "../EmployeeListClient";
@@ -75,19 +74,6 @@ export default async function EmployeeProfilePage({
     reporting_manager: rm,
   };
 
-  // Check if target user has confirmed email or logged in (activated)
-  const adminClient = createAdminSupabase(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    { auth: { autoRefreshToken: false, persistSession: false } }
-  );
-  const { data: authUserData } = await adminClient.auth.admin.getUserById(id);
-  const isConfirmed = Boolean(
-    authUserData?.user?.email_confirmed_at ||
-      authUserData?.user?.confirmed_at ||
-      authUserData?.user?.last_sign_in_at
-  );
-
   // Fetch all active profiles in company for manager dropdown selection
   const { data: managers } = await supabase
     .from("profiles")
@@ -103,7 +89,6 @@ export default async function EmployeeProfilePage({
       currentUserId={user.id}
       currentUserRole={currentUserProfile.role}
       subdomain={subdomain}
-      isConfirmed={isConfirmed}
     />
   );
 }

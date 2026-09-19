@@ -12,16 +12,17 @@ import {
   Building2,
   Calendar,
   IndianRupee,
-  MoreVertical,
   ExternalLink,
   Edit2,
   Archive,
+  Trash2,
   Search,
 } from "lucide-react";
 import PageHeader from "@/components/shared/PageHeader";
 import { DataTable } from "@/components/shared/DataTable";
 import EmptyState from "@/components/shared/EmptyState";
 import ConfirmDialog from "@/components/shared/ConfirmDialog";
+import { ActionMenu } from "@/components/shared/ActionMenu";
 import { formatINR, calculateTimelineProgress } from "@/lib/format";
 
 export interface ProjectRecord {
@@ -69,7 +70,6 @@ export default function ProjectListClient({
   const [statusFilter, setStatusFilter] = useState<string>("active");
   const [clientFilter, setClientFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [openDropdownId, setOpenDropdownId] = useState<string | null>(null);
   const [projectToArchive, setProjectToArchive] = useState<ProjectRecord | null>(null);
   const [isArchiveLoading, setIsArchiveLoading] = useState(false);
 
@@ -279,96 +279,58 @@ export default function ProjectListClient({
       {
         id: "actions",
         header: "",
-        cell: ({ row, table }) => {
+        cell: ({ row }) => {
           const project = row.original;
-          const isDropdownOpen = openDropdownId === project.id;
-          const totalRows = table.getRowModel().rows.length;
-          const isNearBottom = row.index >= Math.max(0, totalRows - 2) && totalRows > 2;
+          const groups = [
+            {
+              items: [
+                {
+                  label: "View details",
+                  icon: <ExternalLink size={14} />,
+                  href: `/projects/${project.id}`,
+                },
+                {
+                  label: "Edit project",
+                  icon: <Edit2 size={14} />,
+                  href: `/projects/${project.id}?edit=true`,
+                  hidden: !canManage,
+                },
+              ],
+            },
+            ...(canManage
+              ? [
+                  {
+                    items: [
+                      ...(project.status !== "cancelled"
+                        ? [
+                            {
+                              label: "Archive project",
+                              icon: <Archive size={14} />,
+                              onClick: () => setProjectToArchive(project),
+                            },
+                          ]
+                        : []),
+                      {
+                        label: "Delete project",
+                        icon: <Trash2 size={14} />,
+                        variant: "danger" as const,
+                        onClick: () => setProjectToDelete(project),
+                      },
+                    ],
+                  },
+                ]
+              : []),
+          ];
 
           return (
-            <div className="relative flex justify-end">
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setOpenDropdownId(isDropdownOpen ? null : project.id);
-                }}
-                className="p-1.5 rounded-md hover:bg-[var(--color-surface-raised)] text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors"
-                aria-label="Open project options"
-              >
-                <MoreVertical size={16} />
-              </button>
-
-              {isDropdownOpen && (
-                <>
-                  <div
-                    className="fixed inset-0 z-40"
-                    onClick={() => setOpenDropdownId(null)}
-                  />
-                  <div
-                    className={`absolute right-0 ${
-                      isNearBottom ? "bottom-full mb-1.5" : "top-full mt-1.5"
-                    } z-50 w-44 rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] shadow-2xl py-1 text-xs divide-y divide-[var(--color-border-subtle)] animate-in fade-in zoom-in-95 duration-150`}
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <div className="py-1">
-                      <Link
-                        href={`/projects/${project.id}`}
-                        onClick={() => setOpenDropdownId(null)}
-                        className="flex items-center gap-2 px-3 py-2 text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]"
-                      >
-                        <ExternalLink size={14} className="text-[var(--color-text-muted)]" />
-                        View details
-                      </Link>
-                      {canManage && (
-                        <Link
-                          href={`/projects/${project.id}?edit=true`}
-                          onClick={() => setOpenDropdownId(null)}
-                          className="flex items-center gap-2 px-3 py-2 text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]"
-                        >
-                          <Edit2 size={14} className="text-[var(--color-text-muted)]" />
-                          Edit project
-                        </Link>
-                      )}
-                    </div>
-
-                    {canManage && (
-                      <div className="py-1">
-                        {project.status !== "cancelled" && (
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setOpenDropdownId(null);
-                              setProjectToArchive(project);
-                            }}
-                            className="w-full flex items-center gap-2 px-3 py-2 text-[var(--color-text-secondary)] hover:bg-[var(--color-surface)] transition-colors text-left"
-                          >
-                            <Archive size={14} />
-                            Archive project
-                          </button>
-                        )}
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setOpenDropdownId(null);
-                            setProjectToDelete(project);
-                          }}
-                          className="w-full flex items-center gap-2 px-3 py-2 text-[var(--color-danger)] hover:bg-[var(--color-danger-subtle)] transition-colors text-left"
-                        >
-                          <Archive size={14} />
-                          Delete project
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                </>
-              )}
+            <div className="flex justify-end">
+              <ActionMenu groups={groups} triggerAriaLabel="Open project options" />
             </div>
           );
         },
       },
     ],
-    [openDropdownId, canManage]
+    [canManage]
   );
 
   return (
@@ -501,7 +463,6 @@ export default function ProjectListClient({
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {filteredProjects.map((project) => {
                 const progress = calculateTimelineProgress(project.start_date, project.end_date);
-                const isDropdownOpen = openDropdownId === project.id;
 
                 return (
                   <div
@@ -531,77 +492,50 @@ export default function ProjectListClient({
 
                         <div className="flex items-center gap-1 shrink-0">
                           {getStatusBadge(project.status)}
-                          <div className="relative">
-                            <button
-                              type="button"
-                              onClick={() => setOpenDropdownId(isDropdownOpen ? null : project.id)}
-                              className="p-1 rounded hover:bg-[var(--color-surface-raised)] text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors"
-                            >
-                              <MoreVertical size={15} />
-                            </button>
-
-                            {isDropdownOpen && (
-                              <>
-                                <div
-                                  className="fixed inset-0 z-40"
-                                  onClick={() => setOpenDropdownId(null)}
-                                />
-                                <div
-                                  className="absolute right-0 top-6 z-50 w-40 rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] shadow-2xl py-1 text-xs divide-y divide-[var(--color-border-subtle)] animate-in fade-in zoom-in-95 duration-150"
-                                  onClick={(e) => e.stopPropagation()}
-                                >
-                                  <div className="py-1">
-                                    <Link
-                                      href={`/projects/${project.id}`}
-                                      onClick={() => setOpenDropdownId(null)}
-                                      className="flex items-center gap-2 px-3 py-1.5 text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]"
-                                    >
-                                      <ExternalLink size={13} />
-                                      View details
-                                    </Link>
-                                    {canManage && (
-                                      <Link
-                                        href={`/projects/${project.id}?edit=true`}
-                                        onClick={() => setOpenDropdownId(null)}
-                                        className="flex items-center gap-2 px-3 py-1.5 text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]"
-                                      >
-                                        <Edit2 size={13} />
-                                        Edit project
-                                      </Link>
-                                    )}
-                                  </div>
-                                  {canManage && (
-                                    <div className="py-1">
-                                      {project.status !== "cancelled" && (
-                                        <button
-                                          type="button"
-                                          onClick={() => {
-                                            setOpenDropdownId(null);
-                                            setProjectToArchive(project);
-                                          }}
-                                          className="w-full flex items-center gap-2 px-3 py-1.5 text-[var(--color-text-secondary)] hover:bg-[var(--color-surface)] text-left"
-                                        >
-                                          <Archive size={13} />
-                                          Archive
-                                        </button>
-                                      )}
-                                      <button
-                                        type="button"
-                                        onClick={() => {
-                                          setOpenDropdownId(null);
-                                          setProjectToDelete(project);
-                                        }}
-                                        className="w-full flex items-center gap-2 px-3 py-1.5 text-[var(--color-danger)] hover:bg-[var(--color-danger-subtle)] text-left"
-                                      >
-                                        <Archive size={13} />
-                                        Delete
-                                      </button>
-                                    </div>
-                                  )}
-                                </div>
-                              </>
-                            )}
-                          </div>
+                          <ActionMenu
+                            triggerAriaLabel="Project options"
+                            triggerClassName="p-1 rounded hover:bg-[var(--color-surface-raised)] text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors"
+                            groups={[
+                              {
+                                items: [
+                                  {
+                                    label: "View details",
+                                    icon: <ExternalLink size={13} />,
+                                    href: `/projects/${project.id}`,
+                                  },
+                                  {
+                                    label: "Edit project",
+                                    icon: <Edit2 size={13} />,
+                                    href: `/projects/${project.id}?edit=true`,
+                                    hidden: !canManage,
+                                  },
+                                ],
+                              },
+                              ...(canManage
+                                ? [
+                                    {
+                                      items: [
+                                        ...(project.status !== "cancelled"
+                                          ? [
+                                              {
+                                                label: "Archive",
+                                                icon: <Archive size={13} />,
+                                                onClick: () => setProjectToArchive(project),
+                                              },
+                                            ]
+                                          : []),
+                                        {
+                                          label: "Delete",
+                                          icon: <Trash2 size={13} />,
+                                          variant: "danger" as const,
+                                          onClick: () => setProjectToDelete(project),
+                                        },
+                                      ],
+                                    },
+                                  ]
+                                : []),
+                            ]}
+                          />
                         </div>
                       </div>
 

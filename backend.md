@@ -367,11 +367,13 @@ Body: { logId, lat, lng }
 ### Employees
 
 ```
-GET  /api/employees               → list employees for current company
-POST /api/employees               → invite + create profile
-GET  /api/employees/:id           → employee detail
-PUT  /api/employees/:id           → update profile
-DELETE /api/employees/:id         → deactivate (is_active = false), not hard delete
+GET    /api/employees               → list employees for current company (?active=true supported)
+GET    /api/employees/:id           → employee detail
+PUT    /api/employees/:id           → update profile
+DELETE /api/employees/:id           → deactivate (action=deactivate) or delete permanently
+PATCH  /api/employees/:id/activate  → approve & activate self-registered employee
+DELETE /api/employees/:id/reject    → reject & delete self-registered applicant
+POST   /api/employees/upload-avatar → upload profile avatar to storage
 ```
 
 ### Clients

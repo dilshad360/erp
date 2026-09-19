@@ -143,9 +143,8 @@ Dashboard cards for MVP:
 
 | Page | Path | Notes |
 |---|---|---|
-| List | `/:subdomain/employees` | Table with search + filter by department |
-| Profile | `/:subdomain/employees/:id` | Full profile, attendance history, assigned tasks |
-| New employee | `/:subdomain/employees/new` | Form → creates Supabase auth invite + profile |
+| List & Approvals | `/:subdomain/employees` | Table with search, department filter, and Pending Approvals tab |
+| Profile | `/:subdomain/employees/:id` | Full profile, contact, role/department management, danger zone |
 
 ### Clients
 

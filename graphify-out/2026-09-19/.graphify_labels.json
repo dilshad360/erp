@@ -66,7 +66,6 @@
   "64": "TRACKER.md",
   "65": "Tasks",
   "66": "Tasks",
-  "67": "PageHeader.tsx",
   "68": "route.ts",
   "69": "route.ts",
   "70": "page.tsx",
@@ -74,11 +73,9 @@
   "72": "BUG-004: Mobile Viewport Bottom Scroll Clearance Obscured by BottomNav",
   "73": "Stories Directory (`phases/stories/`)",
   "74": "route.ts",
-  "75": "StatCard.tsx",
   "76": "graphify.md",
   "77": "graphify.md",
   "78": "generate_icons.py",
   "79": "Phase 3 — Attendance",
-  "80": "page.tsx",
-  "81": "Phase 3 — Attendance"
+  "80": "page.tsx"
 }

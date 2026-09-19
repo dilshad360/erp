@@ -3,9 +3,10 @@
 import React, { useState } from "react";
 import { useDraggable } from "@dnd-kit/core";
 import { CSS } from "@dnd-kit/utilities";
-import { AlertCircle, MoreVertical, Trash2, Edit2 } from "lucide-react";
+import { AlertCircle, Trash2, Edit2 } from "lucide-react";
 import AssigneeAvatarGroup, { type AssigneeInfo } from "@/components/shared/AssigneeAvatarGroup";
 import ConfirmDialog from "@/components/shared/ConfirmDialog";
+import { ActionMenu } from "@/components/shared/ActionMenu";
 import type { Task } from "./TaskListView";
 import type { TaskFormData } from "./TaskForm";
 
@@ -28,7 +29,6 @@ interface KanbanCardProps {
 }
 
 export default function KanbanCard({ task, onEdit, onDelete }: KanbanCardProps): React.JSX.Element {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -103,57 +103,25 @@ export default function KanbanCard({ task, onEdit, onDelete }: KanbanCardProps):
             </p>
           </div>
 
-          <div className="relative shrink-0" data-no-drag>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                setIsMenuOpen(!isMenuOpen);
-              }}
-              className="p-1 rounded text-[var(--color-text-muted)] hover:bg-[var(--color-surface-raised)] hover:text-[var(--color-text-primary)] opacity-0 group-hover:opacity-100 transition-opacity"
-              aria-label="Task options"
-            >
-              <MoreVertical size={14} />
-            </button>
-
-            {isMenuOpen && (
-              <>
-                <div
-                  className="fixed inset-0 z-20"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setIsMenuOpen(false);
-                  }}
-                />
-                <div
-                  className="absolute right-0 top-6 z-30 w-32 rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] shadow-xl py-1 text-xs divide-y divide-[var(--color-border-subtle)]"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                      onEdit(task);
-                    }}
-                    className="w-full flex items-center gap-2 px-3 py-1.5 text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] text-left"
-                  >
-                    <Edit2 size={12} />
-                    Edit
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                      setIsDeleteOpen(true);
-                    }}
-                    className="w-full flex items-center gap-2 px-3 py-1.5 text-[var(--color-danger)] hover:bg-[var(--color-danger-subtle)] text-left"
-                  >
-                    <Trash2 size={12} />
-                    Delete
-                  </button>
-                </div>
-              </>
-            )}
+          <div className="shrink-0" data-no-drag>
+            <ActionMenu
+              triggerAriaLabel="Task options"
+              triggerClassName="p-1 rounded text-[var(--color-text-muted)] hover:bg-[var(--color-surface-raised)] hover:text-[var(--color-text-primary)] opacity-0 group-hover:opacity-100 transition-opacity"
+              menuWidthClass="w-32"
+              items={[
+                {
+                  label: "Edit",
+                  icon: <Edit2 size={12} />,
+                  onClick: () => onEdit(task),
+                },
+                {
+                  label: "Delete",
+                  icon: <Trash2 size={12} />,
+                  variant: "danger",
+                  onClick: () => setIsDeleteOpen(true),
+                },
+              ]}
+            />
           </div>
         </div>
 

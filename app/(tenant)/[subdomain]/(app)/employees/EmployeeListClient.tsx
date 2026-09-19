@@ -8,7 +8,6 @@ import { DataTable } from "@/components/shared/DataTable";
 import Avatar from "@/components/shared/Avatar";
 import type { ColumnDef, CellContext } from "@tanstack/react-table";
 import {
-  UserPlus,
   ChevronRight,
   Eye,
   UserX,
@@ -293,17 +292,6 @@ export default function EmployeeListClient({
       <PageHeader
         title="Employees"
         description="Manage team members, roles, permissions, and registration approvals."
-        actions={
-          currentUserRole === "admin" ? (
-            <Link
-              href="/employees/new"
-              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold text-white bg-[var(--color-brand)] hover:bg-[var(--color-brand-hover)] transition-all shadow-xs active:scale-[0.98]"
-            >
-              <UserPlus size={16} />
-              <span>Invite Employee</span>
-            </Link>
-          ) : undefined
-        }
       />
 
       <div className="flex-1 max-w-7xl w-full mx-auto px-4 py-6 md:px-8 space-y-6">
@@ -426,18 +414,9 @@ export default function EmployeeListClient({
                   <p className="text-xs text-[var(--color-text-secondary)] mt-1">
                     {selectedDepartment !== "ALL"
                       ? "No employees match the selected department."
-                      : "Get started by inviting or approving team members."}
+                      : "When team members sign up on your workspace login page, approve them under Pending Approvals to get started."}
                   </p>
                 </div>
-                {currentUserRole === "admin" && (
-                  <Link
-                    href="/employees/new"
-                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-semibold text-white bg-[var(--color-brand)] hover:bg-[var(--color-brand-hover)] transition-colors mt-2"
-                  >
-                    <UserPlus size={14} />
-                    <span>Invite Employee</span>
-                  </Link>
-                )}
               </div>
             }
           />

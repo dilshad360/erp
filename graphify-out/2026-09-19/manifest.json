@@ -45,8 +45,8 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx": {
-    "mtime": 1789810757.5015154,
-    "ast_hash": "cc715c2cc99b52bd65147377a8941c88",
+    "mtime": 1789812266.1811996,
+    "ast_hash": "89f6bd9316bc648ba948df5632412cb4",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/clients/[id]/page.tsx": {
@@ -120,13 +120,13 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx": {
-    "mtime": 1789810849.6382737,
-    "ast_hash": "d7624825730a42aa64123b3412fb5a89",
+    "mtime": 1789812309.5539544,
+    "ast_hash": "a9fe4a41d64d6832e4b477810a73d8ac",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/projects/[id]/page.tsx": {
-    "mtime": 1789555645.9086454,
-    "ast_hash": "7f37ef84dd33c21f1dfe938dcc625ea9",
+    "mtime": 1789812175.5949223,
+    "ast_hash": "bc377e7a1de2f04dfe624ea826389410",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/projects/[id]/tasks/page.tsx": {

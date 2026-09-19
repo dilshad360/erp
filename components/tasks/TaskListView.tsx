@@ -2,10 +2,11 @@
 
 import React, { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import { Plus, Filter, Search, MoreVertical, Trash2, Edit2 } from "lucide-react";
+import { Plus, Filter, Search, Trash2, Edit2 } from "lucide-react";
 import EmptyState from "@/components/shared/EmptyState";
 import AssigneeAvatarGroup, { type AssigneeInfo } from "@/components/shared/AssigneeAvatarGroup";
 import ConfirmDialog from "@/components/shared/ConfirmDialog";
+import { ActionMenu } from "@/components/shared/ActionMenu";
 import TaskSheet from "./TaskSheet";
 import type { TaskFormData, TaskStatus } from "./TaskForm";
 
@@ -80,7 +81,6 @@ export default function TaskListView({
   const [tasks, setTasks] = useState<Task[]>(initialTasks);
   const [sheetOpen, setSheetOpen] = useState(false);
   const [editTask, setEditTask] = useState<Task | null>(null);
-  const [openDropdownId, setOpenDropdownId] = useState<string | null>(null);
   const [taskToDelete, setTaskToDelete] = useState<Task | null>(null);
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -280,8 +280,6 @@ export default function TaskListView({
           <div className="divide-y divide-[var(--color-border-subtle)]">
             {filteredTasks.map((task, idx) => {
               const overdue = isOverdue(task.due_date);
-              const isDropdownOpen = openDropdownId === task.id;
-              const isNearBottom = idx >= Math.max(0, filteredTasks.length - 2);
               const isLastRow = idx === filteredTasks.length - 1;
               const assigneesList = task.assignees && task.assignees.length > 0
                 ? task.assignees
@@ -330,57 +328,28 @@ export default function TaskListView({
                   </span>
 
                   {/* Options Menu */}
-                  <div className="relative flex justify-end">
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setOpenDropdownId(isDropdownOpen ? null : task.id);
-                      }}
-                      className="p-1 rounded text-[var(--color-text-muted)] hover:bg-[var(--color-surface-raised)] hover:text-[var(--color-text-primary)] transition-colors"
-                      aria-label="Task options"
-                    >
-                      <MoreVertical size={15} />
-                    </button>
-
-                    {isDropdownOpen && (
-                      <>
-                        <div
-                          className="fixed inset-0 z-40"
-                          onClick={() => setOpenDropdownId(null)}
-                        />
-                        <div
-                          className={`absolute right-0 ${
-                            isNearBottom ? "bottom-full mb-1.5" : "top-full mt-1.5"
-                          } z-50 w-36 rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] shadow-2xl py-1 text-xs divide-y divide-[var(--color-border-subtle)] animate-in fade-in zoom-in-95 duration-150`}
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setOpenDropdownId(null);
-                              setEditTask(task);
-                              setSheetOpen(true);
-                            }}
-                            className="w-full flex items-center gap-2 px-3 py-2 text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] text-left"
-                          >
-                            <Edit2 size={13} />
-                            Edit
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setOpenDropdownId(null);
-                              setTaskToDelete(task);
-                            }}
-                            className="w-full flex items-center gap-2 px-3 py-2 text-[var(--color-danger)] hover:bg-[var(--color-danger-subtle)] text-left"
-                          >
-                            <Trash2 size={13} />
-                            Delete
-                          </button>
-                        </div>
-                      </>
-                    )}
+                  <div className="flex justify-end">
+                    <ActionMenu
+                      triggerAriaLabel="Task options"
+                      triggerClassName="p-1 rounded text-[var(--color-text-muted)] hover:bg-[var(--color-surface-raised)] hover:text-[var(--color-text-primary)] transition-colors"
+                      menuWidthClass="w-36"
+                      items={[
+                        {
+                          label: "Edit",
+                          icon: <Edit2 size={13} />,
+                          onClick: () => {
+                            setEditTask(task);
+                            setSheetOpen(true);
+                          },
+                        },
+                        {
+                          label: "Delete",
+                          icon: <Trash2 size={13} />,
+                          variant: "danger",
+                          onClick: () => setTaskToDelete(task),
+                        },
+                      ]}
+                    />
                   </div>
                 </div>
               );
