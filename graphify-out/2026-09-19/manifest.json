@@ -80,23 +80,13 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/employees/[id]/ProfileDetailClient.tsx": {
-    "mtime": 1789813058.74203,
-    "ast_hash": "e4fefbbd9baa3496b5e3032f9df0293e",
+    "mtime": 1789813680.535447,
+    "ast_hash": "99ae31ce09a26041c7495206d1513da3",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/employees/[id]/page.tsx": {
     "mtime": 1789812978.8999622,
     "ast_hash": "e577bf080524067f645c298176330605",
-    "semantic_hash": ""
-  },
-  "app/(tenant)/[subdomain]/(app)/employees/new/InviteFormClient.tsx": {
-    "mtime": 1789554729.468163,
-    "ast_hash": "d15c9c0ddf557ebffe07005ce66cbff7",
-    "semantic_hash": ""
-  },
-  "app/(tenant)/[subdomain]/(app)/employees/new/page.tsx": {
-    "mtime": 1789532821.1950397,
-    "ast_hash": "f7fa6d91b1b226b0f837c72a14f3d40d",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/employees/page.tsx": {
@@ -207,11 +197,6 @@
   "app/api/company/upload-logo/route.ts": {
     "mtime": 1789577674.8639295,
     "ast_hash": "b31ed20fc9846b3450067d956238257a",
-    "semantic_hash": ""
-  },
-  "app/api/employees/[id]/resend-invite/route.ts": {
-    "mtime": 1789532821.1997702,
-    "ast_hash": "968875fa458bed09e30fdf55e5905a0d",
     "semantic_hash": ""
   },
   "app/api/employees/[id]/route.ts": {
@@ -480,8 +465,8 @@
     "semantic_hash": ""
   },
   "components/tasks/TaskSheet.tsx": {
-    "mtime": 1789810617.6113799,
-    "ast_hash": "60eb2cad27efb0822684688d9699b73c",
+    "mtime": 1789814133.1664014,
+    "ast_hash": "1361db0323ed31a82048a72a793a14ec",
     "semantic_hash": ""
   },
   "components/ui/button.tsx": {
@@ -660,8 +645,8 @@
     "semantic_hash": ""
   },
   "TRACKER.md": {
-    "mtime": 1789811183.0299602,
-    "ast_hash": "20aff527322f36ddbd75a0edbd346e09",
+    "mtime": 1789813353.1397557,
+    "ast_hash": "ef560caafd94d5dc5d3295bb4a69c1fb",
     "semantic_hash": ""
   },
   "backend.md": {
@@ -877,6 +862,11 @@
   "components/shared/ActionMenu.tsx": {
     "mtime": 1789812764.5562763,
     "ast_hash": "f91960e31a4e31ffdc1979325488d895",
+    "semantic_hash": ""
+  },
+  "phases/bugs/BUG-005-remove-legacy-invite-employee-page.md": {
+    "mtime": 1789813334.7198825,
+    "ast_hash": "2a027878e8ccad478884072a23f36bae",
     "semantic_hash": ""
   }
 }

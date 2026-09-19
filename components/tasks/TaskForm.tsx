@@ -305,8 +305,8 @@ export default function TaskForm({
           />
         </FormField>
 
-        {/* Actions & Danger Zone */}
-        <div className="flex items-center justify-between gap-2 pt-3 border-t border-[var(--color-border-subtle)]">
+        {/* Actions & Danger Zone - Sticky bottom bar */}
+        <div className="sticky bottom-0 bg-[var(--color-surface)] -mx-5 -mb-5 px-5 py-3.5 border-t border-[var(--color-border)] flex items-center justify-between gap-2 mt-6 shadow-lg z-10">
           {mode === "edit" && taskId && canDelete ? (
             <Button
               type="button"
@@ -326,7 +326,7 @@ export default function TaskForm({
             <button
               type="button"
               onClick={onCancel}
-              className="px-4 py-2 text-sm rounded-lg border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-raised)] transition-colors"
+              className="px-4 py-2 text-sm rounded-lg border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-raised)] transition-colors cursor-pointer"
             >
               Cancel
             </button>
