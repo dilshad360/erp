@@ -9,6 +9,7 @@ import LoadingButton from "@/components/shared/LoadingButton";
 import UserMultiSelect from "@/components/shared/UserMultiSelect";
 import DatePicker from "@/components/shared/DatePicker";
 import ConfirmDialog from "@/components/shared/ConfirmDialog";
+import RichTextEditor from "@/components/shared/RichTextEditor";
 import { AlertCircle, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -47,7 +48,7 @@ export interface TaskFormData {
 const taskFormSchema = z.object({
   projectId: z.string().uuid("Invalid project ID").optional(),
   title: z.string().trim().min(1, "Title is required").max(300),
-  description: z.string().trim().max(5000).optional().nullable(),
+  description: z.string().trim().max(10000).optional().nullable(),
   statusId: z.string().uuid().optional().nullable(),
   priority: z.enum(["low", "medium", "high", "urgent"]),
   assigneeIds: z.array(z.string().uuid()),
@@ -320,11 +321,18 @@ export default function TaskForm({
 
         {/* Description */}
         <FormField label="Description" error={errors.description?.message}>
-          <textarea
-            {...register("description")}
-            rows={3}
-            placeholder="Add a description or checklist..."
-            className="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-brand)] transition-colors resize-none"
+          <Controller
+            control={control}
+            name="description"
+            render={({ field }) => (
+              <RichTextEditor
+                value={field.value ?? ""}
+                onChange={field.onChange}
+                error={errors.description?.message}
+                placeholder="Add a detailed task description, acceptance criteria, or checklist..."
+                minHeight="120px"
+              />
+            )}
           />
         </FormField>
 

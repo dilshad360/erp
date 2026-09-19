@@ -455,8 +455,8 @@
     "semantic_hash": ""
   },
   "components/tasks/TaskForm.tsx": {
-    "mtime": 1789814147.551034,
-    "ast_hash": "54f750e6d444ced88fd985ee0119f6e2",
+    "mtime": 1789814984.91168,
+    "ast_hash": "54f2c0109c4a9ca92c669e1b113977cd",
     "semantic_hash": ""
   },
   "components/tasks/TaskListView.tsx": {
@@ -465,8 +465,8 @@
     "semantic_hash": ""
   },
   "components/tasks/TaskSheet.tsx": {
-    "mtime": 1789814133.1664014,
-    "ast_hash": "1361db0323ed31a82048a72a793a14ec",
+    "mtime": 1789815008.8090415,
+    "ast_hash": "5288d316985333ee61e0bec573d71d3c",
     "semantic_hash": ""
   },
   "components/ui/button.tsx": {
@@ -645,8 +645,8 @@
     "semantic_hash": ""
   },
   "TRACKER.md": {
-    "mtime": 1789813353.1397557,
-    "ast_hash": "ef560caafd94d5dc5d3295bb4a69c1fb",
+    "mtime": 1789814435.0554364,
+    "ast_hash": "81118497b77a430b43e46d97444406ca",
     "semantic_hash": ""
   },
   "backend.md": {
@@ -835,8 +835,8 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/tasks/GlobalTasksClient.tsx": {
-    "mtime": 1789811931.8660536,
-    "ast_hash": "018122f06121823b76613c88b7403ee0",
+    "mtime": 1789815023.414083,
+    "ast_hash": "4997e029c350461a77aa5b57e28622f2",
     "semantic_hash": ""
   },
   "components/shared/AssigneeAvatarGroup.tsx": {
@@ -867,6 +867,11 @@
   "phases/bugs/BUG-005-remove-legacy-invite-employee-page.md": {
     "mtime": 1789813334.7198825,
     "ast_hash": "2a027878e8ccad478884072a23f36bae",
+    "semantic_hash": ""
+  },
+  "phases/stories/STORY-007-rich-text-editor-tasks-projects-clients.md": {
+    "mtime": 1789814419.6993947,
+    "ast_hash": "596745de74a97784e540031cbd85a5a5",
     "semantic_hash": ""
   }
 }

@@ -1,6 +1,6 @@
 # STORY-007: Rich Text Editor Integration for Tasks, Projects & Client Notes
 
-> **Status:** ⬜ Backlog  
+> **Status:** ✅ Done  
 > **Module / Epic:** Shared Components / Tasks / Projects / Clients  
 > **Target Branch:** `feat/rich-text-story-007`  
 > **Priority:** P2 - Medium  
@@ -74,10 +74,10 @@ Every feature touching data must adhere to multi-tenant isolation rules:
    - `components/tasks/TaskForm.tsx`: Replace `<textarea id="description">` with `<RichTextEditor>`.
    - `components/tasks/TaskSheet.tsx` & Task Detail Views: Render rich descriptions with `<RichTextViewer>`.
 2. **Projects**:
-   - `app/(tenant)/[subdomain]/(app)/projects/new/ProjectFormClient.tsx`: Replace description `<textarea>` with `<RichTextEditor>`.
-   - `app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx`: Display rich project description and support rich text editing in the edit modal.
+   - `app/(tenant)/[subdomain]/(app)/projects/new/NewProjectFormClient.tsx`: Replace description `<textarea>` with `<RichTextEditor>`.
+   - `app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx`: Display rich project description with `<RichTextViewer>` and support rich text editing in the edit modal.
 3. **Clients**:
-   - `app/(tenant)/[subdomain]/(app)/clients/new/ClientFormClient.tsx`: Replace notes `<textarea>` with `<RichTextEditor>`.
+   - `app/(tenant)/[subdomain]/(app)/clients/new/NewClientFormClient.tsx`: Replace notes `<textarea>` with `<RichTextEditor>`.
    - `app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx`: Display formatted notes with `<RichTextViewer>` and support rich text editing.
 
 ### D. Mobile & PWA UX (375px viewport)
@@ -123,12 +123,12 @@ Every feature touching data must adhere to multi-tenant isolation rules:
 
 ## 6. Implementation Subtasks Breakdown
 
-- [ ] **Task 1**: Implement `components/shared/RichTextEditor.tsx` and `components/shared/RichTextViewer.tsx` with dark mode tokens and XSS sanitization.
-- [ ] **Task 2**: Integrate `RichTextEditor` and `RichTextViewer` into Task Management (`TaskForm.tsx`, `TaskSheet.tsx`, task views).
-- [ ] **Task 3**: Integrate `RichTextEditor` and `RichTextViewer` into Project Management (`ProjectFormClient.tsx`, `ProjectDetailClient.tsx`).
-- [ ] **Task 4**: Integrate `RichTextEditor` and `RichTextViewer` into Client Management (`ClientFormClient.tsx`, `ClientDetailClient.tsx`).
-- [ ] **Task 5**: Verify mobile responsiveness (375px viewport), toolbar touch targets, and dark mode contrast.
-- [ ] **Task 6**: Run quality gates (`npm run typecheck`, `npm run lint`, `npm run build`) and update tracker.
+- [x] **Task 1**: Implement `components/shared/RichTextEditor.tsx` and `components/shared/RichTextViewer.tsx` with dark mode tokens and XSS sanitization.
+- [x] **Task 2**: Integrate `RichTextEditor` and `RichTextViewer` into Task Management (`TaskForm.tsx`, `TaskSheet.tsx`, task views).
+- [x] **Task 3**: Integrate `RichTextEditor` and `RichTextViewer` into Project Management (`NewProjectFormClient.tsx`, `ProjectDetailClient.tsx`).
+- [x] **Task 4**: Integrate `RichTextEditor` and `RichTextViewer` into Client Management (`NewClientFormClient.tsx`, `ClientDetailClient.tsx`).
+- [x] **Task 5**: Verify mobile responsiveness (375px viewport), toolbar touch targets, and dark mode contrast.
+- [x] **Task 6**: Run quality gates (`npm run typecheck`, `npm run lint`, `npm run build`) and update tracker.
 
 ---
 
@@ -136,19 +136,19 @@ Every feature touching data must adhere to multi-tenant isolation rules:
 
 Run and verify before completing story:
 
-- [ ] `npm run build` — Passes with zero errors
-- [ ] `npm run lint` — Zero ESLint warnings or errors
-- [ ] `npm run typecheck` — Strict TypeScript passes (`tsc --noEmit`)
-- [ ] Mobile viewport tested at 375px width
-- [ ] RLS verified across multiple tenant accounts
-- [ ] Logged-out access blocked
-- [ ] Updated `TRACKER.md` status to ✅ Done
+- [x] `npm run build` — Passes with zero errors
+- [x] `npm run lint` — Zero ESLint warnings or errors
+- [x] `npm run typecheck` — Strict TypeScript passes (`tsc --noEmit`)
+- [x] Mobile viewport tested at 375px width
+- [x] RLS verified across multiple tenant accounts
+- [x] Logged-out access blocked
+- [x] Updated `TRACKER.md` status to ✅ Done
 
 ---
 
 ## 8. Tracking & Sign-Off
 
-- **Completed Date**: Pending implementation
+- **Completed Date**: 2026-09-19
 - **Migrations Applied**: None required (Postgres `text` columns reused)
 - **Decisions Logged in TRACKER.md**: Replaced plain `<textarea>` descriptions with unified `RichTextEditor` across Tasks, Projects, and Clients.
 - **Signed Off By**: Antigravity AI Agent

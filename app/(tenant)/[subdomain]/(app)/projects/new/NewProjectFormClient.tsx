@@ -17,12 +17,13 @@ import PageHeader from "@/components/shared/PageHeader";
 import FormField from "@/components/shared/FormField";
 import LoadingButton from "@/components/shared/LoadingButton";
 import ClientSelect, { type ClientOption } from "@/components/shared/ClientSelect";
+import RichTextEditor from "@/components/shared/RichTextEditor";
 
 const projectFormSchema = z
   .object({
     name: z.string().trim().min(1, "Project name is required").max(150),
     clientId: z.string().min(1, "Please select a client"),
-    description: z.string().trim().max(2000).optional(),
+    description: z.string().trim().max(10000).optional(),
     status: z.enum(["active", "on_hold", "completed", "cancelled"]),
     startDate: z.string().optional().or(z.literal("")),
     endDate: z.string().optional().or(z.literal("")),
@@ -278,12 +279,18 @@ export default function NewProjectFormClient({
             error={errors.description?.message}
             hint="Summarize goals, key deliverables, and client constraints."
           >
-            <textarea
-              id="description"
-              rows={4}
-              placeholder="Outline project objectives, key milestones, and important scope items..."
-              {...register("description")}
-              className="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-brand)] transition-colors resize-none"
+            <Controller
+              control={control}
+              name="description"
+              render={({ field }) => (
+                <RichTextEditor
+                  value={field.value ?? ""}
+                  onChange={field.onChange}
+                  error={errors.description?.message}
+                  placeholder="Outline project objectives, key milestones, and important scope items..."
+                  minHeight="140px"
+                />
+              )}
             />
           </FormField>
         </div>

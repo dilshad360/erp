@@ -3,19 +3,19 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Building2, User, Mail, Phone, MapPin, FileText, AlertCircle } from "lucide-react";
 import PageHeader from "@/components/shared/PageHeader";
 import FormField from "@/components/shared/FormField";
 import LoadingButton from "@/components/shared/LoadingButton";
-
+import RichTextEditor from "@/components/shared/RichTextEditor";
 
 const gstRegex = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
 
 const clientFormSchema = z.object({
-  name: z.string().trim().min(1, "Client company name is required").max(120),
+  name: z.string().trim().min(1, "Client / Company name is required").max(150),
   contactPerson: z.string().trim().max(100).optional(),
   email: z
     .string()
@@ -35,7 +35,7 @@ const clientFormSchema = z.object({
     )
     .optional()
     .or(z.literal("")),
-  notes: z.string().trim().max(1500).optional(),
+  notes: z.string().trim().max(10000).optional(),
 });
 
 type ClientFormData = z.infer<typeof clientFormSchema>;
@@ -47,6 +47,7 @@ export default function NewClientFormClient(): React.JSX.Element {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors, isSubmitting },
   } = useForm<ClientFormData>({
     resolver: zodResolver(clientFormSchema),
@@ -245,12 +246,18 @@ export default function NewClientFormClient(): React.JSX.Element {
             error={errors.notes?.message}
             hint="Billing notes, preferred communications, or key requirements."
           >
-            <textarea
-              id="notes"
-              rows={4}
-              placeholder="Add any helpful internal notes or client preferences..."
-              {...register("notes")}
-              className="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-brand)] transition-colors resize-none"
+            <Controller
+              control={control}
+              name="notes"
+              render={({ field }) => (
+                <RichTextEditor
+                  value={field.value ?? ""}
+                  onChange={field.onChange}
+                  error={errors.notes?.message}
+                  placeholder="Billing notes, preferred communications, or key requirements..."
+                  minHeight="140px"
+                />
+              )}
             />
           </FormField>
         </div>

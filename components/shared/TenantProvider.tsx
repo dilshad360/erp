@@ -24,6 +24,10 @@ export function useTenant(): TenantContextValue {
   return ctx;
 }
 
+export function useOptionalTenant(): TenantContextValue | null {
+  return useContext(TenantContext);
+}
+
 type TenantProviderProps = {
   tenant: TenantContextValue;
   children: React.ReactNode;

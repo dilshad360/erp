@@ -47,7 +47,8 @@
 | `STORY-004` | Session Auto-Login & Tenant Branded Preloader | Foundation / Auth & UX | P1 | ✅ Done | `feat/foundation-story-004` | [`phases/stories/STORY-004-autologin-preloader.md`](phases/stories/STORY-004-autologin-preloader.md) |
 | `STORY-005` | Tenant Employee Self-Signup & Admin Activation Workflow | Foundation / Auth & Employees | P1 | ✅ Done | `feat/auth-story-005` | [`phases/stories/STORY-005-tenant-employee-self-signup-and-admin-activation.md`](phases/stories/STORY-005-tenant-employee-self-signup-and-admin-activation.md) |
 | `STORY-006` | Entity Deletion Lifecycle, Tenant Task Visibility & Multi-Assignee Collaboration | Clients / Projects / Tasks | P1 | ✅ Done | `feat/tasks-clients-story-006` | [`phases/stories/STORY-006-crud-deletion-task-collaboration-multi-assignee.md`](phases/stories/STORY-006-crud-deletion-task-collaboration-multi-assignee.md) |
-| `STORY-007` | Rich Text Editor Integration for Tasks, Projects & Client Notes | Shared / Tasks / Projects / Clients | P2 | ⬜ Backlog | `feat/rich-text-story-007` | [`phases/stories/STORY-007-rich-text-editor-tasks-projects-clients.md`](phases/stories/STORY-007-rich-text-editor-tasks-projects-clients.md) |
+| `STORY-007` | Rich Text Editor Integration for Tasks, Projects & Client Notes | Shared / Tasks / Projects / Clients | P2 | ✅ Done | `feat/rich-text-story-007` | [`phases/stories/STORY-007-rich-text-editor-tasks-projects-clients.md`](phases/stories/STORY-007-rich-text-editor-tasks-projects-clients.md) |
+| `STORY-008` | Global Preloader & Navigation Progress Suite | Foundation / Shared UX & Navigation | P1 | ✅ Done | `feat/foundation-story-008` | [`phases/stories/STORY-008-global-preloader-suite.md`](phases/stories/STORY-008-global-preloader-suite.md) |
 
 ### Bug & Defect Registry (`BUG-xxx`)
 
@@ -290,5 +291,6 @@ Use this section to track important decisions made during development so future 
 | 2026-09-18 | Mobile BottomNav Active Press & Transition Bar (`BUG-003`) | Added tactile active scale-down press states, immediate optimistic pending tab highlight with pulsing dot, and global top-screen `RouteProgressBar` for instant visual page loading feedback on mobile. |
 | 2026-09-19 | Deletion Lifecycle, Multi-Assignees & Global Tasks (`STORY-006`) | Implemented hard deletion with cascade safeguards across Clients, Projects, and Tasks; created `task_assignees` junction table for multi-user assignment with `UserMultiSelect` and stacked `AssigneeAvatarGroup`; opened company-wide task visibility under `/tasks` with "My Tasks" vs "All Tasks" toggle and cross-project task creation. |
 | 2026-09-19 | Decommission Legacy Invite Flow (`BUG-005`) | Deprecated and purged redundant `/employees/new` page, `POST /api/employees` invite handler, and `resend-invite` API endpoint post-self-signup transition (`STORY-005`); unified employee onboarding exclusively through workspace signup and admin Pending Approvals activation. |
+| 2026-09-19 | Global Preloader & Navigation Progress Suite (`STORY-008`) | Implemented top `RouteProgressBar` with App Router navigation link click interception & trickle animation, `GlobalLoadingProvider` and `useGlobalLoading` programmatic loading context, enhanced `TenantPreloader` with ambient glow and indeterminate animation, and streaming `loading.tsx` coverage across all route tiers. |
 
 

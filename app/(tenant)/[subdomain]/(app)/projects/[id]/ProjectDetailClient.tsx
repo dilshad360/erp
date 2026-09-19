@@ -25,6 +25,8 @@ import LoadingButton from "@/components/shared/LoadingButton";
 import ConfirmDialog from "@/components/shared/ConfirmDialog";
 import ClientSelect, { type ClientOption } from "@/components/shared/ClientSelect";
 import Avatar from "@/components/shared/Avatar";
+import RichTextEditor from "@/components/shared/RichTextEditor";
+import RichTextViewer from "@/components/shared/RichTextViewer";
 import { Button } from "@/components/ui/button";
 import { formatINR, calculateTimelineProgress } from "@/lib/format";
 
@@ -32,7 +34,7 @@ const editProjectSchema = z
   .object({
     name: z.string().trim().min(1, "Project name is required").max(150),
     clientId: z.string().min(1, "Please select a client"),
-    description: z.string().trim().max(2000).optional(),
+    description: z.string().trim().max(10000).optional(),
     status: z.enum(["active", "on_hold", "completed", "cancelled"]),
     startDate: z.string().optional().or(z.literal("")),
     endDate: z.string().optional().or(z.literal("")),
@@ -495,11 +497,18 @@ export default function ProjectDetailClient({
                   htmlFor="edit-desc"
                   error={errors.description?.message}
                 >
-                  <textarea
-                    id="edit-desc"
-                    rows={4}
-                    {...register("description")}
-                    className="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-brand)] transition-colors resize-none"
+                  <Controller
+                    control={control}
+                    name="description"
+                    render={({ field }) => (
+                      <RichTextEditor
+                        value={field.value ?? ""}
+                        onChange={field.onChange}
+                        error={errors.description?.message}
+                        placeholder="Project scope, deliverables, and milestones..."
+                        minHeight="140px"
+                      />
+                    )}
                   />
                 </FormField>
               </div>
@@ -617,9 +626,10 @@ export default function ProjectDetailClient({
             <h3 className="text-sm font-semibold text-[var(--color-text-primary)] pb-2 border-b border-[var(--color-border-subtle)]">
               Project Description & Scope
             </h3>
-            <p className="text-sm text-[var(--color-text-secondary)] whitespace-pre-line leading-relaxed">
-              {project.description || "No description provided for this project."}
-            </p>
+            <RichTextViewer
+              content={project.description}
+              placeholder="No description provided for this project."
+            />
           </div>
 
           {/* Tasks Overview Section */}

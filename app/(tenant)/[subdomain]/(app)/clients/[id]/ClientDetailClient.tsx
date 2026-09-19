@@ -3,28 +3,30 @@
 import React, { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import {
   Building2,
-  User,
   Mail,
   Phone,
   MapPin,
   FileText,
+  FolderKanban,
   Edit2,
+  Calendar,
+  User,
   UserX,
   UserCheck,
-  FolderKanban,
   AlertCircle,
-  Calendar,
 } from "lucide-react";
 import PageHeader from "@/components/shared/PageHeader";
 import FormField from "@/components/shared/FormField";
 import LoadingButton from "@/components/shared/LoadingButton";
 import EmptyState from "@/components/shared/EmptyState";
 import ConfirmDialog from "@/components/shared/ConfirmDialog";
+import RichTextEditor from "@/components/shared/RichTextEditor";
+import RichTextViewer from "@/components/shared/RichTextViewer";
 import { Button } from "@/components/ui/button";
 
 const gstRegex = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
@@ -50,7 +52,7 @@ const editClientSchema = z.object({
     )
     .optional()
     .or(z.literal("")),
-  notes: z.string().trim().max(1500).optional(),
+  notes: z.string().trim().max(10000).optional(),
 });
 
 type EditClientFormData = z.infer<typeof editClientSchema>;
@@ -108,6 +110,7 @@ export default function ClientDetailClient({
   const {
     register,
     handleSubmit,
+    control,
     reset,
     formState: { errors, isSubmitting },
   } = useForm<EditClientFormData>({
@@ -425,11 +428,18 @@ export default function ClientDetailClient({
                   htmlFor="edit-notes"
                   error={errors.notes?.message}
                 >
-                  <textarea
-                    id="edit-notes"
-                    rows={4}
-                    {...register("notes")}
-                    className="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-brand)] transition-colors resize-none"
+                  <Controller
+                    control={control}
+                    name="notes"
+                    render={({ field }) => (
+                      <RichTextEditor
+                        value={field.value ?? ""}
+                        onChange={field.onChange}
+                        error={errors.notes?.message}
+                        placeholder="Internal notes, requirements, and communication logs..."
+                        minHeight="140px"
+                      />
+                    )}
                   />
                 </FormField>
               </div>
@@ -551,9 +561,10 @@ export default function ClientDetailClient({
                 Internal Notes & Background
               </h3>
             </div>
-            <p className="text-sm text-[var(--color-text-secondary)] whitespace-pre-line leading-relaxed">
-              {client.notes || "No internal notes recorded for this client."}
-            </p>
+            <RichTextViewer
+              content={client.notes}
+              placeholder="No internal notes recorded for this client."
+            />
           </div>
 
           {/* Section 4: Linked Projects */}

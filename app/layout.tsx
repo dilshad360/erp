@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ServiceWorkerRegister from "@/components/pwa/ServiceWorkerRegister";
+import RouteProgressBar from "@/components/shared/RouteProgressBar";
+import GlobalLoadingProvider from "@/components/shared/GlobalLoadingProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -68,8 +70,9 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-[var(--color-bg)] text-[var(--color-text-primary)] antialiased transition-colors duration-200">
+        <RouteProgressBar />
         <ServiceWorkerRegister />
-        {children}
+        <GlobalLoadingProvider>{children}</GlobalLoadingProvider>
       </body>
     </html>
   );
