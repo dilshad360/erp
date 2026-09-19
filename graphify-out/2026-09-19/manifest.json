@@ -40,8 +40,8 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/clients/ClientListClient.tsx": {
-    "mtime": 1789812044.9932687,
-    "ast_hash": "d4ab15bcfe1bc02eb87a0a748fe6ac28",
+    "mtime": 1789812825.9942834,
+    "ast_hash": "39ae10521e7c09a0bfac40e1033b5809",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx": {
@@ -75,18 +75,18 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/employees/EmployeeListClient.tsx": {
-    "mtime": 1789730076.4144323,
-    "ast_hash": "34dbcc703cbd4ce834949b100c6719b4",
+    "mtime": 1789812967.424183,
+    "ast_hash": "11a8a27cd945cb614c6397202c15d18f",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/employees/[id]/ProfileDetailClient.tsx": {
-    "mtime": 1789554695.243268,
+    "mtime": 1789813058.74203,
     "ast_hash": "e4fefbbd9baa3496b5e3032f9df0293e",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/employees/[id]/page.tsx": {
-    "mtime": 1789532821.1930315,
-    "ast_hash": "b022d0d377673e4ad183f1c4fbdee384",
+    "mtime": 1789812978.8999622,
+    "ast_hash": "e577bf080524067f645c298176330605",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/employees/new/InviteFormClient.tsx": {
@@ -115,8 +115,8 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/projects/ProjectListClient.tsx": {
-    "mtime": 1789811815.2423368,
-    "ast_hash": "d3924d200c407864cbb4b830f40cdf73",
+    "mtime": 1789813002.766861,
+    "ast_hash": "db59c10eee127641a4729d48d28035a4",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx": {
@@ -170,8 +170,8 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx": {
-    "mtime": 1789727696.4936378,
-    "ast_hash": "62339b2dd2e56dc67096f6802e4338b1",
+    "mtime": 1789813193.5431724,
+    "ast_hash": "ff7dcc23dedee8fa470c144eb558767b",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/layout.tsx": {
@@ -220,8 +220,8 @@
     "semantic_hash": ""
   },
   "app/api/employees/route.ts": {
-    "mtime": 1789532821.201766,
-    "ast_hash": "09a2c68bb2d5c0a5b16881e9a3f90e43",
+    "mtime": 1789812938.377511,
+    "ast_hash": "ea815809b5c758d42267c387b6a59cc3",
     "semantic_hash": ""
   },
   "app/api/employees/upload-avatar/route.ts": {
@@ -455,8 +455,8 @@
     "semantic_hash": ""
   },
   "components/tasks/KanbanCard.tsx": {
-    "mtime": 1789810640.0982006,
-    "ast_hash": "de0c3f07ffde574685bb6c6c7a66fbf6",
+    "mtime": 1789812979.3108568,
+    "ast_hash": "12bb0e585e52bc837e3495cb349ab11c",
     "semantic_hash": ""
   },
   "components/tasks/KanbanColumn.tsx": {
@@ -475,8 +475,8 @@
     "semantic_hash": ""
   },
   "components/tasks/TaskListView.tsx": {
-    "mtime": 1789811907.898521,
-    "ast_hash": "3592599e196bb9c655f9012a4bb5a375",
+    "mtime": 1789812937.5672085,
+    "ast_hash": "7c2f8e64ba0579335ad836cb72c76536",
     "semantic_hash": ""
   },
   "components/tasks/TaskSheet.tsx": {
@@ -665,8 +665,8 @@
     "semantic_hash": ""
   },
   "backend.md": {
-    "mtime": 1789456478.3879027,
-    "ast_hash": "db3b229f7a8691328c2d5f400bf754d7",
+    "mtime": 1789813103.4626825,
+    "ast_hash": "f50fa647aaf5703d88f5c8231c35b7b7",
     "semantic_hash": ""
   },
   "design.md": {
@@ -680,8 +680,8 @@
     "semantic_hash": ""
   },
   "frontend.md": {
-    "mtime": 1789456420.388558,
-    "ast_hash": "61f6c8947dde0d79315e2f7f9d44b947",
+    "mtime": 1789813099.1770234,
+    "ast_hash": "47b6693b61bc71ecc99bec5c2200324b",
     "semantic_hash": ""
   },
   "phases/bugs/BUG-001-employee-settings-role-isolation.md": {
@@ -872,6 +872,11 @@
   "supabase/migrations/20260906000000_task_assignees_and_deletions.sql": {
     "mtime": 1789810429.8316896,
     "ast_hash": "5cc6fa1847a48bd661e6e9c3b7451299",
+    "semantic_hash": ""
+  },
+  "components/shared/ActionMenu.tsx": {
+    "mtime": 1789812764.5562763,
+    "ast_hash": "f91960e31a4e31ffdc1979325488d895",
     "semantic_hash": ""
   }
 }

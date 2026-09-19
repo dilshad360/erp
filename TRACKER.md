@@ -56,6 +56,7 @@
 | `BUG-002` | Mobile company logo header & BottomNav More drawer | Mobile AppShell / Navigation | P2 | ✅ Resolved | `fix/mobile-nav-bug-002` | [`phases/bugs/BUG-002-mobile-bottomnav-more-and-logo-missing.md`](phases/bugs/BUG-002-mobile-bottomnav-more-and-logo-missing.md) |
 | `BUG-003` | Mobile BottomNav tactile press feedback & transition indicator | Mobile AppShell / Navigation | P2 | ✅ Resolved | `fix/mobile-nav-bug-003` | [`phases/bugs/BUG-003-mobile-bottom-nav-press-feedback.md`](phases/bugs/BUG-003-mobile-bottom-nav-press-feedback.md) |
 | `BUG-004` | Mobile viewport bottom scroll clearance obscured by BottomNav | Mobile Layout / AppShell | P1 | ✅ Resolved | `fix/mobile-viewport-bug-004` | [`phases/bugs/BUG-004-mobile-viewport-scroll-clearance.md`](phases/bugs/BUG-004-mobile-viewport-scroll-clearance.md) |
+| `BUG-005` | Remove Legacy "Invite Employee" Dashboard Page & Obsolete Invite Endpoints | Employees / Auth Lifecycle | P2 | ✅ Resolved | `fix/employees-bug-005` | [`phases/bugs/BUG-005-remove-legacy-invite-employee-page.md`](phases/bugs/BUG-005-remove-legacy-invite-employee-page.md) |
 
 ---
 
@@ -285,5 +286,6 @@ Use this section to track important decisions made during development so future 
 | 2026-09-18 | Session Auto-Login & Preloader (`STORY-004`) | Implemented instant server-side middleware auto-redirect to `/dashboard` for active sessions, client-side session verification in `LoginClient`, reusable `TenantPreloader` with animated glowing brand accent, and Next.js streaming `loading.tsx` boundaries. |
 | 2026-09-18 | Mobile BottomNav Active Press & Transition Bar (`BUG-003`) | Added tactile active scale-down press states, immediate optimistic pending tab highlight with pulsing dot, and global top-screen `RouteProgressBar` for instant visual page loading feedback on mobile. |
 | 2026-09-19 | Deletion Lifecycle, Multi-Assignees & Global Tasks (`STORY-006`) | Implemented hard deletion with cascade safeguards across Clients, Projects, and Tasks; created `task_assignees` junction table for multi-user assignment with `UserMultiSelect` and stacked `AssigneeAvatarGroup`; opened company-wide task visibility under `/tasks` with "My Tasks" vs "All Tasks" toggle and cross-project task creation. |
+| 2026-09-19 | Decommission Legacy Invite Flow (`BUG-005`) | Deprecated and purged redundant `/employees/new` page, `POST /api/employees` invite handler, and `resend-invite` API endpoint post-self-signup transition (`STORY-005`); unified employee onboarding exclusively through workspace signup and admin Pending Approvals activation. |
 
 

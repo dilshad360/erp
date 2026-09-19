@@ -20,7 +20,6 @@ import {
   AlertCircle,
   Save,
   X,
-  Send,
   UserX,
   UserPlus,
   CheckCircle2,
@@ -33,7 +32,6 @@ type ProfileDetailClientProps = {
   currentUserId: string;
   currentUserRole: string;
   subdomain: string;
-  isConfirmed?: boolean;
 };
 
 export default function ProfileDetailClient({
@@ -42,7 +40,6 @@ export default function ProfileDetailClient({
   currentUserId,
   currentUserRole,
   subdomain: _subdomain,
-  isConfirmed = false,
 }: ProfileDetailClientProps): React.JSX.Element {
   const router = useRouter();
   const isAdmin = currentUserRole === "admin";
@@ -53,7 +50,6 @@ export default function ProfileDetailClient({
   const [isDeactivating, setIsDeactivating] = useState(false);
   const [isReactivating, setIsReactivating] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [isResendingInvite, setIsResendingInvite] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
 
@@ -157,31 +153,6 @@ export default function ProfileDetailClient({
     } catch {
       setErrorMsg("Failed to update profile.");
       setIsSubmitting(false);
-    }
-  };
-
-  // Handle Resend Invite
-  const handleResendInvite = async () => {
-    setIsResendingInvite(true);
-    setErrorMsg(null);
-    setSuccessMsg(null);
-
-    try {
-      const res = await fetch(`/api/employees/${employee.id}/resend-invite`, {
-        method: "POST",
-      });
-
-      const data = await res.json();
-
-      if (!res.ok || data.error) {
-        setErrorMsg(data.error || "Failed to resend invitation email");
-      } else {
-        setSuccessMsg(`Invitation email resent to ${data.data.email || "employee"}!`);
-      }
-    } catch {
-      setErrorMsg("Error resending invitation email.");
-    } finally {
-      setIsResendingInvite(false);
     }
   };
 
@@ -294,33 +265,15 @@ export default function ProfileDetailClient({
         backHref="/employees"
         backLabel="Back to employees"
         actions={
-          <div className="flex items-center gap-2">
-            {isAdmin && !isSelf && employee.is_active && !isConfirmed && (
-              <button
-                onClick={handleResendInvite}
-                disabled={isResendingInvite}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-[var(--color-text-primary)] border border-[var(--color-border)] hover:bg-[var(--color-surface-raised)] transition-colors disabled:opacity-50 cursor-pointer"
-                title="Resend invitation email"
-              >
-                {isResendingInvite ? (
-                  <Loader2 size={14} className="animate-spin" />
-                ) : (
-                  <Send size={14} className="text-[var(--color-brand)]" />
-                )}
-                <span>Resend Invite</span>
-              </button>
-            )}
-
-            {(isAdmin || isSelf) && !isEditing && (
-              <button
-                onClick={() => setIsEditing(true)}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-white bg-[var(--color-brand)] hover:bg-[var(--color-brand-hover)] transition-all shadow-xs active:scale-[0.98] cursor-pointer"
-              >
-                <Edit2 size={14} />
-                <span>Edit Profile</span>
-              </button>
-            )}
-          </div>
+          (isAdmin || isSelf) && !isEditing ? (
+            <button
+              onClick={() => setIsEditing(true)}
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-white bg-[var(--color-brand)] hover:bg-[var(--color-brand-hover)] transition-all shadow-xs active:scale-[0.98] cursor-pointer"
+            >
+              <Edit2 size={14} />
+              <span>Edit Profile</span>
+            </button>
+          ) : undefined
         }
       />
 
@@ -410,17 +363,13 @@ export default function ProfileDetailClient({
                   {role}
                 </span>
 
-                {!employee.is_active ? (
-                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-[var(--color-danger-subtle)] text-[var(--color-danger)]">
-                    Deactivated
-                  </span>
-                ) : !isConfirmed ? (
-                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-500 border border-amber-500/20">
-                    Pending Invite
-                  </span>
-                ) : (
+                {employee.is_active ? (
                   <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-[var(--color-success-subtle)] text-[var(--color-success)]">
                     Active
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-[var(--color-danger-subtle)] text-[var(--color-danger)]">
+                    Deactivated
                   </span>
                 )}
               </div>
@@ -682,22 +631,6 @@ export default function ProfileDetailClient({
             </h3>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              {/* Resend Invite — only shown for pending invite status */}
-              {!isConfirmed && employee.is_active && (
-                <button
-                  onClick={handleResendInvite}
-                  disabled={isResendingInvite}
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-md text-xs font-semibold text-[var(--color-text-primary)] border border-[var(--color-border)] hover:bg-[var(--color-surface-raised)] transition-colors disabled:opacity-50 cursor-pointer"
-                >
-                  {isResendingInvite ? (
-                    <Loader2 size={14} className="animate-spin" />
-                  ) : (
-                    <Send size={14} className="text-[var(--color-brand)]" />
-                  )}
-                  <span>Resend Invite Link</span>
-                </button>
-              )}
-
               {/* Deactivate or Reactivate */}
               {employee.is_active ? (
                 <button
