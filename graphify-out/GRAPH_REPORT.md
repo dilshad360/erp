@@ -1,16 +1,16 @@
 # Graph Report - ERP  (2026-09-19)
 
 ## Corpus Check
-- 175 files · ~113,592 words
+- 175 files · ~113,281 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1004 nodes · 1335 edges · 83 communities (64 shown, 19 thin omitted)
+- 1007 nodes · 1340 edges · 83 communities (65 shown, 18 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a26a39d9`
+- Built from commit: `baaee02b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -123,7 +123,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (83 total, 19 thin omitted)
+## Communities (83 total, 18 thin omitted)
 
 ### Community 0 - "ClientDetailClient.tsx"
 Cohesion: 0.31
@@ -131,11 +131,11 @@ Nodes (8): AttendanceLog, AttendanceMonthCalendar(), AttendanceMonthCalendarProp
 
 ### Community 1 - "EmployeeSettingsClient.tsx"
 Cohesion: 0.06
-Nodes (28): AppLayout(), AppLayoutProps, SetPasswordPage(), LoginClientProps, BeforeInstallPromptEvent, EmployeeProfileData, EmployeeSettingsClientProps, TabType (+20 more)
+Nodes (33): AppLayout(), AppLayoutProps, metadata, SettingsPage(), SetPasswordPage(), LoginClientProps, BeforeInstallPromptEvent, CompanyData (+25 more)
 
 ### Community 2 - "TaskForm.tsx"
 Cohesion: 0.07
-Nodes (45): ClientListClient(), ClientListClientProps, DateFilterKey, GlobalTask, GlobalTasksClient(), GlobalTasksClientProps, isDueToday(), isOverdue() (+37 more)
+Nodes (42): ClientListClient(), ClientListClientProps, generateMetadata(), ProjectTasksPage(), DateFilterKey, GlobalTask, GlobalTasksClient(), GlobalTasksClientProps (+34 more)
 
 ### Community 3 - "EmployeeListClient.tsx"
 Cohesion: 0.11
@@ -154,8 +154,8 @@ Cohesion: 0.09
 Nodes (21): aliases, components, hooks, lib, ui, utils, iconLibrary, menuAccent (+13 more)
 
 ### Community 7 - "ProjectDetailClient.tsx"
-Cohesion: 0.18
-Nodes (14): DashboardPage(), metadata, MyTask, RecentProject, ProjectDetailClient(), metadata, ProjectsPage(), ClientOption (+6 more)
+Cohesion: 0.15
+Nodes (15): DashboardPage(), metadata, MyTask, RecentProject, ProjectDetailClient(), metadata, ProjectsPage(), ClientOption (+7 more)
 
 ### Community 8 - "Backend — Database, API & Supabase Configuration"
 Cohesion: 0.06
@@ -166,8 +166,8 @@ Cohesion: 0.10
 Nodes (19): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+11 more)
 
 ### Community 10 - "createClient"
-Cohesion: 0.14
-Nodes (16): clientSchema, GET(), POST(), GET(), createStatusSchema, GET(), POST(), generateMetadata() (+8 more)
+Cohesion: 0.15
+Nodes (16): DELETE(), GET(), PUT(), RouteProps, updateClientSchema, clientSchema, GET(), POST() (+8 more)
 
 ### Community 11 - "AdminAttendanceTable.tsx"
 Cohesion: 0.31
@@ -175,11 +175,11 @@ Nodes (10): AdminAttendanceTable(), AdminAttendanceTableProps, AttendanceLog, ca
 
 ### Community 12 - "page.tsx"
 Cohesion: 0.14
-Nodes (10): metadata, SettingsPage(), CompanyData, CompanySettingsClientProps, TabType, CompanySummaryData, ColorPickerProps, PRESET_COLORS (+2 more)
+Nodes (5): GlobalPreloader(), GlobalPreloaderProps, TenantPreloader(), TenantPreloaderProps, useOptionalTenant()
 
 ### Community 13 - "server.ts"
-Cohesion: 0.13
-Nodes (4): checkInSchema, POST(), checkOutSchema, POST()
+Cohesion: 0.11
+Nodes (7): checkInSchema, POST(), ClientRecord, metadata, NewClientPage(), ClientsPage(), metadata
 
 ### Community 14 - "page.tsx"
 Cohesion: 0.22
@@ -198,8 +198,8 @@ Cohesion: 0.33
 Nodes (5): DELETE(), GET(), PUT(), RouteProps, updateProjectSchema
 
 ### Community 18 - "PageHeader.tsx"
-Cohesion: 0.33
-Nodes (4): RichTextEditorProps, RichTextViewer(), RichTextViewerProps, sanitizeUrl()
+Cohesion: 0.53
+Nodes (5): isHtmlContent(), isSafeUrl(), RichTextViewer(), RichTextViewerProps, sanitizeHtml()
 
 ### Community 20 - "Design System — ERP SaaS"
 Cohesion: 0.07
@@ -242,8 +242,8 @@ Cohesion: 0.25
 Nodes (8): 1. Defect Description & Symptoms, 2. Environment & Context, 3. Steps to Reproduce, 4. Multi-Tenancy & Security Impact Assessment, 5. Root Cause Analysis (RCA), 6. Fix Implementation Plan, 7. Verification & Regression Checklist, [BUG-002]: Mobile View Missing Company Logo Top Header and BottomNav "More" Button Non-Functional
 
 ### Community 31 - "layout.tsx"
-Cohesion: 0.19
-Nodes (9): ClientDetailProps, EditClientFormData, editClientSchema, ClientFormData, clientFormSchema, LoadingButton(), LoadingButtonProps, Button() (+1 more)
+Cohesion: 0.18
+Nodes (11): ClientDetailProps, EditClientFormData, editClientSchema, ConfirmDialog(), ConfirmDialogProps, PRIORITY_OPTIONS, TaskFormProps, taskFormSchema (+3 more)
 
 ### Community 37 - "page.tsx"
 Cohesion: 0.22
@@ -266,8 +266,8 @@ Cohesion: 0.11
 Nodes (18): 1. User Story Statement, 2. Business Value & Context, 3. Multi-Tenancy & Security Verification, 4. Technical Scope & Architecture, 5. Acceptance Criteria (Given-When-Then), 6. Edge Cases & Boundary Conditions, 7. Implementation Subtasks Breakdown, 8. Quality & Verification Gates (+10 more)
 
 ### Community 50 - "page.tsx"
-Cohesion: 0.14
-Nodes (12): EditProjectFormData, editProjectSchema, ProjectDetailProps, ProjectTeamMember, TaskStatusCount, NewProjectFormClientProps, ProjectFormData, projectFormSchema (+4 more)
+Cohesion: 0.13
+Nodes (13): EditProjectFormData, editProjectSchema, ProjectDetailProps, ProjectTeamMember, TaskStatusCount, NewProjectFormClientProps, ProjectFormData, projectFormSchema (+5 more)
 
 ### Community 51 - "Multi-Tenant ERP SaaS — Development Plan"
 Cohesion: 0.12
@@ -278,8 +278,8 @@ Cohesion: 0.12
 Nodes (17): Active Stories & Features (`STORY-xxx` / `FEAT-xxx`), AI-Assisted Story & Bug Tracking, Bug & Defect Registry (`BUG-xxx`), Database Migration Status, Decisions & Notes Log, ERP SaaS — Master Task Tracker, Phase 1 — Foundation, Phase 2 — Employee Management (+9 more)
 
 ### Community 53 - "cn"
-Cohesion: 0.15
-Nodes (14): AssigneeAvatarGroup(), DatePicker(), DatePickerProps, EmptyState(), EmptyStateProps, FormField(), FormFieldProps, UserMultiSelect() (+6 more)
+Cohesion: 0.16
+Nodes (13): DatePicker(), DatePickerProps, EmptyState(), EmptyStateProps, FormField(), FormFieldProps, UserMultiSelect(), UserMultiSelectProps (+5 more)
 
 ### Community 54 - "Tasks"
 Cohesion: 0.14
@@ -322,8 +322,8 @@ Cohesion: 0.15
 Nodes (12): 5.1 — Projects Schema & Migration, 5.2 — Project API Routes, 5.3 — Project List Page, 5.4 — New Project Form, 5.5 — Project Detail Page, 5.6 — ClientSelect Shared Component, 5.7 — Dashboard Integration, 5.8 — Phase 5 Verification (+4 more)
 
 ### Community 64 - "TRACKER.md"
-Cohesion: 0.20
-Nodes (9): DELETE(), GET(), PUT(), GET(), POST(), CreateTaskInput, createTaskSchema, UpdateTaskInput (+1 more)
+Cohesion: 0.29
+Nodes (6): GET(), POST(), CreateTaskInput, createTaskSchema, UpdateTaskInput, updateTaskSchema
 
 ### Community 65 - "Tasks"
 Cohesion: 0.25
@@ -342,8 +342,8 @@ Cohesion: 0.50
 Nodes (3): createProjectSchema, GET(), POST()
 
 ### Community 69 - "route.ts"
-Cohesion: 0.33
-Nodes (5): DELETE(), GET(), PUT(), RouteProps, updateClientSchema
+Cohesion: 0.22
+Nodes (5): ClientFormData, clientFormSchema, LoadingButton(), LoadingButtonProps, PageHeaderProps
 
 ### Community 70 - "page.tsx"
 Cohesion: 0.50
@@ -363,31 +363,35 @@ Nodes (3): File Naming Convention, Stories Directory (`phases/stories/`), Workfl
 
 ### Community 75 - "PageHeader.tsx"
 Cohesion: 0.50
-Nodes (3): ClientRecord, ClientsPage(), metadata
+Nodes (3): createStatusSchema, GET(), POST()
+
+### Community 79 - "Phase 3 — Attendance"
+Cohesion: 0.50
+Nodes (3): generateMetadata(), ProjectDetailPage(), ProjectDetailData
 
 ### Community 82 - "STORY-007: Rich Text Editor Integration for Tasks, Projects & Client Notes"
 Cohesion: 0.10
 Nodes (19): 1. User Story Statement, 2. Business Value & Context, 3. Multi-Tenancy & Security Verification, 4. Technical Scope & Architecture, 5. Acceptance Criteria (Given-When-Then), 6. Implementation Subtasks Breakdown, 7. Quality & Verification Gates, 8. Tracking & Sign-Off (+11 more)
 
 ## Knowledge Gaps
-- **569 isolated node(s):** `metadata`, `metadata`, `metadata`, `step1Schema`, `step2Schema` (+564 more)
+- **570 isolated node(s):** `metadata`, `metadata`, `metadata`, `step1Schema`, `step2Schema` (+565 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **19 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `createClient()` connect `createClient` to `EmployeeSettingsClient.tsx`, `TaskForm.tsx`, `EmployeeListClient.tsx`, `ProjectDetailClient.tsx`, `page.tsx`, `server.ts`, `route.ts`, `route.ts`, `route.ts`, `route.ts`, `page.tsx`, `[BUG-001]: Employee Users Exposed to Company-Level Workspace Settings and Missing Role-Specific Settings`, `page.tsx`, `TRACKER.md`, `page.tsx`, `route.ts`, `route.ts`, `page.tsx`, `route.ts`, `PageHeader.tsx`, `Phase 3 — Attendance`, `ProjectListClient.tsx`?**
-  _High betweenness centrality (0.077) - this node is a cross-community bridge._
-- **Why does `react` connect `TaskForm.tsx` to `PageHeader.tsx`, `dependencies`?**
-  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+- **Why does `createClient()` connect `createClient` to `EmployeeSettingsClient.tsx`, `TaskForm.tsx`, `EmployeeListClient.tsx`, `ProjectDetailClient.tsx`, `server.ts`, `route.ts`, `route.ts`, `route.ts`, `route.ts`, `page.tsx`, `[BUG-001]: Employee Users Exposed to Company-Level Workspace Settings and Missing Role-Specific Settings`, `page.tsx`, `TRACKER.md`, `page.tsx`, `route.ts`, `page.tsx`, `route.ts`, `PageHeader.tsx`, `Phase 3 — Attendance`, `page.tsx`, `ProjectListClient.tsx`?**
+  _High betweenness centrality (0.076) - this node is a cross-community bridge._
+- **Why does `react` connect `TaskForm.tsx` to `dependencies`, `layout.tsx`?**
+  _High betweenness centrality (0.023) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `dependencies` to `TaskForm.tsx`?**
-  _High betweenness centrality (0.019) - this node is a cross-community bridge._
+  _High betweenness centrality (0.023) - this node is a cross-community bridge._
 - **What connects `metadata`, `metadata`, `metadata` to the rest of the system?**
-  _569 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _570 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `EmployeeSettingsClient.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.05649350649350649 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05576441102756892 - nodes in this community are weakly interconnected._
 - **Should `TaskForm.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.07049180327868852 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07138047138047138 - nodes in this community are weakly interconnected._
 - **Should `EmployeeListClient.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.11231884057971014 - nodes in this community are weakly interconnected._

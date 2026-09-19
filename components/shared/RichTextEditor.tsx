@@ -1,26 +1,26 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import {
   Bold,
   Italic,
+  Underline,
   Strikethrough,
-  Code,
-  Heading2,
-  Heading3,
   List,
   ListOrdered,
-  ListTodo,
   Quote,
   Link as LinkIcon,
-  Minus,
-  FileCode,
-  Eye,
-  Edit3,
+  Unlink,
+  AlignLeft,
+  AlignCenter,
+  AlignRight,
+  RotateCcw,
+  RotateCw,
+  RemoveFormatting,
+  ChevronDown,
   X,
   Check,
 } from "lucide-react";
-import RichTextViewer from "./RichTextViewer";
 
 export type RichTextEditorProps = {
   value?: string;
@@ -32,508 +32,642 @@ export type RichTextEditorProps = {
   className?: string;
 };
 
+interface ActiveStates {
+  bold: boolean;
+  italic: boolean;
+  underline: boolean;
+  strikeThrough: boolean;
+  insertUnorderedList: boolean;
+  insertOrderedList: boolean;
+  justifyLeft: boolean;
+  justifyCenter: boolean;
+  justifyRight: boolean;
+  heading: string; // 'p' | 'h1' | 'h2' | 'h3'
+  isLink: boolean;
+}
+
 export default function RichTextEditor({
   value = "",
   onChange,
-  placeholder = "Write something with rich formatting...",
-  minHeight = "140px",
+  placeholder = "Type your description here...",
+  minHeight = "150px",
   disabled = false,
   error,
   className = "",
 }: RichTextEditorProps): React.JSX.Element {
-  const [mode, setMode] = useState<"write" | "preview">("write");
-  const [internalValue, setInternalValue] = useState(value);
+  const editorRef = useRef<HTMLDivElement>(null);
+  const [activeStates, setActiveStates] = useState<ActiveStates>({
+    bold: false,
+    italic: false,
+    underline: false,
+    strikeThrough: false,
+    insertUnorderedList: false,
+    insertOrderedList: false,
+    justifyLeft: false,
+    justifyCenter: false,
+    justifyRight: false,
+    heading: "p",
+    isLink: false,
+  });
+
+  const [isHeadingDropdownOpen, setIsHeadingDropdownOpen] = useState(false);
   const [isLinkModalOpen, setIsLinkModalOpen] = useState(false);
   const [linkUrl, setLinkUrl] = useState("");
-  const [linkText, setLinkText] = useState("");
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [savedSelection, setSavedSelection] = useState<Range | null>(null);
+  const [isEmpty, setIsEmpty] = useState(!value || value === "<p><br></p>" || value === "<p></p>");
 
+  // Initialize and sync external value without resetting cursor on active typing
   useEffect(() => {
-    setInternalValue(value ?? "");
+    const editor = editorRef.current;
+    if (!editor) return;
+
+    const currentHtml = editor.innerHTML;
+    const incomingHtml = value || "";
+
+    // Check if truly empty
+    const checkEmpty = (html: string) => {
+      const stripped = html.replace(/<[^>]*>/g, "").trim();
+      return !stripped && !html.includes("<img");
+    };
+
+    if (currentHtml !== incomingHtml && document.activeElement !== editor) {
+      editor.innerHTML = incomingHtml;
+      setIsEmpty(checkEmpty(incomingHtml));
+    }
   }, [value]);
 
-  const updateValue = useCallback(
-    (newValue: string) => {
-      setInternalValue(newValue);
-      onChange?.(newValue);
-    },
-    [onChange]
-  );
+  // Query formatting states at current selection
+  const updateActiveStates = useCallback(() => {
+    if (!editorRef.current || typeof document === "undefined") return;
 
-  // Helper to wrap or insert text at current selection
-  const applyWrap = (prefix: string, suffix: string = prefix, defaultPlaceholder: string = "") => {
-    const textarea = textareaRef.current;
-    if (!textarea) return;
+    try {
+      const isBold = document.queryCommandState("bold");
+      const isItalic = document.queryCommandState("italic");
+      const isUnderline = document.queryCommandState("underline");
+      const isStrike = document.queryCommandState("strikeThrough");
+      const isUl = document.queryCommandState("insertUnorderedList");
+      const isOl = document.queryCommandState("insertOrderedList");
+      const isLeft = document.queryCommandState("justifyLeft");
+      const isCenter = document.queryCommandState("justifyCenter");
+      const isRight = document.queryCommandState("justifyRight");
 
-    const start = textarea.selectionStart;
-    const end = textarea.selectionEnd;
-    const current = textarea.value;
-    const selectedText = current.substring(start, end);
-
-    const replacement = selectedText
-      ? `${prefix}${selectedText}${suffix}`
-      : `${prefix}${defaultPlaceholder || "text"}${suffix}`;
-
-    const nextValue = current.substring(0, start) + replacement + current.substring(end);
-    updateValue(nextValue);
-
-    // Restore focus and cursor position
-    setTimeout(() => {
-      textarea.focus();
-      const newCursorPos = selectedText
-        ? start + replacement.length
-        : start + prefix.length + (defaultPlaceholder || "text").length;
-      textarea.setSelectionRange(newCursorPos, newCursorPos);
-    }, 0);
-  };
-
-  // Helper to insert prefix at start of lines (for lists, headings, quotes)
-  const applyLinePrefix = (linePrefix: string) => {
-    const textarea = textareaRef.current;
-    if (!textarea) return;
-
-    const start = textarea.selectionStart;
-    const end = textarea.selectionEnd;
-    const current = textarea.value;
-
-    const lineStart = current.lastIndexOf("\n", start - 1) + 1;
-    const lineEnd = current.indexOf("\n", end);
-    const effectiveLineEnd = lineEnd === -1 ? current.length : lineEnd;
-
-    const selectedBlock = current.substring(lineStart, effectiveLineEnd);
-    const lines = selectedBlock.split("\n");
-
-    const modifiedLines = lines.map((line) => {
-      if (line.startsWith(linePrefix)) {
-        return line.slice(linePrefix.length);
+      // Heading and Link detection from selection parent
+      let currentHeading = "p";
+      let insideLink = false;
+      const sel = window.getSelection();
+      if (sel && sel.rangeCount > 0) {
+        let node: Node | null = sel.getRangeAt(0).commonAncestorContainer;
+        while (node && node !== editorRef.current) {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            const tagName = (node as HTMLElement).tagName.toLowerCase();
+            if (["h1", "h2", "h3"].includes(tagName)) {
+              currentHeading = tagName;
+            }
+            if (tagName === "a") {
+              insideLink = true;
+            }
+          }
+          node = node.parentNode;
+        }
       }
-      return `${linePrefix}${line}`;
-    });
 
-    const replacement = modifiedLines.join("\n");
-    const nextValue = current.substring(0, lineStart) + replacement + current.substring(effectiveLineEnd);
-    updateValue(nextValue);
+      setActiveStates({
+        bold: isBold,
+        italic: isItalic,
+        underline: isUnderline,
+        strikeThrough: isStrike,
+        insertUnorderedList: isUl,
+        insertOrderedList: isOl,
+        justifyLeft: isLeft,
+        justifyCenter: isCenter,
+        justifyRight: isRight,
+        heading: currentHeading,
+        isLink: insideLink,
+      });
+    } catch {
+      // Ignore queryCommandState errors in edge cases
+    }
+  }, []);
 
-    setTimeout(() => {
-      textarea.focus();
-      textarea.setSelectionRange(lineStart + replacement.length, lineStart + replacement.length);
-    }, 0);
+  const handleInput = useCallback(() => {
+    const editor = editorRef.current;
+    if (!editor) return;
+
+    const html = editor.innerHTML;
+    const textContent = editor.textContent?.trim() || "";
+    const empty = textContent.length === 0 && !html.includes("<img");
+    setIsEmpty(empty);
+
+    const emittedValue = empty ? "" : html;
+    onChange?.(emittedValue);
+    updateActiveStates();
+  }, [onChange, updateActiveStates]);
+
+  const exec = (command: string, valueArg: string | undefined = undefined) => {
+    if (disabled || !editorRef.current) return;
+    editorRef.current.focus();
+    document.execCommand(command, false, valueArg);
+    handleInput();
+    updateActiveStates();
   };
 
-  // Link Insertion
-  const handleOpenLinkModal = () => {
-    const textarea = textareaRef.current;
-    if (textarea) {
-      const selected = textarea.value.substring(textarea.selectionStart, textarea.selectionEnd);
-      setLinkText(selected);
+  const handleHeadingChange = (tag: string) => {
+    setIsHeadingDropdownOpen(false);
+    if (disabled || !editorRef.current) return;
+    editorRef.current.focus();
+    if (tag === "p") {
+      document.execCommand("formatBlock", false, "<p>");
+    } else {
+      document.execCommand("formatBlock", false, `<${tag}>`);
     }
-    setLinkUrl("");
+    handleInput();
+    updateActiveStates();
+  };
+
+  const openLinkModal = () => {
+    if (disabled) return;
+    const sel = window.getSelection();
+    if (sel && sel.rangeCount > 0) {
+      setSavedSelection(sel.getRangeAt(0).cloneRange());
+    }
+
+    // Check if cursor is on an existing link
+    let currentUrl = "";
+    if (sel && sel.rangeCount > 0) {
+      let node: Node | null = sel.getRangeAt(0).commonAncestorContainer;
+      while (node && node !== editorRef.current) {
+        if (node.nodeType === Node.ELEMENT_NODE && (node as HTMLElement).tagName.toLowerCase() === "a") {
+          currentUrl = (node as HTMLAnchorElement).getAttribute("href") || "";
+          break;
+        }
+        node = node.parentNode;
+      }
+    }
+
+    setLinkUrl(currentUrl);
     setIsLinkModalOpen(true);
   };
 
-  const handleConfirmLink = () => {
-    if (!linkUrl.trim()) {
-      setIsLinkModalOpen(false);
-      return;
+  const applyLink = () => {
+    setIsLinkModalOpen(false);
+    if (!editorRef.current) return;
+    editorRef.current.focus();
+
+    if (savedSelection) {
+      const sel = window.getSelection();
+      if (sel) {
+        sel.removeAllRanges();
+        sel.addRange(savedSelection);
+      }
     }
 
-    const title = linkText.trim() || linkUrl.trim();
-    const formattedUrl = /^https?:\/\//i.test(linkUrl.trim())
-      ? linkUrl.trim()
-      : `https://${linkUrl.trim()}`;
+    if (!linkUrl.trim()) {
+      document.execCommand("unlink", false);
+    } else {
+      let url = linkUrl.trim();
+      if (!/^https?:\/\//i.test(url) && !/^mailto:/i.test(url) && !url.startsWith("/")) {
+        url = `https://${url}`;
+      }
+      document.execCommand("createLink", false, url);
 
-    applyWrap(`[${title}](`, `)`, formattedUrl);
-    setIsLinkModalOpen(false);
+      // Ensure link opens in new tab with security attributes
+      const links = editorRef.current.querySelectorAll("a");
+      links.forEach((a) => {
+        if (a.getAttribute("href") === url) {
+          a.setAttribute("target", "_blank");
+          a.setAttribute("rel", "noopener noreferrer");
+          a.className = "text-[var(--color-brand)] underline hover:text-[var(--color-brand-hover)]";
+        }
+      });
+    }
+
     setLinkUrl("");
-    setLinkText("");
+    setSavedSelection(null);
+    handleInput();
+    updateActiveStates();
   };
 
-  // Handle Keyboard shortcuts & smart Enter
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (disabled) return;
+  const removeLink = () => {
+    exec("unlink");
+    setIsLinkModalOpen(false);
+  };
 
-    // Shortcuts: Ctrl/Cmd + B, I, K
-    if (e.ctrlKey || e.metaKey) {
-      if (e.key.toLowerCase() === "b") {
-        e.preventDefault();
-        applyWrap("**", "**", "bold text");
-        return;
-      }
-      if (e.key.toLowerCase() === "i") {
-        e.preventDefault();
-        applyWrap("*", "*", "italic text");
-        return;
-      }
-      if (e.key.toLowerCase() === "k") {
-        e.preventDefault();
-        handleOpenLinkModal();
-        return;
-      }
-    }
+  const handlePaste = (e: React.ClipboardEvent<HTMLDivElement>) => {
+    // Clean up pasted content
+    e.preventDefault();
+    const text = e.clipboardData.getData("text/plain");
+    document.execCommand("insertText", false, text);
+    handleInput();
+  };
 
-    // Auto list continuation on Enter
-    if (e.key === "Enter" && !e.shiftKey) {
-      const textarea = textareaRef.current;
-      if (!textarea) return;
-
-      const cursor = textarea.selectionStart;
-      const current = textarea.value;
-      const lineStart = current.lastIndexOf("\n", cursor - 1) + 1;
-      const currentLine = current.substring(lineStart, cursor);
-
-      // Check for bullet list, checklist, or numbered list
-      const bulletMatch = currentLine.match(/^([-*])\s+(.*)$/);
-      const checklistMatch = currentLine.match(/^([-*]\s+\[[ xX]?\])\s+(.*)$/);
-      const numMatch = currentLine.match(/^(\d+)\.\s+(.*)$/);
-
-      if (checklistMatch) {
-        if (!checklistMatch[2].trim()) {
-          // Empty checklist item -> clear prefix
-          e.preventDefault();
-          const nextValue = current.substring(0, lineStart) + current.substring(cursor);
-          updateValue(nextValue);
-          setTimeout(() => {
-            textarea.setSelectionRange(lineStart, lineStart);
-          }, 0);
-        } else {
-          e.preventDefault();
-          const nextPrefix = "\n- [ ] ";
-          const nextValue = current.substring(0, cursor) + nextPrefix + current.substring(cursor);
-          updateValue(nextValue);
-          setTimeout(() => {
-            textarea.setSelectionRange(cursor + nextPrefix.length, cursor + nextPrefix.length);
-          }, 0);
-        }
-        return;
-      }
-
-      if (bulletMatch) {
-        if (!bulletMatch[2].trim()) {
-          // Empty bullet item -> clear line
-          e.preventDefault();
-          const nextValue = current.substring(0, lineStart) + current.substring(cursor);
-          updateValue(nextValue);
-          setTimeout(() => {
-            textarea.setSelectionRange(lineStart, lineStart);
-          }, 0);
-        } else {
-          e.preventDefault();
-          const nextPrefix = `\n${bulletMatch[1]} `;
-          const nextValue = current.substring(0, cursor) + nextPrefix + current.substring(cursor);
-          updateValue(nextValue);
-          setTimeout(() => {
-            textarea.setSelectionRange(cursor + nextPrefix.length, cursor + nextPrefix.length);
-          }, 0);
-        }
-        return;
-      }
-
-      if (numMatch) {
-        if (!numMatch[2].trim()) {
-          // Empty number item -> clear line
-          e.preventDefault();
-          const nextValue = current.substring(0, lineStart) + current.substring(cursor);
-          updateValue(nextValue);
-          setTimeout(() => {
-            textarea.setSelectionRange(lineStart, lineStart);
-          }, 0);
-        } else {
-          e.preventDefault();
-          const nextNum = parseInt(numMatch[1], 10) + 1;
-          const nextPrefix = `\n${nextNum}. `;
-          const nextValue = current.substring(0, cursor) + nextPrefix + current.substring(cursor);
-          updateValue(nextValue);
-          setTimeout(() => {
-            textarea.setSelectionRange(cursor + nextPrefix.length, cursor + nextPrefix.length);
-          }, 0);
-        }
-        return;
-      }
-    }
+  const headingLabels: Record<string, string> = {
+    p: "Normal Text",
+    h1: "Large Heading",
+    h2: "Medium Heading",
+    h3: "Small Heading",
   };
 
   return (
     <div
-      className={`flex flex-col rounded-xl border transition-all ${
+      className={`rounded-xl border transition-colors overflow-hidden bg-[var(--color-surface)] ${
         error
-          ? "border-[var(--color-danger)] focus-within:ring-2 focus-within:ring-[var(--color-danger)]/20"
-          : "border-[var(--color-border)] focus-within:border-[var(--color-brand)] focus-within:ring-2 focus-within:ring-[var(--color-brand-subtle)]"
-      } bg-[var(--color-surface)] overflow-hidden ${className}`}
+          ? "border-red-500/60 ring-1 ring-red-500/20"
+          : "border-[var(--color-border)] focus-within:border-[var(--color-brand)] focus-within:ring-1 focus-within:ring-[var(--color-brand)]/20"
+      } ${disabled ? "opacity-60 pointer-events-none" : ""} ${className}`}
     >
-      {/* Top Header & Formatting Toolbar */}
-      <div className="flex flex-wrap items-center justify-between gap-1 p-1.5 bg-[var(--color-surface-raised)] border-b border-[var(--color-border)] select-none">
-        {/* Formatting Actions (Active in Write Mode) */}
-        <div className="flex items-center gap-0.5 overflow-x-auto touch-pan-x py-0.5 max-w-full">
-          {mode === "write" ? (
-            <>
-              {/* Text formatting */}
-              <button
-                type="button"
-                onClick={() => applyWrap("**", "**", "bold text")}
-                disabled={disabled}
-                className="p-1.5 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] transition-colors disabled:opacity-40 cursor-pointer"
-                title="Bold (Ctrl+B)"
-                aria-label="Bold"
-              >
-                <Bold size={15} />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => applyWrap("*", "*", "italic text")}
-                disabled={disabled}
-                className="p-1.5 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] transition-colors disabled:opacity-40 cursor-pointer"
-                title="Italic (Ctrl+I)"
-                aria-label="Italic"
-              >
-                <Italic size={15} />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => applyWrap("~~", "~~", "strikethrough")}
-                disabled={disabled}
-                className="p-1.5 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] transition-colors disabled:opacity-40 cursor-pointer"
-                title="Strikethrough"
-                aria-label="Strikethrough"
-              >
-                <Strikethrough size={15} />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => applyWrap("`", "`", "code")}
-                disabled={disabled}
-                className="p-1.5 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] transition-colors disabled:opacity-40 cursor-pointer"
-                title="Inline Code"
-                aria-label="Inline Code"
-              >
-                <Code size={15} />
-              </button>
-
-              <div className="h-4 w-px bg-[var(--color-border)] mx-1" />
-
-              {/* Headings */}
-              <button
-                type="button"
-                onClick={() => applyLinePrefix("## ")}
-                disabled={disabled}
-                className="p-1.5 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] transition-colors disabled:opacity-40 cursor-pointer"
-                title="Heading 2"
-                aria-label="Heading 2"
-              >
-                <Heading2 size={15} />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => applyLinePrefix("### ")}
-                disabled={disabled}
-                className="p-1.5 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] transition-colors disabled:opacity-40 cursor-pointer"
-                title="Heading 3"
-                aria-label="Heading 3"
-              >
-                <Heading3 size={15} />
-              </button>
-
-              <div className="h-4 w-px bg-[var(--color-border)] mx-1" />
-
-              {/* Lists */}
-              <button
-                type="button"
-                onClick={() => applyLinePrefix("- ")}
-                disabled={disabled}
-                className="p-1.5 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] transition-colors disabled:opacity-40 cursor-pointer"
-                title="Bullet List"
-                aria-label="Bullet List"
-              >
-                <List size={15} />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => applyLinePrefix("1. ")}
-                disabled={disabled}
-                className="p-1.5 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] transition-colors disabled:opacity-40 cursor-pointer"
-                title="Numbered List"
-                aria-label="Numbered List"
-              >
-                <ListOrdered size={15} />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => applyLinePrefix("- [ ] ")}
-                disabled={disabled}
-                className="p-1.5 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] transition-colors disabled:opacity-40 cursor-pointer"
-                title="Task Checklist"
-                aria-label="Task Checklist"
-              >
-                <ListTodo size={15} />
-              </button>
-
-              <div className="h-4 w-px bg-[var(--color-border)] mx-1" />
-
-              {/* Blocks & Extras */}
-              <button
-                type="button"
-                onClick={() => applyLinePrefix("> ")}
-                disabled={disabled}
-                className="p-1.5 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] transition-colors disabled:opacity-40 cursor-pointer"
-                title="Quote"
-                aria-label="Quote"
-              >
-                <Quote size={15} />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => applyWrap("```\n", "\n```", "code block")}
-                disabled={disabled}
-                className="p-1.5 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] transition-colors disabled:opacity-40 cursor-pointer"
-                title="Code Block"
-                aria-label="Code Block"
-              >
-                <FileCode size={15} />
-              </button>
-
-              <button
-                type="button"
-                onClick={handleOpenLinkModal}
-                disabled={disabled}
-                className="p-1.5 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] transition-colors disabled:opacity-40 cursor-pointer"
-                title="Add Link (Ctrl+K)"
-                aria-label="Add Link"
-              >
-                <LinkIcon size={15} />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => applyWrap("\n---\n", "", "")}
-                disabled={disabled}
-                className="p-1.5 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] transition-colors disabled:opacity-40 cursor-pointer"
-                title="Horizontal Divider"
-                aria-label="Horizontal Divider"
-              >
-                <Minus size={15} />
-              </button>
-            </>
-          ) : (
-            <span className="text-xs font-medium text-[var(--color-text-muted)] px-2">
-              Viewing formatted live preview
-            </span>
-          )}
-        </div>
-
-        {/* Mode Toggle (Write vs Preview) */}
-        <div className="flex items-center gap-1 bg-[var(--color-surface)] p-0.5 rounded-lg border border-[var(--color-border)] ml-auto shrink-0">
+      {/* WYSIWYG Toolbar */}
+      <div className="flex items-center flex-wrap gap-1 p-1.5 border-b border-[var(--color-border)] bg-[var(--color-surface-raised)] select-none">
+        {/* Undo / Redo */}
+        <div className="flex items-center gap-0.5 pr-1 border-r border-[var(--color-border)]">
           <button
             type="button"
-            onClick={() => setMode("write")}
-            className={`flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium transition-colors cursor-pointer ${
-              mode === "write"
-                ? "bg-[var(--color-surface-raised)] text-[var(--color-text-primary)] shadow-xs"
-                : "text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)]"
-            }`}
+            title="Undo (Ctrl+Z)"
+            onClick={() => exec("undo")}
+            className="p-1.5 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] transition-colors"
           >
-            <Edit3 size={13} />
-            <span>Write</span>
+            <RotateCcw size={15} />
           </button>
           <button
             type="button"
-            onClick={() => setMode("preview")}
-            className={`flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium transition-colors cursor-pointer ${
-              mode === "preview"
-                ? "bg-[var(--color-surface-raised)] text-[var(--color-brand)] shadow-xs"
-                : "text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)]"
+            title="Redo (Ctrl+Y)"
+            onClick={() => exec("redo")}
+            className="p-1.5 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] transition-colors"
+          >
+            <RotateCw size={15} />
+          </button>
+        </div>
+
+        {/* Heading Dropdown */}
+        <div className="relative pr-1 border-r border-[var(--color-border)]">
+          <button
+            type="button"
+            title="Text Style"
+            onClick={() => setIsHeadingDropdownOpen(!isHeadingDropdownOpen)}
+            className="flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] border border-transparent hover:border-[var(--color-border)] transition-colors"
+          >
+            <span>{headingLabels[activeStates.heading] || "Normal Text"}</span>
+            <ChevronDown size={13} className="text-[var(--color-text-muted)]" />
+          </button>
+
+          {isHeadingDropdownOpen && (
+            <>
+              <div
+                className="fixed inset-0 z-20"
+                onClick={() => setIsHeadingDropdownOpen(false)}
+              />
+              <div className="absolute top-full left-0 mt-1 z-30 min-w-[150px] py-1 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)] shadow-xl animate-in fade-in zoom-in-95 duration-100">
+                <button
+                  type="button"
+                  onClick={() => handleHeadingChange("p")}
+                  className={`w-full text-left px-3 py-1.5 text-xs transition-colors hover:bg-[var(--color-surface-raised)] ${
+                    activeStates.heading === "p"
+                      ? "text-[var(--color-brand)] font-semibold"
+                      : "text-[var(--color-text-primary)]"
+                  }`}
+                >
+                  Normal Text
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleHeadingChange("h1")}
+                  className={`w-full text-left px-3 py-1.5 text-sm font-bold transition-colors hover:bg-[var(--color-surface-raised)] ${
+                    activeStates.heading === "h1"
+                      ? "text-[var(--color-brand)] font-bold"
+                      : "text-[var(--color-text-primary)]"
+                  }`}
+                >
+                  Large Heading
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleHeadingChange("h2")}
+                  className={`w-full text-left px-3 py-1.5 text-xs font-semibold transition-colors hover:bg-[var(--color-surface-raised)] ${
+                    activeStates.heading === "h2"
+                      ? "text-[var(--color-brand)] font-semibold"
+                      : "text-[var(--color-text-primary)]"
+                  }`}
+                >
+                  Medium Heading
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleHeadingChange("h3")}
+                  className={`w-full text-left px-3 py-1.5 text-xs font-medium text-[var(--color-text-secondary)] transition-colors hover:bg-[var(--color-surface-raised)] ${
+                    activeStates.heading === "h3"
+                      ? "text-[var(--color-brand)] font-semibold"
+                      : "text-[var(--color-text-primary)]"
+                  }`}
+                >
+                  Small Heading
+                </button>
+              </div>
+            </>
+          )}
+        </div>
+
+        {/* Basic Formatting: Bold, Italic, Underline, Strikethrough */}
+        <div className="flex items-center gap-0.5 pr-1 border-r border-[var(--color-border)]">
+          <button
+            type="button"
+            title="Bold (Ctrl+B)"
+            onClick={() => exec("bold")}
+            className={`p-1.5 rounded-md transition-colors ${
+              activeStates.bold
+                ? "bg-[var(--color-brand)]/15 text-[var(--color-brand)] font-bold"
+                : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]"
             }`}
           >
-            <Eye size={13} />
-            <span>Preview</span>
+            <Bold size={15} />
+          </button>
+          <button
+            type="button"
+            title="Italic (Ctrl+I)"
+            onClick={() => exec("italic")}
+            className={`p-1.5 rounded-md transition-colors ${
+              activeStates.italic
+                ? "bg-[var(--color-brand)]/15 text-[var(--color-brand)]"
+                : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]"
+            }`}
+          >
+            <Italic size={15} />
+          </button>
+          <button
+            type="button"
+            title="Underline (Ctrl+U)"
+            onClick={() => exec("underline")}
+            className={`p-1.5 rounded-md transition-colors ${
+              activeStates.underline
+                ? "bg-[var(--color-brand)]/15 text-[var(--color-brand)]"
+                : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]"
+            }`}
+          >
+            <Underline size={15} />
+          </button>
+          <button
+            type="button"
+            title="Strikethrough"
+            onClick={() => exec("strikeThrough")}
+            className={`p-1.5 rounded-md transition-colors ${
+              activeStates.strikeThrough
+                ? "bg-[var(--color-brand)]/15 text-[var(--color-brand)]"
+                : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]"
+            }`}
+          >
+            <Strikethrough size={15} />
+          </button>
+        </div>
+
+        {/* Lists & Quotes */}
+        <div className="flex items-center gap-0.5 pr-1 border-r border-[var(--color-border)]">
+          <button
+            type="button"
+            title="Bullet List"
+            onClick={() => exec("insertUnorderedList")}
+            className={`p-1.5 rounded-md transition-colors ${
+              activeStates.insertUnorderedList
+                ? "bg-[var(--color-brand)]/15 text-[var(--color-brand)]"
+                : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]"
+            }`}
+          >
+            <List size={15} />
+          </button>
+          <button
+            type="button"
+            title="Numbered List"
+            onClick={() => exec("insertOrderedList")}
+            className={`p-1.5 rounded-md transition-colors ${
+              activeStates.insertOrderedList
+                ? "bg-[var(--color-brand)]/15 text-[var(--color-brand)]"
+                : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]"
+            }`}
+          >
+            <ListOrdered size={15} />
+          </button>
+          <button
+            type="button"
+            title="Quote Block"
+            onClick={() => {
+              if (disabled || !editorRef.current) return;
+              editorRef.current.focus();
+              document.execCommand("formatBlock", false, "<blockquote>");
+              handleInput();
+            }}
+            className="p-1.5 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] transition-colors"
+          >
+            <Quote size={15} />
+          </button>
+        </div>
+
+        {/* Alignment */}
+        <div className="flex items-center gap-0.5 pr-1 border-r border-[var(--color-border)]">
+          <button
+            type="button"
+            title="Align Left"
+            onClick={() => exec("justifyLeft")}
+            className={`p-1.5 rounded-md transition-colors ${
+              activeStates.justifyLeft
+                ? "bg-[var(--color-brand)]/15 text-[var(--color-brand)]"
+                : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]"
+            }`}
+          >
+            <AlignLeft size={15} />
+          </button>
+          <button
+            type="button"
+            title="Align Center"
+            onClick={() => exec("justifyCenter")}
+            className={`p-1.5 rounded-md transition-colors ${
+              activeStates.justifyCenter
+                ? "bg-[var(--color-brand)]/15 text-[var(--color-brand)]"
+                : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]"
+            }`}
+          >
+            <AlignCenter size={15} />
+          </button>
+          <button
+            type="button"
+            title="Align Right"
+            onClick={() => exec("justifyRight")}
+            className={`p-1.5 rounded-md transition-colors ${
+              activeStates.justifyRight
+                ? "bg-[var(--color-brand)]/15 text-[var(--color-brand)]"
+                : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]"
+            }`}
+          >
+            <AlignRight size={15} />
+          </button>
+        </div>
+
+        {/* Link & Clear Format */}
+        <div className="flex items-center gap-0.5">
+          <button
+            type="button"
+            title={activeStates.isLink ? "Edit Link" : "Insert Link"}
+            onClick={openLinkModal}
+            className={`p-1.5 rounded-md transition-colors ${
+              activeStates.isLink
+                ? "bg-[var(--color-brand)]/15 text-[var(--color-brand)]"
+                : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]"
+            }`}
+          >
+            <LinkIcon size={15} />
+          </button>
+          {activeStates.isLink && (
+            <button
+              type="button"
+              title="Remove Link"
+              onClick={removeLink}
+              className="p-1.5 rounded-md text-red-400 hover:bg-red-500/10 transition-colors"
+            >
+              <Unlink size={15} />
+            </button>
+          )}
+          <button
+            type="button"
+            title="Clear Formatting"
+            onClick={() => exec("removeFormat")}
+            className="p-1.5 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] transition-colors"
+          >
+            <RemoveFormatting size={15} />
           </button>
         </div>
       </div>
 
-      {/* Editor Body */}
-      {mode === "write" ? (
-        <div className="relative">
-          <textarea
-            ref={textareaRef}
-            value={internalValue}
-            onChange={(e) => updateValue(e.target.value)}
-            onKeyDown={handleKeyDown}
-            disabled={disabled}
-            placeholder={placeholder}
-            style={{ minHeight }}
-            className="w-full p-3.5 text-sm bg-transparent text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none resize-y leading-relaxed font-sans"
-          />
-
-          {/* Character counter / hint */}
-          <div className="flex items-center justify-between px-3 py-1 bg-[var(--color-surface-raised)]/40 border-t border-[var(--color-border-subtle)] text-[11px] text-[var(--color-text-muted)] select-none">
-            <span>Markdown supported (Ctrl+B, Ctrl+I, Ctrl+K)</span>
-            <span>{internalValue.length} chars</span>
+      {/* Editable Canvas */}
+      <div className="relative p-4">
+        {isEmpty && (
+          <div
+            className="absolute top-4 left-4 text-sm text-[var(--color-text-muted)] pointer-events-none select-none"
+            aria-hidden="true"
+          >
+            {placeholder}
           </div>
-        </div>
-      ) : (
+        )}
         <div
+          ref={editorRef}
+          contentEditable={!disabled}
+          onInput={handleInput}
+          onKeyUp={updateActiveStates}
+          onMouseUp={updateActiveStates}
+          onSelect={updateActiveStates}
+          onPaste={handlePaste}
           style={{ minHeight }}
-          className="p-4 overflow-y-auto bg-[var(--color-surface)]/60"
-        >
-          <RichTextViewer
-            content={internalValue}
-            placeholder="Nothing to preview yet. Switch to Write tab to add formatted content."
-          />
-        </div>
-      )}
+          className="focus:outline-none text-sm text-[var(--color-text-primary)] leading-relaxed space-y-2 prose-editor"
+        />
+      </div>
 
       {/* Inline Link Modal */}
       {isLinkModalOpen && (
-        <div className="p-3 bg-[var(--color-surface-raised)] border-t border-[var(--color-border)] flex flex-wrap items-center gap-2 animate-in fade-in">
-          <div className="flex-1 min-w-[140px]">
-            <input
-              type="text"
-              value={linkText}
-              onChange={(e) => setLinkText(e.target.value)}
-              placeholder="Link display text"
-              className="w-full px-2.5 py-1 text-xs rounded-md bg-[var(--color-surface)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-brand)]"
-            />
-          </div>
-          <div className="flex-1 min-w-[180px]">
-            <input
-              type="url"
-              value={linkUrl}
-              onChange={(e) => setLinkUrl(e.target.value)}
-              placeholder="https://example.com"
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                  handleConfirmLink();
-                }
-              }}
-              autoFocus
-              className="w-full px-2.5 py-1 text-xs rounded-md bg-[var(--color-surface)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-brand)]"
-            />
-          </div>
-          <div className="flex items-center gap-1 ml-auto">
-            <button
-              type="button"
-              onClick={handleConfirmLink}
-              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold text-white bg-[var(--color-brand)] hover:bg-[var(--color-brand-hover)] transition-colors cursor-pointer"
-            >
-              <Check size={12} />
-              <span>Insert</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setIsLinkModalOpen(false)}
-              className="p-1 rounded-md text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors cursor-pointer"
-            >
-              <X size={14} />
-            </button>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-in fade-in duration-100">
+          <div
+            className="w-full max-w-sm rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 shadow-2xl space-y-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between pb-2 border-b border-[var(--color-border)]">
+              <h4 className="text-sm font-semibold text-[var(--color-text-primary)] flex items-center gap-2">
+                <LinkIcon size={16} className="text-[var(--color-brand)]" />
+                {activeStates.isLink ? "Edit Link" : "Insert Web Link"}
+              </h4>
+              <button
+                type="button"
+                onClick={() => setIsLinkModalOpen(false)}
+                className="p-1 rounded-md text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]"
+              >
+                <X size={16} />
+              </button>
+            </div>
+
+            <div className="space-y-3">
+              <div>
+                <label className="text-xs font-medium text-[var(--color-text-secondary)] block mb-1">
+                  Destination URL
+                </label>
+                <input
+                  type="text"
+                  placeholder="https://example.com"
+                  value={linkUrl}
+                  onChange={(e) => setLinkUrl(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault();
+                      applyLink();
+                    }
+                  }}
+                  autoFocus
+                  className="w-full px-3 py-2 text-sm rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-brand)]"
+                />
+              </div>
+            </div>
+
+            <div className="flex items-center justify-end gap-2 pt-2">
+              <button
+                type="button"
+                onClick={() => setIsLinkModalOpen(false)}
+                className="px-3 py-1.5 text-xs rounded-lg border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-raised)]"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={applyLink}
+                className="px-4 py-1.5 text-xs font-medium rounded-lg bg-[var(--color-brand)] text-white hover:bg-[var(--color-brand-hover)] flex items-center gap-1.5 shadow-sm"
+              >
+                <Check size={14} />
+                Apply Link
+              </button>
+            </div>
           </div>
         </div>
       )}
+
+      {/* Scoped CSS for Rich Text Editor content styling */}
+      <style jsx global>{`
+        .prose-editor h1 {
+          font-size: 1.35rem;
+          font-weight: 700;
+          margin-top: 0.5rem;
+          margin-bottom: 0.25rem;
+          color: var(--color-text-primary);
+        }
+        .prose-editor h2 {
+          font-size: 1.15rem;
+          font-weight: 600;
+          margin-top: 0.5rem;
+          margin-bottom: 0.25rem;
+          color: var(--color-text-primary);
+        }
+        .prose-editor h3 {
+          font-size: 1rem;
+          font-weight: 600;
+          margin-top: 0.35rem;
+          margin-bottom: 0.2rem;
+          color: var(--color-text-primary);
+        }
+        .prose-editor ul {
+          list-style-type: disc;
+          padding-left: 1.25rem;
+          margin: 0.35rem 0;
+        }
+        .prose-editor ol {
+          list-style-type: decimal;
+          padding-left: 1.25rem;
+          margin: 0.35rem 0;
+        }
+        .prose-editor li {
+          margin: 0.15rem 0;
+        }
+        .prose-editor blockquote {
+          border-left: 3px solid var(--color-brand);
+          padding-left: 0.75rem;
+          margin: 0.5rem 0;
+          font-style: italic;
+          color: var(--color-text-secondary);
+        }
+        .prose-editor a {
+          color: var(--color-brand);
+          text-decoration: underline;
+        }
+      `}</style>
     </div>
   );
 }

@@ -35,8 +35,8 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/attendance/page.tsx": {
-    "mtime": 1789554575.4391568,
-    "ast_hash": "277ca16997ebce37f4c5c898c53cfe80",
+    "mtime": 1789817753.0065503,
+    "ast_hash": "a9397d2ff970a034256e634b171d67d9",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/clients/ClientListClient.tsx": {
@@ -385,13 +385,13 @@
     "semantic_hash": ""
   },
   "components/shared/MobileHeader.tsx": {
-    "mtime": 1789727745.4908724,
-    "ast_hash": "a9373af7ac992bd96a03e6f82fabf3fa",
+    "mtime": 1789817744.0026884,
+    "ast_hash": "1344549db53daa31ecbc56cfb92be72b",
     "semantic_hash": ""
   },
   "components/shared/PageHeader.tsx": {
-    "mtime": 1789554389.5613956,
-    "ast_hash": "bef2e9907217709d885e128aeec64149",
+    "mtime": 1789817739.466556,
+    "ast_hash": "224813b558797206f91c71a94bc6bfe8",
     "semantic_hash": ""
   },
   "components/shared/RouteProgressBar.tsx": {
@@ -900,13 +900,13 @@
     "semantic_hash": ""
   },
   "components/shared/RichTextEditor.tsx": {
-    "mtime": 1789815289.0383403,
-    "ast_hash": "fc6964a196fefa0dfc9eae7d28fa7c39",
+    "mtime": 1789817644.0280492,
+    "ast_hash": "66ffce525ddebd3076ff3ec90df4039c",
     "semantic_hash": ""
   },
   "components/shared/RichTextViewer.tsx": {
-    "mtime": 1789815272.279865,
-    "ast_hash": "401a0f046878a055ad62dd0e86c53456",
+    "mtime": 1789817670.0992053,
+    "ast_hash": "18057bae253d751afafc0e9da42e5d0f",
     "semantic_hash": ""
   },
   "phases/stories/STORY-008-global-preloader-suite.md": {

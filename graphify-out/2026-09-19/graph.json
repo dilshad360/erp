@@ -34,6 +34,26 @@
       "norm_label": "marketinglayout()"
     },
     {
+      "label": "loading.tsx",
+      "file_type": "code",
+      "source_file": "app/(marketing)/loading.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_marketing_loading",
+      "community": 1,
+      "norm_label": "loading.tsx"
+    },
+    {
+      "label": "MarketingLoading()",
+      "file_type": "code",
+      "source_file": "app/(marketing)/loading.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "app_marketing_loading_marketingloading",
+      "community": 1,
+      "norm_label": "marketingloading()"
+    },
+    {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(marketing)/page.tsx",
@@ -300,7 +320,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_clientlistclient",
-      "community": 3,
+      "community": 2,
       "norm_label": "clientlistclient.tsx"
     },
     {
@@ -310,7 +330,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_clientlistclient_clientrecord",
-      "community": 3,
+      "community": 75,
       "norm_label": "clientrecord"
     },
     {
@@ -320,7 +340,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_clientlistclient_clientlistclientprops",
-      "community": 3,
+      "community": 2,
       "norm_label": "clientlistclientprops"
     },
     {
@@ -347,7 +367,7 @@
       "label": "editClientSchema",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L32",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_editclientschema",
       "community": 31,
@@ -357,7 +377,7 @@
       "label": "EditClientFormData",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L56",
+      "source_location": "L58",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_editclientformdata",
       "community": 31,
@@ -367,7 +387,7 @@
       "label": "LinkedProject",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L58",
+      "source_location": "L60",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_linkedproject",
       "community": 61,
@@ -377,7 +397,7 @@
       "label": "ClientDetailProps",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L67",
+      "source_location": "L69",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_clientdetailprops",
       "community": 31,
@@ -387,7 +407,7 @@
       "label": "ClientDetailClient()",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L85",
+      "source_location": "L87",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_clientdetailclient",
       "community": 31,
@@ -430,7 +450,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient",
-      "community": 75,
+      "community": 31,
       "norm_label": "newclientformclient.tsx"
     },
     {
@@ -440,7 +460,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient_clientformschema",
-      "community": 75,
+      "community": 31,
       "norm_label": "clientformschema"
     },
     {
@@ -450,7 +470,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient_clientformdata",
-      "community": 75,
+      "community": 31,
       "norm_label": "clientformdata"
     },
     {
@@ -460,7 +480,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient_newclientformclient",
-      "community": 75,
+      "community": 31,
       "norm_label": "newclientformclient()"
     },
     {
@@ -470,7 +490,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_page",
-      "community": 13,
+      "community": 79,
       "norm_label": "page.tsx"
     },
     {
@@ -480,7 +500,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_page_metadata",
-      "community": 13,
+      "community": 79,
       "norm_label": "metadata"
     },
     {
@@ -490,7 +510,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_page_newclientpage",
-      "community": 13,
+      "community": 79,
       "norm_label": "newclientpage()"
     },
     {
@@ -500,7 +520,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_page",
-      "community": 3,
+      "community": 75,
       "norm_label": "page.tsx"
     },
     {
@@ -510,7 +530,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_page_metadata",
-      "community": 3,
+      "community": 75,
       "norm_label": "metadata"
     },
     {
@@ -520,7 +540,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_page_clientspage",
-      "community": 3,
+      "community": 75,
       "norm_label": "clientspage()"
     },
     {
@@ -770,7 +790,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_projectlistclient",
-      "community": 81,
+      "community": 7,
       "norm_label": "projectlistclient.tsx"
     },
     {
@@ -780,7 +800,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_projectlistclient_projectrecord",
-      "community": 81,
+      "community": 7,
       "norm_label": "projectrecord"
     },
     {
@@ -790,7 +810,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_projectlistclient_clientoption",
-      "community": 81,
+      "community": 7,
       "norm_label": "clientoption"
     },
     {
@@ -800,7 +820,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_projectlistclient_projectlistclientprops",
-      "community": 81,
+      "community": 7,
       "norm_label": "projectlistclientprops"
     },
     {
@@ -820,64 +840,64 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient",
-      "community": 7,
+      "community": 50,
       "norm_label": "projectdetailclient.tsx"
     },
     {
       "label": "editProjectSchema",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L31",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_editprojectschema",
-      "community": 7,
+      "community": 50,
       "norm_label": "editprojectschema"
     },
     {
       "label": "EditProjectFormData",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L55",
+      "source_location": "L57",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_editprojectformdata",
-      "community": 7,
+      "community": 50,
       "norm_label": "editprojectformdata"
     },
     {
       "label": "ProjectDetailData",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L57",
+      "source_location": "L59",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetaildata",
-      "community": 67,
+      "community": 10,
       "norm_label": "projectdetaildata"
     },
     {
       "label": "TaskStatusCount",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L82",
+      "source_location": "L84",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_taskstatuscount",
-      "community": 7,
+      "community": 50,
       "norm_label": "taskstatuscount"
     },
     {
       "label": "ProjectTeamMember",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L89",
+      "source_location": "L91",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectteammember",
-      "community": 7,
+      "community": 50,
       "norm_label": "projectteammember"
     },
     {
       "label": "ProjectDetailProps",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L97",
+      "source_location": "L99",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetailprops",
       "community": 50,
@@ -887,7 +907,7 @@
       "label": "ProjectDetailClient()",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L109",
+      "source_location": "L111",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetailclient",
       "community": 7,
@@ -900,7 +920,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_page",
-      "community": 67,
+      "community": 10,
       "norm_label": "page.tsx"
     },
     {
@@ -910,7 +930,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_page_generatemetadata",
-      "community": 67,
+      "community": 10,
       "norm_label": "generatemetadata()"
     },
     {
@@ -920,7 +940,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_page_projectdetailpage",
-      "community": 67,
+      "community": 10,
       "norm_label": "projectdetailpage()"
     },
     {
@@ -967,7 +987,7 @@
       "label": "projectFormSchema",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/new/NewProjectFormClient.tsx",
-      "source_location": "L21",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_newprojectformclient_projectformschema",
       "community": 50,
@@ -977,7 +997,7 @@
       "label": "ProjectFormData",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/new/NewProjectFormClient.tsx",
-      "source_location": "L45",
+      "source_location": "L46",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_newprojectformclient_projectformdata",
       "community": 50,
@@ -987,7 +1007,7 @@
       "label": "NewProjectFormClientProps",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/new/NewProjectFormClient.tsx",
-      "source_location": "L47",
+      "source_location": "L48",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_newprojectformclient_newprojectformclientprops",
       "community": 50,
@@ -997,7 +1017,7 @@
       "label": "NewProjectFormClient()",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/new/NewProjectFormClient.tsx",
-      "source_location": "L51",
+      "source_location": "L52",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_newprojectformclient_newprojectformclient",
       "community": 50,
@@ -1010,7 +1030,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_page",
-      "community": 10,
+      "community": 81,
       "norm_label": "page.tsx"
     },
     {
@@ -1020,7 +1040,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_page_metadata",
-      "community": 10,
+      "community": 81,
       "norm_label": "metadata"
     },
     {
@@ -1030,7 +1050,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_page_newprojectpage",
-      "community": 10,
+      "community": 81,
       "norm_label": "newprojectpage()"
     },
     {
@@ -1040,7 +1060,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_page",
-      "community": 81,
+      "community": 7,
       "norm_label": "page.tsx"
     },
     {
@@ -1050,7 +1070,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_page_metadata",
-      "community": 81,
+      "community": 7,
       "norm_label": "metadata"
     },
     {
@@ -1060,7 +1080,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_page_projectspage",
-      "community": 81,
+      "community": 7,
       "norm_label": "projectspage()"
     },
     {
@@ -1250,7 +1270,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_auth_login_page",
-      "community": 1,
+      "community": 37,
       "norm_label": "page.tsx"
     },
     {
@@ -1260,7 +1280,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_tenant_subdomain_auth_login_page_loginpageprops",
-      "community": 1,
+      "community": 37,
       "norm_label": "loginpageprops"
     },
     {
@@ -1270,7 +1290,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_tenant_subdomain_auth_login_page_generatemetadata",
-      "community": 1,
+      "community": 37,
       "norm_label": "generatemetadata()"
     },
     {
@@ -1280,7 +1300,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "app_tenant_subdomain_auth_login_page_loginpage",
-      "community": 1,
+      "community": 37,
       "norm_label": "loginpage()"
     },
     {
@@ -1384,13 +1404,33 @@
       "norm_label": "subdomainrootlayout()"
     },
     {
+      "label": "loading.tsx",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/loading.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_loading",
+      "community": 1,
+      "norm_label": "loading.tsx"
+    },
+    {
+      "label": "TenantRootLoading()",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/loading.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_loading_tenantrootloading",
+      "community": 1,
+      "norm_label": "tenantrootloading()"
+    },
+    {
       "label": "route.ts",
       "file_type": "code",
       "source_file": "app/api/attendance/checkin/route.ts",
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_attendance_checkin_route",
-      "community": 10,
+      "community": 13,
       "norm_label": "route.ts"
     },
     {
@@ -1400,7 +1440,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_api_attendance_checkin_route_checkinschema",
-      "community": 10,
+      "community": 13,
       "norm_label": "checkinschema"
     },
     {
@@ -1410,7 +1450,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_api_attendance_checkin_route_post",
-      "community": 10,
+      "community": 13,
       "norm_label": "post()"
     },
     {
@@ -1530,7 +1570,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_clients_route",
-      "community": 18,
+      "community": 10,
       "norm_label": "route.ts"
     },
     {
@@ -1540,7 +1580,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_api_clients_route_clientschema",
-      "community": 18,
+      "community": 10,
       "norm_label": "clientschema"
     },
     {
@@ -1550,7 +1590,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "app_api_clients_route_get",
-      "community": 18,
+      "community": 10,
       "norm_label": "get()"
     },
     {
@@ -1560,7 +1600,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "app_api_clients_route_post",
-      "community": 18,
+      "community": 10,
       "norm_label": "post()"
     },
     {
@@ -1920,7 +1960,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_task_statuses_id_route",
-      "community": 10,
+      "community": 67,
       "norm_label": "route.ts"
     },
     {
@@ -1930,7 +1970,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_api_task_statuses_id_route_updatestatusschema",
-      "community": 10,
+      "community": 67,
       "norm_label": "updatestatusschema"
     },
     {
@@ -1940,7 +1980,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_api_task_statuses_id_route_put",
-      "community": 10,
+      "community": 67,
       "norm_label": "put()"
     },
     {
@@ -1950,7 +1990,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "app_api_task_statuses_id_route_delete",
-      "community": 10,
+      "community": 67,
       "norm_label": "delete()"
     },
     {
@@ -1990,7 +2030,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_task_statuses_route",
-      "community": 27,
+      "community": 10,
       "norm_label": "route.ts"
     },
     {
@@ -2000,7 +2040,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_api_task_statuses_route_createstatusschema",
-      "community": 27,
+      "community": 10,
       "norm_label": "createstatusschema"
     },
     {
@@ -2010,7 +2050,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_api_task_statuses_route_get",
-      "community": 27,
+      "community": 10,
       "norm_label": "get()"
     },
     {
@@ -2020,7 +2060,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "app_api_task_statuses_route_post",
-      "community": 27,
+      "community": 10,
       "norm_label": "post()"
     },
     {
@@ -2107,7 +2147,7 @@
       "label": "inter",
       "file_type": "code",
       "source_file": "app/layout.tsx",
-      "source_location": "L6",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "app_layout_inter",
       "community": 4,
@@ -2117,7 +2157,7 @@
       "label": "viewport",
       "file_type": "code",
       "source_file": "app/layout.tsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "app_layout_viewport",
       "community": 4,
@@ -2127,7 +2167,7 @@
       "label": "metadata",
       "file_type": "code",
       "source_file": "app/layout.tsx",
-      "source_location": "L20",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "app_layout_metadata",
       "community": 4,
@@ -2137,11 +2177,31 @@
       "label": "RootLayout()",
       "file_type": "code",
       "source_file": "app/layout.tsx",
-      "source_location": "L43",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "app_layout_rootlayout",
       "community": 4,
       "norm_label": "rootlayout()"
+    },
+    {
+      "label": "loading.tsx",
+      "file_type": "code",
+      "source_file": "app/loading.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_loading",
+      "community": 1,
+      "norm_label": "loading.tsx"
+    },
+    {
+      "label": "RootLoading()",
+      "file_type": "code",
+      "source_file": "app/loading.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "app_loading_rootloading",
+      "community": 1,
+      "norm_label": "rootloading()"
     },
     {
       "label": "manifest.ts",
@@ -2770,7 +2830,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "components_auth_loginclient_tenantloginbranding",
-      "community": 1,
+      "community": 37,
       "norm_label": "tenantloginbranding"
     },
     {
@@ -3080,7 +3140,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "components_shared_assigneeavatargroup_assigneeavatargroup",
-      "community": 2,
+      "community": 53,
       "norm_label": "assigneeavatargroup()"
     },
     {
@@ -3384,6 +3444,96 @@
       "norm_label": "formfield()"
     },
     {
+      "label": "GlobalLoadingProvider.tsx",
+      "file_type": "code",
+      "source_file": "components/shared/GlobalLoadingProvider.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_shared_globalloadingprovider",
+      "community": 4,
+      "norm_label": "globalloadingprovider.tsx"
+    },
+    {
+      "label": "GlobalLoadingContextValue",
+      "file_type": "code",
+      "source_file": "components/shared/GlobalLoadingProvider.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "components_shared_globalloadingprovider_globalloadingcontextvalue",
+      "community": 4,
+      "norm_label": "globalloadingcontextvalue"
+    },
+    {
+      "label": "GlobalLoadingContext",
+      "file_type": "code",
+      "source_file": "components/shared/GlobalLoadingProvider.tsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "components_shared_globalloadingprovider_globalloadingcontext",
+      "community": 4,
+      "norm_label": "globalloadingcontext"
+    },
+    {
+      "label": "useGlobalLoading()",
+      "file_type": "code",
+      "source_file": "components/shared/GlobalLoadingProvider.tsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "components_shared_globalloadingprovider_usegloballoading",
+      "community": 4,
+      "norm_label": "usegloballoading()"
+    },
+    {
+      "label": "GlobalLoadingProviderProps",
+      "file_type": "code",
+      "source_file": "components/shared/GlobalLoadingProvider.tsx",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "components_shared_globalloadingprovider_globalloadingproviderprops",
+      "community": 4,
+      "norm_label": "globalloadingproviderprops"
+    },
+    {
+      "label": "GlobalLoadingProvider()",
+      "file_type": "code",
+      "source_file": "components/shared/GlobalLoadingProvider.tsx",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "components_shared_globalloadingprovider_globalloadingprovider",
+      "community": 4,
+      "norm_label": "globalloadingprovider()"
+    },
+    {
+      "label": "GlobalPreloader.tsx",
+      "file_type": "code",
+      "source_file": "components/shared/GlobalPreloader.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_shared_globalpreloader",
+      "community": 1,
+      "norm_label": "globalpreloader.tsx"
+    },
+    {
+      "label": "GlobalPreloaderProps",
+      "file_type": "code",
+      "source_file": "components/shared/GlobalPreloader.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "components_shared_globalpreloader_globalpreloaderprops",
+      "community": 1,
+      "norm_label": "globalpreloaderprops"
+    },
+    {
+      "label": "GlobalPreloader()",
+      "file_type": "code",
+      "source_file": "components/shared/GlobalPreloader.tsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "components_shared_globalpreloader_globalpreloader",
+      "community": 1,
+      "norm_label": "globalpreloader()"
+    },
+    {
       "label": "LoadingButton.tsx",
       "file_type": "code",
       "source_file": "components/shared/LoadingButton.tsx",
@@ -3440,7 +3590,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_pageheader",
-      "community": 75,
+      "community": 50,
       "norm_label": "pageheader.tsx"
     },
     {
@@ -3450,7 +3600,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "components_shared_pageheader_pageheaderprops",
-      "community": 75,
+      "community": 50,
       "norm_label": "pageheaderprops"
     },
     {
@@ -3460,8 +3610,78 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "components_shared_pageheader_pageheader",
-      "community": 75,
+      "community": 50,
       "norm_label": "pageheader()"
+    },
+    {
+      "label": "RichTextEditor.tsx",
+      "file_type": "code",
+      "source_file": "components/shared/RichTextEditor.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_shared_richtexteditor",
+      "community": 18,
+      "norm_label": "richtexteditor.tsx"
+    },
+    {
+      "label": "RichTextEditorProps",
+      "file_type": "code",
+      "source_file": "components/shared/RichTextEditor.tsx",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "components_shared_richtexteditor_richtexteditorprops",
+      "community": 18,
+      "norm_label": "richtexteditorprops"
+    },
+    {
+      "label": "RichTextEditor()",
+      "file_type": "code",
+      "source_file": "components/shared/RichTextEditor.tsx",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "components_shared_richtexteditor_richtexteditor",
+      "community": 18,
+      "norm_label": "richtexteditor()"
+    },
+    {
+      "label": "RichTextViewer.tsx",
+      "file_type": "code",
+      "source_file": "components/shared/RichTextViewer.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_shared_richtextviewer",
+      "community": 18,
+      "norm_label": "richtextviewer.tsx"
+    },
+    {
+      "label": "RichTextViewerProps",
+      "file_type": "code",
+      "source_file": "components/shared/RichTextViewer.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "components_shared_richtextviewer_richtextviewerprops",
+      "community": 18,
+      "norm_label": "richtextviewerprops"
+    },
+    {
+      "label": "sanitizeUrl()",
+      "file_type": "code",
+      "source_file": "components/shared/RichTextViewer.tsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "components_shared_richtextviewer_sanitizeurl",
+      "community": 18,
+      "norm_label": "sanitizeurl()"
+    },
+    {
+      "label": "RichTextViewer()",
+      "file_type": "code",
+      "source_file": "components/shared/RichTextViewer.tsx",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "components_shared_richtextviewer_richtextviewer",
+      "community": 18,
+      "norm_label": "richtextviewer()"
     },
     {
       "label": "RouteProgressBar.tsx",
@@ -3470,17 +3690,27 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_routeprogressbar",
-      "community": 79,
+      "community": 4,
       "norm_label": "routeprogressbar.tsx"
+    },
+    {
+      "label": "ProgressContent()",
+      "file_type": "code",
+      "source_file": "components/shared/RouteProgressBar.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "components_shared_routeprogressbar_progresscontent",
+      "community": 4,
+      "norm_label": "progresscontent()"
     },
     {
       "label": "RouteProgressBar()",
       "file_type": "code",
       "source_file": "components/shared/RouteProgressBar.tsx",
-      "source_location": "L5",
+      "source_location": "L159",
       "_origin": "ast",
       "id": "components_shared_routeprogressbar_routeprogressbar",
-      "community": 79,
+      "community": 4,
       "norm_label": "routeprogressbar()"
     },
     {
@@ -3587,7 +3817,7 @@
       "label": "TenantPreloaderProps",
       "file_type": "code",
       "source_file": "components/shared/TenantPreloader.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "components_shared_tenantpreloader_tenantpreloaderprops",
       "community": 1,
@@ -3597,7 +3827,7 @@
       "label": "TenantPreloader()",
       "file_type": "code",
       "source_file": "components/shared/TenantPreloader.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "components_shared_tenantpreloader_tenantpreloader",
       "community": 1,
@@ -3644,10 +3874,20 @@
       "norm_label": "usetenant()"
     },
     {
-      "label": "TenantProviderProps",
+      "label": "useOptionalTenant()",
       "file_type": "code",
       "source_file": "components/shared/TenantProvider.tsx",
       "source_location": "L27",
+      "_origin": "ast",
+      "id": "components_shared_tenantprovider_useoptionaltenant",
+      "community": 1,
+      "norm_label": "useoptionaltenant()"
+    },
+    {
+      "label": "TenantProviderProps",
+      "file_type": "code",
+      "source_file": "components/shared/TenantProvider.tsx",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "components_shared_tenantprovider_tenantproviderprops",
       "community": 1,
@@ -3657,7 +3897,7 @@
       "label": "TenantProvider()",
       "file_type": "code",
       "source_file": "components/shared/TenantProvider.tsx",
-      "source_location": "L32",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "components_shared_tenantprovider_tenantprovider",
       "community": 1,
@@ -3957,7 +4197,7 @@
       "label": "TaskStatus",
       "file_type": "code",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "components_tasks_taskform_taskstatus",
       "community": 2,
@@ -3967,7 +4207,7 @@
       "label": "TaskFormData",
       "file_type": "code",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L23",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "components_tasks_taskform_taskformdata",
       "community": 2,
@@ -3977,7 +4217,7 @@
       "label": "taskFormSchema",
       "file_type": "code",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L47",
+      "source_location": "L48",
       "_origin": "ast",
       "id": "components_tasks_taskform_taskformschema",
       "community": 2,
@@ -3987,7 +4227,7 @@
       "label": "TaskFormValues",
       "file_type": "code",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L61",
+      "source_location": "L62",
       "_origin": "ast",
       "id": "components_tasks_taskform_taskformvalues",
       "community": 2,
@@ -3997,7 +4237,7 @@
       "label": "TaskFormProps",
       "file_type": "code",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L63",
+      "source_location": "L64",
       "_origin": "ast",
       "id": "components_tasks_taskform_taskformprops",
       "community": 2,
@@ -4007,7 +4247,7 @@
       "label": "PRIORITY_OPTIONS",
       "file_type": "code",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L76",
+      "source_location": "L77",
       "_origin": "ast",
       "id": "components_tasks_taskform_priority_options",
       "community": 2,
@@ -4017,7 +4257,7 @@
       "label": "TaskForm()",
       "file_type": "code",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L85",
+      "source_location": "L86",
       "_origin": "ast",
       "id": "components_tasks_taskform_taskform",
       "community": 2,
@@ -5807,7 +6047,7 @@
       "label": "Bug & Defect Registry (`BUG-xxx`)",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L52",
+      "source_location": "L53",
       "_origin": "ast",
       "id": "tracker_bug_defect_registry_bug_xxx",
       "community": 52,
@@ -5817,7 +6057,7 @@
       "label": "Phase 1 \u2014 Foundation",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L64",
+      "source_location": "L65",
       "_origin": "ast",
       "id": "tracker_phase_1_foundation",
       "community": 52,
@@ -5827,7 +6067,7 @@
       "label": "Phase 2 \u2014 Employee Management",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L82",
+      "source_location": "L83",
       "_origin": "ast",
       "id": "tracker_phase_2_employee_management",
       "community": 52,
@@ -5837,7 +6077,7 @@
       "label": "Phase 3 \u2014 Attendance",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L100",
+      "source_location": "L101",
       "_origin": "ast",
       "id": "tracker_phase_3_attendance",
       "community": 52,
@@ -5847,7 +6087,7 @@
       "label": "Phase 4 \u2014 Client Management",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L118",
+      "source_location": "L119",
       "_origin": "ast",
       "id": "tracker_phase_4_client_management",
       "community": 52,
@@ -5857,7 +6097,7 @@
       "label": "Phase 5 \u2014 Project Management",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L136",
+      "source_location": "L137",
       "_origin": "ast",
       "id": "tracker_phase_5_project_management",
       "community": 52,
@@ -5867,7 +6107,7 @@
       "label": "Phase 6 \u2014 Task Management",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L155",
+      "source_location": "L156",
       "_origin": "ast",
       "id": "tracker_phase_6_task_management",
       "community": 52,
@@ -5877,7 +6117,7 @@
       "label": "Phase 7 \u2014 Polish & PWA",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L175",
+      "source_location": "L176",
       "_origin": "ast",
       "id": "tracker_phase_7_polish_pwa",
       "community": 52,
@@ -5887,7 +6127,7 @@
       "label": "Shared Components \u2014 Build Status",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L195",
+      "source_location": "L196",
       "_origin": "ast",
       "id": "tracker_shared_components_build_status",
       "community": 52,
@@ -5897,7 +6137,7 @@
       "label": "Database Migration Status",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L225",
+      "source_location": "L226",
       "_origin": "ast",
       "id": "tracker_database_migration_status",
       "community": 52,
@@ -5907,7 +6147,7 @@
       "label": "Pre-Launch Checklist",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L248",
+      "source_location": "L249",
       "_origin": "ast",
       "id": "tracker_pre_launch_checklist",
       "community": 52,
@@ -5917,7 +6157,7 @@
       "label": "Decisions & Notes Log",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L269",
+      "source_location": "L270",
       "_origin": "ast",
       "id": "tracker_decisions_notes_log",
       "community": 52,
@@ -9454,6 +9694,66 @@
       "norm_label": "8. tracking & sign-off"
     },
     {
+      "label": "STORY-008-global-preloader-suite.md",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-008-global-preloader-suite.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "phases_stories_story_008_global_preloader_suite",
+      "community": 27,
+      "norm_label": "story-008-global-preloader-suite.md"
+    },
+    {
+      "label": "STORY-008: Global Preloader & Navigation Progress Suite",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-008-global-preloader-suite.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "phases_stories_story_008_global_preloader_suite_story_008_global_preloader_navigation_progress_suite",
+      "community": 27,
+      "norm_label": "story-008: global preloader & navigation progress suite"
+    },
+    {
+      "label": "Overview",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-008-global-preloader-suite.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "phases_stories_story_008_global_preloader_suite_overview",
+      "community": 27,
+      "norm_label": "overview"
+    },
+    {
+      "label": "User Story",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-008-global-preloader-suite.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "phases_stories_story_008_global_preloader_suite_user_story",
+      "community": 27,
+      "norm_label": "user story"
+    },
+    {
+      "label": "Acceptance Criteria",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-008-global-preloader-suite.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "phases_stories_story_008_global_preloader_suite_acceptance_criteria",
+      "community": 27,
+      "norm_label": "acceptance criteria"
+    },
+    {
+      "label": "Subtasks",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-008-global-preloader-suite.md",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "phases_stories_story_008_global_preloader_suite_subtasks",
+      "community": 27,
+      "norm_label": "subtasks"
+    },
+    {
       "label": "bug-template.md",
       "file_type": "document",
       "source_file": "templates/bug-template.md",
@@ -9763,6 +10063,38 @@
       "weight": 1.0,
       "source": "app_marketing_layout",
       "target": "app_marketing_layout_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(marketing)/loading.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_marketing_loading",
+      "target": "app_marketing_loading_marketingloading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(marketing)/loading.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_marketing_loading",
+      "target": "components_shared_globalpreloader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(marketing)/loading.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_marketing_loading",
+      "target": "components_shared_globalpreloader_globalpreloader",
       "confidence_score": 1.0
     },
     {
@@ -10242,7 +10574,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L85",
+      "source_location": "L87",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "app_tenant_subdomain_app_clients_id_clientdetailclient_clientdetailclient",
@@ -10252,7 +10584,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L67",
+      "source_location": "L69",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "app_tenant_subdomain_app_clients_id_clientdetailclient_clientdetailprops",
@@ -10262,7 +10594,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L56",
+      "source_location": "L58",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "app_tenant_subdomain_app_clients_id_clientdetailclient_editclientformdata",
@@ -10272,7 +10604,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L32",
+      "source_location": "L34",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "app_tenant_subdomain_app_clients_id_clientdetailclient_editclientschema",
@@ -10282,7 +10614,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L58",
+      "source_location": "L60",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "app_tenant_subdomain_app_clients_id_clientdetailclient_linkedproject",
@@ -10373,6 +10705,28 @@
       "source_location": "L28",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
+      "target": "components_shared_richtexteditor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
+      "target": "components_shared_richtextviewer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "components_ui_button",
       "confidence_score": 1.0
     },
@@ -10381,7 +10735,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx",
-      "source_location": "L28",
+      "source_location": "L30",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_id_clientdetailclient",
       "target": "components_ui_button_button",
@@ -10545,6 +10899,17 @@
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_clients_new_newclientformclient",
       "target": "components_shared_pageheader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/clients/new/NewClientFormClient.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_clients_new_newclientformclient",
+      "target": "components_shared_richtexteditor",
       "confidence_score": 1.0
     },
     {
@@ -11494,7 +11859,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L55",
+      "source_location": "L57",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "app_tenant_subdomain_app_projects_id_projectdetailclient_editprojectformdata",
@@ -11504,7 +11869,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L31",
+      "source_location": "L33",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "app_tenant_subdomain_app_projects_id_projectdetailclient_editprojectschema",
@@ -11514,7 +11879,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L109",
+      "source_location": "L111",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetailclient",
@@ -11524,7 +11889,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L57",
+      "source_location": "L59",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetaildata",
@@ -11534,7 +11899,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L97",
+      "source_location": "L99",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetailprops",
@@ -11544,7 +11909,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L89",
+      "source_location": "L91",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectteammember",
@@ -11554,7 +11919,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L82",
+      "source_location": "L84",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "app_tenant_subdomain_app_projects_id_projectdetailclient_taskstatuscount",
@@ -11678,18 +12043,7 @@
       "source_location": "L28",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
-      "target": "components_ui_button",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
-      "target": "components_ui_button_button",
+      "target": "components_shared_richtexteditor",
       "confidence_score": 1.0
     },
     {
@@ -11700,6 +12054,39 @@
       "source_location": "L29",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
+      "target": "components_shared_richtextviewer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
+      "target": "components_ui_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
+      "target": "components_ui_button_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "lib_format",
       "confidence_score": 1.0
     },
@@ -11708,7 +12095,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "lib_format_calculatetimelineprogress",
@@ -11719,7 +12106,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient",
       "target": "lib_format_formatinr",
@@ -11741,7 +12128,7 @@
       "context": "field",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L99",
+      "source_location": "L101",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetailprops",
       "target": "components_shared_clientselect_clientoption",
@@ -11753,7 +12140,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L264",
+      "source_location": "L266",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetailclient",
       "target": "lib_format_calculatetimelineprogress"
@@ -11764,7 +12151,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx",
-      "source_location": "L594",
+      "source_location": "L603",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetailclient",
       "target": "lib_format_formatinr"
@@ -11967,7 +12354,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/new/NewProjectFormClient.tsx",
-      "source_location": "L51",
+      "source_location": "L52",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_new_newprojectformclient",
       "target": "app_tenant_subdomain_app_projects_new_newprojectformclient_newprojectformclient",
@@ -11977,7 +12364,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/new/NewProjectFormClient.tsx",
-      "source_location": "L47",
+      "source_location": "L48",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_new_newprojectformclient",
       "target": "app_tenant_subdomain_app_projects_new_newprojectformclient_newprojectformclientprops",
@@ -11987,7 +12374,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/new/NewProjectFormClient.tsx",
-      "source_location": "L45",
+      "source_location": "L46",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_new_newprojectformclient",
       "target": "app_tenant_subdomain_app_projects_new_newprojectformclient_projectformdata",
@@ -11997,7 +12384,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/new/NewProjectFormClient.tsx",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_new_newprojectformclient",
       "target": "app_tenant_subdomain_app_projects_new_newprojectformclient_projectformschema",
@@ -12073,6 +12460,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/projects/new/NewProjectFormClient.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_projects_new_newprojectformclient",
+      "target": "components_shared_richtexteditor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/new/page.tsx",
       "source_location": "L3",
       "weight": 1.0,
@@ -12085,7 +12483,7 @@
       "context": "field",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(app)/projects/new/NewProjectFormClient.tsx",
-      "source_location": "L48",
+      "source_location": "L49",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_new_newprojectformclient_newprojectformclientprops",
       "target": "components_shared_clientselect_clientoption",
@@ -13008,6 +13406,27 @@
       "weight": 1.0,
       "source": "app_tenant_subdomain_layout_subdomainrootlayout",
       "target": "lib_supabase_server_createclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/loading.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_loading",
+      "target": "app_tenant_subdomain_loading_tenantrootloading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/loading.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_loading",
+      "target": "components_shared_tenantpreloader",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -14294,7 +14713,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/layout.tsx",
-      "source_location": "L6",
+      "source_location": "L8",
       "weight": 1.0,
       "source": "app_layout",
       "target": "app_layout_inter",
@@ -14304,7 +14723,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/layout.tsx",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0,
       "source": "app_layout",
       "target": "app_layout_metadata",
@@ -14314,7 +14733,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/layout.tsx",
-      "source_location": "L43",
+      "source_location": "L45",
       "weight": 1.0,
       "source": "app_layout",
       "target": "app_layout_rootlayout",
@@ -14324,7 +14743,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/layout.tsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "weight": 1.0,
       "source": "app_layout",
       "target": "app_layout_viewport",
@@ -14350,6 +14769,82 @@
       "weight": 1.0,
       "source": "app_layout",
       "target": "components_pwa_serviceworkerregister_serviceworkerregister",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_layout",
+      "target": "components_shared_globalloadingprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_layout",
+      "target": "components_shared_globalloadingprovider_globalloadingprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_layout",
+      "target": "components_shared_routeprogressbar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_layout",
+      "target": "components_shared_routeprogressbar_routeprogressbar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/loading.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_loading",
+      "target": "app_loading_rootloading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/loading.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_loading",
+      "target": "components_shared_globalpreloader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/loading.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_loading",
+      "target": "components_shared_globalpreloader_globalpreloader",
       "confidence_score": 1.0
     },
     {
@@ -16346,6 +16841,98 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "components/shared/GlobalLoadingProvider.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "components_shared_globalloadingprovider",
+      "target": "components_shared_globalloadingprovider_globalloadingcontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/GlobalLoadingProvider.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "components_shared_globalloadingprovider",
+      "target": "components_shared_globalloadingprovider_globalloadingcontextvalue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/GlobalLoadingProvider.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "components_shared_globalloadingprovider",
+      "target": "components_shared_globalloadingprovider_globalloadingprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/GlobalLoadingProvider.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "components_shared_globalloadingprovider",
+      "target": "components_shared_globalloadingprovider_globalloadingproviderprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/GlobalLoadingProvider.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "components_shared_globalloadingprovider",
+      "target": "components_shared_globalloadingprovider_usegloballoading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/GlobalLoadingProvider.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_shared_globalloadingprovider",
+      "target": "components_shared_tenantpreloader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/GlobalPreloader.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "components_shared_globalpreloader",
+      "target": "components_shared_globalpreloader_globalpreloader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/GlobalPreloader.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "components_shared_globalpreloader",
+      "target": "components_shared_globalpreloader_globalpreloaderprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/GlobalPreloader.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_shared_globalpreloader",
+      "target": "components_shared_tenantpreloader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "components/shared/LoadingButton.tsx",
       "source_location": "L12",
       "weight": 1.0,
@@ -16528,8 +17115,112 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "components/shared/RichTextEditor.tsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "components_shared_richtexteditor",
+      "target": "components_shared_richtexteditor_richtexteditor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/RichTextEditor.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "components_shared_richtexteditor",
+      "target": "components_shared_richtexteditor_richtexteditorprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/RichTextEditor.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "components_shared_richtexteditor",
+      "target": "components_shared_richtextviewer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/tasks/TaskForm.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "components_tasks_taskform",
+      "target": "components_shared_richtexteditor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/RichTextViewer.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "components_shared_richtextviewer",
+      "target": "components_shared_richtextviewer_richtextviewer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/RichTextViewer.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "components_shared_richtextviewer",
+      "target": "components_shared_richtextviewer_richtextviewerprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/RichTextViewer.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "components_shared_richtextviewer",
+      "target": "components_shared_richtextviewer_sanitizeurl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/RichTextViewer.tsx",
+      "source_location": "L150",
+      "weight": 1.0,
+      "source": "components_shared_richtextviewer_richtextviewer",
+      "target": "components_shared_richtextviewer_sanitizeurl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/shared/RichTextViewer.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "components_shared_richtextviewer_richtextviewer",
+      "target": "package_dependencies_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "components/shared/RouteProgressBar.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "components_shared_routeprogressbar",
+      "target": "components_shared_routeprogressbar_progresscontent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/RouteProgressBar.tsx",
+      "source_location": "L159",
       "weight": 1.0,
       "source": "components_shared_routeprogressbar",
       "target": "components_shared_routeprogressbar_routeprogressbar",
@@ -16676,7 +17367,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/shared/TenantPreloader.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "source": "components_shared_tenantpreloader",
       "target": "components_shared_tenantpreloader_tenantpreloader",
@@ -16686,11 +17377,44 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/shared/TenantPreloader.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "source": "components_shared_tenantpreloader",
       "target": "components_shared_tenantpreloader_tenantpreloaderprops",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/TenantPreloader.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "components_shared_tenantpreloader",
+      "target": "components_shared_tenantprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/TenantPreloader.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "components_shared_tenantpreloader",
+      "target": "components_shared_tenantprovider_useoptionaltenant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/shared/TenantPreloader.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "components_shared_tenantpreloader_tenantpreloader",
+      "target": "components_shared_tenantprovider_useoptionaltenant"
     },
     {
       "relation": "contains",
@@ -16716,7 +17440,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/shared/TenantProvider.tsx",
-      "source_location": "L32",
+      "source_location": "L36",
       "weight": 1.0,
       "source": "components_shared_tenantprovider",
       "target": "components_shared_tenantprovider_tenantprovider",
@@ -16726,10 +17450,20 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/shared/TenantProvider.tsx",
-      "source_location": "L27",
+      "source_location": "L31",
       "weight": 1.0,
       "source": "components_shared_tenantprovider",
       "target": "components_shared_tenantprovider_tenantproviderprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/TenantProvider.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "components_shared_tenantprovider",
+      "target": "components_shared_tenantprovider_useoptionaltenant",
       "confidence_score": 1.0
     },
     {
@@ -17341,7 +18075,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L76",
+      "source_location": "L77",
       "weight": 1.0,
       "source": "components_tasks_taskform",
       "target": "components_tasks_taskform_priority_options",
@@ -17351,7 +18085,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L85",
+      "source_location": "L86",
       "weight": 1.0,
       "source": "components_tasks_taskform",
       "target": "components_tasks_taskform_taskform",
@@ -17361,7 +18095,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0,
       "source": "components_tasks_taskform",
       "target": "components_tasks_taskform_taskformdata",
@@ -17371,7 +18105,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L63",
+      "source_location": "L64",
       "weight": 1.0,
       "source": "components_tasks_taskform",
       "target": "components_tasks_taskform_taskformprops",
@@ -17381,7 +18115,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L47",
+      "source_location": "L48",
       "weight": 1.0,
       "source": "components_tasks_taskform",
       "target": "components_tasks_taskform_taskformschema",
@@ -17391,7 +18125,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L61",
+      "source_location": "L62",
       "weight": 1.0,
       "source": "components_tasks_taskform",
       "target": "components_tasks_taskform_taskformvalues",
@@ -17401,7 +18135,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "source": "components_tasks_taskform",
       "target": "components_tasks_taskform_taskstatus",
@@ -17412,7 +18146,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "source": "components_tasks_taskform",
       "target": "components_ui_button",
@@ -17423,7 +18157,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/tasks/TaskForm.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "source": "components_tasks_taskform",
       "target": "components_ui_button_button",
@@ -19167,7 +19901,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L56",
+      "source_location": "L57",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_bugs_bug_001_employee_settings_role_isolation",
@@ -19177,7 +19911,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L57",
+      "source_location": "L58",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_bugs_bug_002_mobile_bottomnav_more_and_logo_missing",
@@ -19187,7 +19921,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L58",
+      "source_location": "L59",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_bugs_bug_003_mobile_bottom_nav_press_feedback",
@@ -19197,7 +19931,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L59",
+      "source_location": "L60",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_bugs_bug_004_mobile_viewport_scroll_clearance",
@@ -19207,7 +19941,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L60",
+      "source_location": "L61",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_bugs_bug_005_remove_legacy_invite_employee_page",
@@ -19217,7 +19951,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L66",
+      "source_location": "L67",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_1_foundation",
@@ -19227,7 +19961,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L84",
+      "source_location": "L85",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_2_employees",
@@ -19237,7 +19971,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L102",
+      "source_location": "L103",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_3_attendance",
@@ -19247,7 +19981,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L120",
+      "source_location": "L121",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_4_clients",
@@ -19257,7 +19991,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L138",
+      "source_location": "L139",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_5_projects",
@@ -19267,7 +20001,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L157",
+      "source_location": "L158",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_6_tasks",
@@ -19277,7 +20011,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L177",
+      "source_location": "L178",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_7_polish_pwa",
@@ -19334,6 +20068,16 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "TRACKER.md",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "tracker",
+      "target": "phases_stories_story_008_global_preloader_suite",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
@@ -19357,7 +20101,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L225",
+      "source_location": "L226",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_database_migration_status",
@@ -19367,7 +20111,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L269",
+      "source_location": "L270",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_decisions_notes_log",
@@ -19377,7 +20121,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_1_foundation",
@@ -19387,7 +20131,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L82",
+      "source_location": "L83",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_2_employee_management",
@@ -19397,7 +20141,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L100",
+      "source_location": "L101",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_3_attendance",
@@ -19407,7 +20151,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L118",
+      "source_location": "L119",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_4_client_management",
@@ -19417,7 +20161,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L136",
+      "source_location": "L137",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_5_project_management",
@@ -19427,7 +20171,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L155",
+      "source_location": "L156",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_6_task_management",
@@ -19437,7 +20181,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L175",
+      "source_location": "L176",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_7_polish_pwa",
@@ -19457,7 +20201,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L248",
+      "source_location": "L249",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_pre_launch_checklist",
@@ -19477,7 +20221,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L195",
+      "source_location": "L196",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_shared_components_build_status",
@@ -19497,7 +20241,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L52",
+      "source_location": "L53",
       "weight": 1.0,
       "source": "tracker_ai_assisted_story_bug_tracking",
       "target": "tracker_bug_defect_registry_bug_xxx",
@@ -22806,6 +23550,56 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-008-global-preloader-suite.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "phases_stories_story_008_global_preloader_suite",
+      "target": "phases_stories_story_008_global_preloader_suite_story_008_global_preloader_navigation_progress_suite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-008-global-preloader-suite.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "phases_stories_story_008_global_preloader_suite_story_008_global_preloader_navigation_progress_suite",
+      "target": "phases_stories_story_008_global_preloader_suite_acceptance_criteria",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-008-global-preloader-suite.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "phases_stories_story_008_global_preloader_suite_story_008_global_preloader_navigation_progress_suite",
+      "target": "phases_stories_story_008_global_preloader_suite_overview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-008-global-preloader-suite.md",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "phases_stories_story_008_global_preloader_suite_story_008_global_preloader_navigation_progress_suite",
+      "target": "phases_stories_story_008_global_preloader_suite_subtasks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-008-global-preloader-suite.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "phases_stories_story_008_global_preloader_suite_story_008_global_preloader_navigation_progress_suite",
+      "target": "phases_stories_story_008_global_preloader_suite_user_story",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "templates/bug-template.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -23075,5 +23869,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "22dbf73653a90ef0613278d43f2ae7a350139fc1"
+  "built_at_commit": "a26a39d98a44d5fb2e732035b8510d8d8807e240"
 }

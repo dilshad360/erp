@@ -98,7 +98,7 @@ export default async function AttendancePage({
         }
       />
 
-      <div className="flex-1 px-4 py-6 md:px-8 space-y-6 max-w-lg mx-auto w-full">
+      <div className="flex-1 px-4 py-4 md:py-6 md:px-8 space-y-4 md:space-y-6 max-w-lg mx-auto w-full">
         {/* Tab toggle */}
         <div
           className="grid grid-cols-2 gap-1 p-1 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)]"
