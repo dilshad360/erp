@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import LoadingButton from "@/components/shared/LoadingButton";
 import ThemeToggle from "@/components/shared/ThemeToggle";
@@ -37,7 +36,6 @@ export default function LoginClient({
   company,
   initialMode = "signin",
 }: LoginClientProps): React.JSX.Element {
-  const router = useRouter();
   const [mode, setMode] = useState<"signin" | "signup">(initialMode);
 
   // Sign In state
