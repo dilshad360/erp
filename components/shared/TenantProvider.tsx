@@ -1,6 +1,7 @@
 "use client";
 
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect } from "react";
+import { applyBrandToDocument } from "@/lib/branding";
 
 export type TenantContextValue = {
   companyId: string;
@@ -37,6 +38,12 @@ export default function TenantProvider({
   tenant,
   children,
 }: TenantProviderProps): React.JSX.Element {
+  useEffect(() => {
+    if (tenant?.brandColor) {
+      applyBrandToDocument(tenant.brandColor);
+    }
+  }, [tenant?.brandColor]);
+
   return (
     <TenantContext.Provider value={tenant}>{children}</TenantContext.Provider>
   );

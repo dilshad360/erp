@@ -76,7 +76,24 @@ export async function GET(
     );
   }
 
-  return NextResponse.json({ data: profile, error: null });
+  let employeeEmail: string | null = null;
+  if (user.id === id) {
+    employeeEmail = user.email || null;
+  } else if (process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    try {
+      const adminClient = createAdminSupabase(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.SUPABASE_SERVICE_ROLE_KEY!,
+        { auth: { autoRefreshToken: false, persistSession: false } }
+      );
+      const { data: authUserData } = await adminClient.auth.admin.getUserById(id);
+      employeeEmail = authUserData?.user?.email || null;
+    } catch {
+      // Graceful fallback
+    }
+  }
+
+  return NextResponse.json({ data: { ...profile, email: employeeEmail }, error: null });
 }
 
 export async function PUT(

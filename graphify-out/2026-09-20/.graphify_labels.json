@@ -68,6 +68,7 @@
   "66": "Tasks",
   "67": "page.tsx",
   "68": "route.ts",
+  "69": "route.ts",
   "70": "page.tsx",
   "71": "Bug Reports & Fixes Directory (`phases/bugs/`)",
   "72": "BUG-004: Mobile Viewport Bottom Scroll Clearance Obscured by BottomNav",
@@ -79,5 +80,6 @@
   "78": "generate_icons.py",
   "79": "Phase 3 — Attendance",
   "80": "page.tsx",
+  "81": "ProjectListClient.tsx",
   "82": "STORY-007: Rich Text Editor Integration for Tasks, Projects & Client Notes"
 }

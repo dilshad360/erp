@@ -59,7 +59,37 @@ export default async function EmployeesPage({
     .eq("company_id", userProfile.company_id)
     .order("created_at", { ascending: false });
 
-  const rawList = (allProfiles as unknown as EmployeeProfile[]) || [];
+  // Populate auth email for profiles
+  const emailMap = new Map<string, string>();
+  if (user.email) {
+    emailMap.set(user.id, user.email);
+  }
+
+  if (process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    try {
+      const { createClient: createAdminSupabase } = await import("@supabase/supabase-js");
+      const adminClient = createAdminSupabase(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.SUPABASE_SERVICE_ROLE_KEY!,
+        { auth: { autoRefreshToken: false, persistSession: false } }
+      );
+      const { data: usersData } = await adminClient.auth.admin.listUsers({ perPage: 1000 });
+      if (usersData?.users) {
+        for (const u of usersData.users) {
+          if (u.email) {
+            emailMap.set(u.id, u.email);
+          }
+        }
+      }
+    } catch {
+      // Graceful fallback if admin client cannot list users
+    }
+  }
+
+  const rawList = ((allProfiles as unknown as EmployeeProfile[]) || []).map((p) => ({
+    ...p,
+    email: emailMap.get(p.id) || null,
+  }));
   const activeEmployees = rawList.filter((e) => e.is_active);
   const pendingEmployees = rawList.filter((e) => !e.is_active);
 

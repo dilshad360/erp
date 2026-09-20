@@ -31,6 +31,7 @@ export type EmployeeProfile = {
   full_name: string | null;
   role: "admin" | "manager" | "employee";
   phone: string | null;
+  email?: string | null;
   employee_id: string | null;
   department: string | null;
   designation: string | null;
@@ -452,6 +453,11 @@ export default function EmployeeListClient({
                             <h4 className="text-sm font-semibold text-[var(--color-text-primary)] truncate">
                               {emp.full_name || "Unnamed Applicant"}
                             </h4>
+                            {emp.email && (
+                              <p className="text-[11px] text-[var(--color-text-muted)] truncate">
+                                {emp.email}
+                              </p>
+                            )}
                             <span className="inline-flex items-center gap-1 text-[11px] text-amber-400 font-medium">
                               <Clock size={11} />
                               <span>Pending Activation</span>

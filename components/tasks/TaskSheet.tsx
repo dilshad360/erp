@@ -79,29 +79,29 @@ export default function TaskSheet({
         aria-label={sheetTitle}
         className="relative z-[80] bg-[var(--color-surface)] border-[var(--color-border)] shadow-2xl flex flex-col transition-transform w-full
           inset-x-0 bottom-0 self-end rounded-t-2xl border-t max-h-[92vh]
-          md:self-stretch md:max-w-md md:rounded-none md:border-l md:max-h-full
+          md:self-stretch md:max-w-xl lg:max-w-2xl xl:max-w-3xl md:rounded-none md:border-l md:max-h-full
           animate-in slide-in-from-bottom md:slide-in-from-right duration-200"
       >
         {/* Mobile handle indicator */}
         <div className="w-10 h-1 rounded-full bg-[var(--color-border)] mx-auto mt-2.5 md:hidden shrink-0" />
 
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-[var(--color-border)] shrink-0">
-          <h2 className="text-base font-semibold text-[var(--color-text-primary)]">
+        <div className="flex items-center justify-between px-6 py-4.5 border-b border-[var(--color-border)] shrink-0">
+          <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">
             {sheetTitle}
           </h2>
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 rounded-md text-[var(--color-text-muted)] hover:bg-[var(--color-surface-raised)] hover:text-[var(--color-text-primary)] transition-colors cursor-pointer"
+            className="p-1.5 rounded-lg text-[var(--color-text-muted)] hover:bg-[var(--color-surface-raised)] hover:text-[var(--color-text-primary)] transition-colors cursor-pointer"
             aria-label="Close"
           >
-            <X size={18} />
+            <X size={20} />
           </button>
         </div>
 
-        {/* Scrollable Form Body */}
-        <div className="flex-1 overflow-y-auto p-5 overscroll-y-contain">
+        {/* Form Container */}
+        <div className="flex-1 min-h-0 flex flex-col overflow-hidden">
           <TaskForm
             projectId={projectId}
             statuses={statuses}

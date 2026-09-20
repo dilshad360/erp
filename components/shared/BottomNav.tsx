@@ -127,15 +127,8 @@ export default function BottomNav(): React.JSX.Element {
                   <Icon
                     size={20}
                     strokeWidth={isHighlighted ? 2.5 : 2}
-                    className={`transition-transform duration-150 ${isPending ? "animate-pulse scale-110" : ""}`}
+                    className="transition-transform duration-150"
                   />
-                  {/* Micro pending dot */}
-                  {isPending && (
-                    <span
-                      className="absolute -top-0.5 -right-1 w-2 h-2 rounded-full animate-ping"
-                      style={{ backgroundColor: activeBrandColor }}
-                    />
-                  )}
                 </div>
 
                 <span className="text-[10px] tracking-tight leading-none truncate max-w-full px-0.5">

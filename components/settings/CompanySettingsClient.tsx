@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useState, useRef } from "react";
+import { useRouter } from "next/navigation";
 import ColorPicker from "@/components/shared/ColorPicker";
 import KanbanColumnManager, { type TaskStatusRow } from "@/components/tasks/KanbanColumnManager";
 import LoadingButton from "@/components/shared/LoadingButton";
+import { applyBrandToDocument } from "@/lib/branding";
 import {
   Building2,
   Palette,
@@ -42,6 +44,7 @@ export default function CompanySettingsClient({
   statuses,
   isAdmin,
 }: CompanySettingsClientProps): React.JSX.Element {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState<TabType>("general");
   const [company, setCompany] = useState<CompanyData>(initialCompany);
 
@@ -74,9 +77,7 @@ export default function CompanySettingsClient({
   // Live CSS variable update for instant feedback
   function handleBrandColorChange(color: string) {
     setBrandColor(color);
-    if (typeof document !== "undefined") {
-      document.documentElement.style.setProperty("--color-brand", color);
-    }
+    applyBrandToDocument(color);
   }
 
   // Handle GPS location fetch
@@ -199,6 +200,10 @@ export default function CompanySettingsClient({
       }
 
       setCompany(json.data);
+      if (json.data.brand_color) {
+        applyBrandToDocument(json.data.brand_color);
+      }
+      router.refresh();
       setAppearanceSuccess("Brand styling saved successfully.");
       setTimeout(() => setAppearanceSuccess(null), 4000);
     } catch (err) {

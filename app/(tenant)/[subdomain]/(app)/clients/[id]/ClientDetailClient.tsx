@@ -19,6 +19,7 @@ import {
   UserX,
   UserCheck,
   AlertCircle,
+  Trash2,
 } from "lucide-react";
 import PageHeader from "@/components/shared/PageHeader";
 import FormField from "@/components/shared/FormField";
@@ -229,15 +230,16 @@ export default function ClientDetailClient({
         backLabel="Back to clients"
         actions={
           canManage && !isEditing ? (
-            <div className="flex items-center gap-2">
+            <div className="flex items-center flex-wrap gap-1.5 sm:gap-2">
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => setIsEditing(true)}
-                className="border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-raised)] hover:text-[var(--color-text-primary)]"
+                className="border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-raised)] hover:text-[var(--color-text-primary)] text-xs px-2.5 sm:px-3 h-8"
               >
-                <Edit2 size={14} className="mr-1.5" />
-                Edit Client
+                <Edit2 size={13} className="mr-1 sm:mr-1.5" />
+                <span>Edit</span>
+                <span className="hidden sm:inline ml-1">Client</span>
               </Button>
               {client.status === "active" ? (
                 <Button
@@ -247,10 +249,10 @@ export default function ClientDetailClient({
                     setConfirmAction("deactivate");
                     setIsConfirmOpen(true);
                   }}
-                  className="border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-raised)]"
+                  className="border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-raised)] text-xs px-2.5 sm:px-3 h-8"
                 >
-                  <UserX size={14} className="mr-1.5" />
-                  Deactivate
+                  <UserX size={13} className="mr-1 sm:mr-1.5" />
+                  <span>Deactivate</span>
                 </Button>
               ) : (
                 <Button
@@ -260,19 +262,21 @@ export default function ClientDetailClient({
                     setConfirmAction("activate");
                     setIsConfirmOpen(true);
                   }}
-                  className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10"
+                  className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 text-xs px-2.5 sm:px-3 h-8"
                 >
-                  <UserCheck size={14} className="mr-1.5" />
-                  Reactivate
+                  <UserCheck size={13} className="mr-1 sm:mr-1.5" />
+                  <span>Reactivate</span>
                 </Button>
               )}
               <Button
                 variant="destructive"
                 size="sm"
                 onClick={() => setIsHardDeleteOpen(true)}
-                className="bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/20"
+                className="bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/20 text-xs px-2.5 sm:px-3 h-8 cursor-pointer"
               >
-                Delete Client
+                <Trash2 size={13} className="mr-1 sm:mr-1.5 sm:hidden" />
+                <span className="hidden sm:inline">Delete Client</span>
+                <span className="sm:hidden">Delete</span>
               </Button>
             </div>
           ) : undefined

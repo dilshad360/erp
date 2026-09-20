@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createClient as createServerSupabase } from "@/lib/supabase/server";
 import { createClient as createAdminSupabase } from "@supabase/supabase-js";
+import { revalidatePath } from "next/cache";
 
 export const dynamic = "force-dynamic";
 
@@ -106,6 +107,12 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       { data: null, error: updateError.message || "Failed to save company logo URL" },
       { status: 500 }
     );
+  }
+
+  try {
+    revalidatePath("/[subdomain]", "layout");
+  } catch {
+    // Non-fatal
   }
 
   return NextResponse.json({

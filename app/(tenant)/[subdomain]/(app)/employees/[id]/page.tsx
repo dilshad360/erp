@@ -69,8 +69,28 @@ export default async function EmployeeProfilePage({
     ? rawEmployee.reporting_manager[0] || null
     : rawEmployee.reporting_manager || null;
 
+  // Retrieve auth email for target employee
+  let employeeEmail: string | null = null;
+  if (user.id === id) {
+    employeeEmail = user.email || null;
+  } else if (process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    try {
+      const { createClient: createAdminSupabase } = await import("@supabase/supabase-js");
+      const adminClient = createAdminSupabase(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.SUPABASE_SERVICE_ROLE_KEY!,
+        { auth: { autoRefreshToken: false, persistSession: false } }
+      );
+      const { data: authUserData } = await adminClient.auth.admin.getUserById(id);
+      employeeEmail = authUserData?.user?.email || null;
+    } catch {
+      // Graceful fallback if admin client fails
+    }
+  }
+
   const employee: EmployeeProfile = {
     ...rawEmployee,
+    email: employeeEmail,
     reporting_manager: rm,
   };
 

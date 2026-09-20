@@ -18,6 +18,7 @@ import {
   AlertCircle,
   Plus,
   ArrowRight,
+  Trash2,
 } from "lucide-react";
 import PageHeader from "@/components/shared/PageHeader";
 import FormField from "@/components/shared/FormField";
@@ -303,34 +304,37 @@ export default function ProjectDetailClient({
         backLabel="Back to projects"
         actions={
           canManage && !isEditing ? (
-            <div className="flex items-center gap-2">
+            <div className="flex items-center flex-wrap gap-1.5 sm:gap-2">
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => setIsEditing(true)}
-                className="border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-raised)] hover:text-[var(--color-text-primary)]"
+                className="border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-raised)] hover:text-[var(--color-text-primary)] text-xs px-2.5 sm:px-3 h-8"
               >
-                <Edit2 size={14} className="mr-1.5" />
-                Edit Project
+                <Edit2 size={13} className="mr-1 sm:mr-1.5" />
+                <span>Edit</span>
+                <span className="hidden sm:inline ml-1">Project</span>
               </Button>
               {project.status !== "cancelled" && (
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => setIsArchiveOpen(true)}
-                  className="border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-raised)]"
+                  className="border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-raised)] text-xs px-2.5 sm:px-3 h-8"
                 >
-                  <Archive size={14} className="mr-1.5" />
-                  Archive
+                  <Archive size={13} className="mr-1 sm:mr-1.5" />
+                  <span>Archive</span>
                 </Button>
               )}
               <Button
                 variant="destructive"
                 size="sm"
                 onClick={() => setIsDeleteOpen(true)}
-                className="bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/20"
+                className="bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/20 text-xs px-2.5 sm:px-3 h-8 cursor-pointer"
               >
-                Delete Project
+                <Trash2 size={13} className="mr-1 sm:mr-1.5 sm:hidden" />
+                <span className="hidden sm:inline">Delete Project</span>
+                <span className="sm:hidden">Delete</span>
               </Button>
             </div>
           ) : undefined
@@ -349,18 +353,18 @@ export default function ProjectDetailClient({
         )}
 
         {/* Quick Status & Client Card */}
-        <div className="flex items-center justify-between p-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-xs">
-          <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-xs">
+          <div className="flex items-center gap-3 min-w-0">
             <div className="w-10 h-10 rounded-lg bg-[var(--color-brand-subtle)] text-[var(--color-brand)] flex items-center justify-center font-bold text-sm shrink-0">
               <FolderKanban size={20} />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-semibold text-sm text-[var(--color-text-primary)]">{project.name}</span>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center flex-wrap gap-2">
+                <span className="font-semibold text-sm text-[var(--color-text-primary)] truncate">{project.name}</span>
                 {getStatusBadge(project.status)}
               </div>
               {project.client && (
-                <p className="text-xs text-[var(--color-text-muted)] mt-0.5">
+                <p className="text-xs text-[var(--color-text-muted)] mt-0.5 truncate">
                   Client: <Link href={`/clients/${project.client.id}`} className="text-[var(--color-brand)] hover:underline font-medium">{project.client.name}</Link>
                 </p>
               )}
@@ -370,10 +374,10 @@ export default function ProjectDetailClient({
           {/* Tasks button */}
           <Link
             href={`/projects/${project.id}/tasks`}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg border border-[var(--color-brand)]/40 text-[var(--color-brand)] hover:bg-[var(--color-brand-subtle)] transition-colors shrink-0"
+            className="flex items-center justify-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg border border-[var(--color-brand)]/40 text-[var(--color-brand)] hover:bg-[var(--color-brand-subtle)] transition-colors shrink-0 self-start sm:self-auto"
           >
             <CheckCircle2 size={14} />
-            Tasks
+            <span>Tasks</span>
           </Link>
         </div>
 

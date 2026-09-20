@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import { generateBrandCss } from "@/lib/branding";
 import type { Metadata } from "next";
 
 type TenantLayoutProps = {
@@ -44,11 +45,11 @@ export default async function SubdomainRootLayout({
     notFound();
   }
 
-  const brandColor = company.brand_color ?? "#6366f1";
+  const brandCss = generateBrandCss(company.brand_color);
 
   return (
     <>
-      <style>{`:root { --color-brand: ${brandColor}; }`}</style>
+      <style id="tenant-brand-theme" dangerouslySetInnerHTML={{ __html: brandCss }} />
       {children}
     </>
   );

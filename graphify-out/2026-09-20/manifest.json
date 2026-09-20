@@ -45,8 +45,8 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/clients/[id]/ClientDetailClient.tsx": {
-    "mtime": 1789924590.7836337,
-    "ast_hash": "02e4e2e815a313294f556fc51e8ffb0d",
+    "mtime": 1789815600.333015,
+    "ast_hash": "4397fe4a371d81b7c89555c5fbf43c01",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/clients/[id]/page.tsx": {
@@ -110,8 +110,8 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/projects/[id]/ProjectDetailClient.tsx": {
-    "mtime": 1789924585.2662005,
-    "ast_hash": "a5db68cf48452889e3d1c8b669d58ef9",
+    "mtime": 1789815378.0472996,
+    "ast_hash": "91e690bff3dd4ac8e3d09d669fa456ca",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/projects/[id]/page.tsx": {
@@ -165,8 +165,8 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/layout.tsx": {
-    "mtime": 1789924401.2850027,
-    "ast_hash": "6852dfb6f024a62a6d0569c94d0eb715",
+    "mtime": 1789460548.7335608,
+    "ast_hash": "cdfba75feb4b2b3b608696b0c7602cdf",
     "semantic_hash": ""
   },
   "app/api/attendance/checkin/route.ts": {
@@ -190,13 +190,13 @@
     "semantic_hash": ""
   },
   "app/api/company/route.ts": {
-    "mtime": 1789924435.9630556,
-    "ast_hash": "1e55293656b24e7b1f9700089c27e23e",
+    "mtime": 1789577502.3326595,
+    "ast_hash": "d5e545f19ef5c4023c3c50f6d22776a8",
     "semantic_hash": ""
   },
   "app/api/company/upload-logo/route.ts": {
-    "mtime": 1789924448.6910186,
-    "ast_hash": "429f466f662dcfe5e484a5d4d1708d84",
+    "mtime": 1789577674.8639295,
+    "ast_hash": "b31ed20fc9846b3450067d956238257a",
     "semantic_hash": ""
   },
   "app/api/employees/[id]/route.ts": {
@@ -320,8 +320,8 @@
     "semantic_hash": ""
   },
   "components/settings/CompanySettingsClient.tsx": {
-    "mtime": 1789924425.8702683,
-    "ast_hash": "3e4a40e942161510e404873534bfaea7",
+    "mtime": 1789722887.3969102,
+    "ast_hash": "9fbb4f5a7421844472eba8ae523a2fec",
     "semantic_hash": ""
   },
   "components/settings/EmployeeSettingsClient.tsx": {
@@ -390,8 +390,8 @@
     "semantic_hash": ""
   },
   "components/shared/PageHeader.tsx": {
-    "mtime": 1789924748.5775013,
-    "ast_hash": "d2ecf830aa224960df80d7b7451f9879",
+    "mtime": 1789817739.466556,
+    "ast_hash": "224813b558797206f91c71a94bc6bfe8",
     "semantic_hash": ""
   },
   "components/shared/RouteProgressBar.tsx": {
@@ -420,8 +420,8 @@
     "semantic_hash": ""
   },
   "components/shared/TenantProvider.tsx": {
-    "mtime": 1789924410.1555855,
-    "ast_hash": "dc55a5a7b11c9640e2678d718bc1e4bd",
+    "mtime": 1789815464.552984,
+    "ast_hash": "13c217ec03de31e9111d6f471434126b",
     "semantic_hash": ""
   },
   "components/shared/ThemeToggle.tsx": {
@@ -645,8 +645,8 @@
     "semantic_hash": ""
   },
   "TRACKER.md": {
-    "mtime": 1789924476.3967955,
-    "ast_hash": "92767141c09dd9459028f62e8faa6f3b",
+    "mtime": 1789815693.0280683,
+    "ast_hash": "4c2f38eede99c779abf90e87b449179d",
     "semantic_hash": ""
   },
   "backend.md": {
@@ -912,16 +912,6 @@
   "phases/stories/STORY-008-global-preloader-suite.md": {
     "mtime": 1789815677.1626022,
     "ast_hash": "55d1f58b0492ac4aabff2be70604707d",
-    "semantic_hash": ""
-  },
-  "lib/branding.ts": {
-    "mtime": 1789924383.1674674,
-    "ast_hash": "91e8f71a8304af549e1dbdb80841890b",
-    "semantic_hash": ""
-  },
-  "phases/bugs/BUG-006-workspace-brand-color-refresh-persistence.md": {
-    "mtime": 1789924464.9985278,
-    "ast_hash": "ad586a870835e628b0be1c7da6f2e890",
     "semantic_hash": ""
   }
 }

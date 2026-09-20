@@ -59,6 +59,7 @@
 | `BUG-003` | Mobile BottomNav tactile press feedback & transition indicator | Mobile AppShell / Navigation | P2 | ✅ Resolved | `fix/mobile-nav-bug-003` | [`phases/bugs/BUG-003-mobile-bottom-nav-press-feedback.md`](phases/bugs/BUG-003-mobile-bottom-nav-press-feedback.md) |
 | `BUG-004` | Mobile viewport bottom scroll clearance obscured by BottomNav | Mobile Layout / AppShell | P1 | ✅ Resolved | `fix/mobile-viewport-bug-004` | [`phases/bugs/BUG-004-mobile-viewport-scroll-clearance.md`](phases/bugs/BUG-004-mobile-viewport-scroll-clearance.md) |
 | `BUG-005` | Remove Legacy "Invite Employee" Dashboard Page & Obsolete Invite Endpoints | Employees / Auth Lifecycle | P2 | ✅ Resolved | `fix/employees-bug-005` | [`phases/bugs/BUG-005-remove-legacy-invite-employee-page.md`](phases/bugs/BUG-005-remove-legacy-invite-employee-page.md) |
+| `BUG-006` | Workspace Brand Color Reset on Page Refresh & Universal Persistence | Foundation / Theme & Tenant Appearance | P2 | ✅ Resolved | `fix/theme-brand-color-persistence-bug-006` | [`phases/bugs/BUG-006-workspace-brand-color-refresh-persistence.md`](phases/bugs/BUG-006-workspace-brand-color-refresh-persistence.md) |
 
 ---
 

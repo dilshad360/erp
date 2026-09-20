@@ -55,6 +55,12 @@
    Shadcn/ui & Theme Variables
    ───────────────────────────────────────────────────────────────────────────── */
 
+:root {
+  --color-brand:          #6366f1;
+  --color-brand-hover:    #4f52d9;
+  --color-brand-subtle:   #1e1f4a;
+}
+
 :root,
 html.dark {
   color-scheme: dark;
@@ -68,10 +74,6 @@ html.dark {
   --color-text-primary:   #e8eaf6;
   --color-text-secondary: #9095b0;
   --color-text-muted:     #5a5f78;
-
-  --color-brand:          #6366f1;
-  --color-brand-hover:    #4f52d9;
-  --color-brand-subtle:   #1e1f4a;
 
   --background:         var(--color-bg);
   --foreground:         var(--color-text-primary);

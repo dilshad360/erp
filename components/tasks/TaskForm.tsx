@@ -214,137 +214,140 @@ export default function TaskForm({
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-        {/* Root error */}
-        {errors.root && (
-          <div className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
-            <AlertCircle size={15} className="shrink-0" />
-            <span>{errors.root.message}</span>
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col flex-1 min-h-0 h-full overflow-hidden">
+        {/* Scrollable Form Content Body */}
+        <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-5 overscroll-y-contain">
+          {/* Root error */}
+          {errors.root && (
+            <div className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+              <AlertCircle size={15} className="shrink-0" />
+              <span>{errors.root.message}</span>
+            </div>
+          )}
+
+          {/* Project Selector (shown if projects list is provided) */}
+          {projects && projects.length > 0 && (
+            <FormField label="Project" required error={errors.projectId?.message}>
+              <Controller
+                control={control}
+                name="projectId"
+                render={({ field }) => (
+                  <select
+                    value={field.value ?? projectId}
+                    onChange={(e) => field.onChange(e.target.value)}
+                    className="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-brand)] transition-colors cursor-pointer"
+                  >
+                    {projects.map((p) => (
+                      <option key={p.id} value={p.id}>
+                        {p.name}
+                      </option>
+                    ))}
+                  </select>
+                )}
+              />
+            </FormField>
+          )}
+
+          {/* Title */}
+          <FormField label="Title" required error={errors.title?.message}>
+            <input
+              {...register("title")}
+              type="text"
+              placeholder="Task title..."
+              className="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-brand)] transition-colors"
+            />
+          </FormField>
+
+          {/* Status + Priority */}
+          <div className="grid grid-cols-2 gap-3">
+            <FormField label="Status" error={errors.statusId?.message}>
+              <Controller
+                control={control}
+                name="statusId"
+                render={({ field }) => (
+                  <select
+                    value={field.value ?? ""}
+                    onChange={(e) => field.onChange(e.target.value || null)}
+                    className="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-brand)] transition-colors"
+                  >
+                    <option value="">No status</option>
+                    {statuses.map((s) => (
+                      <option key={s.id} value={s.id}>
+                        {s.name}
+                      </option>
+                    ))}
+                  </select>
+                )}
+              />
+            </FormField>
+
+            <FormField label="Priority" error={errors.priority?.message}>
+              <select
+                {...register("priority")}
+                className="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-brand)] transition-colors"
+              >
+                {PRIORITY_OPTIONS.map((p) => (
+                  <option key={p.value} value={p.value}>
+                    {p.label}
+                  </option>
+                ))}
+              </select>
+            </FormField>
           </div>
-        )}
 
-        {/* Project Selector (shown if projects list is provided) */}
-        {projects && projects.length > 0 && (
-          <FormField label="Project" required error={errors.projectId?.message}>
+          {/* Multi-Assignees */}
+          <FormField label="Assignees" error={errors.assigneeIds?.message}>
             <Controller
               control={control}
-              name="projectId"
+              name="assigneeIds"
               render={({ field }) => (
-                <select
-                  value={field.value ?? projectId}
-                  onChange={(e) => field.onChange(e.target.value)}
-                  className="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-brand)] transition-colors cursor-pointer"
-                >
-                  {projects.map((p) => (
-                    <option key={p.id} value={p.id}>
-                      {p.name}
-                    </option>
-                  ))}
-                </select>
+                <UserMultiSelect
+                  values={field.value ?? []}
+                  onChange={field.onChange}
+                  placeholder="Assign team members..."
+                />
               )}
             />
           </FormField>
-        )}
 
-        {/* Title */}
-        <FormField label="Title" required error={errors.title?.message}>
-          <input
-            {...register("title")}
-            type="text"
-            placeholder="Task title..."
-            className="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-brand)] transition-colors"
-          />
-        </FormField>
-
-        {/* Status + Priority */}
-        <div className="grid grid-cols-2 gap-3">
-          <FormField label="Status" error={errors.statusId?.message}>
+          {/* Due Date */}
+          <FormField label="Due Date" error={errors.dueDate?.message}>
             <Controller
               control={control}
-              name="statusId"
+              name="dueDate"
               render={({ field }) => (
-                <select
+                <DatePicker value={field.value} onChange={field.onChange} />
+              )}
+            />
+          </FormField>
+
+          {/* Description */}
+          <FormField label="Description" error={errors.description?.message}>
+            <Controller
+              control={control}
+              name="description"
+              render={({ field }) => (
+                <RichTextEditor
                   value={field.value ?? ""}
-                  onChange={(e) => field.onChange(e.target.value || null)}
-                  className="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-brand)] transition-colors"
-                >
-                  <option value="">No status</option>
-                  {statuses.map((s) => (
-                    <option key={s.id} value={s.id}>
-                      {s.name}
-                    </option>
-                  ))}
-                </select>
+                  onChange={field.onChange}
+                  error={errors.description?.message}
+                  placeholder="Add a detailed task description, acceptance criteria, or checklist..."
+                  minHeight="180px"
+                />
               )}
             />
-          </FormField>
-
-          <FormField label="Priority" error={errors.priority?.message}>
-            <select
-              {...register("priority")}
-              className="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--color-surface-raised)] border border-[var(--color-border)] text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-brand)] transition-colors"
-            >
-              {PRIORITY_OPTIONS.map((p) => (
-                <option key={p.value} value={p.value}>
-                  {p.label}
-                </option>
-              ))}
-            </select>
           </FormField>
         </div>
 
-        {/* Multi-Assignees */}
-        <FormField label="Assignees" error={errors.assigneeIds?.message}>
-          <Controller
-            control={control}
-            name="assigneeIds"
-            render={({ field }) => (
-              <UserMultiSelect
-                values={field.value ?? []}
-                onChange={field.onChange}
-                placeholder="Assign team members..."
-              />
-            )}
-          />
-        </FormField>
-
-        {/* Due Date */}
-        <FormField label="Due Date" error={errors.dueDate?.message}>
-          <Controller
-            control={control}
-            name="dueDate"
-            render={({ field }) => (
-              <DatePicker value={field.value} onChange={field.onChange} />
-            )}
-          />
-        </FormField>
-
-        {/* Description */}
-        <FormField label="Description" error={errors.description?.message}>
-          <Controller
-            control={control}
-            name="description"
-            render={({ field }) => (
-              <RichTextEditor
-                value={field.value ?? ""}
-                onChange={field.onChange}
-                error={errors.description?.message}
-                placeholder="Add a detailed task description, acceptance criteria, or checklist..."
-                minHeight="120px"
-              />
-            )}
-          />
-        </FormField>
-
-        {/* Actions & Danger Zone - Sticky bottom bar */}
-        <div className="sticky bottom-0 bg-[var(--color-surface)] -mx-5 -mb-5 px-5 py-3.5 border-t border-[var(--color-border)] flex items-center justify-between gap-2 mt-6 shadow-lg z-10">
+        {/* Dedicated Fixed Action Bar (Outside Scroll Container) */}
+        <div className="shrink-0 px-6 md:px-8 py-4 border-t border-[var(--color-border)] bg-[var(--color-surface)] flex items-center justify-between gap-3 shadow-lg z-10">
           {mode === "edit" && taskId && canDelete ? (
             <Button
               type="button"
               variant="destructive"
               size="sm"
               onClick={() => setIsDeleteOpen(true)}
-              className="bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/20 text-xs"
+              className="bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/20 text-xs cursor-pointer"
             >
               <Trash2 size={13} className="mr-1" />
               Delete Task
@@ -353,7 +356,7 @@ export default function TaskForm({
             <div />
           )}
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <button
               type="button"
               onClick={onCancel}

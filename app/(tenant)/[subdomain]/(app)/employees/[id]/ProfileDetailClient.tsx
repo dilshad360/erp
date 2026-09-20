@@ -23,6 +23,7 @@ import {
   UserX,
   UserPlus,
   CheckCircle2,
+  Mail,
 } from "lucide-react";
 import { format } from "date-fns";
 
@@ -376,6 +377,12 @@ export default function ProfileDetailClient({
             </div>
 
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2 text-xs text-[var(--color-text-muted)] font-mono">
+              {employee.email && (
+                <span className="flex items-center gap-1.5 font-sans text-[var(--color-text-secondary)]">
+                  <Mail size={13} className="text-[var(--color-text-muted)]" />
+                  <span>{employee.email}</span>
+                </span>
+              )}
               <span>ID: {employeeId || "N/A"}</span>
               {employee.date_of_joining && (
                 <span>Joined: {format(new Date(employee.date_of_joining), "MMM d, yyyy")}</span>
@@ -435,6 +442,19 @@ export default function ProfileDetailClient({
                   />
                 </div>
               )}
+
+              <div className="space-y-1.5">
+                <label className="text-xs font-semibold text-[var(--color-text-primary)] flex items-center justify-between">
+                  <span>Email Address</span>
+                  <span className="text-[10px] text-[var(--color-text-muted)] font-normal">(Login Account)</span>
+                </label>
+                <input
+                  type="email"
+                  value={employee.email || ""}
+                  disabled
+                  className="w-full px-3 py-2 rounded-md bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-text-muted)] text-sm opacity-70 cursor-not-allowed"
+                />
+              </div>
 
               <div className="space-y-1.5">
                 <label className="text-xs font-semibold text-[var(--color-text-primary)]">
@@ -553,6 +573,16 @@ export default function ProfileDetailClient({
                 </div>
 
                 <div className="flex items-start gap-3">
+                  <Mail className="h-5 w-5 text-[var(--color-text-muted)] shrink-0 mt-0.5" />
+                  <div>
+                    <span className="text-xs text-[var(--color-text-muted)] block">Email Address</span>
+                    <span className="font-medium text-[var(--color-text-primary)]">
+                      {employee.email || "—"}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
                   <Phone className="h-5 w-5 text-[var(--color-text-muted)] shrink-0 mt-0.5" />
                   <div>
                     <span className="text-xs text-[var(--color-text-muted)] block">Phone Number</span>
@@ -571,7 +601,9 @@ export default function ProfileDetailClient({
                     </span>
                   </div>
                 </div>
+              </div>
 
+              <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <Briefcase className="h-5 w-5 text-[var(--color-text-muted)] shrink-0 mt-0.5" />
                   <div>
@@ -581,9 +613,7 @@ export default function ProfileDetailClient({
                     </span>
                   </div>
                 </div>
-              </div>
 
-              <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <Calendar className="h-5 w-5 text-[var(--color-text-muted)] shrink-0 mt-0.5" />
                   <div>

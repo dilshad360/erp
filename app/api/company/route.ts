@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
 const updateCompanySchema = z.object({
@@ -108,6 +109,13 @@ export async function PATCH(request: NextRequest): Promise<NextResponse> {
       { data: null, error: updateError?.message || "Failed to update company settings" },
       { status: 500 }
     );
+  }
+
+  // Invalidate server layout caches so brand styling and tenant metadata update immediately
+  try {
+    revalidatePath("/[subdomain]", "layout");
+  } catch {
+    // Non-fatal if called in isolated context
   }
 
   return NextResponse.json({ data: updatedCompany, error: null });
