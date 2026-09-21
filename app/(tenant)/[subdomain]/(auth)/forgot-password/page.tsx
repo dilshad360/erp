@@ -2,13 +2,13 @@ import { createClient } from "@/lib/supabase/server";
 import LoginClient, { type TenantLoginBranding } from "@/components/auth/LoginClient";
 import type { Metadata } from "next";
 
-type SignupPageProps = {
+type ForgotPasswordPageProps = {
   params: Promise<{ subdomain: string }>;
 };
 
 export async function generateMetadata({
   params,
-}: SignupPageProps): Promise<Metadata> {
+}: ForgotPasswordPageProps): Promise<Metadata> {
   const { subdomain } = await params;
   const supabase = await createClient();
 
@@ -21,14 +21,14 @@ export async function generateMetadata({
   const companyName = company?.name || subdomain;
 
   return {
-    title: `Sign Up — ${companyName}`,
-    description: `Create an employee account for ${companyName} Octyvo workspace.`,
+    title: `Reset Password — ${companyName}`,
+    description: `Reset your ${companyName} Octyvo workspace account password.`,
   };
 }
 
-export default async function SignupPage({
+export default async function ForgotPasswordPage({
   params,
-}: SignupPageProps): Promise<React.JSX.Element> {
+}: ForgotPasswordPageProps): Promise<React.JSX.Element> {
   const { subdomain } = await params;
   const supabase = await createClient();
 
@@ -45,5 +45,5 @@ export default async function SignupPage({
     logoUrl: companyData?.logo_url ?? null,
   };
 
-  return <LoginClient company={company} initialMode="signup" />;
+  return <LoginClient company={company} initialMode="forgot" />;
 }

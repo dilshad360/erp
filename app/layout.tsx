@@ -21,16 +21,16 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "ERP — erp.dilshadcodes.com",
-    template: "%s | erp.dilshadcodes.com",
+    default: "Octyvo",
+    template: "%s | Octyvo",
   },
   description:
-    "Multi-tenant ERP for small Indian startups. Attendance, clients, projects, and tasks — in one place.",
+    "Multi-tenant workspace for high-growth teams. Attendance, clients, projects, and tasks — in one place.",
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "ERP SaaS",
+    title: "Octyvo",
   },
   icons: {
     icon: "/favicon.ico",

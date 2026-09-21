@@ -59,7 +59,7 @@ export default function Sidebar(): React.JSX.Element {
             {companyName}
           </span>
           <span className="text-[10px] text-[var(--color-text-muted)] font-mono block truncate">
-            ERP Workspace
+            Octyvo Workspace
           </span>
         </div>
       </div>

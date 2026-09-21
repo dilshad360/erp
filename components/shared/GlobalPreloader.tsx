@@ -10,13 +10,13 @@ export type GlobalPreloaderProps = {
 };
 
 export default function GlobalPreloader({
-  message = "Loading application…",
+  message = "Loading Octyvo…",
   fullScreen = true,
   className = "",
 }: GlobalPreloaderProps): React.JSX.Element {
   return (
     <TenantPreloader
-      companyName="ERP SaaS"
+      companyName="Octyvo"
       brandColor="#6366f1"
       logoUrl="/logo.png"
       showAppLogoFallback={true}

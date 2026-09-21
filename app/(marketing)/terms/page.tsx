@@ -4,7 +4,7 @@ import { ArrowLeft, FileText } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Terms of service for ERP SaaS platform.",
+  description: "Terms of service for Octyvo platform.",
 };
 
 export default function TermsOfServicePage(): React.JSX.Element {
@@ -36,7 +36,7 @@ export default function TermsOfServicePage(): React.JSX.Element {
               1. Acceptance of Terms
             </h2>
             <p>
-              By accessing or using our multi-tenant ERP SaaS platform, you agree to be bound by these Terms of Service. If you are registering on behalf of a company, you represent that you have authority to bind that entity.
+              By accessing or using our Octyvo workspace platform, you agree to be bound by these Terms of Service. If you are registering on behalf of a company, you represent that you have authority to bind that entity.
             </p>
           </section>
 

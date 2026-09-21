@@ -4,7 +4,7 @@ import { ArrowLeft, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy policy and location data handling for ERP SaaS.",
+  description: "Privacy policy and location data handling for Octyvo.",
 };
 
 export default function PrivacyPolicyPage(): React.JSX.Element {
@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage(): React.JSX.Element {
               1. Overview
             </h2>
             <p>
-              This Privacy Policy explains how our ERP SaaS platform collects, uses, and protects your information when you use our multi-tenant employee management, project tracking, and attendance services.
+              This Privacy Policy explains how our Octyvo workspace platform collects, uses, and protects your information when you use our multi-tenant employee management, project tracking, and attendance services.
             </p>
           </section>
 

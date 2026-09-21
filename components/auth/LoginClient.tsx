@@ -18,6 +18,8 @@ import {
   CheckCircle2,
   ArrowLeft,
   RotateCcw,
+  KeyRound,
+  Send,
 } from "lucide-react";
 
 export type TenantLoginBranding = {
@@ -29,14 +31,14 @@ export type TenantLoginBranding = {
 
 type LoginClientProps = {
   company: TenantLoginBranding;
-  initialMode?: "signin" | "signup";
+  initialMode?: "signin" | "signup" | "forgot";
 };
 
 export default function LoginClient({
   company,
   initialMode = "signin",
 }: LoginClientProps): React.JSX.Element {
-  const [mode, setMode] = useState<"signin" | "signup">(initialMode);
+  const [mode, setMode] = useState<"signin" | "signup" | "forgot">(initialMode);
 
   // Sign In state
   const [email, setEmail] = useState("");
@@ -49,6 +51,10 @@ export default function LoginClient({
   const [signupPassword, setSignupPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showSignupPassword, setShowSignupPassword] = useState(false);
+
+  // Forgot Password state
+  const [forgotEmail, setForgotEmail] = useState("");
+  const [forgotSuccess, setForgotSuccess] = useState(false);
 
   // UI state
   const [error, setError] = useState<string | null>(null);
@@ -154,6 +160,42 @@ export default function LoginClient({
     }
   }
 
+  // ── Handle Forgot Password ─────────────────────────────────────────────────
+  async function handleForgotPassword(e: React.FormEvent<HTMLFormElement>): Promise<void> {
+    e.preventDefault();
+    setError(null);
+
+    if (!forgotEmail.trim() || !forgotEmail.includes("@")) {
+      setError("Please enter a valid work email address.");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const supabase = createClient();
+      const origin = typeof window !== "undefined" ? window.location.origin : "";
+      const redirectTo = `${origin}/set-password`;
+
+      const { error: resetError } = await supabase.auth.resetPasswordForEmail(
+        forgotEmail.trim(),
+        { redirectTo }
+      );
+
+      if (resetError) {
+        setError(resetError.message || "Failed to send reset email. Please try again.");
+        setLoading(false);
+        return;
+      }
+
+      setForgotSuccess(true);
+      setLoading(false);
+    } catch {
+      setError("An unexpected error occurred. Please try again.");
+      setLoading(false);
+    }
+  }
+
   async function handleSignOutAndReset(): Promise<void> {
     const supabase = createClient();
     await supabase.auth.signOut();
@@ -208,7 +250,9 @@ export default function LoginClient({
             <p className="text-xs sm:text-sm text-[var(--color-text-muted)]">
               {mode === "signin"
                 ? "Sign in to your workspace portal"
-                : "Create your team member account"}
+                : mode === "signup"
+                ? "Create your team member account"
+                : "Reset your workspace password"}
             </p>
           </div>
         </div>
@@ -295,6 +339,130 @@ export default function LoginClient({
               </button>
             </div>
           </div>
+        ) : mode === "forgot" ? (
+          /* ── Forgot Password Screen ────────────────────────────────────────── */
+          <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-6 sm:p-7 space-y-4 shadow-xl backdrop-blur-sm transition-colors duration-200">
+            {forgotSuccess ? (
+              /* Password Reset Dispatched Screen */
+              <div className="space-y-5 text-center animate-in fade-in duration-200">
+                <div
+                  className="w-12 h-12 rounded-2xl border mx-auto flex items-center justify-center"
+                  style={{
+                    backgroundColor: `${brandColor}15`,
+                    borderColor: `${brandColor}30`,
+                    color: brandColor,
+                  }}
+                >
+                  <Send size={22} className="animate-pulse" />
+                </div>
+
+                <div className="space-y-2">
+                  <h2 className="text-base font-semibold text-[var(--color-text-primary)]">
+                    Password Reset Link Sent
+                  </h2>
+                  <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed">
+                    If an account exists for <strong className="text-[var(--color-text-primary)] font-mono">{forgotEmail}</strong>, you will receive an email with instructions to reset your password shortly.
+                  </p>
+                  <p className="text-[11px] text-[var(--color-text-muted)]">
+                    Please check your inbox and spam folder. The link will remain valid for 1 hour.
+                  </p>
+                </div>
+
+                <div className="pt-2 flex flex-col gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setForgotSuccess(false);
+                      setError(null);
+                    }}
+                    className="w-full h-10 rounded-xl border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface-hover)] text-xs font-medium transition-colors cursor-pointer flex items-center justify-center gap-1.5"
+                  >
+                    <RotateCcw size={13} />
+                    <span>Try another email / Resend</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setForgotSuccess(false);
+                      setMode("signin");
+                      setError(null);
+                    }}
+                    className="w-full h-10 rounded-xl text-white text-xs font-semibold shadow-md flex items-center justify-center gap-2 cursor-pointer transition-all"
+                    style={{ backgroundColor: brandColor }}
+                  >
+                    <ArrowLeft size={14} />
+                    <span>Back to Sign In</span>
+                  </button>
+                </div>
+              </div>
+            ) : (
+              /* Forgot Password Request Form */
+              <form onSubmit={handleForgotPassword} className="space-y-4" noValidate>
+                <div className="flex items-center gap-2 pb-1 text-xs text-[var(--color-text-muted)]">
+                  <KeyRound size={14} className="text-[var(--color-brand)] shrink-0" />
+                  <span>Enter your work email and we&apos;ll send you a recovery link.</span>
+                </div>
+
+                {/* Error Alert */}
+                {error && (
+                  <div
+                    role="alert"
+                    className="flex items-start gap-2.5 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-xs font-medium text-red-500 animate-in fade-in duration-200"
+                  >
+                    <AlertCircle size={16} className="shrink-0 mt-0.5" />
+                    <span className="leading-snug">{error}</span>
+                  </div>
+                )}
+
+                {/* Work Email Field */}
+                <div className="space-y-1.5">
+                  <label
+                    htmlFor="forgotEmail"
+                    className="text-xs font-semibold text-[var(--color-text-primary)] flex items-center gap-1.5"
+                  >
+                    <Mail size={13} className="text-[var(--color-text-muted)]" />
+                    <span>Work Email</span>
+                  </label>
+                  <input
+                    id="forgotEmail"
+                    type="email"
+                    autoComplete="email"
+                    required
+                    value={forgotEmail}
+                    onChange={(e) => setForgotEmail(e.target.value)}
+                    placeholder="you@company.com"
+                    className="w-full h-11 px-3.5 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] text-xs sm:text-sm text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-hidden focus:border-[var(--color-brand)] focus:ring-2 focus:ring-[var(--color-brand)]/20 transition-all"
+                  />
+                </div>
+
+                {/* Submit Reset Link Button */}
+                <div className="pt-2 flex flex-col gap-2">
+                  <LoadingButton
+                    type="submit"
+                    isLoading={loading}
+                    loadingText="Sending link…"
+                    className="w-full h-11 rounded-xl text-white text-xs sm:text-sm font-semibold shadow-md transition-all duration-150 cursor-pointer"
+                    style={{ backgroundColor: brandColor }}
+                  >
+                    Send Password Reset Link
+                  </LoadingButton>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMode("signin");
+                      setError(null);
+                    }}
+                    className="w-full h-10 rounded-xl border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface-hover)] text-xs font-medium transition-colors cursor-pointer flex items-center justify-center gap-1.5"
+                  >
+                    <ArrowLeft size={14} />
+                    <span>Back to Sign In</span>
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
         ) : (
           /* ── Auth Card (Sign In / Sign Up Tabs) ─────────────────────────────── */
           <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-6 sm:p-7 space-y-4 shadow-xl backdrop-blur-sm transition-colors duration-200">
@@ -365,15 +533,28 @@ export default function LoginClient({
                   />
                 </div>
 
-                {/* Password Field */}
+                {/* Password Field + Forgot password trigger */}
                 <div className="space-y-1.5">
-                  <label
-                    htmlFor="password"
-                    className="text-xs font-semibold text-[var(--color-text-primary)] flex items-center gap-1.5"
-                  >
-                    <Lock size={13} className="text-[var(--color-text-muted)]" />
-                    <span>Password</span>
-                  </label>
+                  <div className="flex items-center justify-between">
+                    <label
+                      htmlFor="password"
+                      className="text-xs font-semibold text-[var(--color-text-primary)] flex items-center gap-1.5"
+                    >
+                      <Lock size={13} className="text-[var(--color-text-muted)]" />
+                      <span>Password</span>
+                    </label>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setForgotEmail(email);
+                        setMode("forgot");
+                        setError(null);
+                      }}
+                      className="text-xs text-[var(--color-brand)] hover:underline font-medium cursor-pointer"
+                    >
+                      Forgot password?
+                    </button>
+                  </div>
                   <div className="relative">
                     <input
                       id="password"

@@ -50,6 +50,8 @@
 | `STORY-007` | Rich Text Editor Integration for Tasks, Projects & Client Notes | Shared / Tasks / Projects / Clients | P2 | ✅ Done | `feat/rich-text-story-007` | [`phases/stories/STORY-007-rich-text-editor-tasks-projects-clients.md`](phases/stories/STORY-007-rich-text-editor-tasks-projects-clients.md) |
 | `STORY-008` | Global Preloader & Navigation Progress Suite | Foundation / Shared UX & Navigation | P1 | ✅ Done | `feat/foundation-story-008` | [`phases/stories/STORY-008-global-preloader-suite.md`](phases/stories/STORY-008-global-preloader-suite.md) |
 | `STORY-010` | Tenant Company Branding Loaders & Granular Route/Table Skeletons | Shared / Foundation / UX & Navigation | P1 | ✅ Done | `feat/foundation-story-010` | [`phases/stories/STORY-010-tenant-company-branding-loader-and-granular-skeletons.md`](phases/stories/STORY-010-tenant-company-branding-loader-and-granular-skeletons.md) |
+| `STORY-011` | Forgot Password & Self-Serve Account Recovery | Foundation / Auth & Security | P1 | ✅ Done | `feat/auth-story-011` | [`phases/stories/STORY-011-forgot-password-recovery-flow.md`](phases/stories/STORY-011-forgot-password-recovery-flow.md) |
+| `STORY-012` | Rebrand Application to Octyvo & Scrub ERP/SaaS Terminology | Foundation / Branding & Marketing | P1 | ✅ Done | `feat/branding-octyvo` | [`phases/stories/STORY-012-rebrand-octyvo.md`](phases/stories/STORY-012-rebrand-octyvo.md) |
 
 ### Bug & Defect Registry (`BUG-xxx`)
 

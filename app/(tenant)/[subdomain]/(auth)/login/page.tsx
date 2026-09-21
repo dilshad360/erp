@@ -22,7 +22,7 @@ export async function generateMetadata({
 
   return {
     title: `Sign In — ${companyName}`,
-    description: `Sign in to your ${companyName} multi-tenant ERP workspace.`,
+    description: `Sign in to your ${companyName} Octyvo workspace.`,
   };
 }
 

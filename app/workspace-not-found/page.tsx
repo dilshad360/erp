@@ -13,7 +13,7 @@ export default function WorkspaceNotFoundPage(): React.JSX.Element {
       <div className="relative w-16 h-16 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)] flex items-center justify-center shadow-xl overflow-hidden p-2">
         <Image
           src="/logo.png"
-          alt="ERP Logo"
+          alt="Octyvo Logo"
           fill
           className="object-contain p-2"
           priority

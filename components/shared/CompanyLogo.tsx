@@ -107,7 +107,7 @@ export default function CompanyLogo({
       >
         <Image
           src="/logo.png"
-          alt="ERP App Logo"
+          alt="Octyvo App Logo"
           fill
           sizes={`${activeSize.px}px`}
           className={`object-contain p-1 ${imageClassName}`}

@@ -88,14 +88,14 @@ export default function InstallPrompt(): React.JSX.Element | null {
             <div className="relative h-11 w-11 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] p-1 flex items-center justify-center shrink-0 overflow-hidden shadow-sm">
               <Image
                 src="/logo.png"
-                alt="ERP Logo"
+                alt="Octyvo Logo"
                 fill
                 className="object-contain p-1"
               />
             </div>
             <div>
               <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">
-                Install ERP App
+                Install Octyvo App
               </h3>
               <p className="text-xs text-[var(--color-text-muted)] mt-0.5 leading-snug">
                 {isIOS

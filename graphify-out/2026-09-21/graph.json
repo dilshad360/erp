@@ -4,6 +4,26 @@
   "graph": {},
   "nodes": [
     {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(marketing)/forgot-password/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_marketing_forgot_password_page",
+      "community": 92,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "MarketingForgotPasswordPage()",
+      "file_type": "code",
+      "source_file": "app/(marketing)/forgot-password/page.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "app_marketing_forgot_password_page_marketingforgotpasswordpage",
+      "community": 92,
+      "norm_label": "marketingforgotpasswordpage()"
+    },
+    {
       "label": "layout.tsx",
       "file_type": "code",
       "source_file": "app/(marketing)/layout.tsx",
@@ -120,7 +140,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_marketing_set_password_page",
-      "community": 1,
+      "community": 74,
       "norm_label": "page.tsx"
     },
     {
@@ -360,7 +380,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_clientlistclient",
-      "community": 2,
+      "community": 69,
       "norm_label": "clientlistclient.tsx"
     },
     {
@@ -370,7 +390,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_clientlistclient_clientrecord",
-      "community": 13,
+      "community": 69,
       "norm_label": "clientrecord"
     },
     {
@@ -380,7 +400,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_clientlistclient_clientlistclientprops",
-      "community": 2,
+      "community": 69,
       "norm_label": "clientlistclientprops"
     },
     {
@@ -400,7 +420,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient",
-      "community": 50,
+      "community": 85,
       "norm_label": "clientdetailclient.tsx"
     },
     {
@@ -410,7 +430,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_editclientschema",
-      "community": 50,
+      "community": 85,
       "norm_label": "editclientschema"
     },
     {
@@ -420,7 +440,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_editclientformdata",
-      "community": 50,
+      "community": 85,
       "norm_label": "editclientformdata"
     },
     {
@@ -440,7 +460,7 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_clientdetailprops",
-      "community": 50,
+      "community": 85,
       "norm_label": "clientdetailprops"
     },
     {
@@ -450,7 +470,7 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_clientdetailclient",
-      "community": 50,
+      "community": 85,
       "norm_label": "clientdetailclient()"
     },
     {
@@ -530,7 +550,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient",
-      "community": 50,
+      "community": 85,
       "norm_label": "newclientformclient.tsx"
     },
     {
@@ -540,7 +560,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient_clientformschema",
-      "community": 50,
+      "community": 85,
       "norm_label": "clientformschema"
     },
     {
@@ -550,7 +570,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient_clientformdata",
-      "community": 50,
+      "community": 85,
       "norm_label": "clientformdata"
     },
     {
@@ -560,7 +580,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient_newclientformclient",
-      "community": 50,
+      "community": 85,
       "norm_label": "newclientformclient()"
     },
     {
@@ -570,7 +590,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_page",
-      "community": 10,
+      "community": 90,
       "norm_label": "page.tsx"
     },
     {
@@ -580,7 +600,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_page_metadata",
-      "community": 10,
+      "community": 90,
       "norm_label": "metadata"
     },
     {
@@ -590,7 +610,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_page_newclientpage",
-      "community": 10,
+      "community": 90,
       "norm_label": "newclientpage()"
     },
     {
@@ -600,7 +620,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_page",
-      "community": 13,
+      "community": 69,
       "norm_label": "page.tsx"
     },
     {
@@ -610,7 +630,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_page_metadata",
-      "community": 13,
+      "community": 69,
       "norm_label": "metadata"
     },
     {
@@ -620,7 +640,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_page_clientspage",
-      "community": 13,
+      "community": 69,
       "norm_label": "clientspage()"
     },
     {
@@ -980,7 +1000,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient",
-      "community": 50,
+      "community": 67,
       "norm_label": "projectdetailclient.tsx"
     },
     {
@@ -990,7 +1010,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_editprojectschema",
-      "community": 50,
+      "community": 67,
       "norm_label": "editprojectschema"
     },
     {
@@ -1000,7 +1020,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_editprojectformdata",
-      "community": 50,
+      "community": 67,
       "norm_label": "editprojectformdata"
     },
     {
@@ -1020,7 +1040,7 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_taskstatuscount",
-      "community": 50,
+      "community": 67,
       "norm_label": "taskstatuscount"
     },
     {
@@ -1030,7 +1050,7 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectteammember",
-      "community": 50,
+      "community": 67,
       "norm_label": "projectteammember"
     },
     {
@@ -1040,7 +1060,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetailprops",
-      "community": 50,
+      "community": 67,
       "norm_label": "projectdetailprops"
     },
     {
@@ -1120,7 +1140,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_tasks_page_generatemetadata",
-      "community": 10,
+      "community": 2,
       "norm_label": "generatemetadata()"
     },
     {
@@ -1130,7 +1150,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_tasks_page_projecttaskspage",
-      "community": 10,
+      "community": 2,
       "norm_label": "projecttaskspage()"
     },
     {
@@ -1160,7 +1180,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_newprojectformclient",
-      "community": 50,
+      "community": 67,
       "norm_label": "newprojectformclient.tsx"
     },
     {
@@ -1170,7 +1190,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_newprojectformclient_projectformschema",
-      "community": 50,
+      "community": 67,
       "norm_label": "projectformschema"
     },
     {
@@ -1180,7 +1200,7 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_newprojectformclient_projectformdata",
-      "community": 50,
+      "community": 67,
       "norm_label": "projectformdata"
     },
     {
@@ -1190,7 +1210,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_newprojectformclient_newprojectformclientprops",
-      "community": 50,
+      "community": 67,
       "norm_label": "newprojectformclientprops"
     },
     {
@@ -1200,7 +1220,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_newprojectformclient_newprojectformclient",
-      "community": 50,
+      "community": 67,
       "norm_label": "newprojectformclient()"
     },
     {
@@ -1210,7 +1230,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_page",
-      "community": 67,
+      "community": 91,
       "norm_label": "page.tsx"
     },
     {
@@ -1220,7 +1240,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_page_metadata",
-      "community": 67,
+      "community": 91,
       "norm_label": "metadata"
     },
     {
@@ -1230,7 +1250,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_page_newprojectpage",
-      "community": 67,
+      "community": 91,
       "norm_label": "newprojectpage()"
     },
     {
@@ -1464,6 +1484,46 @@
       "norm_label": "taskspage()"
     },
     {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_auth_forgot_password_page",
+      "community": 74,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "ForgotPasswordPageProps",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_auth_forgot_password_page_forgotpasswordpageprops",
+      "community": 74,
+      "norm_label": "forgotpasswordpageprops"
+    },
+    {
+      "label": "generateMetadata()",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_auth_forgot_password_page_generatemetadata",
+      "community": 74,
+      "norm_label": "generatemetadata()"
+    },
+    {
+      "label": "ForgotPasswordPage()",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_auth_forgot_password_page_forgotpasswordpage",
+      "community": 74,
+      "norm_label": "forgotpasswordpage()"
+    },
+    {
       "label": "loading.tsx",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(auth)/login/loading.tsx",
@@ -1490,7 +1550,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_auth_login_page",
-      "community": 37,
+      "community": 10,
       "norm_label": "page.tsx"
     },
     {
@@ -1500,7 +1560,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_tenant_subdomain_auth_login_page_loginpageprops",
-      "community": 37,
+      "community": 10,
       "norm_label": "loginpageprops"
     },
     {
@@ -1510,7 +1570,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_tenant_subdomain_auth_login_page_generatemetadata",
-      "community": 37,
+      "community": 10,
       "norm_label": "generatemetadata()"
     },
     {
@@ -1520,7 +1580,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "app_tenant_subdomain_auth_login_page_loginpage",
-      "community": 37,
+      "community": 10,
       "norm_label": "loginpage()"
     },
     {
@@ -1530,17 +1590,17 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_auth_set_password_page",
-      "community": 1,
+      "community": 74,
       "norm_label": "page.tsx"
     },
     {
       "label": "SetPasswordPage()",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "app_tenant_subdomain_auth_set_password_page_setpasswordpage",
-      "community": 1,
+      "community": 74,
       "norm_label": "setpasswordpage()"
     },
     {
@@ -1650,7 +1710,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_attendance_checkin_route",
-      "community": 13,
+      "community": 10,
       "norm_label": "route.ts"
     },
     {
@@ -1660,7 +1720,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_api_attendance_checkin_route_checkinschema",
-      "community": 13,
+      "community": 10,
       "norm_label": "checkinschema"
     },
     {
@@ -1670,7 +1730,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_api_attendance_checkin_route_post",
-      "community": 13,
+      "community": 10,
       "norm_label": "post()"
     },
     {
@@ -1790,7 +1850,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_clients_route",
-      "community": 10,
+      "community": 87,
       "norm_label": "route.ts"
     },
     {
@@ -1800,7 +1860,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_api_clients_route_clientschema",
-      "community": 10,
+      "community": 87,
       "norm_label": "clientschema"
     },
     {
@@ -1810,7 +1870,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "app_api_clients_route_get",
-      "community": 10,
+      "community": 87,
       "norm_label": "get()"
     },
     {
@@ -1820,7 +1880,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "app_api_clients_route_post",
-      "community": 10,
+      "community": 87,
       "norm_label": "post()"
     },
     {
@@ -2220,7 +2280,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_task_statuses_reorder_route",
-      "community": 74,
+      "community": 13,
       "norm_label": "route.ts"
     },
     {
@@ -2230,7 +2290,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_api_task_statuses_reorder_route_reorderschema",
-      "community": 74,
+      "community": 13,
       "norm_label": "reorderschema"
     },
     {
@@ -2240,7 +2300,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_api_task_statuses_reorder_route_put",
-      "community": 74,
+      "community": 13,
       "norm_label": "put()"
     },
     {
@@ -3040,37 +3100,37 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_auth_loginclient",
-      "community": 12,
+      "community": 74,
       "norm_label": "loginclient.tsx"
     },
     {
       "label": "TenantLoginBranding",
       "file_type": "code",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L23",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "components_auth_loginclient_tenantloginbranding",
-      "community": 37,
+      "community": 74,
       "norm_label": "tenantloginbranding"
     },
     {
       "label": "LoginClientProps",
       "file_type": "code",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L30",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "components_auth_loginclient_loginclientprops",
-      "community": 12,
+      "community": 74,
       "norm_label": "loginclientprops"
     },
     {
       "label": "LoginClient()",
       "file_type": "code",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L35",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "components_auth_loginclient_loginclient",
-      "community": 12,
+      "community": 74,
       "norm_label": "loginclient()"
     },
     {
@@ -3360,7 +3420,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "components_shared_assigneeavatargroup_assigneeavatargroup",
-      "community": 2,
+      "community": 50,
       "norm_label": "assigneeavatargroup()"
     },
     {
@@ -3440,7 +3500,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_clientselect",
-      "community": 50,
+      "community": 67,
       "norm_label": "clientselect.tsx"
     },
     {
@@ -3450,7 +3510,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "components_shared_clientselect_clientoption",
-      "community": 50,
+      "community": 67,
       "norm_label": "clientoption"
     },
     {
@@ -3460,7 +3520,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "components_shared_clientselect_clientselectprops",
-      "community": 50,
+      "community": 67,
       "norm_label": "clientselectprops"
     },
     {
@@ -3470,7 +3530,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "components_shared_clientselect_clientselect",
-      "community": 50,
+      "community": 67,
       "norm_label": "clientselect()"
     },
     {
@@ -3480,7 +3540,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_colorpicker",
-      "community": 84,
+      "community": 7,
       "norm_label": "colorpicker.tsx"
     },
     {
@@ -3490,7 +3550,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_shared_colorpicker_preset_colors",
-      "community": 84,
+      "community": 7,
       "norm_label": "preset_colors"
     },
     {
@@ -3500,7 +3560,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "components_shared_colorpicker_colorpickerprops",
-      "community": 84,
+      "community": 7,
       "norm_label": "colorpickerprops"
     },
     {
@@ -3510,7 +3570,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "components_shared_colorpicker_colorpicker",
-      "community": 84,
+      "community": 7,
       "norm_label": "colorpicker()"
     },
     {
@@ -3520,7 +3580,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_companylogo",
-      "community": 12,
+      "community": 1,
       "norm_label": "companylogo.tsx"
     },
     {
@@ -3530,7 +3590,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "components_shared_companylogo_companylogoprops",
-      "community": 12,
+      "community": 1,
       "norm_label": "companylogoprops"
     },
     {
@@ -3540,7 +3600,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "components_shared_companylogo_sizemap",
-      "community": 12,
+      "community": 1,
       "norm_label": "sizemap"
     },
     {
@@ -3550,7 +3610,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "components_shared_companylogo_shapemap",
-      "community": 12,
+      "community": 1,
       "norm_label": "shapemap"
     },
     {
@@ -3560,7 +3620,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "components_shared_companylogo_companylogo",
-      "community": 12,
+      "community": 1,
       "norm_label": "companylogo()"
     },
     {
@@ -3570,7 +3630,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_confirmdialog",
-      "community": 2,
+      "community": 85,
       "norm_label": "confirmdialog.tsx"
     },
     {
@@ -3580,7 +3640,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "components_shared_confirmdialog_confirmdialogprops",
-      "community": 2,
+      "community": 85,
       "norm_label": "confirmdialogprops"
     },
     {
@@ -3810,7 +3870,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_loadingbutton",
-      "community": 50,
+      "community": 85,
       "norm_label": "loadingbutton.tsx"
     },
     {
@@ -3820,7 +3880,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_shared_loadingbutton_loadingbuttonprops",
-      "community": 50,
+      "community": 85,
       "norm_label": "loadingbuttonprops"
     },
     {
@@ -3830,7 +3890,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "components_shared_loadingbutton_loadingbutton",
-      "community": 50,
+      "community": 85,
       "norm_label": "loadingbutton()"
     },
     {
@@ -3860,7 +3920,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_pageheader",
-      "community": 50,
+      "community": 67,
       "norm_label": "pageheader.tsx"
     },
     {
@@ -3870,7 +3930,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "components_shared_pageheader_pageheaderprops",
-      "community": 50,
+      "community": 67,
       "norm_label": "pageheaderprops"
     },
     {
@@ -3880,7 +3940,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "components_shared_pageheader_pageheader",
-      "community": 50,
+      "community": 67,
       "norm_label": "pageheader()"
     },
     {
@@ -3890,7 +3950,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_richtexteditor",
-      "community": 50,
+      "community": 88,
       "norm_label": "richtexteditor.tsx"
     },
     {
@@ -3900,7 +3960,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "components_shared_richtexteditor_richtexteditorprops",
-      "community": 50,
+      "community": 88,
       "norm_label": "richtexteditorprops"
     },
     {
@@ -3910,7 +3970,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "components_shared_richtexteditor_activestates",
-      "community": 50,
+      "community": 88,
       "norm_label": "activestates"
     },
     {
@@ -3920,7 +3980,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "components_shared_richtexteditor_richtexteditor",
-      "community": 50,
+      "community": 88,
       "norm_label": "richtexteditor()"
     },
     {
@@ -3930,7 +3990,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_richtextviewer",
-      "community": 50,
+      "community": 86,
       "norm_label": "richtextviewer.tsx"
     },
     {
@@ -3940,7 +4000,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "components_shared_richtextviewer_richtextviewerprops",
-      "community": 50,
+      "community": 86,
       "norm_label": "richtextviewerprops"
     },
     {
@@ -3950,7 +4010,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "components_shared_richtextviewer_issafeurl",
-      "community": 50,
+      "community": 86,
       "norm_label": "issafeurl()"
     },
     {
@@ -3960,7 +4020,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "components_shared_richtextviewer_sanitizehtml",
-      "community": 50,
+      "community": 86,
       "norm_label": "sanitizehtml()"
     },
     {
@@ -3970,7 +4030,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "components_shared_richtextviewer_ishtmlcontent",
-      "community": 50,
+      "community": 86,
       "norm_label": "ishtmlcontent()"
     },
     {
@@ -3980,7 +4040,7 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "components_shared_richtextviewer_richtextviewer",
-      "community": 50,
+      "community": 86,
       "norm_label": "richtextviewer()"
     },
     {
@@ -4080,7 +4140,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_statcard",
-      "community": 3,
+      "community": 89,
       "norm_label": "statcard.tsx"
     },
     {
@@ -4090,7 +4150,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "components_shared_statcard_statcardprops",
-      "community": 3,
+      "community": 89,
       "norm_label": "statcardprops"
     },
     {
@@ -4100,7 +4160,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "components_shared_statcard_statcard",
-      "community": 3,
+      "community": 89,
       "norm_label": "statcard()"
     },
     {
@@ -4140,7 +4200,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_tenantprovider",
-      "community": 80,
+      "community": 12,
       "norm_label": "tenantprovider.tsx"
     },
     {
@@ -4150,7 +4210,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_shared_tenantprovider_tenantcontextvalue",
-      "community": 80,
+      "community": 12,
       "norm_label": "tenantcontextvalue"
     },
     {
@@ -4160,7 +4220,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "components_shared_tenantprovider_tenantcontext",
-      "community": 80,
+      "community": 12,
       "norm_label": "tenantcontext"
     },
     {
@@ -4190,7 +4250,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "components_shared_tenantprovider_tenantproviderprops",
-      "community": 80,
+      "community": 12,
       "norm_label": "tenantproviderprops"
     },
     {
@@ -4200,7 +4260,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "components_shared_tenantprovider_tenantprovider",
-      "community": 80,
+      "community": 12,
       "norm_label": "tenantprovider()"
     },
     {
@@ -4314,6 +4374,46 @@
       "norm_label": "userselect()"
     },
     {
+      "label": "AdminAttendanceSkeleton.tsx",
+      "file_type": "code",
+      "source_file": "components/shared/skeletons/AdminAttendanceSkeleton.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_shared_skeletons_adminattendanceskeleton",
+      "community": 53,
+      "norm_label": "adminattendanceskeleton.tsx"
+    },
+    {
+      "label": "AdminAttendanceSkeleton()",
+      "file_type": "code",
+      "source_file": "components/shared/skeletons/AdminAttendanceSkeleton.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "components_shared_skeletons_adminattendanceskeleton_adminattendanceskeleton",
+      "community": 53,
+      "norm_label": "adminattendanceskeleton()"
+    },
+    {
+      "label": "AttendancePageSkeleton.tsx",
+      "file_type": "code",
+      "source_file": "components/shared/skeletons/AttendancePageSkeleton.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_shared_skeletons_attendancepageskeleton",
+      "community": 53,
+      "norm_label": "attendancepageskeleton.tsx"
+    },
+    {
+      "label": "AttendancePageSkeleton()",
+      "file_type": "code",
+      "source_file": "components/shared/skeletons/AttendancePageSkeleton.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "components_shared_skeletons_attendancepageskeleton_attendancepageskeleton",
+      "community": 53,
+      "norm_label": "attendancepageskeleton()"
+    },
+    {
       "label": "AttendanceSkeleton.tsx",
       "file_type": "code",
       "source_file": "components/shared/skeletons/AttendanceSkeleton.tsx",
@@ -4424,6 +4524,26 @@
       "norm_label": "pageheaderskeleton()"
     },
     {
+      "label": "ProjectPageSkeleton.tsx",
+      "file_type": "code",
+      "source_file": "components/shared/skeletons/ProjectPageSkeleton.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_shared_skeletons_projectpageskeleton",
+      "community": 53,
+      "norm_label": "projectpageskeleton.tsx"
+    },
+    {
+      "label": "ProjectPageSkeleton()",
+      "file_type": "code",
+      "source_file": "components/shared/skeletons/ProjectPageSkeleton.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "components_shared_skeletons_projectpageskeleton_projectpageskeleton",
+      "community": 53,
+      "norm_label": "projectpageskeleton()"
+    },
+    {
       "label": "TablePageSkeleton.tsx",
       "file_type": "code",
       "source_file": "components/shared/skeletons/TablePageSkeleton.tsx",
@@ -4452,6 +4572,26 @@
       "id": "components_shared_skeletons_tablepageskeleton_tablepageskeleton",
       "community": 53,
       "norm_label": "tablepageskeleton()"
+    },
+    {
+      "label": "TaskPageSkeleton.tsx",
+      "file_type": "code",
+      "source_file": "components/shared/skeletons/TaskPageSkeleton.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_shared_skeletons_taskpageskeleton",
+      "community": 53,
+      "norm_label": "taskpageskeleton.tsx"
+    },
+    {
+      "label": "TaskPageSkeleton()",
+      "file_type": "code",
+      "source_file": "components/shared/skeletons/TaskPageSkeleton.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "components_shared_skeletons_taskpageskeleton_taskpageskeleton",
+      "community": 53,
+      "norm_label": "taskpageskeleton()"
     },
     {
       "label": "KanbanBoard.tsx",
@@ -4820,7 +4960,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_ui_button",
-      "community": 50,
+      "community": 85,
       "norm_label": "button.tsx"
     },
     {
@@ -4830,7 +4970,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "components_ui_button_buttonvariants",
-      "community": 50,
+      "community": 85,
       "norm_label": "buttonvariants"
     },
     {
@@ -4840,7 +4980,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "components_ui_button_button",
-      "community": 50,
+      "community": 85,
       "norm_label": "button()"
     },
     {
@@ -4940,7 +5080,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "lib_branding_applybrandtodocument",
-      "community": 80,
+      "community": 12,
       "norm_label": "applybrandtodocument()"
     },
     {
@@ -5100,7 +5240,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_supabase_client",
-      "community": 1,
+      "community": 74,
       "norm_label": "client.ts"
     },
     {
@@ -5110,7 +5250,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "lib_supabase_client_createclient",
-      "community": 1,
+      "community": 74,
       "norm_label": "createclient()"
     },
     {
@@ -6500,7 +6640,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tracker",
-      "community": 14,
+      "community": 84,
       "norm_label": "tracker.md"
     },
     {
@@ -6557,7 +6697,7 @@
       "label": "Bug & Defect Registry (`BUG-xxx`)",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L54",
+      "source_location": "L55",
       "_origin": "ast",
       "id": "tracker_bug_defect_registry_bug_xxx",
       "community": 52,
@@ -6567,7 +6707,7 @@
       "label": "Phase 1 \u2014 Foundation",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L67",
+      "source_location": "L68",
       "_origin": "ast",
       "id": "tracker_phase_1_foundation",
       "community": 52,
@@ -6577,7 +6717,7 @@
       "label": "Phase 2 \u2014 Employee Management",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L85",
+      "source_location": "L86",
       "_origin": "ast",
       "id": "tracker_phase_2_employee_management",
       "community": 52,
@@ -6587,7 +6727,7 @@
       "label": "Phase 3 \u2014 Attendance",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L103",
+      "source_location": "L104",
       "_origin": "ast",
       "id": "tracker_phase_3_attendance",
       "community": 52,
@@ -6597,7 +6737,7 @@
       "label": "Phase 4 \u2014 Client Management",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L121",
+      "source_location": "L122",
       "_origin": "ast",
       "id": "tracker_phase_4_client_management",
       "community": 52,
@@ -6607,7 +6747,7 @@
       "label": "Phase 5 \u2014 Project Management",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L139",
+      "source_location": "L140",
       "_origin": "ast",
       "id": "tracker_phase_5_project_management",
       "community": 52,
@@ -6617,7 +6757,7 @@
       "label": "Phase 6 \u2014 Task Management",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L158",
+      "source_location": "L159",
       "_origin": "ast",
       "id": "tracker_phase_6_task_management",
       "community": 52,
@@ -6627,7 +6767,7 @@
       "label": "Phase 7 \u2014 Polish & PWA",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L178",
+      "source_location": "L179",
       "_origin": "ast",
       "id": "tracker_phase_7_polish_pwa",
       "community": 52,
@@ -6637,7 +6777,7 @@
       "label": "Shared Components \u2014 Build Status",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L198",
+      "source_location": "L199",
       "_origin": "ast",
       "id": "tracker_shared_components_build_status",
       "community": 52,
@@ -6647,7 +6787,7 @@
       "label": "Database Migration Status",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L228",
+      "source_location": "L229",
       "_origin": "ast",
       "id": "tracker_database_migration_status",
       "community": 52,
@@ -6657,7 +6797,7 @@
       "label": "Pre-Launch Checklist",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L251",
+      "source_location": "L252",
       "_origin": "ast",
       "id": "tracker_pre_launch_checklist",
       "community": 52,
@@ -6667,7 +6807,7 @@
       "label": "Decisions & Notes Log",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L272",
+      "source_location": "L273",
       "_origin": "ast",
       "id": "tracker_decisions_notes_log",
       "community": 52,
@@ -7770,7 +7910,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_bugs_bug_001_employee_settings_role_isolation",
-      "community": 14,
+      "community": 56,
       "norm_label": "bug-001-employee-settings-role-isolation.md"
     },
     {
@@ -7870,7 +8010,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_bugs_bug_002_mobile_bottomnav_more_and_logo_missing",
-      "community": 30,
+      "community": 84,
       "norm_label": "bug-002-mobile-bottomnav-more-and-logo-missing.md"
     },
     {
@@ -7960,7 +8100,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_bugs_bug_003_mobile_bottom_nav_press_feedback",
-      "community": 14,
+      "community": 84,
       "norm_label": "bug-003-mobile-bottom-nav-press-feedback.md"
     },
     {
@@ -8120,7 +8260,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "phases_bugs_bug_005_remove_legacy_invite_employee_page",
-      "community": 14,
+      "community": 84,
       "norm_label": "bug-005-remove-legacy-invite-employee-page.md"
     },
     {
@@ -10394,6 +10534,56 @@
       "norm_label": "3. implementation subtasks"
     },
     {
+      "label": "STORY-011-forgot-password-recovery-flow.md",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "phases_stories_story_011_forgot_password_recovery_flow",
+      "community": 84,
+      "norm_label": "story-011-forgot-password-recovery-flow.md"
+    },
+    {
+      "label": "User Story \u2014 STORY-011: Forgot Password & Self-Serve Account Recovery",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "phases_stories_story_011_forgot_password_recovery_flow_user_story_story_011_forgot_password_self_serve_account_recovery",
+      "community": 84,
+      "norm_label": "user story \u2014 story-011: forgot password & self-serve account recovery"
+    },
+    {
+      "label": "1. Description & Business Value",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "phases_stories_story_011_forgot_password_recovery_flow_1_description_business_value",
+      "community": 84,
+      "norm_label": "1. description & business value"
+    },
+    {
+      "label": "2. Acceptance Criteria",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "phases_stories_story_011_forgot_password_recovery_flow_2_acceptance_criteria",
+      "community": 84,
+      "norm_label": "2. acceptance criteria"
+    },
+    {
+      "label": "3. Implementation Subtasks",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "phases_stories_story_011_forgot_password_recovery_flow_3_implementation_subtasks",
+      "community": 84,
+      "norm_label": "3. implementation subtasks"
+    },
+    {
       "label": "bug-template.md",
       "file_type": "document",
       "source_file": "templates/bug-template.md",
@@ -10688,6 +10878,16 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/(marketing)/forgot-password/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_marketing_forgot_password_page",
+      "target": "app_marketing_forgot_password_page_marketingforgotpasswordpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "app/(marketing)/layout.tsx",
       "source_location": "L7",
       "weight": 1.0,
@@ -10886,7 +11086,7 @@
       "source_location": "L2",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_attendance_admin_loading",
-      "target": "components_shared_skeletons_tablepageskeleton",
+      "target": "components_shared_skeletons_adminattendanceskeleton",
       "confidence_score": 1.0
     },
     {
@@ -10992,7 +11192,18 @@
       "source_location": "L2",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_attendance_loading",
-      "target": "components_shared_skeletons_attendanceskeleton",
+      "target": "components_shared_skeletons_attendancepageskeleton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(app)/attendance/loading.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_app_attendance_loading",
+      "target": "components_shared_skeletons_attendancepageskeleton_attendancepageskeleton",
       "confidence_score": 1.0
     },
     {
@@ -13198,7 +13409,7 @@
       "source_location": "L2",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_loading",
-      "target": "components_shared_skeletons_tablepageskeleton",
+      "target": "components_shared_skeletons_projectpageskeleton",
       "confidence_score": 1.0
     },
     {
@@ -13892,7 +14103,7 @@
       "source_location": "L2",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_tasks_loading",
-      "target": "components_shared_skeletons_kanbanskeleton",
+      "target": "components_shared_skeletons_taskpageskeleton",
       "confidence_score": 1.0
     },
     {
@@ -13968,6 +14179,102 @@
       "source_location": "L17",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_tasks_page_taskspage",
+      "target": "lib_supabase_server_createclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page",
+      "target": "app_tenant_subdomain_auth_forgot_password_page_forgotpasswordpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page",
+      "target": "app_tenant_subdomain_auth_forgot_password_page_forgotpasswordpageprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page",
+      "target": "app_tenant_subdomain_auth_forgot_password_page_generatemetadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page",
+      "target": "components_auth_loginclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page",
+      "target": "components_auth_loginclient_tenantloginbranding",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page",
+      "target": "lib_supabase_server",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page",
+      "target": "lib_supabase_server_createclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page_generatemetadata",
+      "target": "lib_supabase_server_createclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page_forgotpasswordpage",
       "target": "lib_supabase_server_createclient"
     },
     {
@@ -14091,7 +14398,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "app_tenant_subdomain_auth_set_password_page",
       "target": "app_tenant_subdomain_auth_set_password_page_setpasswordpage",
@@ -14102,7 +14409,51 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_set_password_page",
+      "target": "components_shared_companylogo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_set_password_page",
+      "target": "components_shared_companylogo_companylogo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_set_password_page",
+      "target": "components_shared_loadingbutton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_set_password_page",
+      "target": "components_shared_loadingbutton_loadingbutton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "app_tenant_subdomain_auth_set_password_page",
       "target": "lib_supabase_client",
@@ -14113,7 +14464,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "app_tenant_subdomain_auth_set_password_page",
       "target": "lib_supabase_client_createclient",
@@ -14125,7 +14476,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
-      "source_location": "L20",
+      "source_location": "L28",
       "weight": 1.0,
       "source": "app_tenant_subdomain_auth_set_password_page_setpasswordpage",
       "target": "lib_supabase_client_createclient"
@@ -16560,7 +16911,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L35",
+      "source_location": "L37",
       "weight": 1.0,
       "source": "components_auth_loginclient",
       "target": "components_auth_loginclient_loginclient",
@@ -16570,7 +16921,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L30",
+      "source_location": "L32",
       "weight": 1.0,
       "source": "components_auth_loginclient",
       "target": "components_auth_loginclient_loginclientprops",
@@ -16580,7 +16931,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0,
       "source": "components_auth_loginclient",
       "target": "components_auth_loginclient_tenantloginbranding",
@@ -18433,6 +18784,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "components/shared/skeletons/AdminAttendanceSkeleton.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_shared_skeletons_adminattendanceskeleton",
+      "target": "components_shared_skeletontable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "components/shared/skeletons/AttendanceSkeleton.tsx",
       "source_location": "L5",
       "weight": 1.0,
@@ -18797,6 +19159,48 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "components/shared/skeletons/AdminAttendanceSkeleton.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_shared_skeletons_adminattendanceskeleton",
+      "target": "components_shared_skeletons_adminattendanceskeleton_adminattendanceskeleton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/skeletons/AdminAttendanceSkeleton.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_shared_skeletons_adminattendanceskeleton",
+      "target": "components_shared_skeletons_pageheaderskeleton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/skeletons/AttendancePageSkeleton.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_shared_skeletons_attendancepageskeleton",
+      "target": "components_shared_skeletons_attendancepageskeleton_attendancepageskeleton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/skeletons/AttendancePageSkeleton.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_shared_skeletons_attendancepageskeleton",
+      "target": "components_shared_skeletons_pageheaderskeleton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "components/shared/skeletons/AttendanceSkeleton.tsx",
       "source_location": "L7",
       "weight": 1.0,
@@ -18891,11 +19295,43 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "components/shared/skeletons/ProjectPageSkeleton.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_shared_skeletons_projectpageskeleton",
+      "target": "components_shared_skeletons_pageheaderskeleton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "components/shared/skeletons/TablePageSkeleton.tsx",
       "source_location": "L4",
       "weight": 1.0,
       "source": "components_shared_skeletons_tablepageskeleton",
       "target": "components_shared_skeletons_pageheaderskeleton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/skeletons/TaskPageSkeleton.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_shared_skeletons_taskpageskeleton",
+      "target": "components_shared_skeletons_pageheaderskeleton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/skeletons/ProjectPageSkeleton.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_shared_skeletons_projectpageskeleton",
+      "target": "components_shared_skeletons_projectpageskeleton_projectpageskeleton",
       "confidence_score": 1.0
     },
     {
@@ -18916,6 +19352,16 @@
       "weight": 1.0,
       "source": "components_shared_skeletons_tablepageskeleton",
       "target": "components_shared_skeletons_tablepageskeleton_tablepageskeletonprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/skeletons/TaskPageSkeleton.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_shared_skeletons_taskpageskeleton",
+      "target": "components_shared_skeletons_taskpageskeleton_taskpageskeleton",
       "confidence_score": 1.0
     },
     {
@@ -21301,7 +21747,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L58",
+      "source_location": "L59",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_bugs_bug_001_employee_settings_role_isolation",
@@ -21311,7 +21757,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L59",
+      "source_location": "L60",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_bugs_bug_002_mobile_bottomnav_more_and_logo_missing",
@@ -21321,7 +21767,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L60",
+      "source_location": "L61",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_bugs_bug_003_mobile_bottom_nav_press_feedback",
@@ -21331,7 +21777,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L61",
+      "source_location": "L62",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_bugs_bug_004_mobile_viewport_scroll_clearance",
@@ -21341,7 +21787,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L62",
+      "source_location": "L63",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_bugs_bug_005_remove_legacy_invite_employee_page",
@@ -21351,7 +21797,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L63",
+      "source_location": "L64",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_bugs_bug_006_workspace_brand_color_refresh_persistence",
@@ -21361,7 +21807,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L69",
+      "source_location": "L70",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_1_foundation",
@@ -21371,7 +21817,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L87",
+      "source_location": "L88",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_2_employees",
@@ -21381,7 +21827,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L105",
+      "source_location": "L106",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_3_attendance",
@@ -21391,7 +21837,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L123",
+      "source_location": "L124",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_4_clients",
@@ -21401,7 +21847,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L141",
+      "source_location": "L142",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_5_projects",
@@ -21411,7 +21857,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L160",
+      "source_location": "L161",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_6_tasks",
@@ -21421,7 +21867,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L180",
+      "source_location": "L181",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_7_polish_pwa",
@@ -21498,6 +21944,16 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "TRACKER.md",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "tracker",
+      "target": "phases_stories_story_011_forgot_password_recovery_flow",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
@@ -21521,7 +21977,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L228",
+      "source_location": "L229",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_database_migration_status",
@@ -21531,7 +21987,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L272",
+      "source_location": "L273",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_decisions_notes_log",
@@ -21541,7 +21997,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L67",
+      "source_location": "L68",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_1_foundation",
@@ -21551,7 +22007,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L85",
+      "source_location": "L86",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_2_employee_management",
@@ -21561,7 +22017,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L103",
+      "source_location": "L104",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_3_attendance",
@@ -21571,7 +22027,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L121",
+      "source_location": "L122",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_4_client_management",
@@ -21581,7 +22037,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L139",
+      "source_location": "L140",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_5_project_management",
@@ -21591,7 +22047,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L158",
+      "source_location": "L159",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_6_task_management",
@@ -21601,7 +22057,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L178",
+      "source_location": "L179",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_7_polish_pwa",
@@ -21621,7 +22077,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L251",
+      "source_location": "L252",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_pre_launch_checklist",
@@ -21641,7 +22097,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L198",
+      "source_location": "L199",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_shared_components_build_status",
@@ -21661,7 +22117,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L54",
+      "source_location": "L55",
       "weight": 1.0,
       "source": "tracker_ai_assisted_story_bug_tracking",
       "target": "tracker_bug_defect_registry_bug_xxx",
@@ -25130,6 +25586,46 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "phases_stories_story_011_forgot_password_recovery_flow",
+      "target": "phases_stories_story_011_forgot_password_recovery_flow_user_story_story_011_forgot_password_self_serve_account_recovery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "phases_stories_story_011_forgot_password_recovery_flow_user_story_story_011_forgot_password_self_serve_account_recovery",
+      "target": "phases_stories_story_011_forgot_password_recovery_flow_1_description_business_value",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "phases_stories_story_011_forgot_password_recovery_flow_user_story_story_011_forgot_password_self_serve_account_recovery",
+      "target": "phases_stories_story_011_forgot_password_recovery_flow_2_acceptance_criteria",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "phases_stories_story_011_forgot_password_recovery_flow_user_story_story_011_forgot_password_self_serve_account_recovery",
+      "target": "phases_stories_story_011_forgot_password_recovery_flow_3_implementation_subtasks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "templates/bug-template.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -25399,5 +25895,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7ef15da5cf84a18fc35453d80f71e667757b96c4"
+  "built_at_commit": "b39237d1aa412cf9cc3a5161a920c0d4baba44a2"
 }

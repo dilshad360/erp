@@ -156,7 +156,7 @@ export default function SignupPage(): React.JSX.Element {
           <div className="relative w-14 h-14 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)] p-2 shadow-lg flex items-center justify-center overflow-hidden">
             <Image
               src="/logo.png"
-              alt="ERP Logo"
+              alt="Octyvo Logo"
               fill
               className="object-contain p-2"
               priority

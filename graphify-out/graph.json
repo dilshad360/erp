@@ -4,6 +4,26 @@
   "graph": {},
   "nodes": [
     {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(marketing)/forgot-password/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_marketing_forgot_password_page",
+      "community": 92,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "MarketingForgotPasswordPage()",
+      "file_type": "code",
+      "source_file": "app/(marketing)/forgot-password/page.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "app_marketing_forgot_password_page_marketingforgotpasswordpage",
+      "community": 92,
+      "norm_label": "marketingforgotpasswordpage()"
+    },
+    {
       "label": "layout.tsx",
       "file_type": "code",
       "source_file": "app/(marketing)/layout.tsx",
@@ -120,7 +140,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_marketing_set_password_page",
-      "community": 1,
+      "community": 74,
       "norm_label": "page.tsx"
     },
     {
@@ -370,7 +390,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_clientlistclient_clientrecord",
-      "community": 88,
+      "community": 90,
       "norm_label": "clientrecord"
     },
     {
@@ -600,7 +620,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_page",
-      "community": 88,
+      "community": 90,
       "norm_label": "page.tsx"
     },
     {
@@ -610,7 +630,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_page_metadata",
-      "community": 88,
+      "community": 90,
       "norm_label": "metadata"
     },
     {
@@ -620,7 +640,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_page_clientspage",
-      "community": 88,
+      "community": 90,
       "norm_label": "clientspage()"
     },
     {
@@ -1464,6 +1484,46 @@
       "norm_label": "taskspage()"
     },
     {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_auth_forgot_password_page",
+      "community": 74,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "ForgotPasswordPageProps",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_auth_forgot_password_page_forgotpasswordpageprops",
+      "community": 74,
+      "norm_label": "forgotpasswordpageprops"
+    },
+    {
+      "label": "generateMetadata()",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_auth_forgot_password_page_generatemetadata",
+      "community": 74,
+      "norm_label": "generatemetadata()"
+    },
+    {
+      "label": "ForgotPasswordPage()",
+      "file_type": "code",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "app_tenant_subdomain_auth_forgot_password_page_forgotpasswordpage",
+      "community": 74,
+      "norm_label": "forgotpasswordpage()"
+    },
+    {
       "label": "loading.tsx",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(auth)/login/loading.tsx",
@@ -1490,7 +1550,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_auth_login_page",
-      "community": 37,
+      "community": 91,
       "norm_label": "page.tsx"
     },
     {
@@ -1500,7 +1560,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_tenant_subdomain_auth_login_page_loginpageprops",
-      "community": 37,
+      "community": 91,
       "norm_label": "loginpageprops"
     },
     {
@@ -1510,7 +1570,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_tenant_subdomain_auth_login_page_generatemetadata",
-      "community": 37,
+      "community": 91,
       "norm_label": "generatemetadata()"
     },
     {
@@ -1520,7 +1580,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "app_tenant_subdomain_auth_login_page_loginpage",
-      "community": 37,
+      "community": 91,
       "norm_label": "loginpage()"
     },
     {
@@ -1530,17 +1590,17 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_auth_set_password_page",
-      "community": 1,
+      "community": 74,
       "norm_label": "page.tsx"
     },
     {
       "label": "SetPasswordPage()",
       "file_type": "code",
       "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "app_tenant_subdomain_auth_set_password_page_setpasswordpage",
-      "community": 1,
+      "community": 74,
       "norm_label": "setpasswordpage()"
     },
     {
@@ -2180,7 +2240,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_task_statuses_id_route",
-      "community": 87,
+      "community": 88,
       "norm_label": "route.ts"
     },
     {
@@ -2190,7 +2250,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_api_task_statuses_id_route_updatestatusschema",
-      "community": 87,
+      "community": 88,
       "norm_label": "updatestatusschema"
     },
     {
@@ -2200,7 +2260,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_api_task_statuses_id_route_put",
-      "community": 87,
+      "community": 88,
       "norm_label": "put()"
     },
     {
@@ -2210,7 +2270,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "app_api_task_statuses_id_route_delete",
-      "community": 87,
+      "community": 88,
       "norm_label": "delete()"
     },
     {
@@ -2220,7 +2280,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_task_statuses_reorder_route",
-      "community": 74,
+      "community": 93,
       "norm_label": "route.ts"
     },
     {
@@ -2230,7 +2290,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_api_task_statuses_reorder_route_reorderschema",
-      "community": 74,
+      "community": 93,
       "norm_label": "reorderschema"
     },
     {
@@ -2240,7 +2300,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_api_task_statuses_reorder_route_put",
-      "community": 74,
+      "community": 93,
       "norm_label": "put()"
     },
     {
@@ -3040,37 +3100,37 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_auth_loginclient",
-      "community": 12,
+      "community": 74,
       "norm_label": "loginclient.tsx"
     },
     {
       "label": "TenantLoginBranding",
       "file_type": "code",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L23",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "components_auth_loginclient_tenantloginbranding",
-      "community": 37,
+      "community": 74,
       "norm_label": "tenantloginbranding"
     },
     {
       "label": "LoginClientProps",
       "file_type": "code",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L30",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "components_auth_loginclient_loginclientprops",
-      "community": 12,
+      "community": 74,
       "norm_label": "loginclientprops"
     },
     {
       "label": "LoginClient()",
       "file_type": "code",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L35",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "components_auth_loginclient_loginclient",
-      "community": 12,
+      "community": 74,
       "norm_label": "loginclient()"
     },
     {
@@ -3480,7 +3540,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_colorpicker",
-      "community": 84,
+      "community": 7,
       "norm_label": "colorpicker.tsx"
     },
     {
@@ -3490,7 +3550,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_shared_colorpicker_preset_colors",
-      "community": 84,
+      "community": 7,
       "norm_label": "preset_colors"
     },
     {
@@ -3500,7 +3560,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "components_shared_colorpicker_colorpickerprops",
-      "community": 84,
+      "community": 7,
       "norm_label": "colorpickerprops"
     },
     {
@@ -3510,7 +3570,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "components_shared_colorpicker_colorpicker",
-      "community": 84,
+      "community": 7,
       "norm_label": "colorpicker()"
     },
     {
@@ -3520,7 +3580,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_companylogo",
-      "community": 12,
+      "community": 1,
       "norm_label": "companylogo.tsx"
     },
     {
@@ -3530,7 +3590,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "components_shared_companylogo_companylogoprops",
-      "community": 12,
+      "community": 1,
       "norm_label": "companylogoprops"
     },
     {
@@ -3540,7 +3600,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "components_shared_companylogo_sizemap",
-      "community": 12,
+      "community": 1,
       "norm_label": "sizemap"
     },
     {
@@ -3550,7 +3610,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "components_shared_companylogo_shapemap",
-      "community": 12,
+      "community": 1,
       "norm_label": "shapemap"
     },
     {
@@ -3560,7 +3620,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "components_shared_companylogo_companylogo",
-      "community": 12,
+      "community": 1,
       "norm_label": "companylogo()"
     },
     {
@@ -4140,7 +4200,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_tenantprovider",
-      "community": 80,
+      "community": 12,
       "norm_label": "tenantprovider.tsx"
     },
     {
@@ -4150,7 +4210,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_shared_tenantprovider_tenantcontextvalue",
-      "community": 80,
+      "community": 12,
       "norm_label": "tenantcontextvalue"
     },
     {
@@ -4160,7 +4220,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "components_shared_tenantprovider_tenantcontext",
-      "community": 80,
+      "community": 12,
       "norm_label": "tenantcontext"
     },
     {
@@ -4190,7 +4250,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "components_shared_tenantprovider_tenantproviderprops",
-      "community": 80,
+      "community": 12,
       "norm_label": "tenantproviderprops"
     },
     {
@@ -4200,7 +4260,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "components_shared_tenantprovider_tenantprovider",
-      "community": 80,
+      "community": 12,
       "norm_label": "tenantprovider()"
     },
     {
@@ -5020,7 +5080,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "lib_branding_applybrandtodocument",
-      "community": 80,
+      "community": 12,
       "norm_label": "applybrandtodocument()"
     },
     {
@@ -5180,7 +5240,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_supabase_client",
-      "community": 1,
+      "community": 74,
       "norm_label": "client.ts"
     },
     {
@@ -5190,7 +5250,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "lib_supabase_client_createclient",
-      "community": 1,
+      "community": 74,
       "norm_label": "createclient()"
     },
     {
@@ -6637,7 +6697,7 @@
       "label": "Bug & Defect Registry (`BUG-xxx`)",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L54",
+      "source_location": "L56",
       "_origin": "ast",
       "id": "tracker_bug_defect_registry_bug_xxx",
       "community": 52,
@@ -6647,7 +6707,7 @@
       "label": "Phase 1 \u2014 Foundation",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L67",
+      "source_location": "L69",
       "_origin": "ast",
       "id": "tracker_phase_1_foundation",
       "community": 52,
@@ -6657,7 +6717,7 @@
       "label": "Phase 2 \u2014 Employee Management",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L85",
+      "source_location": "L87",
       "_origin": "ast",
       "id": "tracker_phase_2_employee_management",
       "community": 52,
@@ -6667,7 +6727,7 @@
       "label": "Phase 3 \u2014 Attendance",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L103",
+      "source_location": "L105",
       "_origin": "ast",
       "id": "tracker_phase_3_attendance",
       "community": 52,
@@ -6677,7 +6737,7 @@
       "label": "Phase 4 \u2014 Client Management",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L121",
+      "source_location": "L123",
       "_origin": "ast",
       "id": "tracker_phase_4_client_management",
       "community": 52,
@@ -6687,7 +6747,7 @@
       "label": "Phase 5 \u2014 Project Management",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L139",
+      "source_location": "L141",
       "_origin": "ast",
       "id": "tracker_phase_5_project_management",
       "community": 52,
@@ -6697,7 +6757,7 @@
       "label": "Phase 6 \u2014 Task Management",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L158",
+      "source_location": "L160",
       "_origin": "ast",
       "id": "tracker_phase_6_task_management",
       "community": 52,
@@ -6707,7 +6767,7 @@
       "label": "Phase 7 \u2014 Polish & PWA",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L178",
+      "source_location": "L180",
       "_origin": "ast",
       "id": "tracker_phase_7_polish_pwa",
       "community": 52,
@@ -6717,7 +6777,7 @@
       "label": "Shared Components \u2014 Build Status",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L198",
+      "source_location": "L200",
       "_origin": "ast",
       "id": "tracker_shared_components_build_status",
       "community": 52,
@@ -6727,7 +6787,7 @@
       "label": "Database Migration Status",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L228",
+      "source_location": "L230",
       "_origin": "ast",
       "id": "tracker_database_migration_status",
       "community": 52,
@@ -6737,7 +6797,7 @@
       "label": "Pre-Launch Checklist",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L251",
+      "source_location": "L253",
       "_origin": "ast",
       "id": "tracker_pre_launch_checklist",
       "community": 52,
@@ -6747,7 +6807,7 @@
       "label": "Decisions & Notes Log",
       "file_type": "document",
       "source_file": "TRACKER.md",
-      "source_location": "L272",
+      "source_location": "L274",
       "_origin": "ast",
       "id": "tracker_decisions_notes_log",
       "community": 52,
@@ -10474,6 +10534,126 @@
       "norm_label": "3. implementation subtasks"
     },
     {
+      "label": "STORY-011-forgot-password-recovery-flow.md",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "phases_stories_story_011_forgot_password_recovery_flow",
+      "community": 84,
+      "norm_label": "story-011-forgot-password-recovery-flow.md"
+    },
+    {
+      "label": "User Story \u2014 STORY-011: Forgot Password & Self-Serve Account Recovery",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "phases_stories_story_011_forgot_password_recovery_flow_user_story_story_011_forgot_password_self_serve_account_recovery",
+      "community": 84,
+      "norm_label": "user story \u2014 story-011: forgot password & self-serve account recovery"
+    },
+    {
+      "label": "1. Description & Business Value",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "phases_stories_story_011_forgot_password_recovery_flow_1_description_business_value",
+      "community": 84,
+      "norm_label": "1. description & business value"
+    },
+    {
+      "label": "2. Acceptance Criteria",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "phases_stories_story_011_forgot_password_recovery_flow_2_acceptance_criteria",
+      "community": 84,
+      "norm_label": "2. acceptance criteria"
+    },
+    {
+      "label": "3. Implementation Subtasks",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "phases_stories_story_011_forgot_password_recovery_flow_3_implementation_subtasks",
+      "community": 84,
+      "norm_label": "3. implementation subtasks"
+    },
+    {
+      "label": "STORY-012-rebrand-octyvo.md",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-012-rebrand-octyvo.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "phases_stories_story_012_rebrand_octyvo",
+      "community": 87,
+      "norm_label": "story-012-rebrand-octyvo.md"
+    },
+    {
+      "label": "STORY-012: Rebrand Application to Octyvo & Scrub ERP/SaaS Terminology",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-012-rebrand-octyvo.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "phases_stories_story_012_rebrand_octyvo_story_012_rebrand_application_to_octyvo_scrub_erp_saas_terminology",
+      "community": 87,
+      "norm_label": "story-012: rebrand application to octyvo & scrub erp/saas terminology"
+    },
+    {
+      "label": "Status",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-012-rebrand-octyvo.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "phases_stories_story_012_rebrand_octyvo_status",
+      "community": 87,
+      "norm_label": "status"
+    },
+    {
+      "label": "1. User Story",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-012-rebrand-octyvo.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "phases_stories_story_012_rebrand_octyvo_1_user_story",
+      "community": 87,
+      "norm_label": "1. user story"
+    },
+    {
+      "label": "2. Acceptance Criteria",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-012-rebrand-octyvo.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "phases_stories_story_012_rebrand_octyvo_2_acceptance_criteria",
+      "community": 87,
+      "norm_label": "2. acceptance criteria"
+    },
+    {
+      "label": "3. Implementation Details",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-012-rebrand-octyvo.md",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "phases_stories_story_012_rebrand_octyvo_3_implementation_details",
+      "community": 87,
+      "norm_label": "3. implementation details"
+    },
+    {
+      "label": "4. Verification & Quality Gates",
+      "file_type": "document",
+      "source_file": "phases/stories/STORY-012-rebrand-octyvo.md",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "phases_stories_story_012_rebrand_octyvo_4_verification_quality_gates",
+      "community": 87,
+      "norm_label": "4. verification & quality gates"
+    },
+    {
       "label": "bug-template.md",
       "file_type": "document",
       "source_file": "templates/bug-template.md",
@@ -10765,6 +10945,16 @@
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(marketing)/forgot-password/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_marketing_forgot_password_page",
+      "target": "app_marketing_forgot_password_page_marketingforgotpasswordpage",
+      "confidence_score": 1.0
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -14064,6 +14254,102 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page",
+      "target": "app_tenant_subdomain_auth_forgot_password_page_forgotpasswordpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page",
+      "target": "app_tenant_subdomain_auth_forgot_password_page_forgotpasswordpageprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page",
+      "target": "app_tenant_subdomain_auth_forgot_password_page_generatemetadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page",
+      "target": "components_auth_loginclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page",
+      "target": "components_auth_loginclient_tenantloginbranding",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page",
+      "target": "lib_supabase_server",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page",
+      "target": "lib_supabase_server_createclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page_generatemetadata",
+      "target": "lib_supabase_server_createclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_forgot_password_page_forgotpasswordpage",
+      "target": "lib_supabase_server_createclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(auth)/login/loading.tsx",
       "source_location": "L4",
       "weight": 1.0,
@@ -14182,7 +14468,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "app_tenant_subdomain_auth_set_password_page",
       "target": "app_tenant_subdomain_auth_set_password_page_setpasswordpage",
@@ -14193,7 +14479,51 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_set_password_page",
+      "target": "components_shared_companylogo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_set_password_page",
+      "target": "components_shared_companylogo_companylogo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_set_password_page",
+      "target": "components_shared_loadingbutton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_tenant_subdomain_auth_set_password_page",
+      "target": "components_shared_loadingbutton_loadingbutton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "app_tenant_subdomain_auth_set_password_page",
       "target": "lib_supabase_client",
@@ -14204,7 +14534,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "app_tenant_subdomain_auth_set_password_page",
       "target": "lib_supabase_client_createclient",
@@ -14216,7 +14546,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx",
-      "source_location": "L20",
+      "source_location": "L28",
       "weight": 1.0,
       "source": "app_tenant_subdomain_auth_set_password_page_setpasswordpage",
       "target": "lib_supabase_client_createclient"
@@ -16651,7 +16981,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L35",
+      "source_location": "L37",
       "weight": 1.0,
       "source": "components_auth_loginclient",
       "target": "components_auth_loginclient_loginclient",
@@ -16661,7 +16991,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L30",
+      "source_location": "L32",
       "weight": 1.0,
       "source": "components_auth_loginclient",
       "target": "components_auth_loginclient_loginclientprops",
@@ -16671,7 +17001,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/auth/LoginClient.tsx",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0,
       "source": "components_auth_loginclient",
       "target": "components_auth_loginclient_tenantloginbranding",
@@ -21487,7 +21817,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L58",
+      "source_location": "L60",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_bugs_bug_001_employee_settings_role_isolation",
@@ -21497,7 +21827,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L59",
+      "source_location": "L61",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_bugs_bug_002_mobile_bottomnav_more_and_logo_missing",
@@ -21507,7 +21837,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L60",
+      "source_location": "L62",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_bugs_bug_003_mobile_bottom_nav_press_feedback",
@@ -21517,7 +21847,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L61",
+      "source_location": "L63",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_bugs_bug_004_mobile_viewport_scroll_clearance",
@@ -21527,7 +21857,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L62",
+      "source_location": "L64",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_bugs_bug_005_remove_legacy_invite_employee_page",
@@ -21537,7 +21867,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L63",
+      "source_location": "L65",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_bugs_bug_006_workspace_brand_color_refresh_persistence",
@@ -21547,7 +21877,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L69",
+      "source_location": "L71",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_1_foundation",
@@ -21557,7 +21887,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L87",
+      "source_location": "L89",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_2_employees",
@@ -21567,7 +21897,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L105",
+      "source_location": "L107",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_3_attendance",
@@ -21577,7 +21907,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L123",
+      "source_location": "L125",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_4_clients",
@@ -21587,7 +21917,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L141",
+      "source_location": "L143",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_5_projects",
@@ -21597,7 +21927,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L160",
+      "source_location": "L162",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_6_tasks",
@@ -21607,7 +21937,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L180",
+      "source_location": "L182",
       "weight": 1.0,
       "source": "tracker",
       "target": "phases_phase_7_polish_pwa",
@@ -21684,6 +22014,26 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "TRACKER.md",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "tracker",
+      "target": "phases_stories_story_011_forgot_password_recovery_flow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "TRACKER.md",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "tracker",
+      "target": "phases_stories_story_012_rebrand_octyvo",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
@@ -21707,7 +22057,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L228",
+      "source_location": "L230",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_database_migration_status",
@@ -21717,7 +22067,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L272",
+      "source_location": "L274",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_decisions_notes_log",
@@ -21727,7 +22077,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L67",
+      "source_location": "L69",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_1_foundation",
@@ -21737,7 +22087,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L85",
+      "source_location": "L87",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_2_employee_management",
@@ -21747,7 +22097,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L103",
+      "source_location": "L105",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_3_attendance",
@@ -21757,7 +22107,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L121",
+      "source_location": "L123",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_4_client_management",
@@ -21767,7 +22117,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L139",
+      "source_location": "L141",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_5_project_management",
@@ -21777,7 +22127,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L158",
+      "source_location": "L160",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_6_task_management",
@@ -21787,7 +22137,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L178",
+      "source_location": "L180",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_phase_7_polish_pwa",
@@ -21807,7 +22157,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L251",
+      "source_location": "L253",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_pre_launch_checklist",
@@ -21827,7 +22177,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L198",
+      "source_location": "L200",
       "weight": 1.0,
       "source": "tracker_erp_saas_master_task_tracker",
       "target": "tracker_shared_components_build_status",
@@ -21847,7 +22197,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TRACKER.md",
-      "source_location": "L54",
+      "source_location": "L56",
       "weight": 1.0,
       "source": "tracker_ai_assisted_story_bug_tracking",
       "target": "tracker_bug_defect_registry_bug_xxx",
@@ -25316,6 +25666,106 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "phases_stories_story_011_forgot_password_recovery_flow",
+      "target": "phases_stories_story_011_forgot_password_recovery_flow_user_story_story_011_forgot_password_self_serve_account_recovery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "phases_stories_story_011_forgot_password_recovery_flow_user_story_story_011_forgot_password_self_serve_account_recovery",
+      "target": "phases_stories_story_011_forgot_password_recovery_flow_1_description_business_value",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "phases_stories_story_011_forgot_password_recovery_flow_user_story_story_011_forgot_password_self_serve_account_recovery",
+      "target": "phases_stories_story_011_forgot_password_recovery_flow_2_acceptance_criteria",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-011-forgot-password-recovery-flow.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "phases_stories_story_011_forgot_password_recovery_flow_user_story_story_011_forgot_password_self_serve_account_recovery",
+      "target": "phases_stories_story_011_forgot_password_recovery_flow_3_implementation_subtasks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-012-rebrand-octyvo.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "phases_stories_story_012_rebrand_octyvo",
+      "target": "phases_stories_story_012_rebrand_octyvo_story_012_rebrand_application_to_octyvo_scrub_erp_saas_terminology",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-012-rebrand-octyvo.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "phases_stories_story_012_rebrand_octyvo_story_012_rebrand_application_to_octyvo_scrub_erp_saas_terminology",
+      "target": "phases_stories_story_012_rebrand_octyvo_1_user_story",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-012-rebrand-octyvo.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "phases_stories_story_012_rebrand_octyvo_story_012_rebrand_application_to_octyvo_scrub_erp_saas_terminology",
+      "target": "phases_stories_story_012_rebrand_octyvo_2_acceptance_criteria",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-012-rebrand-octyvo.md",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "phases_stories_story_012_rebrand_octyvo_story_012_rebrand_application_to_octyvo_scrub_erp_saas_terminology",
+      "target": "phases_stories_story_012_rebrand_octyvo_3_implementation_details",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-012-rebrand-octyvo.md",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "phases_stories_story_012_rebrand_octyvo_story_012_rebrand_application_to_octyvo_scrub_erp_saas_terminology",
+      "target": "phases_stories_story_012_rebrand_octyvo_4_verification_quality_gates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "phases/stories/STORY-012-rebrand-octyvo.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "phases_stories_story_012_rebrand_octyvo_story_012_rebrand_application_to_octyvo_scrub_erp_saas_terminology",
+      "target": "phases_stories_story_012_rebrand_octyvo_status",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "templates/bug-template.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -25585,5 +26035,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7ef15da5cf84a18fc35453d80f71e667757b96c4"
+  "built_at_commit": "b39237d1aa412cf9cc3a5161a920c0d4baba44a2"
 }

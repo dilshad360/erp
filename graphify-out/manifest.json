@@ -5,13 +5,13 @@
     "semantic_hash": ""
   },
   "app/(marketing)/page.tsx": {
-    "mtime": 1789727552.5478344,
-    "ast_hash": "86342bf5e9ced4751ab82d053a300098",
+    "mtime": 1790007578.8320637,
+    "ast_hash": "351c74a61abdcc01cb55cb12edba7e6d",
     "semantic_hash": ""
   },
   "app/(marketing)/privacy/page.tsx": {
-    "mtime": 1789577735.9164028,
-    "ast_hash": "57d30893e61d800c25d4057c82821c3f",
+    "mtime": 1790007596.24004,
+    "ast_hash": "c1d8f66fbd8c6ffe7b460839aa1234b5",
     "semantic_hash": ""
   },
   "app/(marketing)/set-password/page.tsx": {
@@ -20,13 +20,13 @@
     "semantic_hash": ""
   },
   "app/(marketing)/signup/page.tsx": {
-    "mtime": 1789727580.202175,
-    "ast_hash": "bf6618e14e0e5cf7e847725243d18377",
+    "mtime": 1790007583.302966,
+    "ast_hash": "5e32d44ae301ca06300fc0034e41454d",
     "semantic_hash": ""
   },
   "app/(marketing)/terms/page.tsx": {
-    "mtime": 1789577743.1263022,
-    "ast_hash": "d24078a30d0342f8be2821ce42330731",
+    "mtime": 1790007601.9633977,
+    "ast_hash": "fc9767c7a129c9f327494e5257c8c9ba",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/attendance/admin/page.tsx": {
@@ -155,13 +155,13 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(auth)/login/page.tsx": {
-    "mtime": 1789705929.5231552,
-    "ast_hash": "f1470772f479795592d4215dcfb5981c",
+    "mtime": 1790007608.9685197,
+    "ast_hash": "330d259a251ffad8f6463435d2dca767",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(auth)/set-password/page.tsx": {
-    "mtime": 1789813193.5431724,
-    "ast_hash": "ff7dcc23dedee8fa470c144eb558767b",
+    "mtime": 1790007159.6488006,
+    "ast_hash": "5e6e6a30614715d842c6dbb3d07ce88c",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/layout.tsx": {
@@ -260,13 +260,13 @@
     "semantic_hash": ""
   },
   "app/layout.tsx": {
-    "mtime": 1789815505.0366783,
-    "ast_hash": "a5f168125fcb342e9aae6a12257fca4e",
+    "mtime": 1790007542.578858,
+    "ast_hash": "a67ceb2704911176198d30bf5fb0b416",
     "semantic_hash": ""
   },
   "app/manifest.ts": {
-    "mtime": 1789577435.2787554,
-    "ast_hash": "0b3f3ae2d64912973954c3f99dbb4eb2",
+    "mtime": 1790007548.9716692,
+    "ast_hash": "16670e15eea9d1bd624abeb9121f7ad9",
     "semantic_hash": ""
   },
   "app/not-found.tsx": {
@@ -275,8 +275,8 @@
     "semantic_hash": ""
   },
   "app/workspace-not-found/page.tsx": {
-    "mtime": 1789727596.4508362,
-    "ast_hash": "8a8ae288548a6ed5b56999e22fa8148b",
+    "mtime": 1790007589.2017057,
+    "ast_hash": "255e9c6ea68022715825e3c54f3de602",
     "semantic_hash": ""
   },
   "components.json": {
@@ -305,13 +305,13 @@
     "semantic_hash": ""
   },
   "components/auth/LoginClient.tsx": {
-    "mtime": 1790000865.835044,
-    "ast_hash": "2ed3151cad78cf4a0013247d35ae20c9",
+    "mtime": 1790007133.562362,
+    "ast_hash": "16010f0775fb55eae6bdad14cf88705f",
     "semantic_hash": ""
   },
   "components/pwa/InstallPrompt.tsx": {
-    "mtime": 1789727733.66219,
-    "ast_hash": "6f61ad7885bf58e4399a2c8cd7e28f94",
+    "mtime": 1790007573.3508773,
+    "ast_hash": "ffd5d34f8198c0ded6403b4249833921",
     "semantic_hash": ""
   },
   "components/pwa/ServiceWorkerRegister.tsx": {
@@ -400,8 +400,8 @@
     "semantic_hash": ""
   },
   "components/shared/Sidebar.tsx": {
-    "mtime": 1790000552.4947195,
-    "ast_hash": "e4138ed252fbcb472057eb39beb90167",
+    "mtime": 1790007563.5701852,
+    "ast_hash": "360ee8e40e404327b9025d4a117a2bc2",
     "semantic_hash": ""
   },
   "components/shared/SkeletonTable.tsx": {
@@ -645,8 +645,8 @@
     "semantic_hash": ""
   },
   "TRACKER.md": {
-    "mtime": 1790001667.4803007,
-    "ast_hash": "8cc93cdbdeb3ae579e041cd201cd6f48",
+    "mtime": 1790008485.3907807,
+    "ast_hash": "1914a301db4e1be2e3754433280e8d42",
     "semantic_hash": ""
   },
   "backend.md": {
@@ -795,8 +795,8 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(auth)/signup/page.tsx": {
-    "mtime": 1789730036.286477,
-    "ast_hash": "5beab8d65cc8c8d7ca6900a421887323",
+    "mtime": 1790007613.0913925,
+    "ast_hash": "ab9c76f0a1af750a3b903ba65f706a17",
     "semantic_hash": ""
   },
   "app/api/auth/signup/route.ts": {
@@ -885,8 +885,8 @@
     "semantic_hash": ""
   },
   "app/loading.tsx": {
-    "mtime": 1789815484.4416506,
-    "ast_hash": "962e4c0877d0fefb896b72c81a64b4f8",
+    "mtime": 1790007558.3017485,
+    "ast_hash": "5fbccca11de1c330ac8cd76025b20869",
     "semantic_hash": ""
   },
   "components/shared/GlobalLoadingProvider.tsx": {
@@ -895,8 +895,8 @@
     "semantic_hash": ""
   },
   "components/shared/GlobalPreloader.tsx": {
-    "mtime": 1789815476.6912773,
-    "ast_hash": "efdeea6ef4f682a1350b6f2905f7efc3",
+    "mtime": 1790007553.9004493,
+    "ast_hash": "aa173920a65d2fb64a1f6a3cdf834f77",
     "semantic_hash": ""
   },
   "components/shared/RichTextEditor.tsx": {
@@ -980,8 +980,8 @@
     "semantic_hash": ""
   },
   "components/shared/CompanyLogo.tsx": {
-    "mtime": 1790000521.9436975,
-    "ast_hash": "a824d10c0d581c7747676f6d43f8bb0e",
+    "mtime": 1790007568.3990853,
+    "ast_hash": "52ed4929189c0bf72c83702f92f3d150",
     "semantic_hash": ""
   },
   "components/shared/skeletons/AttendanceSkeleton.tsx": {
@@ -1037,6 +1037,26 @@
   "components/shared/skeletons/TaskPageSkeleton.tsx": {
     "mtime": 1790001757.6119318,
     "ast_hash": "721700384655e072b7d4f1ff4dec2e31",
+    "semantic_hash": ""
+  },
+  "app/(marketing)/forgot-password/page.tsx": {
+    "mtime": 1790007164.325029,
+    "ast_hash": "94215eb0304277556e9399845c490022",
+    "semantic_hash": ""
+  },
+  "app/(tenant)/[subdomain]/(auth)/forgot-password/page.tsx": {
+    "mtime": 1790007617.0885394,
+    "ast_hash": "5acad3d545f543612531d75ef727445a",
+    "semantic_hash": ""
+  },
+  "phases/stories/STORY-011-forgot-password-recovery-flow.md": {
+    "mtime": 1790007292.9233942,
+    "ast_hash": "f7060a141252ef41f72ba58399fb27cf",
+    "semantic_hash": ""
+  },
+  "phases/stories/STORY-012-rebrand-octyvo.md": {
+    "mtime": 1790008478.627823,
+    "ast_hash": "58aa1f9637cd92b9a97b47573d7012e3",
     "semantic_hash": ""
   }
 }
