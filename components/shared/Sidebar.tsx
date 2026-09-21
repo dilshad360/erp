@@ -16,6 +16,7 @@ import { useTenant } from "./TenantProvider";
 import { createClient } from "@/lib/supabase/client";
 import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
+import CompanyLogo from "./CompanyLogo";
 
 const navItems = [
   { href: "/dashboard",  label: "Dashboard",  icon: LayoutDashboard },
@@ -29,7 +30,7 @@ const navItems = [
 
 export default function Sidebar(): React.JSX.Element {
   const pathname = usePathname();
-  const { companyName, logoUrl, userName, userRole, userAvatarUrl } = useTenant();
+  const { companyName, logoUrl, brandColor, userName, userRole, userAvatarUrl } = useTenant();
   const router = useRouter();
 
   async function handleSignOut(): Promise<void> {
@@ -45,23 +46,14 @@ export default function Sidebar(): React.JSX.Element {
     <div className="flex flex-col h-full bg-[var(--color-surface)] border-r border-[var(--color-border)] select-none">
       {/* Company Branding */}
       <div className="flex items-center gap-3 px-5 py-4 border-b border-[var(--color-border)] h-16">
-        {logoUrl ? (
-          <Image
-            src={logoUrl}
-            alt={companyName}
-            width={32}
-            height={32}
-            className="rounded-lg object-contain"
-          />
-        ) : (
-          <Image
-            src="/logo.png"
-            alt="ERP Logo"
-            width={32}
-            height={32}
-            className="rounded-lg object-contain p-0.5 bg-[var(--color-surface-raised)] border border-[var(--color-border)]"
-          />
-        )}
+        <CompanyLogo
+          logoUrl={logoUrl}
+          companyName={companyName}
+          brandColor={brandColor}
+          size="sm"
+          shape="rounded"
+          className="w-8 h-8 rounded-lg"
+        />
         <div className="min-w-0 flex-1">
           <span className="font-semibold text-sm text-[var(--color-text-primary)] block truncate">
             {companyName}

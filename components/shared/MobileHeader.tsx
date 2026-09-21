@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTenant } from "./TenantProvider";
 import ThemeToggle from "./ThemeToggle";
+import CompanyLogo from "./CompanyLogo";
 
 export default function MobileHeader(): React.JSX.Element {
-  const { companyName, logoUrl, userName, userAvatarUrl } = useTenant();
-  const [logoError, setLogoError] = useState(false);
+  const { companyName, logoUrl, brandColor, userName, userAvatarUrl } = useTenant();
 
   const userInitial = userName ? userName.charAt(0).toUpperCase() : "U";
 
@@ -16,27 +16,14 @@ export default function MobileHeader(): React.JSX.Element {
     <header className="md:hidden sticky top-0 z-40 h-12 bg-[var(--color-surface)]/95 backdrop-blur-md border-b border-[var(--color-border)] px-3.5 flex items-center justify-between safe-area-pt select-none transition-colors duration-200">
       {/* Company Branding */}
       <Link href="/dashboard" className="flex items-center gap-2 min-w-0 max-w-[65%]">
-        {logoUrl && !logoError ? (
-          <div className="relative w-7 h-7 rounded-lg overflow-hidden shrink-0 border border-[var(--color-border)] bg-[var(--color-surface-hover)] shadow-xs">
-            <Image
-              src={logoUrl}
-              alt={companyName}
-              fill
-              className="object-contain p-0.5"
-              onError={() => setLogoError(true)}
-              unoptimized
-            />
-          </div>
-        ) : (
-          <div className="relative w-7 h-7 rounded-lg overflow-hidden shrink-0 border border-[var(--color-border)] bg-[var(--color-surface-hover)] shadow-xs">
-            <Image
-              src="/logo.png"
-              alt="ERP Logo"
-              fill
-              className="object-contain p-0.5"
-            />
-          </div>
-        )}
+        <CompanyLogo
+          logoUrl={logoUrl}
+          companyName={companyName}
+          brandColor={brandColor}
+          size="sm"
+          shape="rounded"
+          className="w-7 h-7 rounded-lg"
+        />
         <span className="text-xs sm:text-sm font-semibold text-[var(--color-text-primary)] truncate">
           {companyName}
         </span>

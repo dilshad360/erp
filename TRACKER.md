@@ -49,6 +49,7 @@
 | `STORY-006` | Entity Deletion Lifecycle, Tenant Task Visibility & Multi-Assignee Collaboration | Clients / Projects / Tasks | P1 | ✅ Done | `feat/tasks-clients-story-006` | [`phases/stories/STORY-006-crud-deletion-task-collaboration-multi-assignee.md`](phases/stories/STORY-006-crud-deletion-task-collaboration-multi-assignee.md) |
 | `STORY-007` | Rich Text Editor Integration for Tasks, Projects & Client Notes | Shared / Tasks / Projects / Clients | P2 | ✅ Done | `feat/rich-text-story-007` | [`phases/stories/STORY-007-rich-text-editor-tasks-projects-clients.md`](phases/stories/STORY-007-rich-text-editor-tasks-projects-clients.md) |
 | `STORY-008` | Global Preloader & Navigation Progress Suite | Foundation / Shared UX & Navigation | P1 | ✅ Done | `feat/foundation-story-008` | [`phases/stories/STORY-008-global-preloader-suite.md`](phases/stories/STORY-008-global-preloader-suite.md) |
+| `STORY-010` | Tenant Company Branding Loaders & Granular Route/Table Skeletons | Shared / Foundation / UX & Navigation | P1 | ✅ Done | `feat/foundation-story-010` | [`phases/stories/STORY-010-tenant-company-branding-loader-and-granular-skeletons.md`](phases/stories/STORY-010-tenant-company-branding-loader-and-granular-skeletons.md) |
 
 ### Bug & Defect Registry (`BUG-xxx`)
 

@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
-import { Loader2 } from "lucide-react";
+import React from "react";
 import { useOptionalTenant } from "./TenantProvider";
+import CompanyLogo from "./CompanyLogo";
 
 export type TenantPreloaderProps = {
   companyName?: string | null;
@@ -19,21 +18,18 @@ export default function TenantPreloader({
   companyName,
   brandColor,
   logoUrl,
-  showAppLogoFallback = true,
+  showAppLogoFallback = false,
   message = "Loading…",
   fullScreen = true,
   className = "",
 }: TenantPreloaderProps): React.JSX.Element {
-  const [logoError, setLogoError] = useState(false);
   const tenant = useOptionalTenant();
 
   // Resolve values from explicit props or fallback to tenant context
-  const resolvedCompanyName = companyName !== undefined ? companyName : tenant?.companyName ?? null;
+  const resolvedCompanyName =
+    companyName !== undefined ? companyName : tenant?.companyName ?? null;
   const resolvedBrandColor = brandColor || tenant?.brandColor || "#6366f1";
   const resolvedLogo = logoUrl !== undefined ? logoUrl : tenant?.logoUrl ?? null;
-
-  // Determine logo source: custom tenant logo if available, or app logo fallback
-  const finalLogoUrl = resolvedLogo && !logoError ? resolvedLogo : (showAppLogoFallback ? "/logo.png" : null);
 
   const content = (
     <div className="relative flex flex-col items-center justify-center p-6 text-center select-none animate-in fade-in zoom-in-95 duration-300">
@@ -43,43 +39,26 @@ export default function TenantPreloader({
         style={{ backgroundColor: resolvedBrandColor }}
       />
 
-      {/* If Logo is available, display it with brand halo */}
-      {finalLogoUrl ? (
-        <div className="relative mb-5">
-          {/* Soft pulsing halo */}
-          <div
-            className="absolute -inset-2 rounded-2xl opacity-35 blur-md animate-pulse"
-            style={{ backgroundColor: resolvedBrandColor }}
+      {/* Company Brand Logo / Monogram with Pulsing Halo */}
+      <div className="relative mb-5">
+        <div
+          className="absolute -inset-2 rounded-2xl opacity-35 blur-md animate-pulse pointer-events-none"
+          style={{ backgroundColor: resolvedBrandColor }}
+        />
+        <div className="relative">
+          <CompanyLogo
+            logoUrl={resolvedLogo}
+            companyName={resolvedCompanyName}
+            brandColor={resolvedBrandColor}
+            size="xl"
+            shape="rounded"
+            showAppLogoFallback={showAppLogoFallback}
+            priority={true}
+            className="w-16 h-16 rounded-2xl shadow-2xl p-2 bg-[var(--color-surface)] border border-[var(--color-border)]"
+            monogramClassName="text-xl"
           />
-          <div className="relative w-16 h-16 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)] p-2.5 shadow-2xl flex items-center justify-center overflow-hidden">
-            <Image
-              src={finalLogoUrl}
-              alt={resolvedCompanyName || "ERP Logo"}
-              fill
-              sizes="64px"
-              className="object-contain p-2"
-              onError={() => setLogoError(true)}
-              priority
-            />
-          </div>
         </div>
-      ) : (
-        /* Minimalist spinner ring for compact embed */
-        <div className="relative mb-5 flex items-center justify-center">
-          <div
-            className="w-12 h-12 rounded-full flex items-center justify-center relative shadow-sm"
-            style={{
-              backgroundColor: `${resolvedBrandColor}14`,
-            }}
-          >
-            <Loader2
-              size={24}
-              className="animate-spin"
-              style={{ color: resolvedBrandColor }}
-            />
-          </div>
-        </div>
-      )}
+      </div>
 
       {/* Title & Status Message */}
       <div className="space-y-1.5 mb-5 max-w-xs">
@@ -109,7 +88,7 @@ export default function TenantPreloader({
   if (!fullScreen) {
     return (
       <div
-        className={`flex items-center justify-center min-h-[260px] w-full ${className}`}
+        className={`flex items-center justify-center min-h-[220px] w-full ${className}`}
         role="status"
         aria-live="polite"
         aria-busy="true"

@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { createClient } from "@/lib/supabase/client";
 import LoadingButton from "@/components/shared/LoadingButton";
 import ThemeToggle from "@/components/shared/ThemeToggle";
 import TenantPreloader from "@/components/shared/TenantPreloader";
+import CompanyLogo from "@/components/shared/CompanyLogo";
 import {
   Mail,
   Lock,
@@ -53,7 +53,6 @@ export default function LoginClient({
   // UI state
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const [logoError, setLogoError] = useState(false);
   const [isRedirecting, setIsRedirecting] = useState(false);
   const [isPendingApproval, setIsPendingApproval] = useState(false);
   const [signupSuccess, setSignupSuccess] = useState(false);
@@ -192,28 +191,15 @@ export default function LoginClient({
       <div className="w-full max-w-sm space-y-6 relative z-10 animate-in fade-in zoom-in-95 duration-200">
         {/* Company Branding & Header */}
         <div className="text-center space-y-3 flex flex-col items-center">
-          {company.logoUrl && !logoError ? (
-            <div className="relative w-16 h-16 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)] p-2 shadow-lg flex items-center justify-center overflow-hidden">
-              <Image
-                src={company.logoUrl}
-                alt={company.name}
-                fill
-                className="object-contain p-2"
-                onError={() => setLogoError(true)}
-                unoptimized
-              />
-            </div>
-          ) : (
-            <div className="relative w-16 h-16 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)] p-2 shadow-lg flex items-center justify-center overflow-hidden">
-              <Image
-                src="/logo.png"
-                alt="ERP Logo"
-                fill
-                className="object-contain p-2"
-                priority
-              />
-            </div>
-          )}
+          <CompanyLogo
+            logoUrl={company.logoUrl}
+            companyName={company.name}
+            brandColor={brandColor}
+            size="xl"
+            shape="rounded"
+            priority={true}
+            className="w-16 h-16 rounded-2xl shadow-lg p-2"
+          />
 
           <div className="space-y-1">
             <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-[var(--color-text-primary)]">

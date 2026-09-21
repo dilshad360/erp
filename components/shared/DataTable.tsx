@@ -12,12 +12,13 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import SkeletonTable from "./SkeletonTable";
-import { Search, ChevronDown, ChevronUp, ChevronsUpDown, ChevronLeft, ChevronRight } from "lucide-react";
+import { Search, ChevronDown, ChevronUp, ChevronsUpDown, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 
 type DataTableProps<TData, TValue> = {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
   isLoading?: boolean;
+  isFetching?: boolean;
   emptyState?: React.ReactNode;
   searchPlaceholder?: string;
   mobileCardRender?: (row: TData) => React.ReactNode;
@@ -28,6 +29,7 @@ export function DataTable<TData, TValue>({
   columns,
   data,
   isLoading = false,
+  isFetching = false,
   emptyState,
   searchPlaceholder = "Search...",
   mobileCardRender,
@@ -68,8 +70,11 @@ export function DataTable<TData, TValue>({
             value={globalFilter ?? ""}
             onChange={(e) => setGlobalFilter(e.target.value)}
             placeholder={searchPlaceholder}
-            className="w-full pl-9 pr-4 py-2 text-sm rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand)] focus:border-transparent transition-all"
+            className="w-full pl-9 pr-9 py-2 text-sm rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand)] focus:border-transparent transition-all"
           />
+          {isFetching && (
+            <Loader2 className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[var(--color-brand)] animate-spin" />
+          )}
         </div>
 
         {filterComponent && (

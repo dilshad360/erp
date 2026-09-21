@@ -645,8 +645,8 @@
     "semantic_hash": ""
   },
   "TRACKER.md": {
-    "mtime": 1790001667.4803007,
-    "ast_hash": "8cc93cdbdeb3ae579e041cd201cd6f48",
+    "mtime": 1790000515.2678785,
+    "ast_hash": "62c39555206718796adef906029d2972",
     "semantic_hash": ""
   },
   "backend.md": {
@@ -925,13 +925,13 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/attendance/admin/loading.tsx": {
-    "mtime": 1790001791.4278028,
-    "ast_hash": "a101dd0bca5597aff2d9669d6b968a27",
+    "mtime": 1790000703.3119767,
+    "ast_hash": "047d1fc07de8091703049d2e04ef2bb5",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/attendance/loading.tsx": {
-    "mtime": 1790001787.3133135,
-    "ast_hash": "0f37fd15dd21408ae08b879394d720b5",
+    "mtime": 1790000698.671699,
+    "ast_hash": "902ff9831ce33630f459c08eba7214df",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/clients/[id]/loading.tsx": {
@@ -965,8 +965,8 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/projects/loading.tsx": {
-    "mtime": 1790001795.9737315,
-    "ast_hash": "f2212ae3a152d52d4451e543a350c618",
+    "mtime": 1790000687.627862,
+    "ast_hash": "82256dc9fd779e6ace912d5300b40a21",
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/settings/loading.tsx": {
@@ -975,8 +975,8 @@
     "semantic_hash": ""
   },
   "app/(tenant)/[subdomain]/(app)/tasks/loading.tsx": {
-    "mtime": 1790001783.0715652,
-    "ast_hash": "73f2544899290d36ad7821d0ec2a4875",
+    "mtime": 1790000695.6497314,
+    "ast_hash": "5f8c988d5c5b683605c43f1b366cf20b",
     "semantic_hash": ""
   },
   "components/shared/CompanyLogo.tsx": {
@@ -1015,28 +1015,8 @@
     "semantic_hash": ""
   },
   "phases/stories/STORY-010-tenant-company-branding-loader-and-granular-skeletons.md": {
-    "mtime": 1790001672.9519143,
-    "ast_hash": "cd9b7ac1f61142bc39e6b563150cb8ac",
-    "semantic_hash": ""
-  },
-  "components/shared/skeletons/AdminAttendanceSkeleton.tsx": {
-    "mtime": 1790001769.4825678,
-    "ast_hash": "b9d8dd8d2a156a2188f453153f51d1f7",
-    "semantic_hash": ""
-  },
-  "components/shared/skeletons/AttendancePageSkeleton.tsx": {
-    "mtime": 1790001763.955907,
-    "ast_hash": "3826022ac879e9fd77dd78c3ede30da8",
-    "semantic_hash": ""
-  },
-  "components/shared/skeletons/ProjectPageSkeleton.tsx": {
-    "mtime": 1790001776.0892663,
-    "ast_hash": "462d1b0cc9b052012665220c8779a122",
-    "semantic_hash": ""
-  },
-  "components/shared/skeletons/TaskPageSkeleton.tsx": {
-    "mtime": 1790001757.6119318,
-    "ast_hash": "721700384655e072b7d4f1ff4dec2e31",
+    "mtime": 1790000510.4460008,
+    "ast_hash": "7ebde5ecaa45db29857d8573090e02b0",
     "semantic_hash": ""
   }
 }

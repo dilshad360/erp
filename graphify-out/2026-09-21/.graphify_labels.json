@@ -83,10 +83,5 @@
   "81": "DetailPageSkeleton.tsx",
   "82": "STORY-007: Rich Text Editor Integration for Tasks, Projects & Client Notes",
   "83": "GlobalPreloader.tsx",
-  "84": "ColorPicker.tsx",
-  "85": "ClientDetailClient.tsx",
-  "86": "ProjectDetailClient.tsx",
-  "87": "route.ts",
-  "88": "page.tsx",
-  "89": "StatCard.tsx"
+  "84": "ColorPicker.tsx"
 }

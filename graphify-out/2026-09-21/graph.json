@@ -370,7 +370,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_clientlistclient_clientrecord",
-      "community": 88,
+      "community": 13,
       "norm_label": "clientrecord"
     },
     {
@@ -400,7 +400,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient",
-      "community": 85,
+      "community": 50,
       "norm_label": "clientdetailclient.tsx"
     },
     {
@@ -410,7 +410,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_editclientschema",
-      "community": 85,
+      "community": 50,
       "norm_label": "editclientschema"
     },
     {
@@ -420,7 +420,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_editclientformdata",
-      "community": 85,
+      "community": 50,
       "norm_label": "editclientformdata"
     },
     {
@@ -440,7 +440,7 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_clientdetailprops",
-      "community": 85,
+      "community": 50,
       "norm_label": "clientdetailprops"
     },
     {
@@ -450,7 +450,7 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_id_clientdetailclient_clientdetailclient",
-      "community": 85,
+      "community": 50,
       "norm_label": "clientdetailclient()"
     },
     {
@@ -530,7 +530,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient",
-      "community": 67,
+      "community": 50,
       "norm_label": "newclientformclient.tsx"
     },
     {
@@ -540,7 +540,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient_clientformschema",
-      "community": 67,
+      "community": 50,
       "norm_label": "clientformschema"
     },
     {
@@ -550,7 +550,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient_clientformdata",
-      "community": 67,
+      "community": 50,
       "norm_label": "clientformdata"
     },
     {
@@ -560,7 +560,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_new_newclientformclient_newclientformclient",
-      "community": 67,
+      "community": 50,
       "norm_label": "newclientformclient()"
     },
     {
@@ -600,7 +600,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_page",
-      "community": 88,
+      "community": 13,
       "norm_label": "page.tsx"
     },
     {
@@ -610,7 +610,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_page_metadata",
-      "community": 88,
+      "community": 13,
       "norm_label": "metadata"
     },
     {
@@ -620,7 +620,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_clients_page_clientspage",
-      "community": 88,
+      "community": 13,
       "norm_label": "clientspage()"
     },
     {
@@ -980,7 +980,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient",
-      "community": 86,
+      "community": 50,
       "norm_label": "projectdetailclient.tsx"
     },
     {
@@ -990,7 +990,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_editprojectschema",
-      "community": 86,
+      "community": 50,
       "norm_label": "editprojectschema"
     },
     {
@@ -1000,7 +1000,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_editprojectformdata",
-      "community": 86,
+      "community": 50,
       "norm_label": "editprojectformdata"
     },
     {
@@ -1020,7 +1020,7 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_taskstatuscount",
-      "community": 86,
+      "community": 50,
       "norm_label": "taskstatuscount"
     },
     {
@@ -1030,7 +1030,7 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectteammember",
-      "community": 86,
+      "community": 50,
       "norm_label": "projectteammember"
     },
     {
@@ -1040,7 +1040,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_projectdetailclient_projectdetailprops",
-      "community": 67,
+      "community": 50,
       "norm_label": "projectdetailprops"
     },
     {
@@ -1120,7 +1120,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_tasks_page_generatemetadata",
-      "community": 2,
+      "community": 10,
       "norm_label": "generatemetadata()"
     },
     {
@@ -1130,7 +1130,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_id_tasks_page_projecttaskspage",
-      "community": 2,
+      "community": 10,
       "norm_label": "projecttaskspage()"
     },
     {
@@ -1160,7 +1160,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_newprojectformclient",
-      "community": 67,
+      "community": 50,
       "norm_label": "newprojectformclient.tsx"
     },
     {
@@ -1170,7 +1170,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_newprojectformclient_projectformschema",
-      "community": 67,
+      "community": 50,
       "norm_label": "projectformschema"
     },
     {
@@ -1180,7 +1180,7 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_newprojectformclient_projectformdata",
-      "community": 67,
+      "community": 50,
       "norm_label": "projectformdata"
     },
     {
@@ -1190,7 +1190,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_newprojectformclient_newprojectformclientprops",
-      "community": 67,
+      "community": 50,
       "norm_label": "newprojectformclientprops"
     },
     {
@@ -1200,7 +1200,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_newprojectformclient_newprojectformclient",
-      "community": 67,
+      "community": 50,
       "norm_label": "newprojectformclient()"
     },
     {
@@ -1210,7 +1210,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_page",
-      "community": 13,
+      "community": 67,
       "norm_label": "page.tsx"
     },
     {
@@ -1220,7 +1220,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_page_metadata",
-      "community": 13,
+      "community": 67,
       "norm_label": "metadata"
     },
     {
@@ -1230,7 +1230,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_tenant_subdomain_app_projects_new_page_newprojectpage",
-      "community": 13,
+      "community": 67,
       "norm_label": "newprojectpage()"
     },
     {
@@ -2180,7 +2180,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_task_statuses_id_route",
-      "community": 87,
+      "community": 10,
       "norm_label": "route.ts"
     },
     {
@@ -2190,7 +2190,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_api_task_statuses_id_route_updatestatusschema",
-      "community": 87,
+      "community": 10,
       "norm_label": "updatestatusschema"
     },
     {
@@ -2200,7 +2200,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_api_task_statuses_id_route_put",
-      "community": 87,
+      "community": 10,
       "norm_label": "put()"
     },
     {
@@ -2210,7 +2210,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "app_api_task_statuses_id_route_delete",
-      "community": 87,
+      "community": 10,
       "norm_label": "delete()"
     },
     {
@@ -2290,7 +2290,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_tasks_id_route",
-      "community": 10,
+      "community": 64,
       "norm_label": "route.ts"
     },
     {
@@ -2300,7 +2300,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_api_tasks_id_route_get",
-      "community": 10,
+      "community": 64,
       "norm_label": "get()"
     },
     {
@@ -2310,7 +2310,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "app_api_tasks_id_route_put",
-      "community": 10,
+      "community": 64,
       "norm_label": "put()"
     },
     {
@@ -2320,7 +2320,7 @@
       "source_location": "L287",
       "_origin": "ast",
       "id": "app_api_tasks_id_route_delete",
-      "community": 10,
+      "community": 64,
       "norm_label": "delete()"
     },
     {
@@ -3450,7 +3450,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "components_shared_clientselect_clientoption",
-      "community": 67,
+      "community": 50,
       "norm_label": "clientoption"
     },
     {
@@ -3570,7 +3570,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_confirmdialog",
-      "community": 85,
+      "community": 2,
       "norm_label": "confirmdialog.tsx"
     },
     {
@@ -3580,7 +3580,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "components_shared_confirmdialog_confirmdialogprops",
-      "community": 85,
+      "community": 2,
       "norm_label": "confirmdialogprops"
     },
     {
@@ -3810,7 +3810,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_loadingbutton",
-      "community": 85,
+      "community": 50,
       "norm_label": "loadingbutton.tsx"
     },
     {
@@ -3820,7 +3820,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_shared_loadingbutton_loadingbuttonprops",
-      "community": 85,
+      "community": 50,
       "norm_label": "loadingbuttonprops"
     },
     {
@@ -3830,7 +3830,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "components_shared_loadingbutton_loadingbutton",
-      "community": 67,
+      "community": 50,
       "norm_label": "loadingbutton()"
     },
     {
@@ -3860,7 +3860,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_pageheader",
-      "community": 67,
+      "community": 50,
       "norm_label": "pageheader.tsx"
     },
     {
@@ -3870,7 +3870,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "components_shared_pageheader_pageheaderprops",
-      "community": 67,
+      "community": 50,
       "norm_label": "pageheaderprops"
     },
     {
@@ -3880,7 +3880,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "components_shared_pageheader_pageheader",
-      "community": 67,
+      "community": 50,
       "norm_label": "pageheader()"
     },
     {
@@ -3890,7 +3890,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_richtexteditor",
-      "community": 67,
+      "community": 50,
       "norm_label": "richtexteditor.tsx"
     },
     {
@@ -3900,7 +3900,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "components_shared_richtexteditor_richtexteditorprops",
-      "community": 67,
+      "community": 50,
       "norm_label": "richtexteditorprops"
     },
     {
@@ -3910,7 +3910,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "components_shared_richtexteditor_activestates",
-      "community": 67,
+      "community": 50,
       "norm_label": "activestates"
     },
     {
@@ -3920,7 +3920,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "components_shared_richtexteditor_richtexteditor",
-      "community": 67,
+      "community": 50,
       "norm_label": "richtexteditor()"
     },
     {
@@ -3930,7 +3930,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_richtextviewer",
-      "community": 86,
+      "community": 50,
       "norm_label": "richtextviewer.tsx"
     },
     {
@@ -3940,7 +3940,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "components_shared_richtextviewer_richtextviewerprops",
-      "community": 86,
+      "community": 50,
       "norm_label": "richtextviewerprops"
     },
     {
@@ -3950,7 +3950,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "components_shared_richtextviewer_issafeurl",
-      "community": 86,
+      "community": 50,
       "norm_label": "issafeurl()"
     },
     {
@@ -3960,7 +3960,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "components_shared_richtextviewer_sanitizehtml",
-      "community": 86,
+      "community": 50,
       "norm_label": "sanitizehtml()"
     },
     {
@@ -3970,7 +3970,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "components_shared_richtextviewer_ishtmlcontent",
-      "community": 86,
+      "community": 50,
       "norm_label": "ishtmlcontent()"
     },
     {
@@ -3980,7 +3980,7 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "components_shared_richtextviewer_richtextviewer",
-      "community": 86,
+      "community": 50,
       "norm_label": "richtextviewer()"
     },
     {
@@ -4080,7 +4080,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_shared_statcard",
-      "community": 89,
+      "community": 3,
       "norm_label": "statcard.tsx"
     },
     {
@@ -4090,7 +4090,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "components_shared_statcard_statcardprops",
-      "community": 89,
+      "community": 3,
       "norm_label": "statcardprops"
     },
     {
@@ -4100,7 +4100,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "components_shared_statcard_statcard",
-      "community": 89,
+      "community": 3,
       "norm_label": "statcard()"
     },
     {
@@ -4314,46 +4314,6 @@
       "norm_label": "userselect()"
     },
     {
-      "label": "AdminAttendanceSkeleton.tsx",
-      "file_type": "code",
-      "source_file": "components/shared/skeletons/AdminAttendanceSkeleton.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "components_shared_skeletons_adminattendanceskeleton",
-      "community": 53,
-      "norm_label": "adminattendanceskeleton.tsx"
-    },
-    {
-      "label": "AdminAttendanceSkeleton()",
-      "file_type": "code",
-      "source_file": "components/shared/skeletons/AdminAttendanceSkeleton.tsx",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "components_shared_skeletons_adminattendanceskeleton_adminattendanceskeleton",
-      "community": 53,
-      "norm_label": "adminattendanceskeleton()"
-    },
-    {
-      "label": "AttendancePageSkeleton.tsx",
-      "file_type": "code",
-      "source_file": "components/shared/skeletons/AttendancePageSkeleton.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "components_shared_skeletons_attendancepageskeleton",
-      "community": 53,
-      "norm_label": "attendancepageskeleton.tsx"
-    },
-    {
-      "label": "AttendancePageSkeleton()",
-      "file_type": "code",
-      "source_file": "components/shared/skeletons/AttendancePageSkeleton.tsx",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "components_shared_skeletons_attendancepageskeleton_attendancepageskeleton",
-      "community": 53,
-      "norm_label": "attendancepageskeleton()"
-    },
-    {
       "label": "AttendanceSkeleton.tsx",
       "file_type": "code",
       "source_file": "components/shared/skeletons/AttendanceSkeleton.tsx",
@@ -4464,26 +4424,6 @@
       "norm_label": "pageheaderskeleton()"
     },
     {
-      "label": "ProjectPageSkeleton.tsx",
-      "file_type": "code",
-      "source_file": "components/shared/skeletons/ProjectPageSkeleton.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "components_shared_skeletons_projectpageskeleton",
-      "community": 53,
-      "norm_label": "projectpageskeleton.tsx"
-    },
-    {
-      "label": "ProjectPageSkeleton()",
-      "file_type": "code",
-      "source_file": "components/shared/skeletons/ProjectPageSkeleton.tsx",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "components_shared_skeletons_projectpageskeleton_projectpageskeleton",
-      "community": 53,
-      "norm_label": "projectpageskeleton()"
-    },
-    {
       "label": "TablePageSkeleton.tsx",
       "file_type": "code",
       "source_file": "components/shared/skeletons/TablePageSkeleton.tsx",
@@ -4512,26 +4452,6 @@
       "id": "components_shared_skeletons_tablepageskeleton_tablepageskeleton",
       "community": 53,
       "norm_label": "tablepageskeleton()"
-    },
-    {
-      "label": "TaskPageSkeleton.tsx",
-      "file_type": "code",
-      "source_file": "components/shared/skeletons/TaskPageSkeleton.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "components_shared_skeletons_taskpageskeleton",
-      "community": 53,
-      "norm_label": "taskpageskeleton.tsx"
-    },
-    {
-      "label": "TaskPageSkeleton()",
-      "file_type": "code",
-      "source_file": "components/shared/skeletons/TaskPageSkeleton.tsx",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "components_shared_skeletons_taskpageskeleton_taskpageskeleton",
-      "community": 53,
-      "norm_label": "taskpageskeleton()"
     },
     {
       "label": "KanbanBoard.tsx",
@@ -4900,7 +4820,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_ui_button",
-      "community": 85,
+      "community": 50,
       "norm_label": "button.tsx"
     },
     {
@@ -4910,7 +4830,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "components_ui_button_buttonvariants",
-      "community": 85,
+      "community": 50,
       "norm_label": "buttonvariants"
     },
     {
@@ -4920,7 +4840,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "components_ui_button_button",
-      "community": 85,
+      "community": 50,
       "norm_label": "button()"
     },
     {
@@ -10966,7 +10886,7 @@
       "source_location": "L2",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_attendance_admin_loading",
-      "target": "components_shared_skeletons_adminattendanceskeleton",
+      "target": "components_shared_skeletons_tablepageskeleton",
       "confidence_score": 1.0
     },
     {
@@ -11072,18 +10992,7 @@
       "source_location": "L2",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_attendance_loading",
-      "target": "components_shared_skeletons_attendancepageskeleton",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(tenant)/[subdomain]/(app)/attendance/loading.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "app_tenant_subdomain_app_attendance_loading",
-      "target": "components_shared_skeletons_attendancepageskeleton_attendancepageskeleton",
+      "target": "components_shared_skeletons_attendanceskeleton",
       "confidence_score": 1.0
     },
     {
@@ -13289,7 +13198,7 @@
       "source_location": "L2",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_projects_loading",
-      "target": "components_shared_skeletons_projectpageskeleton",
+      "target": "components_shared_skeletons_tablepageskeleton",
       "confidence_score": 1.0
     },
     {
@@ -13983,7 +13892,7 @@
       "source_location": "L2",
       "weight": 1.0,
       "source": "app_tenant_subdomain_app_tasks_loading",
-      "target": "components_shared_skeletons_taskpageskeleton",
+      "target": "components_shared_skeletons_kanbanskeleton",
       "confidence_score": 1.0
     },
     {
@@ -18524,17 +18433,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "components/shared/skeletons/AdminAttendanceSkeleton.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "components_shared_skeletons_adminattendanceskeleton",
-      "target": "components_shared_skeletontable",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "components/shared/skeletons/AttendanceSkeleton.tsx",
       "source_location": "L5",
       "weight": 1.0,
@@ -18899,48 +18797,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "components/shared/skeletons/AdminAttendanceSkeleton.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "components_shared_skeletons_adminattendanceskeleton",
-      "target": "components_shared_skeletons_adminattendanceskeleton_adminattendanceskeleton",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/shared/skeletons/AdminAttendanceSkeleton.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "components_shared_skeletons_adminattendanceskeleton",
-      "target": "components_shared_skeletons_pageheaderskeleton",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/shared/skeletons/AttendancePageSkeleton.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "components_shared_skeletons_attendancepageskeleton",
-      "target": "components_shared_skeletons_attendancepageskeleton_attendancepageskeleton",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/shared/skeletons/AttendancePageSkeleton.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "components_shared_skeletons_attendancepageskeleton",
-      "target": "components_shared_skeletons_pageheaderskeleton",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "components/shared/skeletons/AttendanceSkeleton.tsx",
       "source_location": "L7",
       "weight": 1.0,
@@ -19035,43 +18891,11 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "components/shared/skeletons/ProjectPageSkeleton.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "components_shared_skeletons_projectpageskeleton",
-      "target": "components_shared_skeletons_pageheaderskeleton",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "components/shared/skeletons/TablePageSkeleton.tsx",
       "source_location": "L4",
       "weight": 1.0,
       "source": "components_shared_skeletons_tablepageskeleton",
       "target": "components_shared_skeletons_pageheaderskeleton",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/shared/skeletons/TaskPageSkeleton.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "components_shared_skeletons_taskpageskeleton",
-      "target": "components_shared_skeletons_pageheaderskeleton",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/shared/skeletons/ProjectPageSkeleton.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "components_shared_skeletons_projectpageskeleton",
-      "target": "components_shared_skeletons_projectpageskeleton_projectpageskeleton",
       "confidence_score": 1.0
     },
     {
@@ -19092,16 +18916,6 @@
       "weight": 1.0,
       "source": "components_shared_skeletons_tablepageskeleton",
       "target": "components_shared_skeletons_tablepageskeleton_tablepageskeletonprops",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/shared/skeletons/TaskPageSkeleton.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "components_shared_skeletons_taskpageskeleton",
-      "target": "components_shared_skeletons_taskpageskeleton_taskpageskeleton",
       "confidence_score": 1.0
     },
     {
